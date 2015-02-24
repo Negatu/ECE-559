@@ -1,0 +1,20 @@
+
+State Machine - |ReceivePort|state_reg
+Name state_reg.read_state state_reg.s15 state_reg.s14 state_reg.s13 state_reg.s12 state_reg.s11 state_reg.s10 state_reg.s9 state_reg.s8 state_reg.s7 state_reg.s6 state_reg.s5 state_reg.s4 state_reg.s3 state_reg.s2 state_reg.s1 state_reg.reset_state 
+state_reg.reset_state 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state_reg.s1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state_reg.s2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state_reg.s3 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state_reg.s4 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state_reg.s5 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state_reg.s6 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state_reg.s7 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state_reg.s8 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state_reg.s9 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state_reg.s10 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state_reg.s11 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state_reg.s12 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state_reg.s13 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state_reg.s14 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state_reg.s15 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state_reg.read_state 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
