@@ -13,7 +13,7 @@ ptn_Child7=Document-6
 [ProjectWorkspace.Frames.ChildFrames.Document-0]
 ptn_Child1=ViewFrame-0
 [ProjectWorkspace.Frames.ChildFrames.Document-0.ViewFrame-0]
-DocPathName=../Homework2FSM/ReceivePort.vhd
+DocPathName=VHD and VWF Files/PHY/InputPort.vhd
 DocumentCLSID={ca385d57-a4c7-11d1-a098-0020affa43f2}
 IsChildFrameDetached=False
 IsActiveChildFrame=False
@@ -23,22 +23,22 @@ AFC_IN_REPORT=False
 [ProjectWorkspace.Frames.ChildFrames.Document-1]
 ptn_Child1=ViewFrame-0
 [ProjectWorkspace.Frames.ChildFrames.Document-1.ViewFrame-0]
-DocPathName=../Homework2FSM/patternFSM_clkEnable.vhd
+DocPathName=VHD and VWF Files/TransmitStates/FrameCheck.vhd
 DocumentCLSID={ca385d57-a4c7-11d1-a098-0020affa43f2}
 IsChildFrameDetached=False
-IsActiveChildFrame=False
+IsActiveChildFrame=True
 ptn_Child1=StateMap
 [ProjectWorkspace.Frames.ChildFrames.Document-1.ViewFrame-0.StateMap]
 AFC_IN_REPORT=False
-[ProjectWorkspace.Frames.ChildFrames.Document-4]
+[ProjectWorkspace.Frames.ChildFrames.Document-2]
 ptn_Child1=ViewFrame-0
-[ProjectWorkspace.Frames.ChildFrames.Document-4.ViewFrame-0]
-DocPathName=ReceivePort.vwf
+[ProjectWorkspace.Frames.ChildFrames.Document-2.ViewFrame-0]
+DocPathName=VHD and VWF Files/PHY/InputPort.vwf
 DocumentCLSID={4a9ed22a-e60b-11d1-a0bd-0020affa43f2}
 IsChildFrameDetached=False
 IsActiveChildFrame=False
 ptn_Child1=StateMap
-[ProjectWorkspace.Frames.ChildFrames.Document-4.ViewFrame-0.StateMap]
+[ProjectWorkspace.Frames.ChildFrames.Document-2.ViewFrame-0.StateMap]
 AFC_SIM_AP_NAME=ReceivePort
-AFC_PROJ_DB_PATH=C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE 559/ReceivePort/db/ReceivePort.quartus_db
+AFC_PROJ_DB_PATH=C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE 559/ECE-559/ReceivePort/db/ReceivePort.quartus_db
 AFC_IN_REPORT=False
