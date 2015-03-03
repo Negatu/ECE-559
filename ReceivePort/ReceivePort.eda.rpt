@@ -1,5 +1,5 @@
 EDA Netlist Writer report for ReceivePort
-Tue Feb 24 10:57:40 2015
+Mon Mar 02 21:13:36 2015
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Tue Feb 24 10:57:40 2015 ;
+; EDA Netlist Writer Status ; Successful - Mon Mar 02 21:13:36 2015 ;
 ; Revision Name             ; ReceivePort                           ;
 ; Top-level Entity Name     ; ReceivePort                           ;
 ; Family                    ; Cyclone II                            ;
@@ -66,14 +66,14 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------------------+---------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------+
-; Simulation Generated Files                                                                              ;
-+---------------------------------------------------------------------------------------------------------+
-; Generated Files                                                                                         ;
-+---------------------------------------------------------------------------------------------------------+
-; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE 559/ReceivePort/simulation/modelsim/ReceivePort.vo    ;
-; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE 559/ReceivePort/simulation/modelsim/ReceivePort_v.sdo ;
-+---------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------+
+; Simulation Generated Files                                                                                      ;
++-----------------------------------------------------------------------------------------------------------------+
+; Generated Files                                                                                                 ;
++-----------------------------------------------------------------------------------------------------------------+
+; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE 559/ECE-559/ReceivePort/simulation/modelsim/ReceivePort.vo    ;
+; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE 559/ECE-559/ReceivePort/simulation/modelsim/ReceivePort_v.sdo ;
++-----------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -82,12 +82,12 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II EDA Netlist Writer
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Tue Feb 24 10:57:39 2015
+    Info: Processing started: Mon Mar 02 21:13:35 2015
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off ReceivePort -c ReceivePort
-Info: Generated files "ReceivePort.vo" and "ReceivePort_v.sdo" in directory "C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE 559/ReceivePort/simulation/modelsim/" for EDA simulation tool
+Info: Generated files "ReceivePort.vo" and "ReceivePort_v.sdo" in directory "C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE 559/ECE-559/ReceivePort/simulation/modelsim/" for EDA simulation tool
 Info: Quartus II EDA Netlist Writer was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 173 megabytes
-    Info: Processing ended: Tue Feb 24 10:57:40 2015
+    Info: Processing ended: Mon Mar 02 21:13:36 2015
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

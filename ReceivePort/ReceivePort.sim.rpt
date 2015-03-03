@@ -1,5 +1,5 @@
 Simulator report for ReceivePort
-Tue Feb 24 10:57:48 2015
+Mon Mar 02 21:13:04 2015
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -193,9 +193,9 @@ The following table displays output ports that do not toggle to 0 during simulat
 Info: *******************************************************************
 Info: Running Quartus II Simulator
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Tue Feb 24 10:57:48 2015
+    Info: Processing started: Mon Mar 02 21:13:03 2015
 Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off ReceivePort -c ReceivePort
-Info: Using vector source file "C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE 559/ReceivePort/ReceivePort.vwf"
+Info: Using vector source file "C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE 559/ECE-559/ReceivePort/ReceivePort.vwf"
 Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
     Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
 Info: Simulation partitioned into 1 sub-simulations
@@ -203,7 +203,7 @@ Info: Simulation coverage is      72.73 %
 Info: Number of transitions in simulation is 297
 Info: Quartus II Simulator was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 146 megabytes
-    Info: Processing ended: Tue Feb 24 10:57:49 2015
+    Info: Processing ended: Mon Mar 02 21:13:04 2015
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

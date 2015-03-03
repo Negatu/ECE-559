@@ -1,7 +1,8 @@
 vendor_name = ModelSim
-source_file = 1, C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE 559/Homework2FSM/ReceivePort.vhd
-source_file = 1, C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE 559/ReceivePort/ReceivePort.vwf
-source_file = 1, C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE 559/ReceivePort/db/ReceivePort.cbx.xml
+source_file = 1, ../Homework2FSM/ReceivePort.vhd
+source_file = 1, C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE 559/ECE-559/ReceivePort/ReceivePort.vwf
+source_file = 1, C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE 559/ECE-559/ReceivePort/ReceivePort.vhd
+source_file = 1, C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE 559/ECE-559/ReceivePort/db/ReceivePort.cbx.xml
 source_file = 1, c:/altera/91sp2/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
 source_file = 1, c:/altera/91sp2/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
 source_file = 1, c:/altera/91sp2/quartus/libraries/vhdl/ieee/timing_b.vhd
