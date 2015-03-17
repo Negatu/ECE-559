@@ -18,13 +18,13 @@
 #
 # Quartus II
 # Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-# Date created = 10:15:18  February 24, 2015
+# Date created = 22:21:55  March 16, 2015
 #
 # -------------------------------------------------------------------------- #
 
 QUARTUS_VERSION = "9.1"
-DATE = "10:15:18  February 24, 2015"
+DATE = "22:21:55  March 16, 2015"
 
 # Revisions
 
-PROJECT_REVISION = "ReceivePort"
+PROJECT_REVISION = "Receive"
