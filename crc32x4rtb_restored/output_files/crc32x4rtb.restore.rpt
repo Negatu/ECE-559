@@ -1,0 +1,87 @@
+Restore Archived Project report for crc32x4rtb
+Thu Mar 19 09:05:56 2015
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Restore Archived Project Summary
+  3. Restore Archived Project Messages
+  4. Files Restored
+  5. Files Not Restored
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------+
+; Restore Archived Project Summary                                        ;
++---------------------------------+---------------------------------------+
+; Restore Archived Project Status ; Successful - Thu Mar 19 09:05:56 2015 ;
+; Revision Name                   ; crc32x4rtb                            ;
+; Top-level Entity Name           ; crc32x4rtb                            ;
+; Family                          ; Cyclone II                            ;
++---------------------------------+---------------------------------------+
+
+
++-----------------------------------+
+; Restore Archived Project Messages ;
++-----------------------------------+
+Info: Successfully restored 'C:/Users/talal/Desktop/ECE559/FinalProject/crc32x4rtb.qar' into the 'C:/Users/talal/Desktop/ECE559/FinalProject/crc32x4rtb_restored/' directory
+Info: Generated report 'crc32x4rtb.restore.rpt'
+Info: Evaluation of Tcl script c:/altera/91sp2/quartus/common/tcl/apps/qpm/qar.tcl was successful
+Info: Quartus II Shell was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 134 megabytes
+    Info: Processing ended: Thu Mar 19 09:05:56 2015
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
+
+
++-------------------------------------------------------+
+; Files Restored                                        ;
++-------------------------------------------------------+
+; File Name                                             ;
++-------------------------------------------------------+
+; assignment_defaults.qdf                               ;
+; counter12.vhd                                         ;
+; crc32x4r.vhd                                          ;
+; crc32x4rtb.qpf                                        ;
+; crc32x4rtb.qsf                                        ;
+; crc32x4rtb.sdc                                        ;
+; crc32x4rtb.vhd                                        ;
+; crc32x4rtb.vwf                                        ;
+; crcreg32.vhd                                          ;
+; db/crc32x4rtb.sim.vwf                                 ;
+; incremental_db/compiled_partitions/crc32x4rtb.db_info ;
+; shift2.vhd                                            ;
+; tbrom4.mif                                            ;
+; tbrom4.vhd                                            ;
++-------------------------------------------------------+
+
+
++--------------------+
+; Files Not Restored ;
++--------------------+
+; File Name          ;
++--------------------+
+
+
