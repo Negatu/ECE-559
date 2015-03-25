@@ -1,0 +1,79 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE ieee.std_logic_misc.all;
+
+
+ENTITY CRC_FSM IS PORT(
+	clk, reset_sig, rdv : IN STD_LOGIC;
+	CRC_out : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+	init_sig, compute_enable, check_result, crv : OUT STD_LOGIC);
+END CRC_FSM;
+
+ARCHITECTURE CRC_FSM_arch OF CRC_FSM IS 
+	type state_type is
+				(RESET, INIT, WAIT_STATE, RUN, CHECK);
+	signal state_reg, state_next: state_type;
+
+	begin
+		process(clk, reset_sig)  -- STATE REGISTER UPDATE
+		begin 
+			if(reset_sig = '1') then state_reg <= RESET;
+			elsif(clk'event and clk='1') then
+				state_reg <= state_next;
+			end if;
+		end process;
+
+		process(state_reg, rdv) -- NEXT STATE LOGIC
+		begin
+			case state_reg is 
+				when RESET =>
+					state_next <= INIT;
+				when INIT =>
+					state_next <= WAIT_STATE;
+				when WAIT_STATE =>
+					if (rdv='1') then
+						state_next <= RUN;
+					else
+						state_next <= WAIT_STATE;
+					end if;
+				when RUN =>
+					if (rdv='1') then
+						state_next <= RUN;
+					else
+						state_next <= CHECK;
+					end if;
+				when CHECK =>
+					state_next <= INIT;
+			end case;
+		end process;
+
+		process(state_reg) 
+		begin
+			case state_reg is
+				when RESET =>
+					init_sig <= '0';
+					compute_enable <= '0';
+					crv <= '0';
+				when INIT => 
+					init_sig <= '1';
+					compute_enable <= '0';
+					crv <= '0';
+				when WAIT_STATE =>
+					init_sig <= '1';
+					compute_enable <= '0';
+					crv <= '0';
+				when RUN =>
+					init_sig <= '0';
+					compute_enable <= '1';
+					crv <= '0';
+				when CHECK => 
+					init_sig <= '0';
+					compute_enable <= '0';
+					crv <= '1';
+			end case;
+		end process;
+		
+		check_result <= not(or_reduce(CRC_out));
+		
+
+END CRC_FSM_arch;

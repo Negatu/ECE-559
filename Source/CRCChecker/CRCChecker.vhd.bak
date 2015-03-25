@@ -12,4 +12,4 @@ BEGIN
 
 
 
-END CRCChecker_arch;
+END LengthCounter_rtl;
