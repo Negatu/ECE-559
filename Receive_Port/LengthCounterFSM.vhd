@@ -5,7 +5,7 @@ use ieee.std_logic_misc.all;
 
 entity LengthCounterFSM is 
 port( clk, reset_sig, crc_RDV:	in std_logic;
-	  bufferWE, CntEnable:		out std_logic); --bufferWE = buffer write enable, CntEnable = counter enable
+	  bufferWE, CntEnable, reset_counter:		out std_logic); --bufferWE = buffer write enable, CntEnable = counter enable
 end LengthCounterFSM;
 
 
@@ -52,15 +52,19 @@ architecture lengthCounterArch of LengthCounterFSM is
 				when RESET =>
 					bufferWE <= '0';
 					CntEnable <= '0';
+					reset_counter <= '1';
 				when WAITING =>
 					bufferWE <= '0';
 					CntEnable <= '0';
+					reset_counter <= '0';
 				when COUNT =>
 					bufferWE <= '0';
 					CntEnable <= '1';
+					reset_counter <= '0';
 				when WRITEOUT =>
 					bufferWE <= '1';
 					CntEnable <= '0';
+					reset_counter <= '0';
 			end case;
 		end process;
 	

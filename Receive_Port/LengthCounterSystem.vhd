@@ -17,7 +17,8 @@ architecture combined of LengthCounterSystem is
 			reset_sig	: IN STD_LOGIC ;
 			CRC_rdv			: IN STD_LOGIC ;
 			bufferWE	: OUT STD_LOGIC ;
-			CntEnable	: OUT STD_LOGIC 
+			CntEnable	: OUT STD_LOGIC ;
+			reset_counter: OUT STD_LOGIC
 			); 
 	end component;
 	
@@ -27,11 +28,13 @@ architecture combined of LengthCounterSystem is
 		aclr		: IN STD_LOGIC ;
 		clock		: IN STD_LOGIC ;
 		cnt_en		: IN STD_LOGIC ;
+		sclr		: IN STD_LOGIC ;
 		q		: OUT STD_LOGIC_VECTOR (9 DOWNTO 0)
 	);
 	end component;
 
 	signal CntEnable_sig : std_logic;
+	signal counter_reset_sig : std_logic; -- used to clear the counter after each frame
 	
 	begin
 	
@@ -40,13 +43,15 @@ architecture combined of LengthCounterSystem is
 			reset_sig	=> reset,
 			CRC_rdv		=> CRC_rdv,
 			bufferWE	=> buffer_WE,
-			CntEnable	=> CntEnable_sig 
+			CntEnable	=> CntEnable_sig,
+			reset_counter => counter_reset_sig
 			); 
 	
 	LengthCounter_inst : LengthCounter PORT MAP (
 		aclr	 => reset,
 		clock	 => clock,
 		cnt_en	 => CntEnable_sig,
+		sclr	 => counter_reset_sig,
 		q	 => lengthValue
 	);
 	
