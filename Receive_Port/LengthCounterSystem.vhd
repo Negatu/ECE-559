@@ -6,7 +6,7 @@ use ieee.std_logic_misc.all;
 entity LengthCounterSystem is
 	port(clock, CRC_rdv, reset: in std_logic; 
 		 lengthValid,  buffer_WE: out std_logic;
-		 lengthValue: out std_logic_vector(9 downto 0));
+		 lengthValue: out std_logic_vector(10 downto 0));
 end LengthCounterSystem;
 
 architecture combined of LengthCounterSystem is
@@ -29,7 +29,7 @@ architecture combined of LengthCounterSystem is
 		clock		: IN STD_LOGIC ;
 		cnt_en		: IN STD_LOGIC ;
 		sclr		: IN STD_LOGIC ;
-		q		: OUT STD_LOGIC_VECTOR (9 DOWNTO 0)
+		q		: OUT STD_LOGIC_VECTOR (11 DOWNTO 0)
 	);
 	end component;
 
@@ -52,7 +52,7 @@ architecture combined of LengthCounterSystem is
 		clock	 => clock,
 		cnt_en	 => CntEnable_sig,
 		sclr	 => counter_reset_sig,
-		q	 => lengthValue
+		q(11 downto 1) => lengthValue
 	);
 	
 end combined;
