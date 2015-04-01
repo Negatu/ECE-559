@@ -39,7 +39,7 @@ BEGIN
 				ELSE y_next <= A;
 				END IF;
 			WHEN C =>
-				IF sfd_rdv = '0' THEN y_next <= A;
+				IF sfd_rdv = "0" THEN y_next <= A;
 				ELSE y_next <= C;
 				END IF;				
 		END CASE;
