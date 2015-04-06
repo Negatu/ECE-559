@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="MII_to_RCV">
+		<CBX_INST_ENTRY INSTANCE_NAME="|MII_to_RCV|cntr12bit:cntrx|lpm_counter:lpm_counter_component" CBX_FILE_NAME="cntr_k7j.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|MII_to_RCV|framemem:frame_test_mem|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_8081.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

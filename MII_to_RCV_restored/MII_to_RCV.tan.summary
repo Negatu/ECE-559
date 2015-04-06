@@ -1,0 +1,46 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 9.387 ns
+From           : addr_curr[2]
+To             : rcv_data_valid
+From Clock     : Clock25
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Clock Setup: 'Clock25'
+Slack          : 16.684 ns
+Required Time  : 50.00 MHz ( period = 20.000 ns )
+Actual Time    : 301.57 MHz ( period = 3.316 ns )
+From           : addr_curr[8]
+To             : cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|safe_q[11]
+From Clock     : Clock25
+To Clock       : Clock25
+Failed Paths   : 0
+
+Type           : Clock Hold: 'Clock25'
+Slack          : 0.518 ns
+Required Time  : 50.00 MHz ( period = 20.000 ns )
+Actual Time    : N/A
+From           : y_current.reset
+To             : y_current.wait4run
+From Clock     : Clock25
+To Clock       : Clock25
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+

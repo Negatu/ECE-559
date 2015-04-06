@@ -1,4 +1,11 @@
 
+State Machine - |test_bench1|LengthCounterSystem:length_counter_sys_inst|LengthCounterFSM:LengthCounterFSM_int|state_reg
+Name state_reg.WRITEOUT state_reg.COUNT state_reg.WAITING state_reg.RESET 
+state_reg.RESET 0 0 0 0 
+state_reg.WAITING 0 0 1 1 
+state_reg.COUNT 0 1 0 1 
+state_reg.WRITEOUT 1 0 0 1 
+
 State Machine - |test_bench1|CRC_System:crc_system_inst|CRC_FSM:CRC_FSM_inst|state_reg
 Name state_reg.CHECK state_reg.RUN state_reg.WAIT_STATE state_reg.INIT state_reg.RESET 
 state_reg.RESET 0 0 0 0 0 

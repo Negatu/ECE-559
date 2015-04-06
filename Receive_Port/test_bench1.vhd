@@ -14,7 +14,7 @@ ARCHITECTURE tb_arch OF test_bench1 IS
 	SIGNAL check_result : STD_LOGIC;
 	SIGNAL length_valid : STD_LOGIC;
 	SIGNAL length_buffer_write_enable : STD_LOGIC;
-	SIGNAL frame_length : STD_LOGIC_VECTOR(9 DOWNTO 0);
+	SIGNAL frame_length : STD_LOGIC_VECTOR(10 DOWNTO 0);
 	SIGNAL data_buffer_write_enable : STD_LOGIC;
 	SIGNAL data_buffer_full : STD_LOGIC;
 	SIGNAL data_buffer_read_enable : STD_LOGIC;
@@ -47,7 +47,7 @@ ARCHITECTURE tb_arch OF test_bench1 IS
 		PORT( 
 			 clock, CRC_rdv, reset: in std_logic; 
 			 lengthValid,  buffer_WE: out std_logic;
-			 lengthValue: out std_logic_vector(9 downto 0)
+			 lengthValue: out std_logic_vector(10 downto 0)
 		); 
 	END COMPONENT;
 	
