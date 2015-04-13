@@ -15,19 +15,21 @@ END SequenceNumberCounter;
 ARCHITECTURE SequenceNumberCounter_arch OF SequenceNumberCounter IS 	
 	
 	signal sequenceCounter : std_logic_vector(8 downto 0);
-	
-COMPONENT SequenceNumberCounterNineBit PORT (
-	aclr : IN STD_LOGIC;
-	clock : IN STD_LOGIC;
-	cnt_en : IN STD_LOGIC;
-	q : OUT STD_LOGIC_VECTOR(8 downto 0)
+		
+COMPONENT SequenceNumberCounter9BitVHD
+	PORT
+	(
+		aclr		: IN STD_LOGIC ;
+		clock		: IN STD_LOGIC ;
+		cnt_en		: IN STD_LOGIC ;
+		q		: OUT STD_LOGIC_VECTOR (8 DOWNTO 0)
 	);
 END COMPONENT;
-
+		
 		
 BEGIN
 	
-	SequenceNumberCounterNineBit_inst : SequenceNumberCounterNineBit PORT MAP (
+	SequenceNumberCounterNineBit_inst : SequenceNumberCounter9BitVHD PORT MAP (
 		aclr	 => Reset,
 		clock	 => Clk25Mhz,
 		cnt_en	 => FrameValid,
