@@ -21,3 +21,10 @@ ENTITY Receive_Port IS
 		);
 
 END Receive_Port;
+
+
+ARCHITECTURE Receive_Port_arch OF Receive_Port IS
+
+BEGIN
+
+END Receive_Port_arch;

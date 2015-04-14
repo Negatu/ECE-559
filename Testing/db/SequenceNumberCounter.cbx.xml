@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="SequenceNumberCounter">
+		<CBX_INST_ENTRY INSTANCE_NAME="|SequenceNumberCounter|SequenceNumberCounter9BitVHD:SequenceNumberCounterNineBit_inst|lpm_counter:lpm_counter_component" CBX_FILE_NAME="cntr_mni.tdf"/>
+	</PROJECT>
+</LOG_ROOT>
