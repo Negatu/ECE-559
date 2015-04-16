@@ -1,5 +1,5 @@
 Flow report for Receive_Port
-Thu Apr 16 03:00:36 2015
+Thu Apr 16 04:05:42 2015
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -38,21 +38,21 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Flow Summary                                                                      ;
 +------------------------------------+----------------------------------------------+
-; Flow Status                        ; Successful - Thu Apr 16 03:00:35 2015        ;
+; Flow Status                        ; Successful - Thu Apr 16 04:05:42 2015        ;
 ; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                      ; Receive_Port                                 ;
-; Top-level Entity Name              ; Data_Buffer                                  ;
+; Top-level Entity Name              ; LengthCounterSystem                          ;
 ; Family                             ; Cyclone II                                   ;
 ; Device                             ; EP2C15AF256C7                                ;
 ; Timing Models                      ; Final                                        ;
 ; Met timing requirements            ; Yes                                          ;
-; Total logic elements               ; 146 / 14,448 ( 1 % )                         ;
-;     Total combinational functions  ; 75 / 14,448 ( < 1 % )                        ;
-;     Dedicated logic registers      ; 120 / 14,448 ( < 1 % )                       ;
-; Total registers                    ; 120                                          ;
-; Total pins                         ; 19 / 152 ( 13 % )                            ;
+; Total logic elements               ; 22 / 14,448 ( < 1 % )                        ;
+;     Total combinational functions  ; 22 / 14,448 ( < 1 % )                        ;
+;     Dedicated logic registers      ; 15 / 14,448 ( < 1 % )                        ;
+; Total registers                    ; 15                                           ;
+; Total pins                         ; 16 / 152 ( 11 % )                            ;
 ; Total virtual pins                 ; 0                                            ;
-; Total memory bits                  ; 16,384 / 239,616 ( 7 % )                     ;
+; Total memory bits                  ; 0 / 239,616 ( 0 % )                          ;
 ; Embedded Multiplier 9-bit elements ; 0 / 52 ( 0 % )                               ;
 ; Total PLLs                         ; 0 / 4 ( 0 % )                                ;
 +------------------------------------+----------------------------------------------+
@@ -63,32 +63,35 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/16/2015 03:00:15 ;
+; Start date & time ; 04/16/2015 04:05:32 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Receive_Port        ;
 +-------------------+---------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                 ;
-+------------------------------------+------------------------------+---------------+-------------+----------------+
-; Assignment Name                    ; Value                        ; Default Value ; Entity Name ; Section Id     ;
-+------------------------------------+------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID              ; 345056805006.142916761504640 ; --            ; --          ; --             ;
-; IP_TOOL_NAME                       ; FIFO                         ; --            ; --          ; --             ;
-; IP_TOOL_NAME                       ; FIFO                         ; --            ; --          ; --             ;
-; IP_TOOL_VERSION                    ; 9.1                          ; --            ; --          ; --             ;
-; IP_TOOL_VERSION                    ; 9.1                          ; --            ; --          ; --             ;
-; MAX_CORE_JUNCTION_TEMP             ; 85                           ; --            ; --          ; --             ;
-; MIN_CORE_JUNCTION_TEMP             ; 0                            ; --            ; --          ; --             ;
-; MISC_FILE                          ; Data_DCFF_inst.vhd           ; --            ; --          ; --             ;
-; MISC_FILE                          ; Data_DCFF.cmp                ; --            ; --          ; --             ;
-; MISC_FILE                          ; Data_DCFF_syn.v              ; --            ; --          ; --             ;
-; PARTITION_COLOR                    ; 16764057                     ; --            ; Data_Buffer ; Top            ;
-; PARTITION_NETLIST_TYPE             ; SOURCE                       ; --            ; Data_Buffer ; Top            ;
-; TOP_LEVEL_ENTITY                   ; Data_Buffer                  ; Receive_Port  ; --          ; --             ;
-; USE_GENERATED_PHYSICAL_CONSTRAINTS ; Off                          ; --            ; --          ; eda_blast_fpga ;
-+------------------------------------+------------------------------+---------------+-------------+----------------+
++--------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                         ;
++------------------------------------+------------------------------+---------------+---------------------+----------------+
+; Assignment Name                    ; Value                        ; Default Value ; Entity Name         ; Section Id     ;
++------------------------------------+------------------------------+---------------+---------------------+----------------+
+; COMPILER_SIGNATURE_ID              ; 345056805006.142917153204216 ; --            ; --                  ; --             ;
+; IP_TOOL_NAME                       ; FIFO                         ; --            ; --                  ; --             ;
+; IP_TOOL_NAME                       ; FIFO                         ; --            ; --                  ; --             ;
+; IP_TOOL_NAME                       ; LPM_COUNTER                  ; --            ; --                  ; --             ;
+; IP_TOOL_VERSION                    ; 9.1                          ; --            ; --                  ; --             ;
+; IP_TOOL_VERSION                    ; 9.1                          ; --            ; --                  ; --             ;
+; IP_TOOL_VERSION                    ; 9.1                          ; --            ; --                  ; --             ;
+; MAX_CORE_JUNCTION_TEMP             ; 85                           ; --            ; --                  ; --             ;
+; MIN_CORE_JUNCTION_TEMP             ; 0                            ; --            ; --                  ; --             ;
+; MISC_FILE                          ; Data_DCFF_inst.vhd           ; --            ; --                  ; --             ;
+; MISC_FILE                          ; Data_DCFF.cmp                ; --            ; --                  ; --             ;
+; MISC_FILE                          ; Data_DCFF_syn.v              ; --            ; --                  ; --             ;
+; MISC_FILE                          ; LengthCounter_syn.v          ; --            ; --                  ; --             ;
+; PARTITION_COLOR                    ; 16764057                     ; --            ; LengthCounterSystem ; Top            ;
+; PARTITION_NETLIST_TYPE             ; SOURCE                       ; --            ; LengthCounterSystem ; Top            ;
+; TOP_LEVEL_ENTITY                   ; LengthCounterSystem          ; Receive_Port  ; --                  ; --             ;
+; USE_GENERATED_PHYSICAL_CONSTRAINTS ; Off                          ; --            ; --                  ; eda_blast_fpga ;
++------------------------------------+------------------------------+---------------+---------------------+----------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------+
@@ -96,11 +99,11 @@ applicable agreement for further details.
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name             ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis    ; 00:00:06     ; 1.0                     ; 247 MB              ; 00:00:03                           ;
-; Fitter                  ; 00:00:07     ; 1.0                     ; 233 MB              ; 00:00:05                           ;
-; Assembler               ; 00:00:03     ; 1.0                     ; 218 MB              ; 00:00:02                           ;
-; Classic Timing Analyzer ; 00:00:00     ; 1.0                     ; 153 MB              ; 00:00:00                           ;
-; Total                   ; 00:00:16     ; --                      ; --                  ; 00:00:10                           ;
+; Analysis & Synthesis    ; 00:00:02     ; 1.0                     ; 234 MB              ; 00:00:02                           ;
+; Fitter                  ; 00:00:03     ; 1.0                     ; 232 MB              ; 00:00:03                           ;
+; Assembler               ; 00:00:01     ; 1.0                     ; 218 MB              ; 00:00:01                           ;
+; Classic Timing Analyzer ; 00:00:00     ; 1.0                     ; 151 MB              ; 00:00:00                           ;
+; Total                   ; 00:00:06     ; --                      ; --                  ; 00:00:06                           ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

@@ -36,6 +36,7 @@ architecture combined of LengthCounterSystem is
 	signal CntEnable_sig : std_logic;
 	signal odd_nibbles : std_logic;
 	signal counter_reset_sig : std_logic; -- used to clear the counter after each frame
+	signal nibble_length : std_logic_vector(11 downto 0);
 	signal int_lengthValue : std_logic_vector(10 downto 0);
 	
 	begin
@@ -54,10 +55,12 @@ architecture combined of LengthCounterSystem is
 		clock	 => clock,
 		cnt_en	 => CntEnable_sig,
 		sclr	 => counter_reset_sig,
-		q(11 downto 1) => int_lengthValue,
-		q(0) => odd_nibbles
+		q		=> nibble_length
 	);
 	
+ int_lengthValue <= nibble_length(11 downto 1);
+ odd_nibbles 	 <= nibble_length(0);
+
 	--check length validity
 	PROCESS(int_lengthValue)
 	BEGIN

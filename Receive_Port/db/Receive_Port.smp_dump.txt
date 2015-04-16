@@ -1,0 +1,7 @@
+
+State Machine - |LengthCounterSystem|LengthCounterFSM:LengthCounterFSM_int|state_reg
+Name state_reg.WRITEOUT state_reg.COUNT state_reg.WAITING state_reg.RESET 
+state_reg.RESET 0 0 0 0 
+state_reg.WAITING 0 0 1 1 
+state_reg.COUNT 0 1 0 1 
+state_reg.WRITEOUT 1 0 0 1 

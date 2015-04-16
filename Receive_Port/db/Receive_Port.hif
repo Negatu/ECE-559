@@ -453,9 +453,6 @@ USR
 PARAMETER_STRING
 USR
 }
-# hierarchies {
-Data_DCFF:DCFF_inst
-}
 # lmf
 |altera|91sp2|quartus|lmf|maxplus2.lmf
 a36c8ec425c8a2589af98b2d4daabc3
@@ -617,9 +614,6 @@ aclr
 -1
 3
 }
-# hierarchies {
-Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component
-}
 # macro_sequence
 
 # end
@@ -692,9 +686,6 @@ aclr
 -1
 3
 }
-# hierarchies {
-Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated
-}
 # macro_sequence
 
 # end
@@ -755,9 +746,6 @@ aclr
 -1
 3
 }
-# hierarchies {
-Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|a_graycounter_q96:rdptr_g1p
-}
 # macro_sequence
 
 # end
@@ -817,9 +805,6 @@ clock
 aclr
 -1
 3
-}
-# hierarchies {
-Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|a_graycounter_ggc:wrptr_g1p
 }
 # macro_sequence
 
@@ -958,9 +943,6 @@ address_a0
 aclr1
 -1
 3
-}
-# hierarchies {
-Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|altsyncram_qo61:fifo_ram
 }
 # macro_sequence
 
@@ -1130,9 +1112,6 @@ data_a0
 -1
 2
 }
-# hierarchies {
-Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|altsyncram_qo61:fifo_ram|altsyncram_6ve1:altsyncram11
-}
 # macro_sequence
 
 # end
@@ -1159,9 +1138,6 @@ clock
 d0
 -1
 2
-}
-# hierarchies {
-Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|dffpipe_ngh:rdaclr
 }
 # macro_sequence
 
@@ -1256,9 +1232,6 @@ clock
 -1
 3
 }
-# hierarchies {
-Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|alt_synch_pipe_tdb:rs_dgwp
-}
 # macro_sequence
 
 # end
@@ -1351,9 +1324,6 @@ clrn
 clock
 -1
 3
-}
-# hierarchies {
-Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|alt_synch_pipe_tdb:rs_dgwp|dffpipe_re9:dffpipe14
 }
 # macro_sequence
 
@@ -1448,9 +1418,6 @@ clock
 -1
 3
 }
-# hierarchies {
-Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|alt_synch_pipe_1e8:ws_dgrp
-}
 # macro_sequence
 
 # end
@@ -1544,9 +1511,6 @@ clock
 -1
 3
 }
-# hierarchies {
-Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|alt_synch_pipe_1e8:ws_dgrp|dffpipe_se9:dffpipe17
-}
 # macro_sequence
 
 # end
@@ -1637,10 +1601,6 @@ aeb
 -1
 3
 }
-# hierarchies {
-Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|cmpr_736:rdempty_eq_comp
-Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|cmpr_736:wrfull_eq_comp
-}
 # macro_sequence
 
 # end
@@ -1671,45 +1631,6 @@ aset
 -1
 3
 }
-# hierarchies {
-Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|cntr_jvd:cntr_b
-}
-# macro_sequence
-
-# end
-# entity
-SFD_FSM
-# storage
-db|Receive_Port.(21).cnf
-db|Receive_Port.(21).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-sfd_fsm.vhd
-e7ff38f73a8cdca1d37f9c7336c72bb
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
- constraint(datain)
-3 downto 0
-PARAMETER_STRING
-USR
-}
-# lmf
-|altera|91sp2|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
 # macro_sequence
 
 # end
@@ -2596,6 +2517,9 @@ ON
 AUTO_ROM_RECOGNITION
 ON
 }
+# hierarchies {
+LengthCounterFSM:LengthCounterFSM_int
+}
 # lmf
 |altera|91sp2|quartus|lmf|maxplus2.lmf
 a36c8ec425c8a2589af98b2d4daabc3
@@ -2736,6 +2660,9 @@ aclr
 -1
 3
 }
+# hierarchies {
+LengthCounter:LengthCounter_inst|lpm_counter:lpm_counter_component
+}
 # macro_sequence
 
 # end
@@ -2798,6 +2725,9 @@ clock
 aclr
 -1
 3
+}
+# hierarchies {
+LengthCounter:LengthCounter_inst|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated
 }
 # macro_sequence
 
@@ -4100,78 +4030,6 @@ aeb
 
 # end
 # entity
-LengthCounterSystem
-# storage
-db|Receive_Port.(57).cnf
-db|Receive_Port.(57).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-lengthcountersystem.vhd
-8741f7aa99ccb5bc695c4f72d470e0
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
- constraint(lengthvalue)
-10 downto 0
-PARAMETER_STRING
-USR
-}
-# lmf
-|altera|91sp2|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
-# macro_sequence
-
-# end
-# entity
-LengthCounter
-# storage
-db|Receive_Port.(58).cnf
-db|Receive_Port.(58).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-lengthcounter.vhd
-2381ad4f9ba250b921be1911603f36fc
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
- constraint(q)
-11 downto 0
-PARAMETER_STRING
-USR
-}
-# lmf
-|altera|91sp2|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
-# macro_sequence
-
-# end
-# entity
 lpm_counter
 # storage
 db|Receive_Port.(59).cnf
@@ -4401,8 +4259,77 @@ ON
 AUTO_ROM_RECOGNITION
 ON
 }
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+LengthCounterSystem
+# storage
+db|Receive_Port.(20).cnf
+db|Receive_Port.(20).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+lengthcountersystem.vhd
+5c99bf6bf2fc796734a10551893552
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
 # hierarchies {
 |
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+LengthCounter
+# storage
+db|Receive_Port.(21).cnf
+db|Receive_Port.(21).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+lengthcounter.vhd
+a2ea86b1987f72f87357d5cd7256b620
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(q)
+11 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+LengthCounter:LengthCounter_inst
 }
 # lmf
 |altera|91sp2|quartus|lmf|maxplus2.lmf

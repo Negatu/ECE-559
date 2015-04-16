@@ -3,7 +3,7 @@ USE ieee.std_logic_1164.all;
 
 ENTITY SFD_FSM IS
 	PORT (	Clock	: IN	STD_LOGIC;
-			sfd_rdv 	: IN	STD_LOGIC;
+			sfd_rdv : IN	STD_LOGIC;
 			Reset	: IN	STD_LOGIC;
 			dataIn	: IN	STD_LOGIC_VECTOR(3 DOWNTO 0);
 			crc_rdv		: OUT	STD_LOGIC );

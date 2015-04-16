@@ -46,14 +46,14 @@ ENTITY LengthCounter IS
 		clock		: IN STD_LOGIC ;
 		cnt_en		: IN STD_LOGIC ;
 		sclr		: IN STD_LOGIC ;
-		q		: OUT STD_LOGIC_VECTOR (12 DOWNTO 0)
+		q		: OUT STD_LOGIC_VECTOR (11 DOWNTO 0)
 	);
 END LengthCounter;
 
 
 ARCHITECTURE SYN OF lengthcounter IS
 
-	SIGNAL sub_wire0	: STD_LOGIC_VECTOR (12 DOWNTO 0);
+	SIGNAL sub_wire0	: STD_LOGIC_VECTOR (11 DOWNTO 0);
 
 
 
@@ -68,20 +68,20 @@ ARCHITECTURE SYN OF lengthcounter IS
 			sclr	: IN STD_LOGIC ;
 			aclr	: IN STD_LOGIC ;
 			clock	: IN STD_LOGIC ;
-			q	: OUT STD_LOGIC_VECTOR (12 DOWNTO 0);
+			q	: OUT STD_LOGIC_VECTOR (11 DOWNTO 0);
 			cnt_en	: IN STD_LOGIC 
 	);
 	END COMPONENT;
 
 BEGIN
-	q    <= sub_wire0(12 DOWNTO 0);
+	q    <= sub_wire0(11 DOWNTO 0);
 
 	lpm_counter_component : lpm_counter
 	GENERIC MAP (
 		lpm_direction => "UP",
 		lpm_port_updown => "PORT_UNUSED",
 		lpm_type => "LPM_COUNTER",
-		lpm_width => 13
+		lpm_width => 12
 	)
 	PORT MAP (
 		sclr => sclr,
@@ -133,9 +133,9 @@ END SYN;
 -- Retrieval info: LIBRARY: lpm lpm.lpm_components.all
 -- Retrieval info: GEN_FILE: TYPE_NORMAL LengthCounter.vhd TRUE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL LengthCounter.inc FALSE
--- Retrieval info: GEN_FILE: TYPE_NORMAL LengthCounter.cmp TRUE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL LengthCounter.cmp FALSE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL LengthCounter.bsf FALSE
--- Retrieval info: GEN_FILE: TYPE_NORMAL LengthCounter_inst.vhd TRUE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL LengthCounter_inst.vhd FALSE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL LengthCounter_waveforms.html FALSE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL LengthCounter_wave*.jpg FALSE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL LengthCounter_syn.v TRUE
