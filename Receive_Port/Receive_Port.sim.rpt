@@ -1,0 +1,382 @@
+Simulator report for Receive_Port
+Wed Apr 15 23:11:11 2015
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. |crc_computer|MII_to_RCV:phy_inst|framemem:frame_test_mem|altsyncram:altsyncram_component|altsyncram_8081:auto_generated|ALTSYNCRAM
+  6. Coverage Summary
+  7. Complete 1/0-Value Coverage
+  8. Missing 1-Value Coverage
+  9. Missing 0-Value Coverage
+ 10. Simulator INI Usage
+ 11. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------+
+; Simulator Summary                           ;
++-----------------------------+---------------+
+; Type                        ; Value         ;
++-----------------------------+---------------+
+; Simulation Start Time       ; 0 ps          ;
+; Simulation End Time         ; 2.0 us        ;
+; Simulation Netlist Size     ; 171 nodes     ;
+; Simulation Coverage         ;      76.22 %  ;
+; Total Number of Transitions ; 4082          ;
+; Simulation Breakpoints      ; 0             ;
+; Family                      ; Cyclone II    ;
+; Device                      ; EP2C15AF256C7 ;
++-----------------------------+---------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                            ;
++--------------------------------------------------------------------------------------------+------------------+---------------+
+; Option                                                                                     ; Setting          ; Default Value ;
++--------------------------------------------------------------------------------------------+------------------+---------------+
+; Simulation mode                                                                            ; Timing           ; Timing        ;
+; Start time                                                                                 ; 0 ns             ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF             ;               ;
+; Vector input source                                                                        ; crc_computer.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On               ; On            ;
+; Check outputs                                                                              ; Off              ; Off           ;
+; Report simulation coverage                                                                 ; On               ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On               ; On            ;
+; Display missing 1-value coverage report                                                    ; On               ; On            ;
+; Display missing 0-value coverage report                                                    ; On               ; On            ;
+; Detect setup and hold time violations                                                      ; Off              ; Off           ;
+; Detect glitches                                                                            ; Off              ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off              ; Off           ;
+; Generate Signal Activity File                                                              ; Off              ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off              ; Off           ;
+; Group bus channels in simulation results                                                   ; Off              ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On               ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE       ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off              ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off              ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto             ; Auto          ;
++--------------------------------------------------------------------------------------------+------------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; |crc_computer|MII_to_RCV:phy_inst|framemem:frame_test_mem|altsyncram:altsyncram_component|altsyncram_8081:auto_generated|ALTSYNCRAM ;
++-------------------------------------------------------------------------------------------------------------------------------------+
+Please refer to fitter text-based report (*.fit.rpt) to view logical memory report content in ASCII.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      76.22 % ;
+; Total nodes checked                                 ; 171          ;
+; Total output ports checked                          ; 185          ;
+; Total output ports with complete 1/0-value coverage ; 141          ;
+; Total output ports with no 1/0-value coverage       ; 27           ;
+; Total output ports with no 1-value coverage         ; 29           ;
+; Total output ports with no 0-value coverage         ; 42           ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                                                                                                                                                                                                               ;
++----------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+------------------+
+; Node Name                                                                                                                        ; Output Port Name                                                                                                                    ; Output Port Type ;
++----------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+------------------+
+; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_reg_bit1a[0] ; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|safe_q[0]               ; regout           ;
+; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_reg_bit1a[1] ; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|safe_q[1]               ; regout           ;
+; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_reg_bit1a[2] ; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|safe_q[2]               ; regout           ;
+; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_reg_bit1a[3] ; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|safe_q[3]               ; regout           ;
+; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_reg_bit1a[4] ; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|safe_q[4]               ; regout           ;
+; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita0   ; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita0      ; combout          ;
+; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita0   ; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita0~COUT ; cout             ;
+; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita1   ; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita1      ; combout          ;
+; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita1   ; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita1~COUT ; cout             ;
+; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita2   ; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita2      ; combout          ;
+; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita2   ; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita2~COUT ; cout             ;
+; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita3   ; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita3      ; combout          ;
+; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita3   ; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita3~COUT ; cout             ;
+; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita4   ; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita4      ; combout          ;
+; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita4   ; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita4~COUT ; cout             ;
+; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita5   ; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita5      ; combout          ;
+; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita5   ; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita5~COUT ; cout             ;
+; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita6   ; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita6      ; combout          ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[0]                                   ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[0]                                      ; regout           ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[1]                                   ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[1]                                      ; regout           ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[2]                                   ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[2]                                      ; regout           ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[3]                                   ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[3]                                      ; regout           ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[4]                                   ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[4]                                      ; regout           ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[5]                                   ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[5]                                      ; regout           ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[6]                                   ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[6]                                      ; regout           ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[7]                                   ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[7]                                      ; regout           ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[8]                                   ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[8]                                      ; regout           ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[9]                                   ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[9]                                      ; regout           ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[10]                                  ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[10]                                     ; regout           ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[11]                                  ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[11]                                     ; regout           ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[12]                                  ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[12]                                     ; regout           ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[13]                                  ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[13]                                     ; regout           ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[14]                                  ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[14]                                     ; regout           ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[15]                                  ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[15]                                     ; regout           ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[16]                                  ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[16]                                     ; regout           ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[17]                                  ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[17]                                     ; regout           ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[18]                                  ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[18]                                     ; regout           ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[19]                                  ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[19]                                     ; regout           ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[20]                                  ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[20]                                     ; regout           ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[21]                                  ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[21]                                     ; regout           ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[22]                                  ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[22]                                     ; regout           ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[23]                                  ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[23]                                     ; regout           ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[24]                                  ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[24]                                     ; regout           ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[25]                                  ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[25]                                     ; regout           ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[26]                                  ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[26]                                     ; regout           ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[27]                                  ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[27]                                     ; regout           ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[28]                                  ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[28]                                     ; regout           ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[29]                                  ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[29]                                     ; regout           ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[30]                                  ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[30]                                     ; regout           ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[31]                                  ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[31]                                     ; regout           ;
+; |crc_computer|MII_to_RCV:phy_inst|addr_curr[0]                                                                                   ; |crc_computer|MII_to_RCV:phy_inst|addr_curr[0]                                                                                      ; regout           ;
+; |crc_computer|MII_to_RCV:phy_inst|addr_curr[1]                                                                                   ; |crc_computer|MII_to_RCV:phy_inst|addr_curr[1]                                                                                      ; regout           ;
+; |crc_computer|MII_to_RCV:phy_inst|addr_curr[2]                                                                                   ; |crc_computer|MII_to_RCV:phy_inst|addr_curr[2]                                                                                      ; regout           ;
+; |crc_computer|MII_to_RCV:phy_inst|addr_curr[3]                                                                                   ; |crc_computer|MII_to_RCV:phy_inst|addr_curr[3]                                                                                      ; regout           ;
+; |crc_computer|MII_to_RCV:phy_inst|addr_curr[4]                                                                                   ; |crc_computer|MII_to_RCV:phy_inst|addr_curr[4]                                                                                      ; regout           ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~4                                       ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~4                                          ; combout          ;
+; |crc_computer|crc32x4r:crc_inst|crcreg_clock_enable                                                                              ; |crc_computer|crc32x4r:crc_inst|crcreg_clock_enable                                                                                 ; combout          ;
+; |crc_computer|crc32x4r:crc_inst|Q_next[23]~0                                                                                     ; |crc_computer|crc32x4r:crc_inst|Q_next[23]~0                                                                                        ; combout          ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~5                                       ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~5                                          ; combout          ;
+; |crc_computer|crc32x4r:crc_inst|ux4[1]                                                                                           ; |crc_computer|crc32x4r:crc_inst|ux4[1]                                                                                              ; combout          ;
+; |crc_computer|crc32x4r:crc_inst|ux4[0]                                                                                           ; |crc_computer|crc32x4r:crc_inst|ux4[0]                                                                                              ; combout          ;
+; |crc_computer|crc32x4r:crc_inst|Q_next[24]~1                                                                                     ; |crc_computer|crc32x4r:crc_inst|Q_next[24]~1                                                                                        ; combout          ;
+; |crc_computer|crc32x4r:crc_inst|Q_next[26]~2                                                                                     ; |crc_computer|crc32x4r:crc_inst|Q_next[26]~2                                                                                        ; combout          ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~6                                       ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~6                                          ; combout          ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~7                                       ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~7                                          ; combout          ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~8                                       ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~8                                          ; combout          ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~9                                       ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~9                                          ; combout          ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~10                                      ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~10                                         ; combout          ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~11                                      ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~11                                         ; combout          ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~12                                      ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~12                                         ; combout          ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~13                                      ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~13                                         ; combout          ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~14                                      ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~14                                         ; combout          ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~15                                      ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~15                                         ; combout          ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~16                                      ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~16                                         ; combout          ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~17                                      ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~17                                         ; combout          ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~18                                      ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~18                                         ; combout          ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~19                                      ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~19                                         ; combout          ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~20                                      ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~20                                         ; combout          ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~21                                      ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~21                                         ; combout          ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~22                                      ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~22                                         ; combout          ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~23                                      ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~23                                         ; combout          ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~24                                      ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~24                                         ; combout          ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~25                                      ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~25                                         ; combout          ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~26                                      ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~26                                         ; combout          ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~27                                      ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~27                                         ; combout          ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~28                                      ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~28                                         ; combout          ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~29                                      ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~29                                         ; combout          ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~30                                      ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~30                                         ; combout          ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~31                                      ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~31                                         ; combout          ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~32                                      ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~32                                         ; combout          ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~33                                      ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~33                                         ; combout          ;
+; |crc_computer|MII_to_RCV:phy_inst|y_current.waitx                                                                                ; |crc_computer|MII_to_RCV:phy_inst|y_current.waitx                                                                                   ; regout           ;
+; |crc_computer|MII_to_RCV:phy_inst|y_current.wait4run                                                                             ; |crc_computer|MII_to_RCV:phy_inst|y_current.wait4run                                                                                ; regout           ;
+; |crc_computer|MII_to_RCV:phy_inst|Equal0~1                                                                                       ; |crc_computer|MII_to_RCV:phy_inst|Equal0~1                                                                                          ; combout          ;
+; |crc_computer|MII_to_RCV:phy_inst|Equal0~2                                                                                       ; |crc_computer|MII_to_RCV:phy_inst|Equal0~2                                                                                          ; combout          ;
+; |crc_computer|MII_to_RCV:phy_inst|Selector3~0                                                                                    ; |crc_computer|MII_to_RCV:phy_inst|Selector3~0                                                                                       ; combout          ;
+; |crc_computer|MII_to_RCV:phy_inst|Equal1~1                                                                                       ; |crc_computer|MII_to_RCV:phy_inst|Equal1~1                                                                                          ; combout          ;
+; |crc_computer|MII_to_RCV:phy_inst|Selector3~1                                                                                    ; |crc_computer|MII_to_RCV:phy_inst|Selector3~1                                                                                       ; combout          ;
+; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|_~0                  ; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|_~0                     ; combout          ;
+; |crc_computer|MII_to_RCV:phy_inst|Selector0~0                                                                                    ; |crc_computer|MII_to_RCV:phy_inst|Selector0~0                                                                                       ; combout          ;
+; |crc_computer|MII_to_RCV:phy_inst|Selector0~1                                                                                    ; |crc_computer|MII_to_RCV:phy_inst|Selector0~1                                                                                       ; combout          ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~34                                      ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~34                                         ; combout          ;
+; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~35                                      ; |crc_computer|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|_~35                                         ; combout          ;
+; |crc_computer|outCRC[0]                                                                                                          ; |crc_computer|outCRC[0]                                                                                                             ; padio            ;
+; |crc_computer|outCRC[1]                                                                                                          ; |crc_computer|outCRC[1]                                                                                                             ; padio            ;
+; |crc_computer|outCRC[2]                                                                                                          ; |crc_computer|outCRC[2]                                                                                                             ; padio            ;
+; |crc_computer|outCRC[3]                                                                                                          ; |crc_computer|outCRC[3]                                                                                                             ; padio            ;
+; |crc_computer|outCRC[4]                                                                                                          ; |crc_computer|outCRC[4]                                                                                                             ; padio            ;
+; |crc_computer|outCRC[5]                                                                                                          ; |crc_computer|outCRC[5]                                                                                                             ; padio            ;
+; |crc_computer|outCRC[6]                                                                                                          ; |crc_computer|outCRC[6]                                                                                                             ; padio            ;
+; |crc_computer|outCRC[7]                                                                                                          ; |crc_computer|outCRC[7]                                                                                                             ; padio            ;
+; |crc_computer|outCRC[8]                                                                                                          ; |crc_computer|outCRC[8]                                                                                                             ; padio            ;
+; |crc_computer|outCRC[9]                                                                                                          ; |crc_computer|outCRC[9]                                                                                                             ; padio            ;
+; |crc_computer|outCRC[10]                                                                                                         ; |crc_computer|outCRC[10]                                                                                                            ; padio            ;
+; |crc_computer|outCRC[11]                                                                                                         ; |crc_computer|outCRC[11]                                                                                                            ; padio            ;
+; |crc_computer|outCRC[12]                                                                                                         ; |crc_computer|outCRC[12]                                                                                                            ; padio            ;
+; |crc_computer|outCRC[13]                                                                                                         ; |crc_computer|outCRC[13]                                                                                                            ; padio            ;
+; |crc_computer|outCRC[14]                                                                                                         ; |crc_computer|outCRC[14]                                                                                                            ; padio            ;
+; |crc_computer|outCRC[15]                                                                                                         ; |crc_computer|outCRC[15]                                                                                                            ; padio            ;
+; |crc_computer|outCRC[16]                                                                                                         ; |crc_computer|outCRC[16]                                                                                                            ; padio            ;
+; |crc_computer|outCRC[17]                                                                                                         ; |crc_computer|outCRC[17]                                                                                                            ; padio            ;
+; |crc_computer|outCRC[18]                                                                                                         ; |crc_computer|outCRC[18]                                                                                                            ; padio            ;
+; |crc_computer|outCRC[19]                                                                                                         ; |crc_computer|outCRC[19]                                                                                                            ; padio            ;
+; |crc_computer|outCRC[20]                                                                                                         ; |crc_computer|outCRC[20]                                                                                                            ; padio            ;
+; |crc_computer|outCRC[21]                                                                                                         ; |crc_computer|outCRC[21]                                                                                                            ; padio            ;
+; |crc_computer|outCRC[22]                                                                                                         ; |crc_computer|outCRC[22]                                                                                                            ; padio            ;
+; |crc_computer|outCRC[23]                                                                                                         ; |crc_computer|outCRC[23]                                                                                                            ; padio            ;
+; |crc_computer|outCRC[24]                                                                                                         ; |crc_computer|outCRC[24]                                                                                                            ; padio            ;
+; |crc_computer|outCRC[25]                                                                                                         ; |crc_computer|outCRC[25]                                                                                                            ; padio            ;
+; |crc_computer|outCRC[26]                                                                                                         ; |crc_computer|outCRC[26]                                                                                                            ; padio            ;
+; |crc_computer|outCRC[27]                                                                                                         ; |crc_computer|outCRC[27]                                                                                                            ; padio            ;
+; |crc_computer|outCRC[28]                                                                                                         ; |crc_computer|outCRC[28]                                                                                                            ; padio            ;
+; |crc_computer|outCRC[29]                                                                                                         ; |crc_computer|outCRC[29]                                                                                                            ; padio            ;
+; |crc_computer|outCRC[30]                                                                                                         ; |crc_computer|outCRC[30]                                                                                                            ; padio            ;
+; |crc_computer|outCRC[31]                                                                                                         ; |crc_computer|outCRC[31]                                                                                                            ; padio            ;
+; |crc_computer|clock25                                                                                                            ; |crc_computer|clock25~corein                                                                                                        ; combout          ;
+; |crc_computer|init                                                                                                               ; |crc_computer|init~corein                                                                                                           ; combout          ;
+; |crc_computer|comp_en                                                                                                            ; |crc_computer|comp_en~corein                                                                                                        ; combout          ;
+; |crc_computer|clock25~clkctrl                                                                                                    ; |crc_computer|clock25~clkctrl                                                                                                       ; outclk           ;
+; |crc_computer|MII_to_RCV:phy_inst|addr_curr[3]~feeder                                                                            ; |crc_computer|MII_to_RCV:phy_inst|addr_curr[3]~feeder                                                                               ; combout          ;
+; |crc_computer|MII_to_RCV:phy_inst|addr_curr[4]~feeder                                                                            ; |crc_computer|MII_to_RCV:phy_inst|addr_curr[4]~feeder                                                                               ; combout          ;
++----------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                                                                                                                                                                                                                                    ;
++-----------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+------------------+
+; Node Name                                                                                                                         ; Output Port Name                                                                                                                     ; Output Port Type ;
++-----------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+------------------+
+; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_reg_bit1a[6]  ; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|safe_q[6]                ; regout           ;
+; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_reg_bit1a[7]  ; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|safe_q[7]                ; regout           ;
+; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_reg_bit1a[8]  ; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|safe_q[8]                ; regout           ;
+; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_reg_bit1a[9]  ; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|safe_q[9]                ; regout           ;
+; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_reg_bit1a[11] ; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|safe_q[11]               ; regout           ;
+; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_reg_bit1a[10] ; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|safe_q[10]               ; regout           ;
+; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita6    ; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita6~COUT  ; cout             ;
+; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita7    ; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita7       ; combout          ;
+; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita7    ; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita7~COUT  ; cout             ;
+; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita8    ; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita8       ; combout          ;
+; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita8    ; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita8~COUT  ; cout             ;
+; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita9    ; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita9       ; combout          ;
+; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita9    ; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita9~COUT  ; cout             ;
+; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita10   ; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita10      ; combout          ;
+; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita10   ; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita10~COUT ; cout             ;
+; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita11   ; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita11      ; combout          ;
+; |crc_computer|MII_to_RCV:phy_inst|addr_curr[6]                                                                                    ; |crc_computer|MII_to_RCV:phy_inst|addr_curr[6]                                                                                       ; regout           ;
+; |crc_computer|MII_to_RCV:phy_inst|addr_curr[7]                                                                                    ; |crc_computer|MII_to_RCV:phy_inst|addr_curr[7]                                                                                       ; regout           ;
+; |crc_computer|MII_to_RCV:phy_inst|addr_curr[8]                                                                                    ; |crc_computer|MII_to_RCV:phy_inst|addr_curr[8]                                                                                       ; regout           ;
+; |crc_computer|MII_to_RCV:phy_inst|addr_curr[9]                                                                                    ; |crc_computer|MII_to_RCV:phy_inst|addr_curr[9]                                                                                       ; regout           ;
+; |crc_computer|MII_to_RCV:phy_inst|Equal0~0                                                                                        ; |crc_computer|MII_to_RCV:phy_inst|Equal0~0                                                                                           ; combout          ;
+; |crc_computer|MII_to_RCV:phy_inst|Equal1~0                                                                                        ; |crc_computer|MII_to_RCV:phy_inst|Equal1~0                                                                                           ; combout          ;
+; |crc_computer|MII_to_RCV:phy_inst|Equal1~2                                                                                        ; |crc_computer|MII_to_RCV:phy_inst|Equal1~2                                                                                           ; combout          ;
+; |crc_computer|~GND                                                                                                                ; |crc_computer|~GND                                                                                                                   ; combout          ;
+; |crc_computer|reset                                                                                                               ; |crc_computer|reset~corein                                                                                                           ; combout          ;
+; |crc_computer|reset~clkctrl                                                                                                       ; |crc_computer|reset~clkctrl                                                                                                          ; outclk           ;
+; |crc_computer|MII_to_RCV:phy_inst|addr_curr[6]~feeder                                                                             ; |crc_computer|MII_to_RCV:phy_inst|addr_curr[6]~feeder                                                                                ; combout          ;
+; |crc_computer|MII_to_RCV:phy_inst|addr_curr[9]~feeder                                                                             ; |crc_computer|MII_to_RCV:phy_inst|addr_curr[9]~feeder                                                                                ; combout          ;
+; |crc_computer|MII_to_RCV:phy_inst|y_current.reset~feeder                                                                          ; |crc_computer|MII_to_RCV:phy_inst|y_current.reset~feeder                                                                             ; combout          ;
++-----------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                                                                                                                                                                                                                        ;
++---------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+------------------+
+; Node Name                                                                                                                             ; Output Port Name                                                                                                                     ; Output Port Type ;
++---------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+------------------+
+; |crc_computer|MII_to_RCV:phy_inst|framemem:frame_test_mem|altsyncram:altsyncram_component|altsyncram_8081:auto_generated|ram_block1a0 ; |crc_computer|MII_to_RCV:phy_inst|framemem:frame_test_mem|altsyncram:altsyncram_component|altsyncram_8081:auto_generated|q_a[0]      ; portadataout0    ;
+; |crc_computer|MII_to_RCV:phy_inst|framemem:frame_test_mem|altsyncram:altsyncram_component|altsyncram_8081:auto_generated|ram_block1a0 ; |crc_computer|MII_to_RCV:phy_inst|framemem:frame_test_mem|altsyncram:altsyncram_component|altsyncram_8081:auto_generated|q_a[1]      ; portadataout1    ;
+; |crc_computer|MII_to_RCV:phy_inst|framemem:frame_test_mem|altsyncram:altsyncram_component|altsyncram_8081:auto_generated|ram_block1a0 ; |crc_computer|MII_to_RCV:phy_inst|framemem:frame_test_mem|altsyncram:altsyncram_component|altsyncram_8081:auto_generated|q_a[2]      ; portadataout2    ;
+; |crc_computer|MII_to_RCV:phy_inst|framemem:frame_test_mem|altsyncram:altsyncram_component|altsyncram_8081:auto_generated|ram_block1a0 ; |crc_computer|MII_to_RCV:phy_inst|framemem:frame_test_mem|altsyncram:altsyncram_component|altsyncram_8081:auto_generated|q_a[3]      ; portadataout3    ;
+; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_reg_bit1a[5]      ; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|safe_q[5]                ; regout           ;
+; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_reg_bit1a[6]      ; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|safe_q[6]                ; regout           ;
+; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_reg_bit1a[7]      ; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|safe_q[7]                ; regout           ;
+; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_reg_bit1a[8]      ; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|safe_q[8]                ; regout           ;
+; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_reg_bit1a[9]      ; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|safe_q[9]                ; regout           ;
+; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_reg_bit1a[11]     ; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|safe_q[11]               ; regout           ;
+; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_reg_bit1a[10]     ; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|safe_q[10]               ; regout           ;
+; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita6        ; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita6~COUT  ; cout             ;
+; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita7        ; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita7       ; combout          ;
+; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita7        ; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita7~COUT  ; cout             ;
+; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita8        ; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita8       ; combout          ;
+; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita8        ; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita8~COUT  ; cout             ;
+; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita9        ; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita9       ; combout          ;
+; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita9        ; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita9~COUT  ; cout             ;
+; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita10       ; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita10      ; combout          ;
+; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita10       ; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita10~COUT ; cout             ;
+; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita11       ; |crc_computer|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|counter_comb_bita11      ; combout          ;
+; |crc_computer|MII_to_RCV:phy_inst|addr_curr[5]                                                                                        ; |crc_computer|MII_to_RCV:phy_inst|addr_curr[5]                                                                                       ; regout           ;
+; |crc_computer|MII_to_RCV:phy_inst|addr_curr[6]                                                                                        ; |crc_computer|MII_to_RCV:phy_inst|addr_curr[6]                                                                                       ; regout           ;
+; |crc_computer|MII_to_RCV:phy_inst|addr_curr[7]                                                                                        ; |crc_computer|MII_to_RCV:phy_inst|addr_curr[7]                                                                                       ; regout           ;
+; |crc_computer|MII_to_RCV:phy_inst|addr_curr[8]                                                                                        ; |crc_computer|MII_to_RCV:phy_inst|addr_curr[8]                                                                                       ; regout           ;
+; |crc_computer|MII_to_RCV:phy_inst|addr_curr[9]                                                                                        ; |crc_computer|MII_to_RCV:phy_inst|addr_curr[9]                                                                                       ; regout           ;
+; |crc_computer|MII_to_RCV:phy_inst|y_current.run                                                                                       ; |crc_computer|MII_to_RCV:phy_inst|y_current.run                                                                                      ; regout           ;
+; |crc_computer|MII_to_RCV:phy_inst|addr_next~0                                                                                         ; |crc_computer|MII_to_RCV:phy_inst|addr_next~0                                                                                        ; combout          ;
+; |crc_computer|MII_to_RCV:phy_inst|Equal0~0                                                                                            ; |crc_computer|MII_to_RCV:phy_inst|Equal0~0                                                                                           ; combout          ;
+; |crc_computer|MII_to_RCV:phy_inst|Equal1~0                                                                                            ; |crc_computer|MII_to_RCV:phy_inst|Equal1~0                                                                                           ; combout          ;
+; |crc_computer|MII_to_RCV:phy_inst|Equal1~2                                                                                            ; |crc_computer|MII_to_RCV:phy_inst|Equal1~2                                                                                           ; combout          ;
+; |crc_computer|MII_to_RCV:phy_inst|Selector1~0                                                                                         ; |crc_computer|MII_to_RCV:phy_inst|Selector1~0                                                                                        ; combout          ;
+; |crc_computer|MII_to_RCV:phy_inst|y_current.reset                                                                                     ; |crc_computer|MII_to_RCV:phy_inst|y_current.reset                                                                                    ; regout           ;
+; |crc_computer|~GND                                                                                                                    ; |crc_computer|~GND                                                                                                                   ; combout          ;
+; |crc_computer|out_input[0]                                                                                                            ; |crc_computer|out_input[0]                                                                                                           ; padio            ;
+; |crc_computer|out_input[1]                                                                                                            ; |crc_computer|out_input[1]                                                                                                           ; padio            ;
+; |crc_computer|out_input[2]                                                                                                            ; |crc_computer|out_input[2]                                                                                                           ; padio            ;
+; |crc_computer|out_input[3]                                                                                                            ; |crc_computer|out_input[3]                                                                                                           ; padio            ;
+; |crc_computer|MII_to_RCV:phy_inst|addr_curr[5]~feeder                                                                                 ; |crc_computer|MII_to_RCV:phy_inst|addr_curr[5]~feeder                                                                                ; combout          ;
+; |crc_computer|MII_to_RCV:phy_inst|addr_curr[6]~feeder                                                                                 ; |crc_computer|MII_to_RCV:phy_inst|addr_curr[6]~feeder                                                                                ; combout          ;
+; |crc_computer|MII_to_RCV:phy_inst|addr_curr[9]~feeder                                                                                 ; |crc_computer|MII_to_RCV:phy_inst|addr_curr[9]~feeder                                                                                ; combout          ;
+; |crc_computer|MII_to_RCV:phy_inst|y_current.reset~feeder                                                                              ; |crc_computer|MII_to_RCV:phy_inst|y_current.reset~feeder                                                                             ; combout          ;
++---------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+    Info: Processing started: Wed Apr 15 23:11:11 2015
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off Receive_Port -c Receive_Port
+Info: Using vector source file "C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/crc_computer.vwf"
+Warning: Can't display state machine states -- register holding state machine bit "|crc_computer|MII_to_RCV:phy_inst|y_current.done" was synthesized away
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      76.22 %
+Info: Number of transitions in simulation is 4082
+Info: Quartus II Simulator was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 147 megabytes
+    Info: Processing ended: Wed Apr 15 23:11:11 2015
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:01
+
+

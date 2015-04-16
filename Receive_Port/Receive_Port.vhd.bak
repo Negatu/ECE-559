@@ -27,4 +27,4 @@ ARCHITECTURE Receive_Port_arch OF Receive_Port IS
 
 BEGIN
 
-END Receive_Port_arch
+END Receive_Port_arch;

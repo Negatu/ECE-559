@@ -43,7 +43,8 @@ BEGIN
 		compute_enable	=> crc_comp_enable,
 		init	 => crc_init,
 		u4		 => dataIn,
-		CRC_out	 => crc_out);
+		CRC_out	 => crc_out
+		);
 
 	
 	

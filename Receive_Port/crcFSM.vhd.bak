@@ -23,6 +23,7 @@ ARCHITECTURE behavior OF crcFSM IS
 	SIGNAL crc_init		: STD_LOGIC;
 	SIGNAL crc_comp_enable		: STD_LOGIC;
 	SIGNAL crc_out		: STD_LOGIC_VECTOR(15 DOWNTO 0); 
+	
 component crc32x4r
 	PORT (	Clock		: IN		STD_LOGIC;
 			Reset		: IN		STD_LOGIC;

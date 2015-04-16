@@ -1,4 +1,4 @@
--- Copyright (C) 1991-2009 Altera Corporation
+-- Copyright (C) 1991-2010 Altera Corporation
 -- Your use of Altera Corporation's design tools, logic functions 
 -- and other software and tools, and its AMPP partner logic 
 -- functions, and any output files from any of the foregoing 
@@ -21,9 +21,24 @@ ADDRESS_RADIX=UNS;
 DATA_RADIX=HEX;
 
 CONTENT BEGIN
-	[0..14]  :   A;
+	0     :   A;
+	1     :   B;
+	2     :   C;
+	3     :   D;
+	4     :   E;
+	5     :   F;
+	[6..7]  :   A;
+	8     :   B;
+	9     :   A;
+	10    :   B;
+	[11..14]  :   A;
 	15    :   B;
-	[16..143]  :   F;
+	16    :   F;
+	17    :   C;
+	18    :   D;
+	19    :   A;
+	20    :   C;
+	[21..143]  :   F;
 	144   :   5;
 	145   :   D;
 	146   :   E;
