@@ -21,7 +21,8 @@ ARCHITECTURE tb_arch OF test_bench1 IS
 	SIGNAL check_result : STD_LOGIC;
 	SIGNAL length_valid : STD_LOGIC;
 	SIGNAL length_buffer_write_enable : STD_LOGIC;
-	SIGNAL frame_length : STD_LOGIC_VECTOR(11 DOWNTO 0);
+	SIGNAL frame_valid : STD_LOGIC_VECTOR;
+	SIGNAL frame_length : STD_LOGIC_VECTOR(11 DOWNTO 0); -- concatenation of frame valid and length
 	SIGNAL data_buffer_write_enable : STD_LOGIC;
 	SIGNAL data_buffer_full : STD_LOGIC;
 	SIGNAL data_buffer_read_enable : STD_LOGIC;
@@ -61,12 +62,12 @@ ARCHITECTURE tb_arch OF test_bench1 IS
 	COMPONENT Length_DCFF
 		PORT(
 		aclr		: IN STD_LOGIC  := '0';
-		data		: IN STD_LOGIC_VECTOR (10 DOWNTO 0);
+		data		: IN STD_LOGIC_VECTOR (11 DOWNTO 0);
 		rdclk		: IN STD_LOGIC ;
 		rdreq		: IN STD_LOGIC ;
 		wrclk		: IN STD_LOGIC ;
 		wrreq		: IN STD_LOGIC ;
-		q		: OUT STD_LOGIC_VECTOR (10 DOWNTO 0);
+		q		: OUT STD_LOGIC_VECTOR (11 DOWNTO 0);
 		rdempty		: OUT STD_LOGIC ;
 		wrfull		: OUT STD_LOGIC 
 		);
@@ -118,7 +119,7 @@ BEGIN
 	length_buffer_inst : Length_DCFF PORT MAP (
 		wrclk => clk25,
 		aclr => reset, 
-		data => frame_length,
+		data => frame_length,-- length + valid
 		wrreq => data_buffer_write_enable,
 		rdclk => length_read_clock,
 		rdreq => length_read_enable,
@@ -133,9 +134,11 @@ BEGIN
 			CRC_rdv => CRC_rdv,
 			lengthValid => length_valid,
 			buffer_WE => length_buffer_write_enable,
-			lengthValue => frame_length
+			lengthValue => frame_length (10 DOWNTO 0)
 	);
 	
+	frame_valid <= (length_valid AND check_result AND check_result_valid); 
+	frame_length(11) <= frame_valid;
 	length_buffer_out_11bit <= length_to_forwarding;	--going to forwarding
 	length_valid_out <= length_valid;	--going to forwarding
 	data_buffer_out_8bit <= data_to_forwarding;	--going to forwarding
