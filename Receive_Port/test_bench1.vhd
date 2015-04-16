@@ -114,6 +114,13 @@ ARCHITECTURE tb_arch OF test_bench1 IS
 		Frame : OUT STD_LOGIC_VECTOR(11 DOWNTO 0)
 	);
 	END COMPONENT;
+	
+	COMPONENT FwdOutputCntrlr IS
+	PORT(clock,reset : in std_logic; 
+		 inFrameLengthValue: in std_logic_vector(11 downto 0);
+		 lengthBuffer_RE,  dataBuffer_RE, fwdFrameValid: out std_logic;
+		 fwdFrameLengthValue: out std_logic_vector(10 downto 0));
+	END COMPONENT;
 
 BEGIN
 
@@ -166,6 +173,16 @@ BEGIN
 			lengthValue =>  frame_length_and_valid (10 DOWNTO 0)
 	);
 	
+		FwdOutputCntrlr_inst : FwdOutputCntrlr PORT MAP(
+		 clock => clk50,
+		 reset => reset,
+		 inFrameLengthValue => length_buffer_output,
+		 lengthBuffer_RE => length_read_enable,
+		 dataBuffer_RE => data_buffer_read_enable,
+		 fwdFrameValid => frame_valid_out,
+		 fwdFrameLengthValue => length_buffer_out_11bit
+		  );
+	
 	seq_counter_inst : SequenceNumberCounter PORT MAP (
 		Clk50Mhz => clk25,
 		FrameValid => frame_valid,
@@ -186,12 +203,12 @@ BEGIN
 	
 	frame_valid <= (length_valid AND check_result_shift AND check_result_valid); 
 	frame_length_and_valid(11) <= frame_valid;
-	length_buffer_out_11bit <= length_buffer_output(10 DOWNTO 0);	--going to forwarding
-	frame_valid_out <= length_buffer_output(11);	--going to forwarding
+	--length_buffer_out_11bit <= length_buffer_output(10 DOWNTO 0);	--going to forwarding
+	--frame_valid_out <= length_buffer_output(11);	--going to forwarding
 	data_buffer_out_8bit <= data_to_forwarding;	--going to forwarding
 	
 	--test - probe inside wires of test_bench1;
-	test_crc_rdv <= CRC_rdv;
+	test_crc_rdv <= data_buffer_read_enable;
 	test_input4bit <= input_4bit;
 	test_length_value <= frame_length_and_valid(10 DOWNTO 0);
 	test_length_valid <= length_valid;

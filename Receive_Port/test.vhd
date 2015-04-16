@@ -54,7 +54,7 @@ ARCHITECTURE test_arch OF test IS
 		);
 	END COMPONENT;
 	
-	COMPONENT MII_to_RCV
+	COMPONENT MII_to_RCV IS
 		PORT(
 			Clock25		: IN		STD_LOGIC;
 			Resetx		: IN		STD_LOGIC;
@@ -62,6 +62,8 @@ ARCHITECTURE test_arch OF test IS
 			rcv_data	:OUT	STD_LOGIC_VECTOR(3 DOWNTO 0)
 		);
 	END COMPONENT;
+	
+
 	
 	BEGIN
 	

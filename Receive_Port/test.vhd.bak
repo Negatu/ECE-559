@@ -78,6 +78,9 @@ ARCHITECTURE test_arch OF test IS
 			
 			data_buffer_out_8bit => data_buffer_out_8bit,
 			
+			frame_to_monitoring => frame_to_monitoring,
+			frame_available_monitoring => frame_available_monitoring,
+			
 			test_crc_rdv => test_crc_rdv,
 			test_length_value => test_length_value,
 			test_length_valid => test_length_valid,
