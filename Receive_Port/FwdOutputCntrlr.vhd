@@ -5,8 +5,8 @@ use ieee.std_logic_misc.all;
 entity FwdOutputCntrlr is
 	port(clock,reset : in std_logic; 
 		 inFrameLengthValue: in std_logic_vector(11 downto 0);
-		 lengthBuffer_RE,  dataBuffer_RE: out std_logic;
-		 fwdFrameLengthValue: out std_logic_vector(11 downto 0));
+		 lengthBuffer_RE,  dataBuffer_RE, fwdFrameValid: out std_logic;
+		 fwdFrameLengthValue: out std_logic_vector(10 downto 0));
 end FwdOutputCntrlr;
 
 architecture RegCountArch of FwdOutputCntrlr is
@@ -103,6 +103,8 @@ architecture RegCountArch of FwdOutputCntrlr is
 			counter_reset_sig <= '0';
 		END IF;
 	END PROCESS;
-	fwdFrameLengthValue <= int_FrameLengthValue;
+	fwdFrameLengthValue <= int_FrameLengthValue(10 downto 0);
+	fwdFrameValid		<= int_FrameLengthValue(11);
 	lengthBuffer_RE <= int_lengthBufferRE;
+	
 end RegCountArch;
