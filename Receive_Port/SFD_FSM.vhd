@@ -2,12 +2,13 @@ LIBRARY ieee;
 USE ieee.std_logic_1164.all;
 
 ENTITY SFD_FSM IS
-	PORT (	Clock	: IN	STD_LOGIC;
+	PORT (
+			Clock	: IN	STD_LOGIC;
 			sfd_rdv : IN	STD_LOGIC;
 			Reset	: IN	STD_LOGIC;
 			dataIn	: IN	STD_LOGIC_VECTOR(3 DOWNTO 0);
-			crc_rdv		: OUT	STD_LOGIC );
-
+			crc_rdv		: OUT	STD_LOGIC 
+		  );
 END SFD_FSM;
 
 
@@ -33,6 +34,7 @@ BEGIN
 		CASE y_current IS
 			WHEN A =>
 				IF dataIn = "1010" THEN y_next <= B;
+				ELSE y_next <= A;
 				END IF;
 			WHEN B =>
 				IF dataIn = "1011" THEN y_next <= C;
@@ -40,7 +42,7 @@ BEGIN
 				END IF;
 			WHEN C =>
 				IF sfd_rdv = '0' THEN y_next <= A;
-				ELSE y_next <= C;
+				ELSIF sfd_rdv = '1' THEN y_next <= C;
 				END IF;				
 		END CASE;
 	END PROCESS;

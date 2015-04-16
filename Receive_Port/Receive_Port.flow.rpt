@@ -1,5 +1,5 @@
 Flow report for Receive_Port
-Thu Apr 16 04:09:34 2015
+Thu Apr 16 10:11:04 2015
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -38,21 +38,21 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Flow Summary                                                                      ;
 +------------------------------------+----------------------------------------------+
-; Flow Status                        ; Successful - Thu Apr 16 04:09:34 2015        ;
+; Flow Status                        ; Successful - Thu Apr 16 10:11:04 2015        ;
 ; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                      ; Receive_Port                                 ;
-; Top-level Entity Name              ; test_bench1                                  ;
+; Top-level Entity Name              ; test                                         ;
 ; Family                             ; Cyclone II                                   ;
 ; Device                             ; EP2C15AF256C7                                ;
 ; Timing Models                      ; Final                                        ;
-; Met timing requirements            ; No                                           ;
-; Total logic elements               ; 144 / 14,448 ( < 1 % )                       ;
-;     Total combinational functions  ; 144 / 14,448 ( < 1 % )                       ;
-;     Dedicated logic registers      ; 93 / 14,448 ( < 1 % )                        ;
-; Total registers                    ; 93                                           ;
-; Total pins                         ; 28 / 152 ( 18 % )                            ;
+; Met timing requirements            ; Yes                                          ;
+; Total logic elements               ; 177 / 14,448 ( 1 % )                         ;
+;     Total combinational functions  ; 170 / 14,448 ( 1 % )                         ;
+;     Dedicated logic registers      ; 120 / 14,448 ( < 1 % )                       ;
+; Total registers                    ; 120                                          ;
+; Total pins                         ; 44 / 152 ( 29 % )                            ;
 ; Total virtual pins                 ; 0                                            ;
-; Total memory bits                  ; 16,768 / 239,616 ( 7 % )                     ;
+; Total memory bits                  ; 20,864 / 239,616 ( 9 % )                     ;
 ; Embedded Multiplier 9-bit elements ; 0 / 52 ( 0 % )                               ;
 ; Total PLLs                         ; 0 / 4 ( 0 % )                                ;
 +------------------------------------+----------------------------------------------+
@@ -63,7 +63,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/16/2015 04:09:16 ;
+; Start date & time ; 04/16/2015 10:10:50 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Receive_Port        ;
 +-------------------+---------------------+
@@ -74,9 +74,11 @@ applicable agreement for further details.
 +------------------------------------+---------------------------------+---------------+---------------------+----------------+
 ; Assignment Name                    ; Value                           ; Default Value ; Entity Name         ; Section Id     ;
 +------------------------------------+---------------------------------+---------------+---------------------+----------------+
-; COMPILER_SIGNATURE_ID              ; 176509006398336.142917175514640 ; --            ; --                  ; --             ;
+; COMPILER_SIGNATURE_ID              ; 176509006398336.142919344915628 ; --            ; --                  ; --             ;
 ; IP_TOOL_NAME                       ; FIFO                            ; --            ; --                  ; --             ;
 ; IP_TOOL_NAME                       ; FIFO                            ; --            ; --                  ; --             ;
+; IP_TOOL_NAME                       ; LPM_SHIFTREG                    ; --            ; --                  ; --             ;
+; IP_TOOL_VERSION                    ; 9.1                             ; --            ; --                  ; --             ;
 ; IP_TOOL_VERSION                    ; 9.1                             ; --            ; --                  ; --             ;
 ; IP_TOOL_VERSION                    ; 9.1                             ; --            ; --                  ; --             ;
 ; MAX_CORE_JUNCTION_TEMP             ; 85                              ; --            ; --                  ; --             ;
@@ -85,14 +87,12 @@ applicable agreement for further details.
 ; MISC_FILE                          ; Data_DCFF.cmp                   ; --            ; --                  ; --             ;
 ; MISC_FILE                          ; Data_DCFF_syn.v                 ; --            ; --                  ; --             ;
 ; PARTITION_COLOR                    ; 16764057                        ; --            ; Data_Buffer         ; Top            ;
-; PARTITION_COLOR                    ; 16764057                        ; --            ; crc_compute         ; Top            ;
 ; PARTITION_COLOR                    ; 16764057                        ; --            ; lengthcountersystem ; Top            ;
-; PARTITION_COLOR                    ; 16764057                        ; --            ; test_bench1         ; Top            ;
+; PARTITION_COLOR                    ; 16764057                        ; --            ; test                ; Top            ;
 ; PARTITION_NETLIST_TYPE             ; SOURCE                          ; --            ; Data_Buffer         ; Top            ;
-; PARTITION_NETLIST_TYPE             ; SOURCE                          ; --            ; crc_compute         ; Top            ;
 ; PARTITION_NETLIST_TYPE             ; SOURCE                          ; --            ; lengthcountersystem ; Top            ;
-; PARTITION_NETLIST_TYPE             ; SOURCE                          ; --            ; test_bench1         ; Top            ;
-; TOP_LEVEL_ENTITY                   ; test_bench1                     ; Receive_Port  ; --                  ; --             ;
+; PARTITION_NETLIST_TYPE             ; SOURCE                          ; --            ; test                ; Top            ;
+; TOP_LEVEL_ENTITY                   ; test                            ; Receive_Port  ; --                  ; --             ;
 ; USE_GENERATED_PHYSICAL_CONSTRAINTS ; Off                             ; --            ; --                  ; eda_blast_fpga ;
 +------------------------------------+---------------------------------+---------------+---------------------+----------------+
 
@@ -102,11 +102,11 @@ applicable agreement for further details.
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name             ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis    ; 00:00:04     ; 1.0                     ; 237 MB              ; 00:00:04                           ;
-; Fitter                  ; 00:00:09     ; 1.0                     ; 229 MB              ; 00:00:05                           ;
+; Analysis & Synthesis    ; 00:00:04     ; 1.0                     ; 239 MB              ; 00:00:08                           ;
+; Fitter                  ; 00:00:04     ; 1.0                     ; 230 MB              ; 00:00:06                           ;
 ; Assembler               ; 00:00:02     ; 1.0                     ; 213 MB              ; 00:00:02                           ;
-; Classic Timing Analyzer ; 00:00:00     ; 1.0                     ; 148 MB              ; 00:00:01                           ;
-; Total                   ; 00:00:15     ; --                      ; --                  ; 00:00:12                           ;
+; Classic Timing Analyzer ; 00:00:01     ; 1.0                     ; 150 MB              ; 00:00:02                           ;
+; Total                   ; 00:00:11     ; --                      ; --                  ; 00:00:18                           ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

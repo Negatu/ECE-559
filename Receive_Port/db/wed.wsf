@@ -797,11 +797,110 @@ VECTOR("C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/crc_c
 	}
 }
 
-VECTOR("C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/crc_compute.vwf")
+VECTOR("C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/SFD_FSM.vwf")
 {
 	ZOOM{
 		ZBEGIN = 0;
 		ZEND = 668000;
+		NUMERATOR = 835;
+		DENOMINATOR = 668000;
+		TOP_INDEX = 0;
+	}
+	CLOCK{
+		PERIOD = 40000;
+		OFFSET = 0;
+		DUTY_CYCLE = 50;
+	}
+	RANDOM_VALUE{
+		INTERVAL_TYPE = HALF_GRID;
+	}
+	LINE{
+		SIGNAL = "Clock";
+		INDEX = 0;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "crc_rdv";
+		INDEX = 1;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "dataIn";
+		INDEX = 2;
+		FORMAT = T;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "dataIn[3]";
+		INDEX = 3;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "dataIn[2]";
+		INDEX = 4;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "dataIn[1]";
+		INDEX = 5;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "dataIn[0]";
+		INDEX = 6;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "Reset";
+		INDEX = 7;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "sfd_rdv";
+		INDEX = 8;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "y_current";
+		INDEX = 9;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+}
+
+VECTOR("C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/crc_compute.vwf")
+{
+	ZOOM{
+		ZBEGIN = 428000;
+		ZEND = 1096000;
 		NUMERATOR = 835;
 		DENOMINATOR = 668000;
 		TOP_INDEX = 0;
@@ -1155,11 +1254,11 @@ VECTOR("C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/crc_c
 VECTOR("C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/Receive_Port.sim.cvwf")
 {
 	ZOOM{
-		ZBEGIN = 6193870;
-		ZEND = 6547624;
-		NUMERATOR = 653;
-		DENOMINATOR = 353754;
-		TOP_INDEX = 0;
+		ZBEGIN = 6615350;
+		ZEND = 6860476;
+		NUMERATOR = 636;
+		DENOMINATOR = 245126;
+		TOP_INDEX = 11;
 	}
 	CLOCK{
 		PERIOD = 10000;
@@ -1178,7 +1277,7 @@ VECTOR("C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/Re
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "comp_en";
+		SIGNAL = "clock50";
 		INDEX = 1;
 		FORMAT = E;
 		SCALE = 1;
@@ -1186,23 +1285,23 @@ VECTOR("C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/Re
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "init";
+		SIGNAL = "data_buffer_out_8bit";
 		INDEX = 2;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "out_input";
-		INDEX = 3;
 		FORMAT = T;
 		SCALE = 1;
 		VISIBLE = Y;
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "out_input[3]";
+		SIGNAL = "data_buffer_out_8bit[7]";
+		INDEX = 3;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "data_buffer_out_8bit[6]";
 		INDEX = 4;
 		FORMAT = E;
 		SCALE = 1;
@@ -1210,7 +1309,7 @@ VECTOR("C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/Re
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "out_input[2]";
+		SIGNAL = "data_buffer_out_8bit[5]";
 		INDEX = 5;
 		FORMAT = E;
 		SCALE = 1;
@@ -1218,7 +1317,7 @@ VECTOR("C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/Re
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "out_input[1]";
+		SIGNAL = "data_buffer_out_8bit[4]";
 		INDEX = 6;
 		FORMAT = E;
 		SCALE = 1;
@@ -1226,7 +1325,7 @@ VECTOR("C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/Re
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "out_input[0]";
+		SIGNAL = "data_buffer_out_8bit[3]";
 		INDEX = 7;
 		FORMAT = E;
 		SCALE = 1;
@@ -1234,15 +1333,15 @@ VECTOR("C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/Re
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "outCRC";
+		SIGNAL = "data_buffer_out_8bit[2]";
 		INDEX = 8;
-		FORMAT = T;
+		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "outCRC[31]";
+		SIGNAL = "data_buffer_out_8bit[1]";
 		INDEX = 9;
 		FORMAT = E;
 		SCALE = 1;
@@ -1250,7 +1349,7 @@ VECTOR("C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/Re
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "outCRC[30]";
+		SIGNAL = "data_buffer_out_8bit[0]";
 		INDEX = 10;
 		FORMAT = E;
 		SCALE = 1;
@@ -1258,7 +1357,7 @@ VECTOR("C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/Re
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "outCRC[29]";
+		SIGNAL = "frame_valid_out";
 		INDEX = 11;
 		FORMAT = E;
 		SCALE = 1;
@@ -1266,15 +1365,15 @@ VECTOR("C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/Re
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "outCRC[28]";
+		SIGNAL = "length_buffer_out_11bit";
 		INDEX = 12;
-		FORMAT = E;
+		FORMAT = T;
 		SCALE = 1;
 		VISIBLE = Y;
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "outCRC[27]";
+		SIGNAL = "length_buffer_out_11bit[10]";
 		INDEX = 13;
 		FORMAT = E;
 		SCALE = 1;
@@ -1282,7 +1381,7 @@ VECTOR("C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/Re
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "outCRC[26]";
+		SIGNAL = "length_buffer_out_11bit[9]";
 		INDEX = 14;
 		FORMAT = E;
 		SCALE = 1;
@@ -1290,7 +1389,7 @@ VECTOR("C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/Re
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "outCRC[25]";
+		SIGNAL = "length_buffer_out_11bit[8]";
 		INDEX = 15;
 		FORMAT = E;
 		SCALE = 1;
@@ -1298,7 +1397,7 @@ VECTOR("C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/Re
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "outCRC[24]";
+		SIGNAL = "length_buffer_out_11bit[7]";
 		INDEX = 16;
 		FORMAT = E;
 		SCALE = 1;
@@ -1306,7 +1405,7 @@ VECTOR("C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/Re
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "outCRC[23]";
+		SIGNAL = "length_buffer_out_11bit[6]";
 		INDEX = 17;
 		FORMAT = E;
 		SCALE = 1;
@@ -1314,7 +1413,7 @@ VECTOR("C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/Re
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "outCRC[22]";
+		SIGNAL = "length_buffer_out_11bit[5]";
 		INDEX = 18;
 		FORMAT = E;
 		SCALE = 1;
@@ -1322,7 +1421,7 @@ VECTOR("C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/Re
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "outCRC[21]";
+		SIGNAL = "length_buffer_out_11bit[4]";
 		INDEX = 19;
 		FORMAT = E;
 		SCALE = 1;
@@ -1330,7 +1429,7 @@ VECTOR("C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/Re
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "outCRC[20]";
+		SIGNAL = "length_buffer_out_11bit[3]";
 		INDEX = 20;
 		FORMAT = E;
 		SCALE = 1;
@@ -1338,7 +1437,7 @@ VECTOR("C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/Re
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "outCRC[19]";
+		SIGNAL = "length_buffer_out_11bit[2]";
 		INDEX = 21;
 		FORMAT = E;
 		SCALE = 1;
@@ -1346,7 +1445,7 @@ VECTOR("C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/Re
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "outCRC[18]";
+		SIGNAL = "length_buffer_out_11bit[1]";
 		INDEX = 22;
 		FORMAT = E;
 		SCALE = 1;
@@ -1354,7 +1453,7 @@ VECTOR("C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/Re
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "outCRC[17]";
+		SIGNAL = "length_buffer_out_11bit[0]";
 		INDEX = 23;
 		FORMAT = E;
 		SCALE = 1;
@@ -1362,7 +1461,7 @@ VECTOR("C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/Re
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "outCRC[16]";
+		SIGNAL = "reset";
 		INDEX = 24;
 		FORMAT = E;
 		SCALE = 1;
@@ -1370,15 +1469,15 @@ VECTOR("C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/Re
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "outCRC[15]";
+		SIGNAL = "test_length_value";
 		INDEX = 25;
-		FORMAT = E;
+		FORMAT = T;
 		SCALE = 1;
 		VISIBLE = Y;
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "outCRC[14]";
+		SIGNAL = "test_length_value[10]";
 		INDEX = 26;
 		FORMAT = E;
 		SCALE = 1;
@@ -1386,7 +1485,7 @@ VECTOR("C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/Re
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "outCRC[13]";
+		SIGNAL = "test_length_value[9]";
 		INDEX = 27;
 		FORMAT = E;
 		SCALE = 1;
@@ -1394,7 +1493,7 @@ VECTOR("C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/Re
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "outCRC[12]";
+		SIGNAL = "test_length_value[8]";
 		INDEX = 28;
 		FORMAT = E;
 		SCALE = 1;
@@ -1402,7 +1501,7 @@ VECTOR("C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/Re
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "outCRC[11]";
+		SIGNAL = "test_length_value[7]";
 		INDEX = 29;
 		FORMAT = E;
 		SCALE = 1;
@@ -1410,7 +1509,7 @@ VECTOR("C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/Re
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "outCRC[10]";
+		SIGNAL = "test_length_value[6]";
 		INDEX = 30;
 		FORMAT = E;
 		SCALE = 1;
@@ -1418,7 +1517,7 @@ VECTOR("C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/Re
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "outCRC[9]";
+		SIGNAL = "test_length_value[5]";
 		INDEX = 31;
 		FORMAT = E;
 		SCALE = 1;
@@ -1426,7 +1525,7 @@ VECTOR("C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/Re
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "outCRC[8]";
+		SIGNAL = "test_length_value[4]";
 		INDEX = 32;
 		FORMAT = E;
 		SCALE = 1;
@@ -1434,7 +1533,7 @@ VECTOR("C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/Re
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "outCRC[7]";
+		SIGNAL = "test_length_value[3]";
 		INDEX = 33;
 		FORMAT = E;
 		SCALE = 1;
@@ -1442,7 +1541,7 @@ VECTOR("C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/Re
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "outCRC[6]";
+		SIGNAL = "test_length_value[2]";
 		INDEX = 34;
 		FORMAT = E;
 		SCALE = 1;
@@ -1450,7 +1549,7 @@ VECTOR("C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/Re
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "outCRC[5]";
+		SIGNAL = "test_length_value[1]";
 		INDEX = 35;
 		FORMAT = E;
 		SCALE = 1;
@@ -1458,7 +1557,7 @@ VECTOR("C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/Re
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "outCRC[4]";
+		SIGNAL = "test_length_value[0]";
 		INDEX = 36;
 		FORMAT = E;
 		SCALE = 1;
@@ -1466,15 +1565,15 @@ VECTOR("C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/Re
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "outCRC[3]";
+		SIGNAL = "test_input4bit";
 		INDEX = 37;
-		FORMAT = E;
+		FORMAT = T;
 		SCALE = 1;
 		VISIBLE = Y;
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "outCRC[2]";
+		SIGNAL = "test_input4bit[3]";
 		INDEX = 38;
 		FORMAT = E;
 		SCALE = 1;
@@ -1482,7 +1581,7 @@ VECTOR("C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/Re
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "outCRC[1]";
+		SIGNAL = "test_input4bit[2]";
 		INDEX = 39;
 		FORMAT = E;
 		SCALE = 1;
@@ -1490,7 +1589,7 @@ VECTOR("C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/Re
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "outCRC[0]";
+		SIGNAL = "test_input4bit[1]";
 		INDEX = 40;
 		FORMAT = E;
 		SCALE = 1;
@@ -1498,8 +1597,56 @@ VECTOR("C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/Re
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "reset";
+		SIGNAL = "test_input4bit[0]";
 		INDEX = 41;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "test_crc_rdv";
+		INDEX = 42;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "test_length_we";
+		INDEX = 43;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "test_crc_cr";
+		INDEX = 44;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "test_crc_crv";
+		INDEX = 45;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "test_length_valid";
+		INDEX = 46;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "test_frame_valid";
+		INDEX = 47;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;

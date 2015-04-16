@@ -9,8 +9,17 @@ ENTITY test_bench1 IS
 		length_buffer_out_11bit : OUT STD_LOGIC_VECTOR (10 DOWNTO 0);	--going to forwarding
 		frame_valid_out : OUT STD_LOGIC;	--going to forwarding
 		
-		data_buffer_out_8bit : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)	--going to forwarding
+		data_buffer_out_8bit : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);	--going to forwarding
 		
+		--test different outputs of test_bench1
+		test_crc_rdv : OUT STD_LOGIC;
+		test_length_value : OUT STD_LOGIC_VECTOR(10 DOWNTO 0);
+		test_length_valid : OUT STD_LOGIC;
+		test_length_we : OUT STD_LOGIC;
+		test_crc_crv : OUT STD_LOGIC;
+		test_crc_cr : OUT STD_LOGIC;
+		test_frame_valid : OUT STD_LOGIC;
+		test_input4bit : OUT STD_LOGIC_VECTOR(3 DOWNTO 0) 
 		);
 END test_bench1;
 
@@ -22,7 +31,7 @@ ARCHITECTURE tb_arch OF test_bench1 IS
 	SIGNAL length_valid : STD_LOGIC;
 	SIGNAL length_buffer_write_enable : STD_LOGIC;
 	SIGNAL frame_valid : STD_LOGIC;
-	SIGNAL  frame_length_and_valid : STD_LOGIC_VECTOR(11 DOWNTO 0); -- concatenation of frame valid and length
+	SIGNAL frame_length_and_valid : STD_LOGIC_VECTOR(11 DOWNTO 0); -- concatenation of frame valid and length
 	SIGNAL data_buffer_write_enable : STD_LOGIC;
 	SIGNAL data_buffer_full : STD_LOGIC;
 	SIGNAL data_buffer_read_enable : STD_LOGIC;
@@ -31,6 +40,7 @@ ARCHITECTURE tb_arch OF test_bench1 IS
 	SIGNAL length_read_enable : STD_LOGIC;
 	SIGNAL length_buffer_full : STD_LOGIC;
 	SIGNAL length_buffer_empty : STD_LOGIC;
+	SIGNAL check_result_shift : STD_LOGIC;
 	
 	COMPONENT SFD_FSM
 		PORT (	Clock	: IN	STD_LOGIC;
@@ -59,18 +69,17 @@ ARCHITECTURE tb_arch OF test_bench1 IS
 	
 	COMPONENT Length_DCFF
 		PORT(
-		aclr		: IN STD_LOGIC  := '0';
-		data		: IN STD_LOGIC_VECTOR (11 DOWNTO 0);
-		rdclk		: IN STD_LOGIC ;
-		rdreq		: IN STD_LOGIC ;
-		wrclk		: IN STD_LOGIC ;
-		wrreq		: IN STD_LOGIC ;
-		q		: OUT STD_LOGIC_VECTOR (11 DOWNTO 0);
-		rdempty		: OUT STD_LOGIC ;
-		wrfull		: OUT STD_LOGIC 
+			aclr		: IN STD_LOGIC  := '0';
+			data		: IN STD_LOGIC_VECTOR (11 DOWNTO 0);
+			rdclk		: IN STD_LOGIC ;
+			rdreq		: IN STD_LOGIC ;
+			wrclk		: IN STD_LOGIC ;
+			wrreq		: IN STD_LOGIC ;
+			q		: OUT STD_LOGIC_VECTOR (11 DOWNTO 0);
+			rdempty		: OUT STD_LOGIC ;
+			wrfull		: OUT STD_LOGIC 
 		);
 	END COMPONENT;
-	
 	
 	COMPONENT Data_Buffer
 		PORT(
@@ -80,7 +89,16 @@ ARCHITECTURE tb_arch OF test_bench1 IS
 		data_out_8 : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
 		);
 	END COMPONENT;
-
+	
+	COMPONENT shift2bit IS
+		PORT
+		(
+			aclr		: IN STD_LOGIC ;
+			clock		: IN STD_LOGIC ;
+			shiftin		: IN STD_LOGIC ;
+			shiftout		: OUT STD_LOGIC 
+		);
+	END COMPONENT;
 
 BEGIN
 
@@ -100,7 +118,6 @@ BEGIN
 		CRC_result_valid => check_result_valid,
 		CRC_check_result => check_result
 	);
-	
 	
 	data_buffer_inst : Data_Buffer PORT MAP (
 		reset => reset, 
@@ -134,11 +151,27 @@ BEGIN
 			lengthValue =>  frame_length_and_valid (10 DOWNTO 0)
 	);
 	
-	frame_valid <= (length_valid AND check_result AND check_result_valid); 
+	shift_inst : shift2bit PORT MAP (
+			aclr => reset,
+			clock => clk25,
+			shiftin	=> check_result,
+			shiftout => check_result_shift
+	);
+	
+	frame_valid <= (length_valid AND check_result_shift AND check_result_valid); 
 	frame_length_and_valid(11) <= frame_valid;
 	length_buffer_out_11bit <= length_buffer_output(10 DOWNTO 0);	--going to forwarding
 	frame_valid_out <= length_buffer_output(11);	--going to forwarding
 	data_buffer_out_8bit <= data_to_forwarding;	--going to forwarding
-
+	
+	--test - probe inside wires of test_bench1;
+	test_crc_rdv <= CRC_rdv;
+	test_input4bit <= input_4bit;
+	test_length_value <= frame_length_and_valid(10 DOWNTO 0);
+	test_length_valid <= length_valid;
+	test_length_we <= length_buffer_write_enable;
+	test_crc_crv <= check_result_valid;
+	test_crc_cr <= check_result_shift;
+	test_frame_valid <= frame_valid;
 
 END tb_arch;

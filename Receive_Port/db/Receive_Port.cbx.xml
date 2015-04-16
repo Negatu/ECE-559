@@ -1,8 +1,10 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="Receive_Port">
-		<CBX_INST_ENTRY INSTANCE_NAME="|test_bench1|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component" CBX_FILE_NAME="dcfifo_30i1.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|test_bench1|LengthCounterSystem:length_counter_sys_inst|LengthCounter:LengthCounter_inst|lpm_counter:lpm_counter_component" CBX_FILE_NAME="cntr_k7j.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|test_bench1|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component" CBX_FILE_NAME="dcfifo_ksh1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|test|test_bench1:test_bench_inst|LengthCounterSystem:length_counter_sys_inst|LengthCounter:LengthCounter_inst|lpm_counter:lpm_counter_component" CBX_FILE_NAME="cntr_k7j.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|test|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component" CBX_FILE_NAME="dcfifo_ksh1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|test|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component" CBX_FILE_NAME="cntr_k7j.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|test|MII_to_RCV:phy_inst|framemem:frame_test_mem|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_e781.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|test|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component" CBX_FILE_NAME="dcfifo_30i1.tdf"/>
 	</PROJECT>
 </LOG_ROOT>
