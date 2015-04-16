@@ -30,7 +30,6 @@ ARCHITECTURE tb_arch OF test_bench1 IS
 	SIGNAL length_buffer_output : STD_LOGIC_VECTOR(11 DOWNTO 0);
 	SIGNAL length_read_enable : STD_LOGIC;
 	SIGNAL length_buffer_full : STD_LOGIC;
-	SIGNAL length_buffer_write_enable : STD_LOGIC;
 	SIGNAL length_buffer_empty : STD_LOGIC;
 	
 	COMPONENT SFD_FSM

@@ -135,7 +135,7 @@ BEGIN
 	);
 	
 	frame_valid <= (length_valid AND check_result AND check_result_valid); 
-	 frame_length_and_valid(11) <= frame_valid;
+	frame_length_and_valid(11) <= frame_valid;
 	length_buffer_out_11bit <= length_buffer_output(10 DOWNTO 0);	--going to forwarding
 	frame_valid_out <= length_buffer_output(11);	--going to forwarding
 	data_buffer_out_8bit <= data_to_forwarding;	--going to forwarding

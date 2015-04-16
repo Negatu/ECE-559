@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Receive_Port
-Thu Apr 16 03:00:21 2015
+Thu Apr 16 03:57:07 2015
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -10,25 +10,10 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. Analysis & Synthesis RAM Summary
-  9. Registers Protected by Synthesis
- 10. General Register Statistics
- 11. Inverted Register Statistics
- 12. Source assignments for Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated
- 13. Source assignments for Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|a_graycounter_q96:rdptr_g1p
- 14. Source assignments for Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|a_graycounter_ggc:wrptr_g1p
- 15. Source assignments for Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|altsyncram_qo61:fifo_ram
- 16. Source assignments for Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|altsyncram_qo61:fifo_ram|altsyncram_6ve1:altsyncram11
- 17. Source assignments for Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|dffpipe_ngh:rdaclr
- 18. Source assignments for Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|alt_synch_pipe_tdb:rs_dgwp
- 19. Source assignments for Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|alt_synch_pipe_tdb:rs_dgwp|dffpipe_re9:dffpipe14
- 20. Source assignments for Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|alt_synch_pipe_1e8:ws_dgrp
- 21. Source assignments for Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|alt_synch_pipe_1e8:ws_dgrp|dffpipe_se9:dffpipe17
- 22. Parameter Settings for User Entity Instance: Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component
- 23. Analysis & Synthesis Messages
+  5. Source assignments for LengthCounter:LengthCounter_inst|lpm_counter:lpm_counter_component
+  6. Parameter Settings for User Entity Instance: LengthCounter:LengthCounter_inst|lpm_counter:lpm_counter_component
+  7. Port Connectivity Checks: "LengthCounter:LengthCounter_inst"
+  8. Analysis & Synthesis Messages
 
 
 
@@ -54,100 +39,100 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +------------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Apr 16 03:00:21 2015        ;
+; Analysis & Synthesis Status        ; Failed - Thu Apr 16 03:57:07 2015            ;
 ; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                      ; Receive_Port                                 ;
-; Top-level Entity Name              ; Data_Buffer                                  ;
+; Top-level Entity Name              ; lengthcountersystem                          ;
 ; Family                             ; Cyclone II                                   ;
-; Total logic elements               ; 159                                          ;
-;     Total combinational functions  ; 73                                           ;
-;     Dedicated logic registers      ; 120                                          ;
-; Total registers                    ; 120                                          ;
-; Total pins                         ; 19                                           ;
-; Total virtual pins                 ; 0                                            ;
-; Total memory bits                  ; 16,384                                       ;
-; Embedded Multiplier 9-bit elements ; 0                                            ;
-; Total PLLs                         ; 0                                            ;
+; Total logic elements               ; N/A until Partition Merge                    ;
+;     Total combinational functions  ; N/A until Partition Merge                    ;
+;     Dedicated logic registers      ; N/A until Partition Merge                    ;
+; Total registers                    ; N/A until Partition Merge                    ;
+; Total pins                         ; N/A until Partition Merge                    ;
+; Total virtual pins                 ; N/A until Partition Merge                    ;
+; Total memory bits                  ; N/A until Partition Merge                    ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                    ;
+; Total PLLs                         ; N/A until Partition Merge                    ;
 +------------------------------------+----------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                                        ;
-+----------------------------------------------------------------------------+--------------------+--------------------+
-; Option                                                                     ; Setting            ; Default Value      ;
-+----------------------------------------------------------------------------+--------------------+--------------------+
-; Device                                                                     ; EP2C15AF256C7      ;                    ;
-; Top-level entity name                                                      ; Data_Buffer        ; Receive_Port       ;
-; Family name                                                                ; Cyclone II         ; Stratix II         ;
-; Use Generated Physical Constraints File                                    ; Off                ;                    ;
-; Use smart compilation                                                      ; Off                ; Off                ;
-; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
-; Enable compact report table                                                ; Off                ; Off                ;
-; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
-; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
-; Preserve fewer node names                                                  ; On                 ; On                 ;
-; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
-; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
-; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
-; State Machine Processing                                                   ; Auto               ; Auto               ;
-; Safe State Machine                                                         ; Off                ; Off                ;
-; Extract Verilog State Machines                                             ; On                 ; On                 ;
-; Extract VHDL State Machines                                                ; On                 ; On                 ;
-; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
-; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
-; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
-; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
-; Parallel Synthesis                                                         ; On                 ; On                 ;
-; DSP Block Balancing                                                        ; Auto               ; Auto               ;
-; NOT Gate Push-Back                                                         ; On                 ; On                 ;
-; Power-Up Don't Care                                                        ; On                 ; On                 ;
-; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
-; Remove Duplicate Registers                                                 ; On                 ; On                 ;
-; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
-; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
-; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
-; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
-; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
-; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
-; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
-; Optimization Technique                                                     ; Balanced           ; Balanced           ;
-; Carry Chain Length                                                         ; 70                 ; 70                 ;
-; Auto Carry Chains                                                          ; On                 ; On                 ;
-; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
-; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
-; Auto ROM Replacement                                                       ; On                 ; On                 ;
-; Auto RAM Replacement                                                       ; On                 ; On                 ;
-; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
-; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
-; Strict RAM Replacement                                                     ; Off                ; Off                ;
-; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
-; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
-; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
-; Auto Resource Sharing                                                      ; Off                ; Off                ;
-; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
-; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
-; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
-; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
-; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
-; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
-; Show Parameter Settings Tables in Synthesis Report                         ; On                 ; On                 ;
-; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
-; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
-; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
-; HDL message level                                                          ; Level2             ; Level2             ;
-; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
-; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
-; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
-; Clock MUX Protection                                                       ; On                 ; On                 ;
-; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
-; Block Design Naming                                                        ; Auto               ; Auto               ;
-; SDC constraint protection                                                  ; Off                ; Off                ;
-; Synthesis Effort                                                           ; Auto               ; Auto               ;
-; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
-; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
-; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
-; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
-+----------------------------------------------------------------------------+--------------------+--------------------+
++-----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                         ;
++----------------------------------------------------------------------------+---------------------+--------------------+
+; Option                                                                     ; Setting             ; Default Value      ;
++----------------------------------------------------------------------------+---------------------+--------------------+
+; Device                                                                     ; EP2C15AF256C7       ;                    ;
+; Top-level entity name                                                      ; lengthcountersystem ; Receive_Port       ;
+; Family name                                                                ; Cyclone II          ; Stratix II         ;
+; Use Generated Physical Constraints File                                    ; Off                 ;                    ;
+; Use smart compilation                                                      ; Off                 ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                  ; On                 ;
+; Enable compact report table                                                ; Off                 ; Off                ;
+; Restructure Multiplexers                                                   ; Auto                ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                 ; Off                ;
+; Preserve fewer node names                                                  ; On                  ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                 ; Off                ;
+; Verilog Version                                                            ; Verilog_2001        ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993           ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto                ; Auto               ;
+; Safe State Machine                                                         ; Off                 ; Off                ;
+; Extract Verilog State Machines                                             ; On                  ; On                 ;
+; Extract VHDL State Machines                                                ; On                  ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                 ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000                ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                 ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                  ; On                 ;
+; Parallel Synthesis                                                         ; On                  ; On                 ;
+; DSP Block Balancing                                                        ; Auto                ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                  ; On                 ;
+; Power-Up Don't Care                                                        ; On                  ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                 ; Off                ;
+; Remove Duplicate Registers                                                 ; On                  ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                 ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                 ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                 ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                 ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                 ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                  ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                 ; Off                ;
+; Optimization Technique                                                     ; Balanced            ; Balanced           ;
+; Carry Chain Length                                                         ; 70                  ; 70                 ;
+; Auto Carry Chains                                                          ; On                  ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                  ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                 ; Off                ;
+; Auto ROM Replacement                                                       ; On                  ; On                 ;
+; Auto RAM Replacement                                                       ; On                  ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto                ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                  ; On                 ;
+; Strict RAM Replacement                                                     ; Off                 ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                  ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                 ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                 ; Off                ;
+; Auto Resource Sharing                                                      ; Off                 ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                 ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                 ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                 ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                  ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                 ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                 ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                         ; On                  ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                 ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                   ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation  ; Normal compilation ;
+; HDL message level                                                          ; Level2              ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                 ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000                ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                 ; 100                ;
+; Clock MUX Protection                                                       ; On                  ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                 ; Off                ;
+; Block Design Naming                                                        ; Auto                ; Auto               ;
+; SDC constraint protection                                                  ; Off                 ; Off                ;
+; Synthesis Effort                                                           ; Auto                ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                  ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium              ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto                ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                  ; On                 ;
++----------------------------------------------------------------------------+---------------------+--------------------+
 
 
 Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
@@ -161,265 +146,51 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                   ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------------------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                         ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------------------+
-; Data_DCFF.vhd                    ; yes             ; User Wizard-Generated File   ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/Data_DCFF.vhd             ;
-; Data_Buffer.vhd                  ; yes             ; User VHDL File               ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/Data_Buffer.vhd           ;
-; dcfifo_mixed_widths.tdf          ; yes             ; Megafunction                 ; c:/altera/91sp2/quartus/libraries/megafunctions/dcfifo_mixed_widths.tdf                              ;
-; db/dcfifo_30i1.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/db/dcfifo_30i1.tdf        ;
-; db/a_graycounter_q96.tdf         ; yes             ; Auto-Generated Megafunction  ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/db/a_graycounter_q96.tdf  ;
-; db/a_graycounter_ggc.tdf         ; yes             ; Auto-Generated Megafunction  ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/db/a_graycounter_ggc.tdf  ;
-; db/altsyncram_qo61.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/db/altsyncram_qo61.tdf    ;
-; db/altsyncram_6ve1.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/db/altsyncram_6ve1.tdf    ;
-; db/dffpipe_ngh.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/db/dffpipe_ngh.tdf        ;
-; db/alt_synch_pipe_tdb.tdf        ; yes             ; Auto-Generated Megafunction  ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/db/alt_synch_pipe_tdb.tdf ;
-; db/dffpipe_re9.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/db/dffpipe_re9.tdf        ;
-; db/alt_synch_pipe_1e8.tdf        ; yes             ; Auto-Generated Megafunction  ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/db/alt_synch_pipe_1e8.tdf ;
-; db/dffpipe_se9.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/db/dffpipe_se9.tdf        ;
-; db/cmpr_736.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/db/cmpr_736.tdf           ;
-; db/cntr_jvd.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/db/cntr_jvd.tdf           ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------+
+; Source assignments for LengthCounter:LengthCounter_inst|lpm_counter:lpm_counter_component ;
++---------------------------+-------+------+------------------------------------------------+
+; Assignment                ; Value ; From ; To                                             ;
++---------------------------+-------+------+------------------------------------------------+
+; SUPPRESS_DA_RULE_INTERNAL ; a101  ; -    ; -                                              ;
+; SUPPRESS_DA_RULE_INTERNAL ; s102  ; -    ; -                                              ;
+; SUPPRESS_DA_RULE_INTERNAL ; s103  ; -    ; -                                              ;
++---------------------------+-------+------+------------------------------------------------+
 
 
-+-----------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary         ;
-+---------------------------------------------+-------+
-; Resource                                    ; Usage ;
-+---------------------------------------------+-------+
-; Estimated Total logic elements              ; 159   ;
-;                                             ;       ;
-; Total combinational functions               ; 73    ;
-; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 48    ;
-;     -- 3 input functions                    ; 10    ;
-;     -- <=2 input functions                  ; 15    ;
-;                                             ;       ;
-; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 72    ;
-;     -- arithmetic mode                      ; 1     ;
-;                                             ;       ;
-; Total registers                             ; 120   ;
-;     -- Dedicated logic registers            ; 120   ;
-;     -- I/O registers                        ; 0     ;
-;                                             ;       ;
-; I/O pins                                    ; 19    ;
-; Total memory bits                           ; 16384 ;
-; Maximum fan-out node                        ; reset ;
-; Maximum fan-out                             ; 107   ;
-; Total fan-out                               ; 773   ;
-; Average fan-out                             ; 3.58  ;
-+---------------------------------------------+-------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                        ;
-+-----------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node                                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                 ; Library Name ;
-+-----------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |Data_Buffer                                              ; 73 (0)            ; 120 (0)      ; 16384       ; 0            ; 0       ; 0         ; 19   ; 0            ; |Data_Buffer                                                                                                                                                        ; work         ;
-;    |Data_DCFF:DCFF_inst|                                  ; 73 (0)            ; 120 (0)      ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |Data_Buffer|Data_DCFF:DCFF_inst                                                                                                                                    ;              ;
-;       |dcfifo_mixed_widths:dcfifo_mixed_widths_component| ; 73 (0)            ; 120 (0)      ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |Data_Buffer|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component                                                                                  ; work         ;
-;          |dcfifo_30i1:auto_generated|                     ; 73 (6)            ; 120 (38)     ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |Data_Buffer|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated                                                       ; work         ;
-;             |a_graycounter_ggc:wrptr_g1p|                 ; 23 (23)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Data_Buffer|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|a_graycounter_ggc:wrptr_g1p                           ; work         ;
-;             |a_graycounter_q96:rdptr_g1p|                 ; 24 (24)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Data_Buffer|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|a_graycounter_q96:rdptr_g1p                           ; work         ;
-;             |alt_synch_pipe_1e8:ws_dgrp|                  ; 0 (0)             ; 24 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Data_Buffer|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|alt_synch_pipe_1e8:ws_dgrp                            ;              ;
-;                |dffpipe_se9:dffpipe17|                    ; 0 (0)             ; 24 (24)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Data_Buffer|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|alt_synch_pipe_1e8:ws_dgrp|dffpipe_se9:dffpipe17      ;              ;
-;             |alt_synch_pipe_tdb:rs_dgwp|                  ; 0 (0)             ; 24 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Data_Buffer|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|alt_synch_pipe_tdb:rs_dgwp                            ;              ;
-;                |dffpipe_re9:dffpipe14|                    ; 0 (0)             ; 24 (24)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Data_Buffer|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|alt_synch_pipe_tdb:rs_dgwp|dffpipe_re9:dffpipe14      ;              ;
-;             |altsyncram_qo61:fifo_ram|                    ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |Data_Buffer|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|altsyncram_qo61:fifo_ram                              ; work         ;
-;                |altsyncram_6ve1:altsyncram11|             ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |Data_Buffer|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|altsyncram_qo61:fifo_ram|altsyncram_6ve1:altsyncram11 ; work         ;
-;             |cmpr_736:rdempty_eq_comp|                    ; 9 (9)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Data_Buffer|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|cmpr_736:rdempty_eq_comp                              ; work         ;
-;             |cmpr_736:wrfull_eq_comp|                     ; 9 (9)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Data_Buffer|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|cmpr_736:wrfull_eq_comp                               ; work         ;
-;             |cntr_jvd:cntr_b|                             ; 2 (2)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Data_Buffer|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|cntr_jvd:cntr_b                                       ; work         ;
-;             |dffpipe_ngh:rdaclr|                          ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Data_Buffer|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|dffpipe_ngh:rdaclr                                    ; work         ;
-+-----------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                                                                                     ;
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+-------+------+
-; Name                                                                                                                                                              ; Type ; Mode           ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF  ;
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+-------+------+
-; Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|altsyncram_qo61:fifo_ram|altsyncram_6ve1:altsyncram11|ALTSYNCRAM ; AUTO ; True Dual Port ; 2048         ; 8            ; 4096         ; 4            ; 16384 ; None ;
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+-------+------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Protected by Synthesis                                                                                                                                                                                                               ;
-+--------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+--------------------------------------------+
-; Register Name                                                                                                                  ; Protected by Synthesis Attribute or Preserve Register Assignment ; Not to be Touched by Netlist Optimizations ;
-+--------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+--------------------------------------------+
-; Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|dffpipe_ngh:rdaclr|dffe13a[0] ; yes                                                              ; yes                                        ;
-+--------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+--------------------------------------------+
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 120   ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 120   ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 36    ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Inverted Register Statistics                                                                                                                         ;
-+--------------------------------------------------------------------------------------------------------------------------------------------+---------+
-; Inverted Register                                                                                                                          ; Fan out ;
-+--------------------------------------------------------------------------------------------------------------------------------------------+---------+
-; Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|a_graycounter_q96:rdptr_g1p|sub_parity6a0 ; 1       ;
-; Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|a_graycounter_ggc:wrptr_g1p|sub_parity9a0 ; 1       ;
-; Total number of inverted registers = 2                                                                                                     ;         ;
-+--------------------------------------------------------------------------------------------------------------------------------------------+---------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated                                             ;
-+---------------------------------+-------------------------------------------------------------------------------------+-----------------+---------------------------+
-; Assignment                      ; Value                                                                               ; From            ; To                        ;
-+---------------------------------+-------------------------------------------------------------------------------------+-----------------+---------------------------+
-; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF                                                                                 ; -               ; -                         ;
-; REMOVE_DUPLICATE_REGISTERS      ; OFF                                                                                 ; -               ; -                         ;
-; SUPPRESS_DA_RULE_INTERNAL       ; d101                                                                                ; -               ; -                         ;
-; SUPPRESS_DA_RULE_INTERNAL       ; d102                                                                                ; -               ; -                         ;
-; SUPPRESS_DA_RULE_INTERNAL       ; S102                                                                                ; -               ; -                         ;
-; POWER_UP_LEVEL                  ; LOW                                                                                 ; -               ; p0addr                    ;
-; SUPPRESS_DA_RULE_INTERNAL       ; r105                                                                                ; -               ; rdptr_g                   ;
-; SUPPRESS_DA_RULE_INTERNAL       ; s102                                                                                ; -               ; wrptr_g                   ;
-; CUT                             ; ON                                                                                  ; rdptr_g         ; ws_dgrp|dffpipe17|dffe18a ;
-; SDC_STATEMENT                   ; set_false_path -from *rdptr_g* -to *ws_dgrp|dffpipe_se9:dffpipe17|dffe18a*          ; -               ; -                         ;
-; CUT                             ; ON                                                                                  ; delayed_wrptr_g ; rs_dgwp|dffpipe14|dffe15a ;
-; SDC_STATEMENT                   ; set_false_path -from *delayed_wrptr_g* -to *rs_dgwp|dffpipe_re9:dffpipe14|dffe15a*  ; -               ; -                         ;
-+---------------------------------+-------------------------------------------------------------------------------------+-----------------+---------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|a_graycounter_q96:rdptr_g1p ;
-+----------------+-------+------+---------------------------------------------------------------------------------------------------------------------+
-; Assignment     ; Value ; From ; To                                                                                                                  ;
-+----------------+-------+------+---------------------------------------------------------------------------------------------------------------------+
-; POWER_UP_LEVEL ; HIGH  ; -    ; sub_parity6a0                                                                                                       ;
-; POWER_UP_LEVEL ; LOW   ; -    ; parity5                                                                                                             ;
-+----------------+-------+------+---------------------------------------------------------------------------------------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|a_graycounter_ggc:wrptr_g1p ;
-+---------------------------+-------+------+----------------------------------------------------------------------------------------------------------+
-; Assignment                ; Value ; From ; To                                                                                                       ;
-+---------------------------+-------+------+----------------------------------------------------------------------------------------------------------+
-; SUPPRESS_DA_RULE_INTERNAL ; s102  ; -    ; -                                                                                                        ;
-; POWER_UP_LEVEL            ; HIGH  ; -    ; sub_parity9a0                                                                                            ;
-; POWER_UP_LEVEL            ; LOW   ; -    ; parity8                                                                                                  ;
-+---------------------------+-------+------+----------------------------------------------------------------------------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|altsyncram_qo61:fifo_ram ;
-+---------------------------------+--------------------+------+------------------------------------------------------------------------------------+
-; Assignment                      ; Value              ; From ; To                                                                                 ;
-+---------------------------------+--------------------+------+------------------------------------------------------------------------------------+
-; SUPPRESS_DA_RULE_INTERNAL       ; r105               ; -    ; -                                                                                  ;
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                  ;
-+---------------------------------+--------------------+------+------------------------------------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|altsyncram_qo61:fifo_ram|altsyncram_6ve1:altsyncram11 ;
-+---------------------------------+--------------------+------+-----------------------------------------------------------------------------------------------------------------+
-; Assignment                      ; Value              ; From ; To                                                                                                              ;
-+---------------------------------+--------------------+------+-----------------------------------------------------------------------------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                                               ;
-+---------------------------------+--------------------+------+-----------------------------------------------------------------------------------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|dffpipe_ngh:rdaclr ;
-+---------------------------------+-------+------+-------------------------------------------------------------------------------------------+
-; Assignment                      ; Value ; From ; To                                                                                        ;
-+---------------------------------+-------+------+-------------------------------------------------------------------------------------------+
-; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                                                                         ;
-; PRESERVE_REGISTER               ; ON    ; -    ; -                                                                                         ;
-; SUPPRESS_DA_RULE_INTERNAL       ; c106  ; -    ; -                                                                                         ;
-; SUPPRESS_DA_RULE_INTERNAL       ; r105  ; -    ; -                                                                                         ;
-+---------------------------------+-------+------+-------------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|alt_synch_pipe_tdb:rs_dgwp ;
-+---------------------------+-------+------+---------------------------------------------------------------------------------------------------------+
-; Assignment                ; Value ; From ; To                                                                                                      ;
-+---------------------------+-------+------+---------------------------------------------------------------------------------------------------------+
-; X_ON_VIOLATION_OPTION     ; OFF   ; -    ; -                                                                                                       ;
-; SUPPRESS_DA_RULE_INTERNAL ; r105  ; -    ; -                                                                                                       ;
-+---------------------------+-------+------+---------------------------------------------------------------------------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|alt_synch_pipe_tdb:rs_dgwp|dffpipe_re9:dffpipe14 ;
-+---------------------------------+-------+------+-------------------------------------------------------------------------------------------------------------------------+
-; Assignment                      ; Value ; From ; To                                                                                                                      ;
-+---------------------------------+-------+------+-------------------------------------------------------------------------------------------------------------------------+
-; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                                                                                                       ;
-+---------------------------------+-------+------+-------------------------------------------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|alt_synch_pipe_1e8:ws_dgrp ;
-+-----------------------+-------+------+-------------------------------------------------------------------------------------------------------------+
-; Assignment            ; Value ; From ; To                                                                                                          ;
-+-----------------------+-------+------+-------------------------------------------------------------------------------------------------------------+
-; X_ON_VIOLATION_OPTION ; OFF   ; -    ; -                                                                                                           ;
-+-----------------------+-------+------+-------------------------------------------------------------------------------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|alt_synch_pipe_1e8:ws_dgrp|dffpipe_se9:dffpipe17 ;
-+---------------------------------+-------+------+-------------------------------------------------------------------------------------------------------------------------+
-; Assignment                      ; Value ; From ; To                                                                                                                      ;
-+---------------------------------+-------+------+-------------------------------------------------------------------------------------------------------------------------+
-; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                                                                                                       ;
-+---------------------------------+-------+------+-------------------------------------------------------------------------------------------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component ;
-+--------------------------+-------------+---------------------------------------------------------------------------+
-; Parameter Name           ; Value       ; Type                                                                      ;
-+--------------------------+-------------+---------------------------------------------------------------------------+
-; ACF_DISABLE_MLAB_RAM_USE ; FALSE       ; Untyped                                                                   ;
-; ADD_RAM_OUTPUT_REGISTER  ; OFF         ; Untyped                                                                   ;
-; ADD_USEDW_MSB_BIT        ; OFF         ; Untyped                                                                   ;
-; CLOCKS_ARE_SYNCHRONIZED  ; FALSE       ; Untyped                                                                   ;
-; DELAY_RDUSEDW            ; 1           ; Untyped                                                                   ;
-; DELAY_WRUSEDW            ; 1           ; Untyped                                                                   ;
-; LPM_NUMWORDS             ; 4096        ; Signed Integer                                                            ;
-; LPM_SHOWAHEAD            ; OFF         ; Untyped                                                                   ;
-; LPM_WIDTH                ; 4           ; Signed Integer                                                            ;
-; LPM_WIDTH_R              ; 8           ; Signed Integer                                                            ;
-; LPM_WIDTHU               ; 12          ; Signed Integer                                                            ;
-; LPM_WIDTHU_R             ; 11          ; Signed Integer                                                            ;
-; MAXIMIZE_SPEED           ; 5           ; Untyped                                                                   ;
-; OVERFLOW_CHECKING        ; ON          ; Untyped                                                                   ;
-; RAM_BLOCK_TYPE           ; AUTO        ; Untyped                                                                   ;
-; RDSYNC_DELAYPIPE         ; 4           ; Signed Integer                                                            ;
-; UNDERFLOW_CHECKING       ; ON          ; Untyped                                                                   ;
-; USE_EAB                  ; ON          ; Untyped                                                                   ;
-; WRITE_ACLR_SYNCH         ; OFF         ; Untyped                                                                   ;
-; WRSYNC_DELAYPIPE         ; 4           ; Signed Integer                                                            ;
-; CBXI_PARAMETER           ; dcfifo_30i1 ; Untyped                                                                   ;
-+--------------------------+-------------+---------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LengthCounter:LengthCounter_inst|lpm_counter:lpm_counter_component ;
++------------------------+-------------+--------------------------------------------------------------------------+
+; Parameter Name         ; Value       ; Type                                                                     ;
++------------------------+-------------+--------------------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                                               ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                                             ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                                             ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                                           ;
+; LPM_WIDTH              ; 13          ; Signed Integer                                                           ;
+; LPM_DIRECTION          ; UP          ; Untyped                                                                  ;
+; LPM_MODULUS            ; 0           ; Untyped                                                                  ;
+; LPM_AVALUE             ; UNUSED      ; Untyped                                                                  ;
+; LPM_SVALUE             ; UNUSED      ; Untyped                                                                  ;
+; LPM_PORT_UPDOWN        ; PORT_UNUSED ; Untyped                                                                  ;
+; DEVICE_FAMILY          ; Cyclone II  ; Untyped                                                                  ;
+; CARRY_CHAIN            ; MANUAL      ; Untyped                                                                  ;
+; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH                                                       ;
+; NOT_GATE_PUSH_BACK     ; ON          ; NOT_GATE_PUSH_BACK                                                       ;
+; CARRY_CNT_EN           ; SMART       ; Untyped                                                                  ;
+; LABWIDE_SCLR           ; ON          ; Untyped                                                                  ;
+; USE_NEW_VERSION        ; TRUE        ; Untyped                                                                  ;
+; CBXI_PARAMETER         ; cntr_l7j    ; Untyped                                                                  ;
++------------------------+-------------+--------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "LengthCounter:LengthCounter_inst"                                                                                ;
++------+--------+------------------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity         ; Details                                                                                                  ;
++------+--------+------------------+----------------------------------------------------------------------------------------------------------+
+; q    ; Output ; Critical Warning ; Can't connect array with 12 elements in array dimension 1 to port with 13 elements in the same dimension ;
++------+--------+------------------+----------------------------------------------------------------------------------------------------------+
 
 
 +-------------------------------+
@@ -428,15 +199,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Thu Apr 16 03:00:14 2015
+    Info: Processing started: Thu Apr 16 03:57:06 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Receive_Port -c Receive_Port
-Info: Found 2 design units, including 1 entities, in source file /users/gift nyikayaramba/documents/academic/ece 559/ece-559/mii_to_rcv_restored/cntr12bit.vhd
+Info: Found 2 design units, including 1 entities, in source file /users/negatu/desktop/spring 2015 - dawning/ece-559/mii_to_rcv_restored/cntr12bit.vhd
     Info: Found design unit 1: cntr12bit-SYN
     Info: Found entity 1: cntr12bit
-Info: Found 2 design units, including 1 entities, in source file /users/gift nyikayaramba/documents/academic/ece 559/ece-559/mii_to_rcv_restored/framemem.vhd
+Info: Found 2 design units, including 1 entities, in source file /users/negatu/desktop/spring 2015 - dawning/ece-559/mii_to_rcv_restored/framemem.vhd
     Info: Found design unit 1: framemem-SYN
     Info: Found entity 1: framemem
-Info: Found 2 design units, including 1 entities, in source file /users/gift nyikayaramba/documents/academic/ece 559/ece-559/mii_to_rcv_restored/mii_to_rcv.vhd
+Info: Found 2 design units, including 1 entities, in source file /users/negatu/desktop/spring 2015 - dawning/ece-559/mii_to_rcv_restored/mii_to_rcv.vhd
     Info: Found design unit 1: MII_to_RCV-test_bench
     Info: Found entity 1: MII_to_RCV
 Info: Found 2 design units, including 1 entities, in source file sequencenumbercounter.vhd
@@ -487,75 +258,39 @@ Info: Found 2 design units, including 1 entities, in source file receive_port.vh
 Info: Found 2 design units, including 1 entities, in source file test.vhd
     Info: Found design unit 1: test-test_arch
     Info: Found entity 1: test
-Info: Found 2 design units, including 1 entities, in source file crc_computer.vhd
-    Info: Found design unit 1: crc_computer-test_arch
-    Info: Found entity 1: crc_computer
-Info: Elaborating entity "Data_Buffer" for the top level hierarchy
-Info: Elaborating entity "Data_DCFF" for hierarchy "Data_DCFF:DCFF_inst"
-Info: Elaborating entity "dcfifo_mixed_widths" for hierarchy "Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component"
-Info: Elaborated megafunction instantiation "Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component"
-Info: Instantiated megafunction "Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component" with the following parameter:
-    Info: Parameter "intended_device_family" = "Cyclone II"
-    Info: Parameter "lpm_numwords" = "4096"
-    Info: Parameter "lpm_showahead" = "OFF"
-    Info: Parameter "lpm_type" = "dcfifo"
-    Info: Parameter "lpm_width" = "4"
-    Info: Parameter "lpm_widthu" = "12"
-    Info: Parameter "lpm_widthu_r" = "11"
-    Info: Parameter "lpm_width_r" = "8"
-    Info: Parameter "overflow_checking" = "ON"
-    Info: Parameter "rdsync_delaypipe" = "4"
-    Info: Parameter "underflow_checking" = "ON"
-    Info: Parameter "use_eab" = "ON"
-    Info: Parameter "write_aclr_synch" = "OFF"
-    Info: Parameter "wrsync_delaypipe" = "4"
-Info: Found 1 design units, including 1 entities, in source file db/dcfifo_30i1.tdf
-    Info: Found entity 1: dcfifo_30i1
-Info: Elaborating entity "dcfifo_30i1" for hierarchy "Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated"
-Info: Found 1 design units, including 1 entities, in source file db/a_graycounter_q96.tdf
-    Info: Found entity 1: a_graycounter_q96
-Info: Elaborating entity "a_graycounter_q96" for hierarchy "Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|a_graycounter_q96:rdptr_g1p"
-Info: Found 1 design units, including 1 entities, in source file db/a_graycounter_ggc.tdf
-    Info: Found entity 1: a_graycounter_ggc
-Info: Elaborating entity "a_graycounter_ggc" for hierarchy "Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|a_graycounter_ggc:wrptr_g1p"
-Info: Found 1 design units, including 1 entities, in source file db/altsyncram_qo61.tdf
-    Info: Found entity 1: altsyncram_qo61
-Info: Elaborating entity "altsyncram_qo61" for hierarchy "Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|altsyncram_qo61:fifo_ram"
-Info: Found 1 design units, including 1 entities, in source file db/altsyncram_6ve1.tdf
-    Info: Found entity 1: altsyncram_6ve1
-Info: Elaborating entity "altsyncram_6ve1" for hierarchy "Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|altsyncram_qo61:fifo_ram|altsyncram_6ve1:altsyncram11"
-Info: Found 1 design units, including 1 entities, in source file db/dffpipe_ngh.tdf
-    Info: Found entity 1: dffpipe_ngh
-Info: Elaborating entity "dffpipe_ngh" for hierarchy "Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|dffpipe_ngh:rdaclr"
-Info: Found 1 design units, including 1 entities, in source file db/alt_synch_pipe_tdb.tdf
-    Info: Found entity 1: alt_synch_pipe_tdb
-Info: Elaborating entity "alt_synch_pipe_tdb" for hierarchy "Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|alt_synch_pipe_tdb:rs_dgwp"
-Info: Found 1 design units, including 1 entities, in source file db/dffpipe_re9.tdf
-    Info: Found entity 1: dffpipe_re9
-Info: Elaborating entity "dffpipe_re9" for hierarchy "Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|alt_synch_pipe_tdb:rs_dgwp|dffpipe_re9:dffpipe14"
-Info: Found 1 design units, including 1 entities, in source file db/alt_synch_pipe_1e8.tdf
-    Info: Found entity 1: alt_synch_pipe_1e8
-Info: Elaborating entity "alt_synch_pipe_1e8" for hierarchy "Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|alt_synch_pipe_1e8:ws_dgrp"
-Info: Found 1 design units, including 1 entities, in source file db/dffpipe_se9.tdf
-    Info: Found entity 1: dffpipe_se9
-Info: Elaborating entity "dffpipe_se9" for hierarchy "Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|alt_synch_pipe_1e8:ws_dgrp|dffpipe_se9:dffpipe17"
-Info: Found 1 design units, including 1 entities, in source file db/cmpr_736.tdf
-    Info: Found entity 1: cmpr_736
-Info: Elaborating entity "cmpr_736" for hierarchy "Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|cmpr_736:rdempty_eq_comp"
-Info: Found 1 design units, including 1 entities, in source file db/cntr_jvd.tdf
-    Info: Found entity 1: cntr_jvd
-Info: Elaborating entity "cntr_jvd" for hierarchy "Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|cntr_jvd:cntr_b"
-Info: Registers with preset signals will power-up high
-Info: DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
-Info: Implemented 182 device resources after synthesis - the final resource count might be different
-    Info: Implemented 9 input pins
-    Info: Implemented 10 output pins
-    Info: Implemented 159 logic cells
-    Info: Implemented 4 RAM segments
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 247 megabytes
-    Info: Processing ended: Thu Apr 16 03:00:21 2015
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:03
+Warning: Can't analyze file -- file crc_computer.vhd is missing
+Info: Found 2 design units, including 1 entities, in source file crc_compute.vhd
+    Info: Found design unit 1: crc_compute-crc_arch
+    Info: Found entity 1: crc_compute
+Info: Found 2 design units, including 1 entities, in source file lengthcountersystem.vhd
+    Info: Found design unit 1: LengthCounterSystem-combined
+    Info: Found entity 1: LengthCounterSystem
+Info: Elaborating entity "lengthcountersystem" for the top level hierarchy
+Warning (10492): VHDL Process Statement warning at lengthcountersystem.vhd(64): signal "odd_nibbles" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning: Using design file lengthcounterfsm.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: LengthCounterFSM-lengthCounterArch
+    Info: Found entity 1: LengthCounterFSM
+Info: Elaborating entity "LengthCounterFSM" for hierarchy "LengthCounterFSM:LengthCounterFSM_int"
+Warning: Using design file lengthcounter.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: lengthcounter-SYN
+    Info: Found entity 1: LengthCounter
+Info: Elaborating entity "LengthCounter" for hierarchy "LengthCounter:LengthCounter_inst"
+Info: Elaborating entity "lpm_counter" for hierarchy "LengthCounter:LengthCounter_inst|lpm_counter:lpm_counter_component"
+Info: Elaborated megafunction instantiation "LengthCounter:LengthCounter_inst|lpm_counter:lpm_counter_component"
+Info: Instantiated megafunction "LengthCounter:LengthCounter_inst|lpm_counter:lpm_counter_component" with the following parameter:
+    Info: Parameter "lpm_direction" = "UP"
+    Info: Parameter "lpm_port_updown" = "PORT_UNUSED"
+    Info: Parameter "lpm_type" = "LPM_COUNTER"
+    Info: Parameter "lpm_width" = "13"
+Info: Found 1 design units, including 1 entities, in source file db/cntr_l7j.tdf
+    Info: Found entity 1: cntr_l7j
+Info: Elaborating entity "cntr_l7j" for hierarchy "LengthCounter:LengthCounter_inst|lpm_counter:lpm_counter_component|cntr_l7j:auto_generated"
+Error: Actual width (12) of port "q" on instance "LengthCounter:LengthCounter_inst" is not compatible with the formal port width (13) declared by the instantiated entity File: C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/lengthcountersystem.vhd Line: 52
+Warning: 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Error: Quartus II Analysis & Synthesis was unsuccessful. 1 error, 5 warnings
+    Error: Peak virtual memory: 219 megabytes
+    Error: Processing ended: Thu Apr 16 03:57:07 2015
+    Error: Elapsed time: 00:00:01
+    Error: Total CPU time (on all processors): 00:00:02
 
 
