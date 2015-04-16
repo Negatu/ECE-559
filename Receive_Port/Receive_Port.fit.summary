@@ -1,16 +1,16 @@
-Fitter Status : Successful - Wed Apr 15 23:10:12 2015
+Fitter Status : Successful - Thu Apr 16 03:00:29 2015
 Quartus II Version : 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition
 Revision Name : Receive_Port
-Top-level Entity Name : crc_computer
+Top-level Entity Name : Data_Buffer
 Family : Cyclone II
 Device : EP2C15AF256C7
 Timing Models : Final
-Total logic elements : 72 / 14,448 ( < 1 % )
-    Total combinational functions : 65 / 14,448 ( < 1 % )
-    Dedicated logic registers : 58 / 14,448 ( < 1 % )
-Total registers : 58
-Total pins : 40 / 152 ( 26 % )
+Total logic elements : 146 / 14,448 ( 1 % )
+    Total combinational functions : 75 / 14,448 ( < 1 % )
+    Dedicated logic registers : 120 / 14,448 ( < 1 % )
+Total registers : 120
+Total pins : 19 / 152 ( 13 % )
 Total virtual pins : 0
-Total memory bits : 4,096 / 239,616 ( 2 % )
+Total memory bits : 16,384 / 239,616 ( 7 % )
 Embedded Multiplier 9-bit elements : 0 / 52 ( 0 % )
 Total PLLs : 0 / 4 ( 0 % )

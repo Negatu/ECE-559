@@ -7,7 +7,7 @@ ENTITY test_bench1 IS
 		input_4bit : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
 		
 		length_buffer_out_11bit : OUT STD_LOGIC_VECTOR (10 DOWNTO 0);	--going to forwarding
-		length_valid_out : OUT STD_LOGIC;	--going to forwarding
+		frame_valid_out : OUT STD_LOGIC;	--going to forwarding
 		
 		data_buffer_out_8bit : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)	--going to forwarding
 		
@@ -21,16 +21,14 @@ ARCHITECTURE tb_arch OF test_bench1 IS
 	SIGNAL check_result : STD_LOGIC;
 	SIGNAL length_valid : STD_LOGIC;
 	SIGNAL length_buffer_write_enable : STD_LOGIC;
-	SIGNAL frame_valid : STD_LOGIC_VECTOR;
-	SIGNAL frame_length : STD_LOGIC_VECTOR(11 DOWNTO 0); -- concatenation of frame valid and length
+	SIGNAL frame_valid : STD_LOGIC;
+	SIGNAL  frame_length_and_valid : STD_LOGIC_VECTOR(11 DOWNTO 0); -- concatenation of frame valid and length
 	SIGNAL data_buffer_write_enable : STD_LOGIC;
 	SIGNAL data_buffer_full : STD_LOGIC;
 	SIGNAL data_buffer_read_enable : STD_LOGIC;
-	SIGNAL data_buffer_read_clock : STD_LOGIC;
 	SIGNAL data_to_forwarding : STD_LOGIC_VECTOR(7 DOWNTO 0);
-	SIGNAL length_to_forwarding : STD_LOGIC_VECTOR(10 DOWNTO 0);
+	SIGNAL length_buffer_output : STD_LOGIC_VECTOR(11 DOWNTO 0);
 	SIGNAL length_read_enable : STD_LOGIC;
-	SIGNAL length_read_clock : STD_LOGIC;
 	SIGNAL length_buffer_full : STD_LOGIC;
 	SIGNAL length_buffer_empty : STD_LOGIC;
 	
@@ -76,7 +74,7 @@ ARCHITECTURE tb_arch OF test_bench1 IS
 	
 	COMPONENT Data_Buffer
 		PORT(
-		clk1, reset, write_enable, write_clk, read_enable, read_clk : IN STD_LOGIC;
+		reset, write_enable, write_clk, read_enable, read_clk : IN STD_LOGIC;
 		data_in_4 : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
 		read_empty, write_full : OUT STD_LOGIC;
 		data_out_8 : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
@@ -105,25 +103,24 @@ BEGIN
 	
 	
 	data_buffer_inst : Data_Buffer PORT MAP (
-		clk1 => clk25,
 		reset => reset, 
 		write_enable => data_buffer_write_enable,
 		write_clk => clk25,
 		data_in_4 => input_4bit,
 		write_full => data_buffer_full,
 		read_enable => data_buffer_read_enable,
-		read_clk => data_buffer_read_clock,
+		read_clk => clk50,
 		data_out_8 => data_to_forwarding
 	);
 
 	length_buffer_inst : Length_DCFF PORT MAP (
 		wrclk => clk25,
 		aclr => reset, 
-		data => frame_length,-- length + valid
-		wrreq => data_buffer_write_enable,
-		rdclk => length_read_clock,
+		data =>  frame_length_and_valid,
+		wrreq => length_buffer_write_enable,
+		rdclk => clk50,
 		rdreq => length_read_enable,
-		q => length_to_forwarding,
+		q	  => length_buffer_output,
 		rdempty => length_buffer_empty,
 		wrfull => length_buffer_full
 	);
@@ -134,13 +131,13 @@ BEGIN
 			CRC_rdv => CRC_rdv,
 			lengthValid => length_valid,
 			buffer_WE => length_buffer_write_enable,
-			lengthValue => frame_length (10 DOWNTO 0)
+			lengthValue =>  frame_length_and_valid (10 DOWNTO 0)
 	);
 	
 	frame_valid <= (length_valid AND check_result AND check_result_valid); 
-	frame_length(11) <= frame_valid;
-	length_buffer_out_11bit <= length_to_forwarding;	--going to forwarding
-	length_valid_out <= length_valid;	--going to forwarding
+	 frame_length_and_valid(11) <= frame_valid;
+	length_buffer_out_11bit <= length_buffer_output(10 DOWNTO 0);	--going to forwarding
+	frame_valid_out <= length_buffer_output(11);	--going to forwarding
 	data_buffer_out_8bit <= data_to_forwarding;	--going to forwarding
 
 

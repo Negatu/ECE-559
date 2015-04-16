@@ -1,8 +1,0 @@
-
-State Machine - |crc_computer|MII_to_RCV:phy_inst|y_current
-Name y_current.done y_current.run y_current.waitx y_current.wait4run y_current.reset 
-y_current.reset 0 0 0 0 0 
-y_current.wait4run 0 0 0 1 1 
-y_current.waitx 0 0 1 0 1 
-y_current.run 0 1 0 0 1 
-y_current.done 1 0 0 0 1 

@@ -5,41 +5,51 @@ Timing Analyzer Summary
 Type           : Worst-case tsu
 Slack          : N/A
 Required Time  : None
-Actual Time    : 5.592 ns
-From           : comp_en
-To             : crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[3]
+Actual Time    : 5.643 ns
+From           : write_enable
+To             : Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|altsyncram_qo61:fifo_ram|altsyncram_6ve1:altsyncram11|ram_block12a1~portb_address_reg11
 From Clock     : --
-To Clock       : clock25
+To Clock       : write_clk
 Failed Paths   : 0
 
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 8.675 ns
-From           : MII_to_RCV:phy_inst|framemem:frame_test_mem|altsyncram:altsyncram_component|altsyncram_8081:auto_generated|q_a[3]
-To             : out_input[3]
-From Clock     : clock25
+Actual Time    : 13.551 ns
+From           : Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|rdptr_g[7]
+To             : read_empty
+From Clock     : read_clk
 To Clock       : --
 Failed Paths   : 0
 
 Type           : Worst-case th
 Slack          : N/A
 Required Time  : None
-Actual Time    : -3.525 ns
-From           : init
-To             : crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[21]
+Actual Time    : -2.035 ns
+From           : read_enable
+To             : Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|rdptr_g[4]
 From Clock     : --
-To Clock       : clock25
+To Clock       : read_clk
 Failed Paths   : 0
 
-Type           : Clock Setup: 'clock25'
+Type           : Clock Setup: 'read_clk'
 Slack          : N/A
 Required Time  : None
-Actual Time    : Restricted to 216.08 MHz ( period = 4.628 ns )
-From           : MII_to_RCV:phy_inst|framemem:frame_test_mem|altsyncram:altsyncram_component|altsyncram_8081:auto_generated|ram_block1a0~porta_address_reg9
-To             : MII_to_RCV:phy_inst|framemem:frame_test_mem|altsyncram:altsyncram_component|altsyncram_8081:auto_generated|q_a[3]
-From Clock     : clock25
-To Clock       : clock25
+Actual Time    : 140.92 MHz ( period = 7.096 ns )
+From           : Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|rdptr_g[7]
+To             : Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|altsyncram_qo61:fifo_ram|altsyncram_6ve1:altsyncram11|q_a[5]
+From Clock     : read_clk
+To Clock       : read_clk
+Failed Paths   : 0
+
+Type           : Clock Setup: 'write_clk'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 159.13 MHz ( period = 6.284 ns )
+From           : Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|wrptr_g[7]
+To             : Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|altsyncram_qo61:fifo_ram|altsyncram_6ve1:altsyncram11|ram_block12a1~portb_address_reg11
+From Clock     : write_clk
+To Clock       : write_clk
 Failed Paths   : 0
 
 Type           : Total number of failed paths
