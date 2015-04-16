@@ -11,6 +11,10 @@ ENTITY test_bench1 IS
 		
 		data_buffer_out_8bit : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);	--going to forwarding
 		
+		frame_to_monitoring : OUT STD_LOGIC_VECTOR(11 DOWNTO 0); -- going to monitoring.
+		frame_available_monitoring : OUT STD_LOGIC; -- going to monitoring.
+		
+		
 		--test different outputs of test_bench1
 		test_crc_rdv : OUT STD_LOGIC;
 		test_length_value : OUT STD_LOGIC_VECTOR(10 DOWNTO 0);
@@ -100,6 +104,17 @@ ARCHITECTURE tb_arch OF test_bench1 IS
 		);
 	END COMPONENT;
 
+	COMPONENT SequenceNumberCounter IS
+	PORT
+	(
+		Clk50Mhz, FrameValid, CRV, Reset : IN STD_LOGIC;
+		PortID : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
+		
+		FrameAvailable : OUT STD_LOGIC;
+		Frame : OUT STD_LOGIC_VECTOR(11 DOWNTO 0)
+	);
+	END COMPONENT;
+
 BEGIN
 
 	sfd_fsm_inst : SFD_FSM  PORT MAP (
@@ -149,6 +164,17 @@ BEGIN
 			lengthValid => length_valid,
 			buffer_WE => length_buffer_write_enable,
 			lengthValue =>  frame_length_and_valid (10 DOWNTO 0)
+	);
+	
+	seq_counter_inst : SequenceNumberCounter PORT MAP (
+		Clk50Mhz => clk25,
+		FrameValid => frame_valid,
+		CRV => check_result_valid,
+		Reset => reset,
+		PortID => "00",
+		FrameAvailable => frame_available_monitoring,
+		Frame => frame_to_monitoring
+		
 	);
 	
 	shift_inst : shift2bit PORT MAP (

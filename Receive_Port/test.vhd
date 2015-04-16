@@ -10,6 +10,9 @@ ENTITY test IS
 		
 		data_buffer_out_8bit : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);	--going to forwarding
 		
+		frame_to_monitoring : OUT STD_LOGIC_VECTOR(11 DOWNTO 0); -- going to monitoring.
+		frame_available_monitoring : OUT STD_LOGIC; -- going to monitoring.
+		
 		test_crc_rdv : OUT STD_LOGIC;
 		test_length_value : OUT STD_LOGIC_VECTOR(10 DOWNTO 0);
 		test_length_valid : OUT STD_LOGIC;
@@ -36,6 +39,9 @@ ARCHITECTURE test_arch OF test IS
 			frame_valid_out : OUT STD_LOGIC;	
 			
 			data_buffer_out_8bit : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+			
+			frame_to_monitoring : OUT STD_LOGIC_VECTOR(11 DOWNTO 0);
+			frame_available_monitoring : OUT STD_LOGIC; 
 			
 			test_crc_rdv : OUT STD_LOGIC;
 			test_length_value : OUT STD_LOGIC_VECTOR(10 DOWNTO 0);
@@ -71,6 +77,9 @@ ARCHITECTURE test_arch OF test IS
 			frame_valid_out => frame_valid_out,	
 			
 			data_buffer_out_8bit => data_buffer_out_8bit,
+			
+			frame_to_monitoring => frame_to_monitoring,
+			frame_available_monitoring => frame_available_monitoring,
 			
 			test_crc_rdv => test_crc_rdv,
 			test_length_value => test_length_value,

@@ -1,5 +1,5 @@
 Assembler report for Receive_Port
-Thu Apr 16 10:11:02 2015
+Thu Apr 16 10:39:29 2015
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Thu Apr 16 10:11:02 2015 ;
+; Assembler Status      ; Successful - Thu Apr 16 10:39:29 2015 ;
 ; Revision Name         ; Receive_Port                          ;
 ; Top-level Entity Name ; test                                  ;
 ; Family                ; Cyclone II                            ;
@@ -95,7 +95,7 @@ applicable agreement for further details.
 +----------------+----------------------------------------------------------------------------------------------+
 ; Device         ; EP2C15AF256C7                                                                                ;
 ; JTAG usercode  ; 0xFFFFFFFF                                                                                   ;
-; Checksum       ; 0x001D6E8F                                                                                   ;
+; Checksum       ; 0x001D892D                                                                                   ;
 +----------------+----------------------------------------------------------------------------------------------+
 
 
@@ -106,7 +106,7 @@ applicable agreement for further details.
 +--------------------+------------------------------------------------------------------------------------------+
 ; Device             ; EPCS16                                                                                   ;
 ; JTAG usercode      ; 0x00000000                                                                               ;
-; Checksum           ; 0x1DD4B50C                                                                               ;
+; Checksum           ; 0x1DD3448B                                                                               ;
 ; Compression Ratio  ; 3                                                                                        ;
 +--------------------+------------------------------------------------------------------------------------------+
 
@@ -117,14 +117,14 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II Assembler
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Thu Apr 16 10:11:00 2015
+    Info: Processing started: Thu Apr 16 10:39:27 2015
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off Receive_Port -c Receive_Port
 Info: Writing out detailed assembly data for power analysis
 Info: Assembler is generating device programming files
 Info: Quartus II Assembler was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 213 megabytes
-    Info: Processing ended: Thu Apr 16 10:11:02 2015
+    Info: Processing ended: Thu Apr 16 10:39:29 2015
     Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Total CPU time (on all processors): 00:00:02
 
 

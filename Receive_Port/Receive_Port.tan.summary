@@ -5,9 +5,9 @@ Timing Analyzer Summary
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 11.248 ns
+Actual Time    : 10.605 ns
 From           : test_bench1:test_bench_inst|LengthCounterSystem:length_counter_sys_inst|LengthCounter:LengthCounter_inst|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|safe_q[8]
-To             : test_frame_valid
+To             : test_length_valid
 From Clock     : clock25
 To Clock       : --
 Failed Paths   : 0
