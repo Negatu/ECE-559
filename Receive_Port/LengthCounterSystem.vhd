@@ -59,7 +59,7 @@ architecture combined of LengthCounterSystem is
 	--check length vlidity
 	PROCESS(int_lengthValue)
 	BEGIN
-		IF (int_lengthValue < "000001000000") or (int_lengthValue > "010111101110") THEN
+		IF ((q(0)='1') or int_lengthValue < "000001000000") or (int_lengthValue > "010111101110") THEN
 			lengthValid <= '0';
 		ELSE lengthValid <= '1';
 		END IF;

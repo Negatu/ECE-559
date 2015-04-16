@@ -21,7 +21,7 @@ ARCHITECTURE tb_arch OF test_bench1 IS
 	SIGNAL check_result : STD_LOGIC;
 	SIGNAL length_valid : STD_LOGIC;
 	SIGNAL length_buffer_write_enable : STD_LOGIC;
-	SIGNAL frame_length : STD_LOGIC_VECTOR(10 DOWNTO 0);
+	SIGNAL frame_length : STD_LOGIC_VECTOR(11 DOWNTO 0);
 	SIGNAL data_buffer_write_enable : STD_LOGIC;
 	SIGNAL data_buffer_full : STD_LOGIC;
 	SIGNAL data_buffer_read_enable : STD_LOGIC;

@@ -43,12 +43,12 @@ ENTITY Length_DCFF IS
 	PORT
 	(
 		aclr		: IN STD_LOGIC  := '0';
-		data		: IN STD_LOGIC_VECTOR (10 DOWNTO 0);
+		data		: IN STD_LOGIC_VECTOR (11 DOWNTO 0);
 		rdclk		: IN STD_LOGIC ;
 		rdreq		: IN STD_LOGIC ;
 		wrclk		: IN STD_LOGIC ;
 		wrreq		: IN STD_LOGIC ;
-		q		: OUT STD_LOGIC_VECTOR (10 DOWNTO 0);
+		q		: OUT STD_LOGIC_VECTOR (11 DOWNTO 0);
 		rdempty		: OUT STD_LOGIC ;
 		wrfull		: OUT STD_LOGIC 
 	);
@@ -59,7 +59,7 @@ ARCHITECTURE SYN OF length_dcff IS
 
 	SIGNAL sub_wire0	: STD_LOGIC ;
 	SIGNAL sub_wire1	: STD_LOGIC ;
-	SIGNAL sub_wire2	: STD_LOGIC_VECTOR (10 DOWNTO 0);
+	SIGNAL sub_wire2	: STD_LOGIC_VECTOR (11 DOWNTO 0);
 
 
 
@@ -85,25 +85,25 @@ ARCHITECTURE SYN OF length_dcff IS
 			aclr	: IN STD_LOGIC ;
 			wrfull	: OUT STD_LOGIC ;
 			rdclk	: IN STD_LOGIC ;
-			q	: OUT STD_LOGIC_VECTOR (10 DOWNTO 0);
+			q	: OUT STD_LOGIC_VECTOR (11 DOWNTO 0);
 			wrreq	: IN STD_LOGIC ;
-			data	: IN STD_LOGIC_VECTOR (10 DOWNTO 0)
+			data	: IN STD_LOGIC_VECTOR (11 DOWNTO 0)
 	);
 	END COMPONENT;
 
 BEGIN
 	rdempty    <= sub_wire0;
 	wrfull    <= sub_wire1;
-	q    <= sub_wire2(10 DOWNTO 0);
+	q    <= sub_wire2(11 DOWNTO 0);
 
 	dcfifo_component : dcfifo
 	GENERIC MAP (
 		intended_device_family => "Cyclone II",
-		lpm_numwords => 64,
+		lpm_numwords => 32,
 		lpm_showahead => "OFF",
 		lpm_type => "dcfifo",
-		lpm_width => 11,
-		lpm_widthu => 6,
+		lpm_width => 12,
+		lpm_widthu => 5,
 		overflow_checking => "ON",
 		rdsync_delaypipe => 4,
 		underflow_checking => "ON",
@@ -136,7 +136,7 @@ END SYN;
 -- Retrieval info: PRIVATE: AlmostFullThr NUMERIC "-1"
 -- Retrieval info: PRIVATE: CLOCKS_ARE_SYNCHRONIZED NUMERIC "0"
 -- Retrieval info: PRIVATE: Clock NUMERIC "4"
--- Retrieval info: PRIVATE: Depth NUMERIC "64"
+-- Retrieval info: PRIVATE: Depth NUMERIC "32"
 -- Retrieval info: PRIVATE: Empty NUMERIC "1"
 -- Retrieval info: PRIVATE: Full NUMERIC "1"
 -- Retrieval info: PRIVATE: INTENDED_DEVICE_FAMILY STRING "Cyclone II"
@@ -149,11 +149,11 @@ END SYN;
 -- Retrieval info: PRIVATE: SYNTH_WRAPPER_GEN_POSTFIX STRING "0"
 -- Retrieval info: PRIVATE: UNDERFLOW_CHECKING NUMERIC "0"
 -- Retrieval info: PRIVATE: UsedW NUMERIC "1"
--- Retrieval info: PRIVATE: Width NUMERIC "11"
+-- Retrieval info: PRIVATE: Width NUMERIC "12"
 -- Retrieval info: PRIVATE: dc_aclr NUMERIC "1"
 -- Retrieval info: PRIVATE: diff_widths NUMERIC "0"
 -- Retrieval info: PRIVATE: msb_usedw NUMERIC "0"
--- Retrieval info: PRIVATE: output_width NUMERIC "11"
+-- Retrieval info: PRIVATE: output_width NUMERIC "12"
 -- Retrieval info: PRIVATE: rsEmpty NUMERIC "1"
 -- Retrieval info: PRIVATE: rsFull NUMERIC "0"
 -- Retrieval info: PRIVATE: rsUsedW NUMERIC "0"
@@ -163,11 +163,11 @@ END SYN;
 -- Retrieval info: PRIVATE: wsFull NUMERIC "1"
 -- Retrieval info: PRIVATE: wsUsedW NUMERIC "0"
 -- Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "Cyclone II"
--- Retrieval info: CONSTANT: LPM_NUMWORDS NUMERIC "64"
+-- Retrieval info: CONSTANT: LPM_NUMWORDS NUMERIC "32"
 -- Retrieval info: CONSTANT: LPM_SHOWAHEAD STRING "OFF"
 -- Retrieval info: CONSTANT: LPM_TYPE STRING "dcfifo"
--- Retrieval info: CONSTANT: LPM_WIDTH NUMERIC "11"
--- Retrieval info: CONSTANT: LPM_WIDTHU NUMERIC "6"
+-- Retrieval info: CONSTANT: LPM_WIDTH NUMERIC "12"
+-- Retrieval info: CONSTANT: LPM_WIDTHU NUMERIC "5"
 -- Retrieval info: CONSTANT: OVERFLOW_CHECKING STRING "ON"
 -- Retrieval info: CONSTANT: RDSYNC_DELAYPIPE NUMERIC "4"
 -- Retrieval info: CONSTANT: UNDERFLOW_CHECKING STRING "ON"
@@ -175,16 +175,16 @@ END SYN;
 -- Retrieval info: CONSTANT: WRITE_ACLR_SYNCH STRING "OFF"
 -- Retrieval info: CONSTANT: WRSYNC_DELAYPIPE NUMERIC "4"
 -- Retrieval info: USED_PORT: aclr 0 0 0 0 INPUT GND aclr
--- Retrieval info: USED_PORT: data 0 0 11 0 INPUT NODEFVAL data[10..0]
--- Retrieval info: USED_PORT: q 0 0 11 0 OUTPUT NODEFVAL q[10..0]
+-- Retrieval info: USED_PORT: data 0 0 12 0 INPUT NODEFVAL data[11..0]
+-- Retrieval info: USED_PORT: q 0 0 12 0 OUTPUT NODEFVAL q[11..0]
 -- Retrieval info: USED_PORT: rdclk 0 0 0 0 INPUT NODEFVAL rdclk
 -- Retrieval info: USED_PORT: rdempty 0 0 0 0 OUTPUT NODEFVAL rdempty
 -- Retrieval info: USED_PORT: rdreq 0 0 0 0 INPUT NODEFVAL rdreq
 -- Retrieval info: USED_PORT: wrclk 0 0 0 0 INPUT NODEFVAL wrclk
 -- Retrieval info: USED_PORT: wrfull 0 0 0 0 OUTPUT NODEFVAL wrfull
 -- Retrieval info: USED_PORT: wrreq 0 0 0 0 INPUT NODEFVAL wrreq
--- Retrieval info: CONNECT: @data 0 0 11 0 data 0 0 11 0
--- Retrieval info: CONNECT: q 0 0 11 0 @q 0 0 11 0
+-- Retrieval info: CONNECT: @data 0 0 12 0 data 0 0 12 0
+-- Retrieval info: CONNECT: q 0 0 12 0 @q 0 0 12 0
 -- Retrieval info: CONNECT: @wrreq 0 0 0 0 wrreq 0 0 0 0
 -- Retrieval info: CONNECT: @rdreq 0 0 0 0 rdreq 0 0 0 0
 -- Retrieval info: CONNECT: @rdclk 0 0 0 0 rdclk 0 0 0 0
