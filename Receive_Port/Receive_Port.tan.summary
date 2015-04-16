@@ -5,42 +5,62 @@ Timing Analyzer Summary
 Type           : Worst-case tsu
 Slack          : N/A
 Required Time  : None
-Actual Time    : 5.592 ns
-From           : comp_en
-To             : crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[3]
+Actual Time    : 5.821 ns
+From           : input_4bit[0]
+To             : CRC_System:crc_system_inst|crc32x4r:crc32x4r_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[7]
 From Clock     : --
-To Clock       : clock25
+To Clock       : clk25
 Failed Paths   : 0
 
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 8.675 ns
-From           : MII_to_RCV:phy_inst|framemem:frame_test_mem|altsyncram:altsyncram_component|altsyncram_e781:auto_generated|q_a[3]
-To             : out_input[3]
-From Clock     : clock25
+Actual Time    : 9.154 ns
+From           : Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_ksh1:auto_generated|altsyncram_ro61:fifo_ram|q_b[11]
+To             : frame_valid_out
+From Clock     : clk50
 To Clock       : --
 Failed Paths   : 0
 
 Type           : Worst-case th
 Slack          : N/A
 Required Time  : None
-Actual Time    : -3.525 ns
-From           : init
-To             : crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component|dffs[21]
+Actual Time    : 1.321 ns
+From           : rdv
+To             : SFD_FSM:sfd_fsm_inst|y_next.A_79
 From Clock     : --
-To Clock       : clock25
+To Clock       : clk25
 Failed Paths   : 0
 
-Type           : Clock Setup: 'clock25'
+Type           : Clock Setup: 'clk25'
 Slack          : N/A
 Required Time  : None
-Actual Time    : Restricted to 216.08 MHz ( period = 4.628 ns )
-From           : MII_to_RCV:phy_inst|framemem:frame_test_mem|altsyncram:altsyncram_component|altsyncram_e781:auto_generated|ram_block1a0~porta_address_reg9
-To             : MII_to_RCV:phy_inst|framemem:frame_test_mem|altsyncram:altsyncram_component|altsyncram_e781:auto_generated|q_a[3]
-From Clock     : clock25
-To Clock       : clock25
+Actual Time    : 89.48 MHz ( period = 11.176 ns )
+From           : SFD_FSM:sfd_fsm_inst|y_next.C_64
+To             : SFD_FSM:sfd_fsm_inst|y_current.C
+From Clock     : clk25
+To Clock       : clk25
 Failed Paths   : 0
+
+Type           : Clock Setup: 'clk50'
+Slack          : N/A
+Required Time  : None
+Actual Time    : Restricted to 195.01 MHz ( period = 5.128 ns )
+From           : Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_ksh1:auto_generated|altsyncram_ro61:fifo_ram|ram_block14a0~portb_address_reg4
+To             : Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_ksh1:auto_generated|altsyncram_ro61:fifo_ram|q_b[11]
+From Clock     : clk50
+To Clock       : clk50
+Failed Paths   : 0
+
+Type           : Clock Hold: 'clk25'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : SFD_FSM:sfd_fsm_inst|y_current.C
+To             : SFD_FSM:sfd_fsm_inst|y_next.A_79
+From Clock     : clk25
+To Clock       : clk25
+Failed Paths   : 4
 
 Type           : Total number of failed paths
 Slack          : 
@@ -50,7 +70,7 @@ From           :
 To             : 
 From Clock     : 
 To Clock       : 
-Failed Paths   : 0
+Failed Paths   : 4
 
 --------------------------------------------------------------------------------------
 

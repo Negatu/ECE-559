@@ -20,7 +20,7 @@ VHSM_ON
 -- Start VHDL Libraries --
 -- End VHDL Libraries --
 # entity
-CRC_FSM
+test_bench1
 # storage
 db|Receive_Port.(0).cnf
 db|Receive_Port.(0).cnf
@@ -30,8 +30,8 @@ ON
 }
 # case_insensitive
 # source_file
-crc_fsm.vhd
-c6d65c5cc99223b6801bedf067c7d893
+test_bench1.vhd
+a9fcf67068e82398dc2ed342e0969
 5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -43,6 +43,48 @@ ON
 AUTO_ROM_RECOGNITION
 ON
 }
+# hierarchies {
+|
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+SFD_FSM
+# storage
+db|Receive_Port.(1).cnf
+db|Receive_Port.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+sfd_fsm.vhd
+1045d54212264452afb36cb4b454e5df
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(datain)
+3 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+SFD_FSM:sfd_fsm_inst
+}
 # lmf
 |altera|91sp2|quartus|lmf|maxplus2.lmf
 a36c8ec425c8a2589af98b2d4daabc3
@@ -52,8 +94,8 @@ a36c8ec425c8a2589af98b2d4daabc3
 # entity
 CRC_System
 # storage
-db|Receive_Port.(1).cnf
-db|Receive_Port.(1).cnf
+db|Receive_Port.(2).cnf
+db|Receive_Port.(2).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
@@ -73,6 +115,54 @@ ON
 AUTO_ROM_RECOGNITION
 ON
 }
+# user_parameter {
+ constraint(data_in_4)
+3 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+CRC_System:crc_system_inst
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+CRC_FSM
+# storage
+db|Receive_Port.(3).cnf
+db|Receive_Port.(3).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+crc_fsm.vhd
+c6d65c5cc99223b6801bedf067c7d893
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(crc_out)
+31 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+CRC_System:crc_system_inst|CRC_FSM:CRC_FSM_inst
+}
 # lmf
 |altera|91sp2|quartus|lmf|maxplus2.lmf
 a36c8ec425c8a2589af98b2d4daabc3
@@ -82,8 +172,8 @@ a36c8ec425c8a2589af98b2d4daabc3
 # entity
 crc32x4r
 # storage
-db|Receive_Port.(2).cnf
-db|Receive_Port.(2).cnf
+db|Receive_Port.(4).cnf
+db|Receive_Port.(4).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
@@ -113,6 +203,9 @@ USR
 PARAMETER_STRING
 USR
 }
+# hierarchies {
+CRC_System:crc_system_inst|crc32x4r:crc32x4r_inst
+}
 # lmf
 |altera|91sp2|quartus|lmf|maxplus2.lmf
 a36c8ec425c8a2589af98b2d4daabc3
@@ -122,8 +215,8 @@ a36c8ec425c8a2589af98b2d4daabc3
 # entity
 crcreg32
 # storage
-db|Receive_Port.(3).cnf
-db|Receive_Port.(3).cnf
+db|Receive_Port.(5).cnf
+db|Receive_Port.(5).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
@@ -153,6 +246,9 @@ USR
 PARAMETER_STRING
 USR
 }
+# hierarchies {
+CRC_System:crc_system_inst|crc32x4r:crc32x4r_inst|crcreg32:crcreg32r
+}
 # lmf
 |altera|91sp2|quartus|lmf|maxplus2.lmf
 a36c8ec425c8a2589af98b2d4daabc3
@@ -162,8 +258,8 @@ a36c8ec425c8a2589af98b2d4daabc3
 # entity
 lpm_shiftreg
 # storage
-db|Receive_Port.(4).cnf
-db|Receive_Port.(4).cnf
+db|Receive_Port.(6).cnf
+db|Receive_Port.(6).cnf
 # case_insensitive
 # source_file
 |altera|91sp2|quartus|libraries|megafunctions|lpm_shiftreg.tdf
@@ -416,14 +512,60 @@ aclr
 -1
 3
 }
+# hierarchies {
+CRC_System:crc_system_inst|crc32x4r:crc32x4r_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component
+}
+# macro_sequence
+
+# end
+# entity
+Data_Buffer
+# storage
+db|Receive_Port.(7).cnf
+db|Receive_Port.(7).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+data_buffer.vhd
+acbe8f7c3dc86c909d13add1ebba5a2d
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(data_in_4)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(data_out_8)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+Data_Buffer:data_buffer_inst
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
 # macro_sequence
 
 # end
 # entity
 Data_DCFF
 # storage
-db|Receive_Port.(6).cnf
-db|Receive_Port.(6).cnf
+db|Receive_Port.(8).cnf
+db|Receive_Port.(8).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
@@ -453,6 +595,9 @@ USR
 PARAMETER_STRING
 USR
 }
+# hierarchies {
+Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst
+}
 # lmf
 |altera|91sp2|quartus|lmf|maxplus2.lmf
 a36c8ec425c8a2589af98b2d4daabc3
@@ -462,8 +607,8 @@ a36c8ec425c8a2589af98b2d4daabc3
 # entity
 dcfifo_mixed_widths
 # storage
-db|Receive_Port.(7).cnf
-db|Receive_Port.(7).cnf
+db|Receive_Port.(9).cnf
+db|Receive_Port.(9).cnf
 # case_insensitive
 # source_file
 |altera|91sp2|quartus|libraries|megafunctions|dcfifo_mixed_widths.tdf
@@ -614,14 +759,17 @@ aclr
 -1
 3
 }
+# hierarchies {
+Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component
+}
 # macro_sequence
 
 # end
 # entity
 dcfifo_30i1
 # storage
-db|Receive_Port.(8).cnf
-db|Receive_Port.(8).cnf
+db|Receive_Port.(10).cnf
+db|Receive_Port.(10).cnf
 # case_insensitive
 # source_file
 db|dcfifo_30i1.tdf
@@ -686,14 +834,17 @@ aclr
 -1
 3
 }
+# hierarchies {
+Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated
+}
 # macro_sequence
 
 # end
 # entity
 a_graycounter_q96
 # storage
-db|Receive_Port.(9).cnf
-db|Receive_Port.(9).cnf
+db|Receive_Port.(11).cnf
+db|Receive_Port.(11).cnf
 # case_insensitive
 # source_file
 db|a_graycounter_q96.tdf
@@ -746,14 +897,17 @@ aclr
 -1
 3
 }
+# hierarchies {
+Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|a_graycounter_q96:rdptr_g1p
+}
 # macro_sequence
 
 # end
 # entity
 a_graycounter_ggc
 # storage
-db|Receive_Port.(10).cnf
-db|Receive_Port.(10).cnf
+db|Receive_Port.(12).cnf
+db|Receive_Port.(12).cnf
 # case_insensitive
 # source_file
 db|a_graycounter_ggc.tdf
@@ -806,14 +960,17 @@ aclr
 -1
 3
 }
+# hierarchies {
+Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|a_graycounter_ggc:wrptr_g1p
+}
 # macro_sequence
 
 # end
 # entity
 altsyncram_qo61
 # storage
-db|Receive_Port.(11).cnf
-db|Receive_Port.(11).cnf
+db|Receive_Port.(13).cnf
+db|Receive_Port.(13).cnf
 # case_insensitive
 # source_file
 db|altsyncram_qo61.tdf
@@ -944,14 +1101,17 @@ aclr1
 -1
 3
 }
+# hierarchies {
+Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|altsyncram_qo61:fifo_ram
+}
 # macro_sequence
 
 # end
 # entity
 altsyncram_6ve1
 # storage
-db|Receive_Port.(12).cnf
-db|Receive_Port.(12).cnf
+db|Receive_Port.(14).cnf
+db|Receive_Port.(14).cnf
 # case_insensitive
 # source_file
 db|altsyncram_6ve1.tdf
@@ -1112,14 +1272,17 @@ data_a0
 -1
 2
 }
+# hierarchies {
+Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|altsyncram_qo61:fifo_ram|altsyncram_6ve1:altsyncram11
+}
 # macro_sequence
 
 # end
 # entity
 dffpipe_ngh
 # storage
-db|Receive_Port.(13).cnf
-db|Receive_Port.(13).cnf
+db|Receive_Port.(15).cnf
+db|Receive_Port.(15).cnf
 # case_insensitive
 # source_file
 db|dffpipe_ngh.tdf
@@ -1139,14 +1302,18 @@ d0
 -1
 2
 }
+# hierarchies {
+Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|dffpipe_ngh:rdaclr
+Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_ksh1:auto_generated|dffpipe_ngh:rdaclr
+}
 # macro_sequence
 
 # end
 # entity
 alt_synch_pipe_tdb
 # storage
-db|Receive_Port.(14).cnf
-db|Receive_Port.(14).cnf
+db|Receive_Port.(16).cnf
+db|Receive_Port.(16).cnf
 # case_insensitive
 # source_file
 db|alt_synch_pipe_tdb.tdf
@@ -1232,14 +1399,17 @@ clock
 -1
 3
 }
+# hierarchies {
+Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|alt_synch_pipe_tdb:rs_dgwp
+}
 # macro_sequence
 
 # end
 # entity
 dffpipe_re9
 # storage
-db|Receive_Port.(15).cnf
-db|Receive_Port.(15).cnf
+db|Receive_Port.(17).cnf
+db|Receive_Port.(17).cnf
 # case_insensitive
 # source_file
 db|dffpipe_re9.tdf
@@ -1325,14 +1495,17 @@ clock
 -1
 3
 }
+# hierarchies {
+Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|alt_synch_pipe_tdb:rs_dgwp|dffpipe_re9:dffpipe14
+}
 # macro_sequence
 
 # end
 # entity
 alt_synch_pipe_1e8
 # storage
-db|Receive_Port.(16).cnf
-db|Receive_Port.(16).cnf
+db|Receive_Port.(18).cnf
+db|Receive_Port.(18).cnf
 # case_insensitive
 # source_file
 db|alt_synch_pipe_1e8.tdf
@@ -1418,14 +1591,17 @@ clock
 -1
 3
 }
+# hierarchies {
+Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|alt_synch_pipe_1e8:ws_dgrp
+}
 # macro_sequence
 
 # end
 # entity
 dffpipe_se9
 # storage
-db|Receive_Port.(17).cnf
-db|Receive_Port.(17).cnf
+db|Receive_Port.(19).cnf
+db|Receive_Port.(19).cnf
 # case_insensitive
 # source_file
 db|dffpipe_se9.tdf
@@ -1511,14 +1687,17 @@ clock
 -1
 3
 }
+# hierarchies {
+Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|alt_synch_pipe_1e8:ws_dgrp|dffpipe_se9:dffpipe17
+}
 # macro_sequence
 
 # end
 # entity
 cmpr_736
 # storage
-db|Receive_Port.(18).cnf
-db|Receive_Port.(18).cnf
+db|Receive_Port.(20).cnf
+db|Receive_Port.(20).cnf
 # case_insensitive
 # source_file
 db|cmpr_736.tdf
@@ -1601,14 +1780,18 @@ aeb
 -1
 3
 }
+# hierarchies {
+Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|cmpr_736:rdempty_eq_comp
+Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|cmpr_736:wrfull_eq_comp
+}
 # macro_sequence
 
 # end
 # entity
 cntr_jvd
 # storage
-db|Receive_Port.(19).cnf
-db|Receive_Port.(19).cnf
+db|Receive_Port.(21).cnf
+db|Receive_Port.(21).cnf
 # case_insensitive
 # source_file
 db|cntr_jvd.tdf
@@ -1631,1495 +1814,8 @@ aset
 -1
 3
 }
-# macro_sequence
-
-# end
-# entity
-SFD_FSM
-# storage
-db|Receive_Port.(21).cnf
-db|Receive_Port.(21).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-sfd_fsm.vhd
-e7ff38f73a8cdca1d37f9c7336c72bb
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
- constraint(datain)
-3 downto 0
-PARAMETER_STRING
-USR
-}
-# lmf
-|altera|91sp2|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
-# macro_sequence
-
-# end
-# entity
-dcfifo
-# storage
-db|Receive_Port.(23).cnf
-db|Receive_Port.(23).cnf
-# case_insensitive
-# source_file
-|altera|91sp2|quartus|libraries|megafunctions|dcfifo.tdf
-cfbc26efcc24dbca1d95391a1b8354d
-7
-# user_parameter {
-WIDTH_BYTEENA
-1
-PARAMETER_UNKNOWN
-DEF
-AUTO_CARRY_CHAINS
-ON
-AUTO_CARRY
-USR
-IGNORE_CARRY_BUFFERS
-OFF
-IGNORE_CARRY
-USR
-AUTO_CASCADE_CHAINS
-ON
-AUTO_CASCADE
-USR
-IGNORE_CASCADE_BUFFERS
-OFF
-IGNORE_CASCADE
-USR
-LPM_WIDTH
-11
-PARAMETER_SIGNED_DEC
-USR
-LPM_NUMWORDS
-64
-PARAMETER_SIGNED_DEC
-USR
-LPM_WIDTHU
-6
-PARAMETER_SIGNED_DEC
-USR
-LPM_SHOWAHEAD
-OFF
-PARAMETER_UNKNOWN
-USR
-UNDERFLOW_CHECKING
-ON
-PARAMETER_UNKNOWN
-USR
-OVERFLOW_CHECKING
-ON
-PARAMETER_UNKNOWN
-USR
-USE_EAB
-ON
-PARAMETER_UNKNOWN
-USR
-ADD_RAM_OUTPUT_REGISTER
-OFF
-PARAMETER_UNKNOWN
-DEF
-DELAY_RDUSEDW
-1
-PARAMETER_UNKNOWN
-DEF
-DELAY_WRUSEDW
-1
-PARAMETER_UNKNOWN
-DEF
-RDSYNC_DELAYPIPE
-4
-PARAMETER_SIGNED_DEC
-USR
-WRSYNC_DELAYPIPE
-4
-PARAMETER_SIGNED_DEC
-USR
-CLOCKS_ARE_SYNCHRONIZED
-FALSE
-PARAMETER_UNKNOWN
-DEF
-MAXIMIZE_SPEED
-5
-PARAMETER_UNKNOWN
-DEF
-DEVICE_FAMILY
-Cyclone II
-PARAMETER_UNKNOWN
-USR
-ADD_USEDW_MSB_BIT
-OFF
-PARAMETER_UNKNOWN
-DEF
-WRITE_ACLR_SYNCH
-OFF
-PARAMETER_UNKNOWN
-USR
-CBXI_PARAMETER
-dcfifo_psh1
-PARAMETER_UNKNOWN
-USR
-}
-# used_port {
-wrreq
--1
-3
-wrfull
--1
-3
-wrclk
--1
-3
-rdreq
--1
-3
-rdempty
--1
-3
-rdclk
--1
-3
-q9
--1
-3
-q8
--1
-3
-q7
--1
-3
-q6
--1
-3
-q5
--1
-3
-q4
--1
-3
-q3
--1
-3
-q2
--1
-3
-q10
--1
-3
-q1
--1
-3
-q0
--1
-3
-data9
--1
-3
-data8
--1
-3
-data7
--1
-3
-data6
--1
-3
-data5
--1
-3
-data4
--1
-3
-data3
--1
-3
-data2
--1
-3
-data10
--1
-3
-data1
--1
-3
-data0
--1
-3
-aclr
--1
-3
-}
-# macro_sequence
-
-# end
-# entity
-dcfifo_psh1
-# storage
-db|Receive_Port.(24).cnf
-db|Receive_Port.(24).cnf
-# case_insensitive
-# source_file
-db|dcfifo_psh1.tdf
-2394419cafab5a82736ca321dfe557
-7
-# used_port {
-wrreq
--1
-3
-wrfull
--1
-3
-wrclk
--1
-3
-rdreq
--1
-3
-rdempty
--1
-3
-rdclk
--1
-3
-q9
--1
-3
-q8
--1
-3
-q7
--1
-3
-q6
--1
-3
-q5
--1
-3
-q4
--1
-3
-q3
--1
-3
-q2
--1
-3
-q10
--1
-3
-q1
--1
-3
-q0
--1
-3
-data9
--1
-3
-data8
--1
-3
-data7
--1
-3
-data6
--1
-3
-data5
--1
-3
-data4
--1
-3
-data3
--1
-3
-data2
--1
-3
-data10
--1
-3
-data1
--1
-3
-data0
--1
-3
-aclr
--1
-3
-}
-# macro_sequence
-
-# end
-# entity
-a_graycounter_e86
-# storage
-db|Receive_Port.(25).cnf
-db|Receive_Port.(25).cnf
-# case_insensitive
-# source_file
-db|a_graycounter_e86.tdf
-ef4c29729c75693077c7584ad391e1b8
-7
-# used_port {
-q6
--1
-3
-q5
--1
-3
-q4
--1
-3
-q3
--1
-3
-q2
--1
-3
-q1
--1
-3
-q0
--1
-3
-cnt_en
--1
-3
-clock
--1
-3
-aclr
--1
-3
-}
-# macro_sequence
-
-# end
-# entity
-a_graycounter_5fc
-# storage
-db|Receive_Port.(26).cnf
-db|Receive_Port.(26).cnf
-# case_insensitive
-# source_file
-db|a_graycounter_5fc.tdf
-8c32ff20c3b2dac1ab898669f79a23e1
-7
-# used_port {
-cnt_en
--1
-3
-clock
--1
-3
-aclr
--1
-3
-}
-# macro_sequence
-
-# end
-# entity
-a_graycounter_4fc
-# storage
-db|Receive_Port.(27).cnf
-db|Receive_Port.(27).cnf
-# case_insensitive
-# source_file
-db|a_graycounter_4fc.tdf
-4570f24e31e99bbd3b68a7f04dd6b7a9
-7
-# used_port {
-q6
--1
-3
-q5
--1
-3
-q4
--1
-3
-q3
--1
-3
-q2
--1
-3
-q1
--1
-3
-q0
--1
-3
-cnt_en
--1
-3
-clock
--1
-3
-aclr
--1
-3
-}
-# macro_sequence
-
-# end
-# entity
-altsyncram_po61
-# storage
-db|Receive_Port.(28).cnf
-db|Receive_Port.(28).cnf
-# case_insensitive
-# source_file
-db|altsyncram_po61.tdf
-6c2dadb32c4a8c2a9de53fea7159e11
-7
-# used_port {
-wren_a
--1
-3
-q_b9
--1
-3
-q_b8
--1
-3
-q_b7
--1
-3
-q_b6
--1
-3
-q_b5
--1
-3
-q_b4
--1
-3
-q_b3
--1
-3
-q_b2
--1
-3
-q_b10
--1
-3
-q_b1
--1
-3
-q_b0
--1
-3
-data_a9
--1
-3
-data_a8
--1
-3
-data_a7
--1
-3
-data_a6
--1
-3
-data_a5
--1
-3
-data_a4
--1
-3
-data_a3
--1
-3
-data_a2
--1
-3
-data_a10
--1
-3
-data_a1
--1
-3
-data_a0
--1
-3
-clocken1
--1
-3
-clock1
--1
-3
-clock0
--1
-3
-addressstall_b
--1
-3
-address_b5
--1
-3
-address_b4
--1
-3
-address_b3
--1
-3
-address_b2
--1
-3
-address_b1
--1
-3
-address_b0
--1
-3
-address_a5
--1
-3
-address_a4
--1
-3
-address_a3
--1
-3
-address_a2
--1
-3
-address_a1
--1
-3
-address_a0
--1
-3
-aclr1
--1
-3
-}
-# macro_sequence
-
-# end
-# entity
-alt_synch_pipe_hcb
-# storage
-db|Receive_Port.(29).cnf
-db|Receive_Port.(29).cnf
-# case_insensitive
-# source_file
-db|alt_synch_pipe_hcb.tdf
-68381359e913e73fe5fbff13cc68a869
-7
-# used_port {
-q6
--1
-3
-q5
--1
-3
-q4
--1
-3
-q3
--1
-3
-q2
--1
-3
-q1
--1
-3
-q0
--1
-3
-d6
--1
-3
-d5
--1
-3
-d4
--1
-3
-d3
--1
-3
-d2
--1
-3
-d1
--1
-3
-d0
--1
-3
-clrn
--1
-3
-clock
--1
-3
-}
-# macro_sequence
-
-# end
-# entity
-dffpipe_fd9
-# storage
-db|Receive_Port.(30).cnf
-db|Receive_Port.(30).cnf
-# case_insensitive
-# source_file
-db|dffpipe_fd9.tdf
-9fb6841177efc2bb59af92844f9812
-7
-# used_port {
-q6
--1
-3
-q5
--1
-3
-q4
--1
-3
-q3
--1
-3
-q2
--1
-3
-q1
--1
-3
-q0
--1
-3
-d6
--1
-3
-d5
--1
-3
-d4
--1
-3
-d3
--1
-3
-d2
--1
-3
-d1
--1
-3
-d0
--1
-3
-clrn
--1
-3
-clock
--1
-3
-}
-# macro_sequence
-
-# end
-# entity
-alt_synch_pipe_lc8
-# storage
-db|Receive_Port.(31).cnf
-db|Receive_Port.(31).cnf
-# case_insensitive
-# source_file
-db|alt_synch_pipe_lc8.tdf
-93ada356fcda453342ea45c476addc5
-7
-# used_port {
-q6
--1
-3
-q5
--1
-3
-q4
--1
-3
-q3
--1
-3
-q2
--1
-3
-q1
--1
-3
-q0
--1
-3
-d6
--1
-3
-d5
--1
-3
-d4
--1
-3
-d3
--1
-3
-d2
--1
-3
-d1
--1
-3
-d0
--1
-3
-clrn
--1
-3
-clock
--1
-3
-}
-# macro_sequence
-
-# end
-# entity
-dffpipe_gd9
-# storage
-db|Receive_Port.(32).cnf
-db|Receive_Port.(32).cnf
-# case_insensitive
-# source_file
-db|dffpipe_gd9.tdf
-34df847bce75e5e939573e1af8459683
-7
-# used_port {
-q6
--1
-3
-q5
--1
-3
-q4
--1
-3
-q3
--1
-3
-q2
--1
-3
-q1
--1
-3
-q0
--1
-3
-d6
--1
-3
-d5
--1
-3
-d4
--1
-3
-d3
--1
-3
-d2
--1
-3
-d1
--1
-3
-d0
--1
-3
-clrn
--1
-3
-clock
--1
-3
-}
-# macro_sequence
-
-# end
-# entity
-cmpr_r16
-# storage
-db|Receive_Port.(33).cnf
-db|Receive_Port.(33).cnf
-# case_insensitive
-# source_file
-db|cmpr_r16.tdf
-aebd1387dc8d1db9b2ca3ef942512af6
-7
-# used_port {
-datab6
--1
-3
-datab5
--1
-3
-datab4
--1
-3
-datab3
--1
-3
-datab2
--1
-3
-datab1
--1
-3
-datab0
--1
-3
-dataa6
--1
-3
-dataa5
--1
-3
-dataa4
--1
-3
-dataa3
--1
-3
-dataa2
--1
-3
-dataa1
--1
-3
-dataa0
--1
-3
-aeb
--1
-3
-}
-# macro_sequence
-
-# end
-# entity
-LengthCounterFSM
-# storage
-db|Receive_Port.(35).cnf
-db|Receive_Port.(35).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-lengthcounterfsm.vhd
-9befe7548166fa9202b6bb69657f778
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
 # hierarchies {
-LengthCounterFSM:LengthCounterFSM_int
-}
-# lmf
-|altera|91sp2|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
-# macro_sequence
-
-# end
-# entity
-lpm_counter
-# storage
-db|Receive_Port.(37).cnf
-db|Receive_Port.(37).cnf
-# case_insensitive
-# source_file
-|altera|91sp2|quartus|libraries|megafunctions|lpm_counter.tdf
-151f75e8fcf5e87e72b7df6bb2ea
-7
-# user_parameter {
-AUTO_CARRY_CHAINS
-ON
-AUTO_CARRY
-USR
-IGNORE_CARRY_BUFFERS
-OFF
-IGNORE_CARRY
-USR
-AUTO_CASCADE_CHAINS
-ON
-AUTO_CASCADE
-USR
-IGNORE_CASCADE_BUFFERS
-OFF
-IGNORE_CASCADE
-USR
-LPM_WIDTH
-12
-PARAMETER_SIGNED_DEC
-USR
-LPM_DIRECTION
-UP
-PARAMETER_UNKNOWN
-USR
-LPM_MODULUS
-0
-PARAMETER_UNKNOWN
-DEF
-LPM_AVALUE
-UNUSED
-PARAMETER_UNKNOWN
-DEF
-LPM_SVALUE
-UNUSED
-PARAMETER_UNKNOWN
-DEF
-LPM_PORT_UPDOWN
-PORT_UNUSED
-PARAMETER_UNKNOWN
-USR
-DEVICE_FAMILY
-Cyclone II
-PARAMETER_UNKNOWN
-USR
-CARRY_CHAIN
-MANUAL
-PARAMETER_UNKNOWN
-USR
-CARRY_CHAIN_LENGTH
-48
-CARRY_CHAIN_LENGTH
-USR
-NOT_GATE_PUSH_BACK
-ON
-NOT_GATE_PUSH_BACK
-USR
-CARRY_CNT_EN
-SMART
-PARAMETER_UNKNOWN
-DEF
-LABWIDE_SCLR
-ON
-PARAMETER_UNKNOWN
-DEF
-USE_NEW_VERSION
-TRUE
-PARAMETER_UNKNOWN
-DEF
-CBXI_PARAMETER
-cntr_k7j
-PARAMETER_UNKNOWN
-USR
-}
-# used_port {
-sclr
--1
-3
-q9
--1
-3
-q8
--1
-3
-q7
--1
-3
-q6
--1
-3
-q5
--1
-3
-q4
--1
-3
-q3
--1
-3
-q2
--1
-3
-q11
--1
-3
-q10
--1
-3
-q1
--1
-3
-q0
--1
-3
-cnt_en
--1
-3
-clock
--1
-3
-aclr
--1
-3
-}
-# macro_sequence
-
-# end
-# entity
-cntr_k7j
-# storage
-db|Receive_Port.(38).cnf
-db|Receive_Port.(38).cnf
-# case_insensitive
-# source_file
-db|cntr_k7j.tdf
-8127cc2b6dd61db7472d6897b41bc
-7
-# used_port {
-sclr
--1
-3
-q9
--1
-3
-q8
--1
-3
-q7
--1
-3
-q6
--1
-3
-q5
--1
-3
-q4
--1
-3
-q3
--1
-3
-q2
--1
-3
-q11
--1
-3
-q10
--1
-3
-q1
--1
-3
-q0
--1
-3
-cnt_en
--1
-3
-clock
--1
-3
-aclr
--1
-3
-}
-# macro_sequence
-
-# end
-# entity
-Receive_Port
-# storage
-db|Receive_Port.(43).cnf
-db|Receive_Port.(43).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-receive_port.vhd
-ee9732d7a76841d97b512a7f28fbee
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# lmf
-|altera|91sp2|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
-# macro_sequence
-
-# end
-# entity
-altsyncram
-# storage
-db|Receive_Port.(47).cnf
-db|Receive_Port.(47).cnf
-# case_insensitive
-# source_file
-|altera|91sp2|quartus|libraries|megafunctions|altsyncram.tdf
-67d9a3902c8a461c1d5750189e124f2
-7
-# user_parameter {
-BYTE_SIZE_BLOCK
-8
-PARAMETER_UNKNOWN
-DEF
-AUTO_CARRY_CHAINS
-ON
-AUTO_CARRY
-USR
-IGNORE_CARRY_BUFFERS
-OFF
-IGNORE_CARRY
-USR
-AUTO_CASCADE_CHAINS
-ON
-AUTO_CASCADE
-USR
-IGNORE_CASCADE_BUFFERS
-OFF
-IGNORE_CASCADE
-USR
-WIDTH_BYTEENA
-1
-PARAMETER_UNKNOWN
-DEF
-OPERATION_MODE
-ROM
-PARAMETER_UNKNOWN
-USR
-WIDTH_A
-4
-PARAMETER_SIGNED_DEC
-USR
-WIDTHAD_A
-10
-PARAMETER_SIGNED_DEC
-USR
-NUMWORDS_A
-1024
-PARAMETER_SIGNED_DEC
-USR
-OUTDATA_REG_A
-CLOCK0
-PARAMETER_UNKNOWN
-USR
-ADDRESS_ACLR_A
-NONE
-PARAMETER_UNKNOWN
-DEF
-OUTDATA_ACLR_A
-CLEAR0
-PARAMETER_UNKNOWN
-USR
-WRCONTROL_ACLR_A
-NONE
-PARAMETER_UNKNOWN
-DEF
-INDATA_ACLR_A
-NONE
-PARAMETER_UNKNOWN
-DEF
-BYTEENA_ACLR_A
-NONE
-PARAMETER_UNKNOWN
-DEF
-WIDTH_B
-1
-PARAMETER_UNKNOWN
-DEF
-WIDTHAD_B
-1
-PARAMETER_UNKNOWN
-DEF
-NUMWORDS_B
-1
-PARAMETER_UNKNOWN
-DEF
-INDATA_REG_B
-CLOCK1
-PARAMETER_UNKNOWN
-DEF
-WRCONTROL_WRADDRESS_REG_B
-CLOCK1
-PARAMETER_UNKNOWN
-DEF
-RDCONTROL_REG_B
-CLOCK1
-PARAMETER_UNKNOWN
-DEF
-ADDRESS_REG_B
-CLOCK1
-PARAMETER_UNKNOWN
-DEF
-OUTDATA_REG_B
-UNREGISTERED
-PARAMETER_UNKNOWN
-DEF
-BYTEENA_REG_B
-CLOCK1
-PARAMETER_UNKNOWN
-DEF
-INDATA_ACLR_B
-NONE
-PARAMETER_UNKNOWN
-DEF
-WRCONTROL_ACLR_B
-NONE
-PARAMETER_UNKNOWN
-DEF
-ADDRESS_ACLR_B
-NONE
-PARAMETER_UNKNOWN
-DEF
-OUTDATA_ACLR_B
-NONE
-PARAMETER_UNKNOWN
-DEF
-RDCONTROL_ACLR_B
-NONE
-PARAMETER_UNKNOWN
-DEF
-BYTEENA_ACLR_B
-NONE
-PARAMETER_UNKNOWN
-DEF
-WIDTH_BYTEENA_A
-1
-PARAMETER_SIGNED_DEC
-USR
-WIDTH_BYTEENA_B
-1
-PARAMETER_UNKNOWN
-DEF
-RAM_BLOCK_TYPE
-AUTO
-PARAMETER_UNKNOWN
-DEF
-BYTE_SIZE
-8
-PARAMETER_UNKNOWN
-DEF
-READ_DURING_WRITE_MODE_MIXED_PORTS
-DONT_CARE
-PARAMETER_UNKNOWN
-DEF
-READ_DURING_WRITE_MODE_PORT_A
-NEW_DATA_NO_NBE_READ
-PARAMETER_UNKNOWN
-DEF
-READ_DURING_WRITE_MODE_PORT_B
-NEW_DATA_NO_NBE_READ
-PARAMETER_UNKNOWN
-DEF
-INIT_FILE
-framemem.mif
-PARAMETER_UNKNOWN
-USR
-INIT_FILE_LAYOUT
-PORT_A
-PARAMETER_UNKNOWN
-DEF
-MAXIMUM_DEPTH
-0
-PARAMETER_UNKNOWN
-DEF
-CLOCK_ENABLE_INPUT_A
-BYPASS
-PARAMETER_UNKNOWN
-USR
-CLOCK_ENABLE_INPUT_B
-NORMAL
-PARAMETER_UNKNOWN
-DEF
-CLOCK_ENABLE_OUTPUT_A
-BYPASS
-PARAMETER_UNKNOWN
-USR
-CLOCK_ENABLE_OUTPUT_B
-NORMAL
-PARAMETER_UNKNOWN
-DEF
-CLOCK_ENABLE_CORE_A
-USE_INPUT_CLKEN
-PARAMETER_UNKNOWN
-DEF
-CLOCK_ENABLE_CORE_B
-USE_INPUT_CLKEN
-PARAMETER_UNKNOWN
-DEF
-ENABLE_ECC
-FALSE
-PARAMETER_UNKNOWN
-DEF
-DEVICE_FAMILY
-Cyclone II
-PARAMETER_UNKNOWN
-USR
-CBXI_PARAMETER
-altsyncram_8081
-PARAMETER_UNKNOWN
-USR
-}
-# used_port {
-q_a3
--1
-3
-q_a2
--1
-3
-q_a1
--1
-3
-q_a0
--1
-3
-clock0
--1
-3
-address_a9
--1
-3
-address_a8
--1
-3
-address_a7
--1
-3
-address_a6
--1
-3
-address_a5
--1
-3
-address_a4
--1
-3
-address_a3
--1
-3
-address_a2
--1
-3
-address_a1
--1
-3
-address_a0
--1
-3
-aclr0
--1
-3
-}
-# macro_sequence
-
-# end
-# entity
-altsyncram_8081
-# storage
-db|Receive_Port.(48).cnf
-db|Receive_Port.(48).cnf
-# case_insensitive
-# source_file
-db|altsyncram_8081.tdf
-cf7babb3098827ad868fd7e321434a
-7
-# used_port {
-q_a3
--1
-3
-q_a2
--1
-3
-q_a1
--1
-3
-q_a0
--1
-3
-clock0
--1
-3
-address_a9
--1
-3
-address_a8
--1
-3
-address_a7
--1
-3
-address_a6
--1
-3
-address_a5
--1
-3
-address_a4
--1
-3
-address_a3
--1
-3
-address_a2
--1
-3
-address_a1
--1
-3
-address_a0
--1
-3
-aclr0
--1
-3
-}
-# memory_file {
-framemem.mif
-0
+Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|cntr_jvd:cntr_b
 }
 # macro_sequence
 
@@ -3158,6 +1854,9 @@ USR
 PARAMETER_STRING
 USR
 }
+# hierarchies {
+Length_DCFF:length_buffer_inst
+}
 # lmf
 |altera|91sp2|quartus|lmf|maxplus2.lmf
 a36c8ec425c8a2589af98b2d4daabc3
@@ -3167,8 +1866,8 @@ a36c8ec425c8a2589af98b2d4daabc3
 # entity
 dcfifo
 # storage
-db|Receive_Port.(34).cnf
-db|Receive_Port.(34).cnf
+db|Receive_Port.(23).cnf
+db|Receive_Port.(23).cnf
 # case_insensitive
 # source_file
 |altera|91sp2|quartus|libraries|megafunctions|dcfifo.tdf
@@ -3363,14 +2062,17 @@ aclr
 -1
 3
 }
+# hierarchies {
+Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component
+}
 # macro_sequence
 
 # end
 # entity
 dcfifo_ksh1
 # storage
-db|Receive_Port.(36).cnf
-db|Receive_Port.(36).cnf
+db|Receive_Port.(24).cnf
+db|Receive_Port.(24).cnf
 # case_insensitive
 # source_file
 db|dcfifo_ksh1.tdf
@@ -3471,14 +2173,17 @@ aclr
 -1
 3
 }
+# hierarchies {
+Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_ksh1:auto_generated
+}
 # macro_sequence
 
 # end
 # entity
 a_graycounter_d86
 # storage
-db|Receive_Port.(45).cnf
-db|Receive_Port.(45).cnf
+db|Receive_Port.(25).cnf
+db|Receive_Port.(25).cnf
 # case_insensitive
 # source_file
 db|a_graycounter_d86.tdf
@@ -3513,14 +2218,17 @@ aclr
 -1
 3
 }
+# hierarchies {
+Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_ksh1:auto_generated|a_graycounter_d86:rdptr_g1p
+}
 # macro_sequence
 
 # end
 # entity
 a_graycounter_6fc
 # storage
-db|Receive_Port.(46).cnf
-db|Receive_Port.(46).cnf
+db|Receive_Port.(26).cnf
+db|Receive_Port.(26).cnf
 # case_insensitive
 # source_file
 db|a_graycounter_6fc.tdf
@@ -3537,14 +2245,17 @@ aclr
 -1
 3
 }
+# hierarchies {
+Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_ksh1:auto_generated|a_graycounter_6fc:wrptr_g1p
+}
 # macro_sequence
 
 # end
 # entity
 a_graycounter_3fc
 # storage
-db|Receive_Port.(49).cnf
-db|Receive_Port.(49).cnf
+db|Receive_Port.(27).cnf
+db|Receive_Port.(27).cnf
 # case_insensitive
 # source_file
 db|a_graycounter_3fc.tdf
@@ -3579,14 +2290,17 @@ aclr
 -1
 3
 }
+# hierarchies {
+Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_ksh1:auto_generated|a_graycounter_3fc:wrptr_gp
+}
 # macro_sequence
 
 # end
 # entity
 altsyncram_ro61
 # storage
-db|Receive_Port.(51).cnf
-db|Receive_Port.(51).cnf
+db|Receive_Port.(28).cnf
+db|Receive_Port.(28).cnf
 # case_insensitive
 # source_file
 db|altsyncram_ro61.tdf
@@ -3714,14 +2428,17 @@ aclr1
 -1
 3
 }
+# hierarchies {
+Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_ksh1:auto_generated|altsyncram_ro61:fifo_ram
+}
 # macro_sequence
 
 # end
 # entity
 alt_synch_pipe_gcb
 # storage
-db|Receive_Port.(52).cnf
-db|Receive_Port.(52).cnf
+db|Receive_Port.(29).cnf
+db|Receive_Port.(29).cnf
 # case_insensitive
 # source_file
 db|alt_synch_pipe_gcb.tdf
@@ -3771,14 +2488,17 @@ clock
 -1
 3
 }
+# hierarchies {
+Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_ksh1:auto_generated|alt_synch_pipe_gcb:rs_dgwp
+}
 # macro_sequence
 
 # end
 # entity
 dffpipe_ed9
 # storage
-db|Receive_Port.(53).cnf
-db|Receive_Port.(53).cnf
+db|Receive_Port.(30).cnf
+db|Receive_Port.(30).cnf
 # case_insensitive
 # source_file
 db|dffpipe_ed9.tdf
@@ -3828,14 +2548,17 @@ clock
 -1
 3
 }
+# hierarchies {
+Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_ksh1:auto_generated|alt_synch_pipe_gcb:rs_dgwp|dffpipe_ed9:dffpipe15
+}
 # macro_sequence
 
 # end
 # entity
 alt_synch_pipe_kc8
 # storage
-db|Receive_Port.(54).cnf
-db|Receive_Port.(54).cnf
+db|Receive_Port.(31).cnf
+db|Receive_Port.(31).cnf
 # case_insensitive
 # source_file
 db|alt_synch_pipe_kc8.tdf
@@ -3885,14 +2608,17 @@ clock
 -1
 3
 }
+# hierarchies {
+Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_ksh1:auto_generated|alt_synch_pipe_kc8:ws_dgrp
+}
 # macro_sequence
 
 # end
 # entity
 dffpipe_hd9
 # storage
-db|Receive_Port.(55).cnf
-db|Receive_Port.(55).cnf
+db|Receive_Port.(32).cnf
+db|Receive_Port.(32).cnf
 # case_insensitive
 # source_file
 db|dffpipe_hd9.tdf
@@ -3942,14 +2668,17 @@ clock
 -1
 3
 }
+# hierarchies {
+Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_ksh1:auto_generated|alt_synch_pipe_kc8:ws_dgrp|dffpipe_hd9:dffpipe18
+}
 # macro_sequence
 
 # end
 # entity
 cmpr_q16
 # storage
-db|Receive_Port.(56).cnf
-db|Receive_Port.(56).cnf
+db|Receive_Port.(33).cnf
+db|Receive_Port.(33).cnf
 # case_insensitive
 # source_file
 db|cmpr_q16.tdf
@@ -3996,14 +2725,18 @@ aeb
 -1
 3
 }
+# hierarchies {
+Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_ksh1:auto_generated|cmpr_q16:rdempty_eq_comp
+Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_ksh1:auto_generated|cmpr_q16:wrfull_eq_comp
+}
 # macro_sequence
 
 # end
 # entity
 LengthCounterSystem
 # storage
-db|Receive_Port.(57).cnf
-db|Receive_Port.(57).cnf
+db|Receive_Port.(34).cnf
+db|Receive_Port.(34).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
@@ -4011,7 +2744,7 @@ ON
 # case_insensitive
 # source_file
 lengthcountersystem.vhd
-8741f7aa99ccb5bc695c4f72d470e0
+5c99bf6bf2fc796734a10551893552
 5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -4029,6 +2762,42 @@ ON
 PARAMETER_STRING
 USR
 }
+# hierarchies {
+LengthCounterSystem:length_counter_sys_inst
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+LengthCounterFSM
+# storage
+db|Receive_Port.(35).cnf
+db|Receive_Port.(35).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+lengthcounterfsm.vhd
+9befe7548166fa9202b6bb69657f778
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+LengthCounterSystem:length_counter_sys_inst|LengthCounterFSM:LengthCounterFSM_int
+}
 # lmf
 |altera|91sp2|quartus|lmf|maxplus2.lmf
 a36c8ec425c8a2589af98b2d4daabc3
@@ -4038,8 +2807,8 @@ a36c8ec425c8a2589af98b2d4daabc3
 # entity
 LengthCounter
 # storage
-db|Receive_Port.(58).cnf
-db|Receive_Port.(58).cnf
+db|Receive_Port.(36).cnf
+db|Receive_Port.(36).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
@@ -4047,7 +2816,7 @@ ON
 # case_insensitive
 # source_file
 lengthcounter.vhd
-2381ad4f9ba250b921be1911603f36fc
+a2ea86b1987f72f87357d5cd7256b620
 5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -4066,7 +2835,7 @@ PARAMETER_STRING
 USR
 }
 # hierarchies {
-LengthCounter:LengthCounter_inst
+LengthCounterSystem:length_counter_sys_inst|LengthCounter:LengthCounter_inst
 }
 # lmf
 |altera|91sp2|quartus|lmf|maxplus2.lmf
@@ -4077,8 +2846,8 @@ a36c8ec425c8a2589af98b2d4daabc3
 # entity
 lpm_counter
 # storage
-db|Receive_Port.(59).cnf
-db|Receive_Port.(59).cnf
+db|Receive_Port.(37).cnf
+db|Receive_Port.(37).cnf
 # case_insensitive
 # source_file
 |altera|91sp2|quartus|libraries|megafunctions|lpm_counter.tdf
@@ -4102,7 +2871,7 @@ OFF
 IGNORE_CASCADE
 USR
 LPM_WIDTH
-13
+12
 PARAMETER_SIGNED_DEC
 USR
 LPM_DIRECTION
@@ -4154,7 +2923,7 @@ TRUE
 PARAMETER_UNKNOWN
 DEF
 CBXI_PARAMETER
-cntr_l7j
+cntr_k7j
 PARAMETER_UNKNOWN
 USR
 }
@@ -4186,9 +2955,6 @@ q3
 q2
 -1
 3
-q12
--1
-3
 q11
 -1
 3
@@ -4212,20 +2978,20 @@ aclr
 3
 }
 # hierarchies {
-LengthCounter:LengthCounter_inst|lpm_counter:lpm_counter_component
+LengthCounterSystem:length_counter_sys_inst|LengthCounter:LengthCounter_inst|lpm_counter:lpm_counter_component
 }
 # macro_sequence
 
 # end
 # entity
-cntr_l7j
+cntr_k7j
 # storage
-db|Receive_Port.(60).cnf
-db|Receive_Port.(60).cnf
+db|Receive_Port.(38).cnf
+db|Receive_Port.(38).cnf
 # case_insensitive
 # source_file
-db|cntr_l7j.tdf
-258da1ac6d2e7b57e1d04fb8e46ab1d
+db|cntr_k7j.tdf
+8127cc2b6dd61db7472d6897b41bc
 7
 # used_port {
 sclr
@@ -4255,9 +3021,6 @@ q3
 q2
 -1
 3
-q12
--1
-3
 q11
 -1
 3
@@ -4281,508 +3044,8 @@ aclr
 3
 }
 # hierarchies {
-LengthCounter:LengthCounter_inst|lpm_counter:lpm_counter_component|cntr_l7j:auto_generated
+LengthCounterSystem:length_counter_sys_inst|LengthCounter:LengthCounter_inst|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated
 }
-# macro_sequence
-
-# end
-# entity
-Data_Buffer
-# storage
-db|Receive_Port.(5).cnf
-db|Receive_Port.(5).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-data_buffer.vhd
-acbe8f7c3dc86c909d13add1ebba5a2d
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# lmf
-|altera|91sp2|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
-# macro_sequence
-
-# end
-# entity
-crc_compute
-# storage
-db|Receive_Port.(20).cnf
-db|Receive_Port.(20).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-crc_compute.vhd
-9c91105f54f33a322e0e754e4447680
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# lmf
-|altera|91sp2|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
-# macro_sequence
-
-# end
-# entity
-MII_to_RCV
-# storage
-db|Receive_Port.(50).cnf
-db|Receive_Port.(50).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-|users|negatu|desktop|spring 2015 - dawning|ece-559|mii_to_rcv_restored|mii_to_rcv.vhd
-61252449c8055ed2d74ccb2bdab84
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
- constraint(rcv_data)
-3 downto 0
-PARAMETER_STRING
-USR
-}
-# lmf
-|altera|91sp2|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
-# macro_sequence
-
-# end
-# entity
-cntr12bit
-# storage
-db|Receive_Port.(62).cnf
-db|Receive_Port.(62).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-|users|negatu|desktop|spring 2015 - dawning|ece-559|mii_to_rcv_restored|cntr12bit.vhd
-31fb789ff8cc51f9698ce62c7238c3a9
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
- constraint(q)
-11 downto 0
-PARAMETER_STRING
-USR
-}
-# lmf
-|altera|91sp2|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
-# macro_sequence
-
-# end
-# entity
-framemem
-# storage
-db|Receive_Port.(61).cnf
-db|Receive_Port.(61).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-|users|negatu|desktop|spring 2015 - dawning|ece-559|mii_to_rcv_restored|framemem.vhd
-81f1f1e0ec7148e39ae439b2ca691ce8
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
- constraint(address)
-9 downto 0
-PARAMETER_STRING
-USR
- constraint(q)
-3 downto 0
-PARAMETER_STRING
-USR
-}
-# lmf
-|altera|91sp2|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
-# macro_sequence
-
-# end
-# entity
-altsyncram
-# storage
-db|Receive_Port.(63).cnf
-db|Receive_Port.(63).cnf
-# case_insensitive
-# source_file
-|altera|91sp2|quartus|libraries|megafunctions|altsyncram.tdf
-67d9a3902c8a461c1d5750189e124f2
-7
-# user_parameter {
-BYTE_SIZE_BLOCK
-8
-PARAMETER_UNKNOWN
-DEF
-AUTO_CARRY_CHAINS
-ON
-AUTO_CARRY
-USR
-IGNORE_CARRY_BUFFERS
-OFF
-IGNORE_CARRY
-USR
-AUTO_CASCADE_CHAINS
-ON
-AUTO_CASCADE
-USR
-IGNORE_CASCADE_BUFFERS
-OFF
-IGNORE_CASCADE
-USR
-WIDTH_BYTEENA
-1
-PARAMETER_UNKNOWN
-DEF
-OPERATION_MODE
-ROM
-PARAMETER_UNKNOWN
-USR
-WIDTH_A
-4
-PARAMETER_SIGNED_DEC
-USR
-WIDTHAD_A
-10
-PARAMETER_SIGNED_DEC
-USR
-NUMWORDS_A
-1024
-PARAMETER_SIGNED_DEC
-USR
-OUTDATA_REG_A
-CLOCK0
-PARAMETER_UNKNOWN
-USR
-ADDRESS_ACLR_A
-NONE
-PARAMETER_UNKNOWN
-DEF
-OUTDATA_ACLR_A
-CLEAR0
-PARAMETER_UNKNOWN
-USR
-WRCONTROL_ACLR_A
-NONE
-PARAMETER_UNKNOWN
-DEF
-INDATA_ACLR_A
-NONE
-PARAMETER_UNKNOWN
-DEF
-BYTEENA_ACLR_A
-NONE
-PARAMETER_UNKNOWN
-DEF
-WIDTH_B
-1
-PARAMETER_UNKNOWN
-DEF
-WIDTHAD_B
-1
-PARAMETER_UNKNOWN
-DEF
-NUMWORDS_B
-1
-PARAMETER_UNKNOWN
-DEF
-INDATA_REG_B
-CLOCK1
-PARAMETER_UNKNOWN
-DEF
-WRCONTROL_WRADDRESS_REG_B
-CLOCK1
-PARAMETER_UNKNOWN
-DEF
-RDCONTROL_REG_B
-CLOCK1
-PARAMETER_UNKNOWN
-DEF
-ADDRESS_REG_B
-CLOCK1
-PARAMETER_UNKNOWN
-DEF
-OUTDATA_REG_B
-UNREGISTERED
-PARAMETER_UNKNOWN
-DEF
-BYTEENA_REG_B
-CLOCK1
-PARAMETER_UNKNOWN
-DEF
-INDATA_ACLR_B
-NONE
-PARAMETER_UNKNOWN
-DEF
-WRCONTROL_ACLR_B
-NONE
-PARAMETER_UNKNOWN
-DEF
-ADDRESS_ACLR_B
-NONE
-PARAMETER_UNKNOWN
-DEF
-OUTDATA_ACLR_B
-NONE
-PARAMETER_UNKNOWN
-DEF
-RDCONTROL_ACLR_B
-NONE
-PARAMETER_UNKNOWN
-DEF
-BYTEENA_ACLR_B
-NONE
-PARAMETER_UNKNOWN
-DEF
-WIDTH_BYTEENA_A
-1
-PARAMETER_SIGNED_DEC
-USR
-WIDTH_BYTEENA_B
-1
-PARAMETER_UNKNOWN
-DEF
-RAM_BLOCK_TYPE
-AUTO
-PARAMETER_UNKNOWN
-DEF
-BYTE_SIZE
-8
-PARAMETER_UNKNOWN
-DEF
-READ_DURING_WRITE_MODE_MIXED_PORTS
-DONT_CARE
-PARAMETER_UNKNOWN
-DEF
-READ_DURING_WRITE_MODE_PORT_A
-NEW_DATA_NO_NBE_READ
-PARAMETER_UNKNOWN
-DEF
-READ_DURING_WRITE_MODE_PORT_B
-NEW_DATA_NO_NBE_READ
-PARAMETER_UNKNOWN
-DEF
-INIT_FILE
-myframemem.mif
-PARAMETER_UNKNOWN
-USR
-INIT_FILE_LAYOUT
-PORT_A
-PARAMETER_UNKNOWN
-DEF
-MAXIMUM_DEPTH
-0
-PARAMETER_UNKNOWN
-DEF
-CLOCK_ENABLE_INPUT_A
-BYPASS
-PARAMETER_UNKNOWN
-USR
-CLOCK_ENABLE_INPUT_B
-NORMAL
-PARAMETER_UNKNOWN
-DEF
-CLOCK_ENABLE_OUTPUT_A
-BYPASS
-PARAMETER_UNKNOWN
-USR
-CLOCK_ENABLE_OUTPUT_B
-NORMAL
-PARAMETER_UNKNOWN
-DEF
-CLOCK_ENABLE_CORE_A
-USE_INPUT_CLKEN
-PARAMETER_UNKNOWN
-DEF
-CLOCK_ENABLE_CORE_B
-USE_INPUT_CLKEN
-PARAMETER_UNKNOWN
-DEF
-ENABLE_ECC
-FALSE
-PARAMETER_UNKNOWN
-DEF
-DEVICE_FAMILY
-Cyclone II
-PARAMETER_UNKNOWN
-USR
-CBXI_PARAMETER
-altsyncram_e781
-PARAMETER_UNKNOWN
-USR
-}
-# used_port {
-q_a3
--1
-3
-q_a2
--1
-3
-q_a1
--1
-3
-q_a0
--1
-3
-clock0
--1
-3
-address_a9
--1
-3
-address_a8
--1
-3
-address_a7
--1
-3
-address_a6
--1
-3
-address_a5
--1
-3
-address_a4
--1
-3
-address_a3
--1
-3
-address_a2
--1
-3
-address_a1
--1
-3
-address_a0
--1
-3
-aclr0
--1
-3
-}
-# macro_sequence
-
-# end
-# entity
-test_bench1
-# storage
-db|Receive_Port.(44).cnf
-db|Receive_Port.(44).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-test_bench1.vhd
-a9fcf67068e82398dc2ed342e0969
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# lmf
-|altera|91sp2|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
-# macro_sequence
-
-# end
-# entity
-lengthcountersystem
-# storage
-db|Receive_Port.(64).cnf
-db|Receive_Port.(64).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-lengthcountersystem.vhd
-8741f7aa99ccb5bc695c4f72d470e0
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# hierarchies {
-|
-}
-# lmf
-|altera|91sp2|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
 # macro_sequence
 
 # end

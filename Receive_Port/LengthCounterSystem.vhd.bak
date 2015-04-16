@@ -61,7 +61,7 @@ architecture combined of LengthCounterSystem is
 	--check length validity
 	PROCESS(int_lengthValue)
 	BEGIN
-		IF ((odd_nibbles="1") or int_lengthValue < "00001000000") or (int_lengthValue > "10111101110") THEN
+		IF ((odd_nibbles = '1') or int_lengthValue < "00001000000") or (int_lengthValue > "10111101110") THEN
 			lengthValid <= '0';
 		ELSE lengthValid <= '1';
 		END IF;
