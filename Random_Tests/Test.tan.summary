@@ -1,0 +1,66 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 4.582 ns
+From           : inFrameLengthValue[0]
+To             : lengthValidReg:lengthValidReg_inst|lpm_ff:lpm_ff_component|dffs[0]
+From Clock     : --
+To Clock       : clock
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 9.534 ns
+From           : lengthValidReg:lengthValidReg_inst|lpm_ff:lpm_ff_component|dffs[5]
+To             : fwdFrameLengthValue[5]
+From Clock     : clock
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case tpd
+Slack          : N/A
+Required Time  : None
+Actual Time    : 6.685 ns
+From           : lengthRdEmpty
+To             : lengthBuffer_RE
+From Clock     : --
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : -0.027 ns
+From           : lengthRdEmpty
+To             : y_current
+From Clock     : --
+To Clock       : clock
+Failed Paths   : 0
+
+Type           : Clock Setup: 'clock'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 368.46 MHz ( period = 2.714 ns )
+From           : lengthValidReg:lengthValidReg_inst|lpm_ff:lpm_ff_component|dffs[8]
+To             : y_current
+From Clock     : clock
+To Clock       : clock
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+
