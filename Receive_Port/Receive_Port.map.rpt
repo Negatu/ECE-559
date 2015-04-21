@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Receive_Port
-Tue Apr 21 02:33:12 2015
+Tue Apr 21 03:38:52 2015
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -94,16 +94,16 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +------------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Apr 21 02:33:11 2015        ;
+; Analysis & Synthesis Status        ; Successful - Tue Apr 21 03:38:52 2015        ;
 ; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                      ; Receive_Port                                 ;
 ; Top-level Entity Name              ; test                                         ;
 ; Family                             ; Cyclone II                                   ;
-; Total logic elements               ; 401                                          ;
-;     Total combinational functions  ; 253                                          ;
+; Total logic elements               ; 405                                          ;
+;     Total combinational functions  ; 257                                          ;
 ;     Dedicated logic registers      ; 298                                          ;
 ; Total registers                    ; 298                                          ;
-; Total pins                         ; 67                                           ;
+; Total pins                         ; 71                                           ;
 ; Total virtual pins                 ; 0                                            ;
 ; Total memory bits                  ; 20,864                                       ;
 ; Embedded Multiplier 9-bit elements ; 0                                            ;
@@ -201,72 +201,72 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                         ;
-+---------------------------------------+-----------------+----------------------------------------+-------------------------------------------------------------------------------------------------------------+
-; File Name with User-Entered Path      ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                                                ;
-+---------------------------------------+-----------------+----------------------------------------+-------------------------------------------------------------------------------------------------------------+
-; ../MII_to_RCV_restored/cntr12bit.vhd  ; yes             ; User Wizard-Generated File             ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/MII_to_RCV_restored/cntr12bit.vhd             ;
-; ../MII_to_RCV_restored/framemem.vhd   ; yes             ; User Wizard-Generated File             ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/MII_to_RCV_restored/framemem.vhd              ;
-; ../MII_to_RCV_restored/MII_to_RCV.vhd ; yes             ; User VHDL File                         ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/MII_to_RCV_restored/MII_to_RCV.vhd            ;
-; SequenceNumberCounter.vhd             ; yes             ; User VHDL File                         ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/SequenceNumberCounter.vhd        ;
-; SequenceNumberCounter9BitVHD.vhd      ; yes             ; User Wizard-Generated File             ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/SequenceNumberCounter9BitVHD.vhd ;
-; crc32x4r.vhd                          ; yes             ; User VHDL File                         ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/crc32x4r.vhd                     ;
-; crcreg32.vhd                          ; yes             ; User Wizard-Generated File             ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/crcreg32.vhd                     ;
-; CRC_FSM.vhd                           ; yes             ; User VHDL File                         ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/CRC_FSM.vhd                      ;
-; CRC_System.vhd                        ; yes             ; User VHDL File                         ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/CRC_System.vhd                   ;
-; Data_DCFF.vhd                         ; yes             ; User Wizard-Generated File             ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/Data_DCFF.vhd                    ;
-; Length_DCFF.vhd                       ; yes             ; User Wizard-Generated File             ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/Length_DCFF.vhd                  ;
-; Data_Buffer.vhd                       ; yes             ; User VHDL File                         ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/Data_Buffer.vhd                  ;
-; test_bench1.vhd                       ; yes             ; User VHDL File                         ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/test_bench1.vhd                  ;
-; lengthcountersystem.vhd               ; yes             ; User VHDL File                         ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/lengthcountersystem.vhd          ;
-; test.vhd                              ; yes             ; User VHDL File                         ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/test.vhd                         ;
-; SFD_FSM.vhd                           ; yes             ; User VHDL File                         ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/SFD_FSM.vhd                      ;
-; shift1_4bit.vhd                       ; yes             ; User Wizard-Generated File             ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/shift1_4bit.vhd                  ;
-; shift1_1bit.vhd                       ; yes             ; User Wizard-Generated File             ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/shift1_1bit.vhd                  ;
-; FrameValidFSM.vhd                     ; yes             ; User VHDL File                         ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/FrameValidFSM.vhd                ;
-; lpm_shiftreg.tdf                      ; yes             ; Megafunction                           ; c:/altera/91sp2/quartus/libraries/megafunctions/lpm_shiftreg.tdf                                            ;
-; dcfifo_mixed_widths.tdf               ; yes             ; Megafunction                           ; c:/altera/91sp2/quartus/libraries/megafunctions/dcfifo_mixed_widths.tdf                                     ;
-; db/dcfifo_30i1.tdf                    ; yes             ; Auto-Generated Megafunction            ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/db/dcfifo_30i1.tdf               ;
-; db/a_graycounter_q96.tdf              ; yes             ; Auto-Generated Megafunction            ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/db/a_graycounter_q96.tdf         ;
-; db/a_graycounter_ggc.tdf              ; yes             ; Auto-Generated Megafunction            ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/db/a_graycounter_ggc.tdf         ;
-; db/altsyncram_qo61.tdf                ; yes             ; Auto-Generated Megafunction            ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/db/altsyncram_qo61.tdf           ;
-; db/altsyncram_6ve1.tdf                ; yes             ; Auto-Generated Megafunction            ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/db/altsyncram_6ve1.tdf           ;
-; db/dffpipe_ngh.tdf                    ; yes             ; Auto-Generated Megafunction            ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/db/dffpipe_ngh.tdf               ;
-; db/alt_synch_pipe_tdb.tdf             ; yes             ; Auto-Generated Megafunction            ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/db/alt_synch_pipe_tdb.tdf        ;
-; db/dffpipe_re9.tdf                    ; yes             ; Auto-Generated Megafunction            ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/db/dffpipe_re9.tdf               ;
-; db/alt_synch_pipe_1e8.tdf             ; yes             ; Auto-Generated Megafunction            ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/db/alt_synch_pipe_1e8.tdf        ;
-; db/dffpipe_se9.tdf                    ; yes             ; Auto-Generated Megafunction            ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/db/dffpipe_se9.tdf               ;
-; db/cmpr_736.tdf                       ; yes             ; Auto-Generated Megafunction            ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/db/cmpr_736.tdf                  ;
-; db/cntr_jvd.tdf                       ; yes             ; Auto-Generated Megafunction            ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/db/cntr_jvd.tdf                  ;
-; dcfifo.tdf                            ; yes             ; Megafunction                           ; c:/altera/91sp2/quartus/libraries/megafunctions/dcfifo.tdf                                                  ;
-; db/dcfifo_ksh1.tdf                    ; yes             ; Auto-Generated Megafunction            ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/db/dcfifo_ksh1.tdf               ;
-; db/a_graycounter_d86.tdf              ; yes             ; Auto-Generated Megafunction            ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/db/a_graycounter_d86.tdf         ;
-; db/a_graycounter_4fc.tdf              ; yes             ; Auto-Generated Megafunction            ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/db/a_graycounter_4fc.tdf         ;
-; db/a_graycounter_3fc.tdf              ; yes             ; Auto-Generated Megafunction            ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/db/a_graycounter_3fc.tdf         ;
-; db/altsyncram_po61.tdf                ; yes             ; Auto-Generated Megafunction            ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/db/altsyncram_po61.tdf           ;
-; db/alt_synch_pipe_gcb.tdf             ; yes             ; Auto-Generated Megafunction            ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/db/alt_synch_pipe_gcb.tdf        ;
-; db/dffpipe_ed9.tdf                    ; yes             ; Auto-Generated Megafunction            ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/db/dffpipe_ed9.tdf               ;
-; db/alt_synch_pipe_kc8.tdf             ; yes             ; Auto-Generated Megafunction            ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/db/alt_synch_pipe_kc8.tdf        ;
-; db/dffpipe_fd9.tdf                    ; yes             ; Auto-Generated Megafunction            ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/db/dffpipe_fd9.tdf               ;
-; db/cmpr_q16.tdf                       ; yes             ; Auto-Generated Megafunction            ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/db/cmpr_q16.tdf                  ;
-; lengthcounterfsm.vhd                  ; yes             ; Auto-Found VHDL File                   ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/lengthcounterfsm.vhd             ;
-; lengthcounter.vhd                     ; yes             ; Auto-Found Wizard-Generated File       ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/lengthcounter.vhd                ;
-; lpm_counter.tdf                       ; yes             ; Megafunction                           ; c:/altera/91sp2/quartus/libraries/megafunctions/lpm_counter.tdf                                             ;
-; db/cntr_k7j.tdf                       ; yes             ; Auto-Generated Megafunction            ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/db/cntr_k7j.tdf                  ;
-; fwdoutputcntrlr.vhd                   ; yes             ; Auto-Found VHDL File                   ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/fwdoutputcntrlr.vhd              ;
-; lengthvalidreg.vhd                    ; yes             ; Auto-Found Wizard-Generated File       ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/lengthvalidreg.vhd               ;
-; lpm_ff.tdf                            ; yes             ; Megafunction                           ; c:/altera/91sp2/quartus/libraries/megafunctions/lpm_ff.tdf                                                  ;
-; outframelengthcounter.vhd             ; yes             ; Auto-Found Wizard-Generated File       ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/outframelengthcounter.vhd        ;
-; db/cntr_q4i.tdf                       ; yes             ; Auto-Generated Megafunction            ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/db/cntr_q4i.tdf                  ;
-; framelengthvaluecomp.vhd              ; yes             ; Auto-Found Wizard-Generated File       ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/framelengthvaluecomp.vhd         ;
-; lpm_compare.tdf                       ; yes             ; Megafunction                           ; c:/altera/91sp2/quartus/libraries/megafunctions/lpm_compare.tdf                                             ;
-; db/cmpr_nig.tdf                       ; yes             ; Auto-Generated Megafunction            ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/db/cmpr_nig.tdf                  ;
-; db/cntr_mni.tdf                       ; yes             ; Auto-Generated Megafunction            ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/db/cntr_mni.tdf                  ;
-; altsyncram.tdf                        ; yes             ; Megafunction                           ; c:/altera/91sp2/quartus/libraries/megafunctions/altsyncram.tdf                                              ;
-; db/altsyncram_e781.tdf                ; yes             ; Auto-Generated Megafunction            ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/db/altsyncram_e781.tdf           ;
-; myframemem.mif                        ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/myframemem.mif                   ;
-+---------------------------------------+-----------------+----------------------------------------+-------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                 ;
++---------------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------------------------+
+; File Name with User-Entered Path      ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                                        ;
++---------------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------------------------+
+; ../MII_to_RCV_restored/cntr12bit.vhd  ; yes             ; User Wizard-Generated File             ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/MII_to_RCV_restored/cntr12bit.vhd             ;
+; ../MII_to_RCV_restored/framemem.vhd   ; yes             ; User Wizard-Generated File             ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/MII_to_RCV_restored/framemem.vhd              ;
+; ../MII_to_RCV_restored/MII_to_RCV.vhd ; yes             ; User VHDL File                         ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/MII_to_RCV_restored/MII_to_RCV.vhd            ;
+; SequenceNumberCounter.vhd             ; yes             ; User VHDL File                         ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/SequenceNumberCounter.vhd        ;
+; SequenceNumberCounter9BitVHD.vhd      ; yes             ; User Wizard-Generated File             ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/SequenceNumberCounter9BitVHD.vhd ;
+; crc32x4r.vhd                          ; yes             ; User VHDL File                         ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/crc32x4r.vhd                     ;
+; crcreg32.vhd                          ; yes             ; User Wizard-Generated File             ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/crcreg32.vhd                     ;
+; CRC_FSM.vhd                           ; yes             ; User VHDL File                         ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/CRC_FSM.vhd                      ;
+; CRC_System.vhd                        ; yes             ; User VHDL File                         ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/CRC_System.vhd                   ;
+; Data_DCFF.vhd                         ; yes             ; User Wizard-Generated File             ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/Data_DCFF.vhd                    ;
+; Length_DCFF.vhd                       ; yes             ; User Wizard-Generated File             ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/Length_DCFF.vhd                  ;
+; Data_Buffer.vhd                       ; yes             ; User VHDL File                         ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/Data_Buffer.vhd                  ;
+; test_bench1.vhd                       ; yes             ; User VHDL File                         ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/test_bench1.vhd                  ;
+; lengthcountersystem.vhd               ; yes             ; User VHDL File                         ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/lengthcountersystem.vhd          ;
+; test.vhd                              ; yes             ; User VHDL File                         ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/test.vhd                         ;
+; SFD_FSM.vhd                           ; yes             ; User VHDL File                         ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/SFD_FSM.vhd                      ;
+; shift1_4bit.vhd                       ; yes             ; User Wizard-Generated File             ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/shift1_4bit.vhd                  ;
+; shift1_1bit.vhd                       ; yes             ; User Wizard-Generated File             ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/shift1_1bit.vhd                  ;
+; FrameValidFSM.vhd                     ; yes             ; User VHDL File                         ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/FrameValidFSM.vhd                ;
+; lpm_shiftreg.tdf                      ; yes             ; Megafunction                           ; c:/altera/91sp2/quartus/libraries/megafunctions/lpm_shiftreg.tdf                                    ;
+; dcfifo_mixed_widths.tdf               ; yes             ; Megafunction                           ; c:/altera/91sp2/quartus/libraries/megafunctions/dcfifo_mixed_widths.tdf                             ;
+; db/dcfifo_30i1.tdf                    ; yes             ; Auto-Generated Megafunction            ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/dcfifo_30i1.tdf               ;
+; db/a_graycounter_q96.tdf              ; yes             ; Auto-Generated Megafunction            ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/a_graycounter_q96.tdf         ;
+; db/a_graycounter_ggc.tdf              ; yes             ; Auto-Generated Megafunction            ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/a_graycounter_ggc.tdf         ;
+; db/altsyncram_qo61.tdf                ; yes             ; Auto-Generated Megafunction            ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/altsyncram_qo61.tdf           ;
+; db/altsyncram_6ve1.tdf                ; yes             ; Auto-Generated Megafunction            ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/altsyncram_6ve1.tdf           ;
+; db/dffpipe_ngh.tdf                    ; yes             ; Auto-Generated Megafunction            ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/dffpipe_ngh.tdf               ;
+; db/alt_synch_pipe_tdb.tdf             ; yes             ; Auto-Generated Megafunction            ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/alt_synch_pipe_tdb.tdf        ;
+; db/dffpipe_re9.tdf                    ; yes             ; Auto-Generated Megafunction            ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/dffpipe_re9.tdf               ;
+; db/alt_synch_pipe_1e8.tdf             ; yes             ; Auto-Generated Megafunction            ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/alt_synch_pipe_1e8.tdf        ;
+; db/dffpipe_se9.tdf                    ; yes             ; Auto-Generated Megafunction            ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/dffpipe_se9.tdf               ;
+; db/cmpr_736.tdf                       ; yes             ; Auto-Generated Megafunction            ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/cmpr_736.tdf                  ;
+; db/cntr_jvd.tdf                       ; yes             ; Auto-Generated Megafunction            ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/cntr_jvd.tdf                  ;
+; dcfifo.tdf                            ; yes             ; Megafunction                           ; c:/altera/91sp2/quartus/libraries/megafunctions/dcfifo.tdf                                          ;
+; db/dcfifo_ksh1.tdf                    ; yes             ; Auto-Generated Megafunction            ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/dcfifo_ksh1.tdf               ;
+; db/a_graycounter_d86.tdf              ; yes             ; Auto-Generated Megafunction            ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/a_graycounter_d86.tdf         ;
+; db/a_graycounter_4fc.tdf              ; yes             ; Auto-Generated Megafunction            ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/a_graycounter_4fc.tdf         ;
+; db/a_graycounter_3fc.tdf              ; yes             ; Auto-Generated Megafunction            ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/a_graycounter_3fc.tdf         ;
+; db/altsyncram_po61.tdf                ; yes             ; Auto-Generated Megafunction            ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/altsyncram_po61.tdf           ;
+; db/alt_synch_pipe_gcb.tdf             ; yes             ; Auto-Generated Megafunction            ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/alt_synch_pipe_gcb.tdf        ;
+; db/dffpipe_ed9.tdf                    ; yes             ; Auto-Generated Megafunction            ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/dffpipe_ed9.tdf               ;
+; db/alt_synch_pipe_kc8.tdf             ; yes             ; Auto-Generated Megafunction            ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/alt_synch_pipe_kc8.tdf        ;
+; db/dffpipe_fd9.tdf                    ; yes             ; Auto-Generated Megafunction            ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/dffpipe_fd9.tdf               ;
+; db/cmpr_q16.tdf                       ; yes             ; Auto-Generated Megafunction            ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/cmpr_q16.tdf                  ;
+; lengthcounterfsm.vhd                  ; yes             ; Auto-Found VHDL File                   ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/lengthcounterfsm.vhd             ;
+; lengthcounter.vhd                     ; yes             ; Auto-Found Wizard-Generated File       ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/lengthcounter.vhd                ;
+; lpm_counter.tdf                       ; yes             ; Megafunction                           ; c:/altera/91sp2/quartus/libraries/megafunctions/lpm_counter.tdf                                     ;
+; db/cntr_k7j.tdf                       ; yes             ; Auto-Generated Megafunction            ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/cntr_k7j.tdf                  ;
+; fwdoutputcntrlr.vhd                   ; yes             ; Auto-Found VHDL File                   ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/fwdoutputcntrlr.vhd              ;
+; lengthvalidreg.vhd                    ; yes             ; Auto-Found Wizard-Generated File       ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/lengthvalidreg.vhd               ;
+; lpm_ff.tdf                            ; yes             ; Megafunction                           ; c:/altera/91sp2/quartus/libraries/megafunctions/lpm_ff.tdf                                          ;
+; outframelengthcounter.vhd             ; yes             ; Auto-Found Wizard-Generated File       ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/outframelengthcounter.vhd        ;
+; db/cntr_q4i.tdf                       ; yes             ; Auto-Generated Megafunction            ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/cntr_q4i.tdf                  ;
+; framelengthvaluecomp.vhd              ; yes             ; Auto-Found Wizard-Generated File       ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/framelengthvaluecomp.vhd         ;
+; lpm_compare.tdf                       ; yes             ; Megafunction                           ; c:/altera/91sp2/quartus/libraries/megafunctions/lpm_compare.tdf                                     ;
+; db/cmpr_nig.tdf                       ; yes             ; Auto-Generated Megafunction            ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/cmpr_nig.tdf                  ;
+; db/cntr_mni.tdf                       ; yes             ; Auto-Generated Megafunction            ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/cntr_mni.tdf                  ;
+; altsyncram.tdf                        ; yes             ; Megafunction                           ; c:/altera/91sp2/quartus/libraries/megafunctions/altsyncram.tdf                                      ;
+; db/altsyncram_e781.tdf                ; yes             ; Auto-Generated Megafunction            ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/altsyncram_e781.tdf           ;
+; myframemem.mif                        ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/myframemem.mif                   ;
++---------------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -274,28 +274,28 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 401   ;
+; Estimated Total logic elements              ; 405   ;
 ;                                             ;       ;
-; Total combinational functions               ; 253   ;
+; Total combinational functions               ; 257   ;
 ; Logic element usage by number of LUT inputs ;       ;
 ;     -- 4 input functions                    ; 136   ;
-;     -- 3 input functions                    ; 32    ;
+;     -- 3 input functions                    ; 36    ;
 ;     -- <=2 input functions                  ; 85    ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 212   ;
+;     -- normal mode                          ; 216   ;
 ;     -- arithmetic mode                      ; 41    ;
 ;                                             ;       ;
 ; Total registers                             ; 298   ;
 ;     -- Dedicated logic registers            ; 298   ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
-; I/O pins                                    ; 67    ;
+; I/O pins                                    ; 71    ;
 ; Total memory bits                           ; 20864 ;
 ; Maximum fan-out node                        ; reset ;
-; Maximum fan-out                             ; 275   ;
-; Total fan-out                               ; 2312  ;
-; Average fan-out                             ; 3.62  ;
+; Maximum fan-out                             ; 264   ;
+; Total fan-out                               ; 2328  ;
+; Average fan-out                             ; 3.60  ;
 +---------------------------------------------+-------+
 
 
@@ -304,7 +304,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                                                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                   ; Library Name ;
 +---------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |test                                                                     ; 253 (1)           ; 298 (0)      ; 20864       ; 0            ; 0       ; 0         ; 67   ; 0            ; |test                                                                                                                                                                                                                 ; work         ;
+; |test                                                                     ; 257 (1)           ; 298 (0)      ; 20864       ; 0            ; 0       ; 0         ; 71   ; 0            ; |test                                                                                                                                                                                                                 ; work         ;
 ;    |MII_to_RCV:phy_inst|                                                  ; 26 (13)           ; 25 (13)      ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|MII_to_RCV:phy_inst                                                                                                                                                                                             ; work         ;
 ;       |cntr12bit:cntrx|                                                   ; 13 (0)            ; 12 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|MII_to_RCV:phy_inst|cntr12bit:cntrx                                                                                                                                                                             ; work         ;
 ;          |lpm_counter:lpm_counter_component|                              ; 13 (0)            ; 12 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component                                                                                                                                           ; work         ;
@@ -312,7 +312,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;       |framemem:frame_test_mem|                                           ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|MII_to_RCV:phy_inst|framemem:frame_test_mem                                                                                                                                                                     ; work         ;
 ;          |altsyncram:altsyncram_component|                                ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|MII_to_RCV:phy_inst|framemem:frame_test_mem|altsyncram:altsyncram_component                                                                                                                                     ; work         ;
 ;             |altsyncram_e781:auto_generated|                              ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|MII_to_RCV:phy_inst|framemem:frame_test_mem|altsyncram:altsyncram_component|altsyncram_e781:auto_generated                                                                                                      ; work         ;
-;    |test_bench1:test_bench_inst|                                          ; 226 (0)           ; 273 (0)      ; 16768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst                                                                                                                                                                                     ;              ;
+;    |test_bench1:test_bench_inst|                                          ; 230 (0)           ; 273 (0)      ; 16768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst                                                                                                                                                                                     ;              ;
 ;       |CRC_System:crc_system_inst|                                        ; 56 (0)            ; 38 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|CRC_System:crc_system_inst                                                                                                                                                          ; work         ;
 ;          |CRC_FSM:CRC_FSM_inst|                                           ; 16 (16)           ; 6 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|CRC_System:crc_system_inst|CRC_FSM:CRC_FSM_inst                                                                                                                                     ; work         ;
 ;             |shift1_1bit:shift_check_result|                              ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|CRC_System:crc_system_inst|CRC_FSM:CRC_FSM_inst|shift1_1bit:shift_check_result                                                                                                      ; work         ;
@@ -320,24 +320,24 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;          |crc32x4r:crc32x4r_inst|                                         ; 40 (8)            ; 32 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|CRC_System:crc_system_inst|crc32x4r:crc32x4r_inst                                                                                                                                   ; work         ;
 ;             |crcreg32:crcreg32r|                                          ; 32 (0)            ; 32 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|CRC_System:crc_system_inst|crc32x4r:crc32x4r_inst|crcreg32:crcreg32r                                                                                                                ; work         ;
 ;                |lpm_shiftreg:lpm_shiftreg_component|                      ; 32 (32)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|CRC_System:crc_system_inst|crc32x4r:crc32x4r_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component                                                                            ; work         ;
-;       |Data_Buffer:data_buffer_inst|                                      ; 71 (0)            ; 120 (0)      ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst                                                                                                                                                        ; work         ;
-;          |Data_DCFF:DCFF_inst|                                            ; 71 (0)            ; 120 (0)      ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst                                                                                                                                    ; work         ;
-;             |dcfifo_mixed_widths:dcfifo_mixed_widths_component|           ; 71 (0)            ; 120 (0)      ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component                                                                                  ; work         ;
-;                |dcfifo_30i1:auto_generated|                               ; 71 (7)            ; 120 (38)     ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated                                                       ; work         ;
+;       |Data_Buffer:data_buffer_inst|                                      ; 72 (0)            ; 120 (0)      ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst                                                                                                                                                        ; work         ;
+;          |Data_DCFF:DCFF_inst|                                            ; 72 (0)            ; 120 (0)      ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst                                                                                                                                    ; work         ;
+;             |dcfifo_mixed_widths:dcfifo_mixed_widths_component|           ; 72 (0)            ; 120 (0)      ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component                                                                                  ; work         ;
+;                |dcfifo_30i1:auto_generated|                               ; 72 (7)            ; 120 (38)     ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated                                                       ; work         ;
 ;                   |a_graycounter_ggc:wrptr_g1p|                           ; 23 (23)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|a_graycounter_ggc:wrptr_g1p                           ; work         ;
 ;                   |a_graycounter_q96:rdptr_g1p|                           ; 23 (23)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|a_graycounter_q96:rdptr_g1p                           ; work         ;
 ;                   |alt_synch_pipe_1e8:ws_dgrp|                            ; 0 (0)             ; 24 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|alt_synch_pipe_1e8:ws_dgrp                            ;              ;
 ;                      |dffpipe_se9:dffpipe17|                              ; 0 (0)             ; 24 (24)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|alt_synch_pipe_1e8:ws_dgrp|dffpipe_se9:dffpipe17      ;              ;
 ;                   |alt_synch_pipe_tdb:rs_dgwp|                            ; 0 (0)             ; 24 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|alt_synch_pipe_tdb:rs_dgwp                            ; work         ;
-;                      |dffpipe_re9:dffpipe14|                              ; 0 (0)             ; 24 (24)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|alt_synch_pipe_tdb:rs_dgwp|dffpipe_re9:dffpipe14      ;              ;
+;                      |dffpipe_re9:dffpipe14|                              ; 0 (0)             ; 24 (24)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|alt_synch_pipe_tdb:rs_dgwp|dffpipe_re9:dffpipe14      ; work         ;
 ;                   |altsyncram_qo61:fifo_ram|                              ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|altsyncram_qo61:fifo_ram                              ; work         ;
 ;                      |altsyncram_6ve1:altsyncram11|                       ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|altsyncram_qo61:fifo_ram|altsyncram_6ve1:altsyncram11 ; work         ;
-;                   |cmpr_736:rdempty_eq_comp|                              ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|cmpr_736:rdempty_eq_comp                              ;              ;
-;                   |cmpr_736:wrfull_eq_comp|                               ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|cmpr_736:wrfull_eq_comp                               ; work         ;
+;                   |cmpr_736:rdempty_eq_comp|                              ; 9 (9)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|cmpr_736:rdempty_eq_comp                              ;              ;
+;                   |cmpr_736:wrfull_eq_comp|                               ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|cmpr_736:wrfull_eq_comp                               ;              ;
 ;                   |cntr_jvd:cntr_b|                                       ; 2 (2)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|cntr_jvd:cntr_b                                       ; work         ;
 ;                   |dffpipe_ngh:rdaclr|                                    ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|dffpipe_ngh:rdaclr                                    ; work         ;
 ;       |FrameValidFSM:FrameValidFSM_inst|                                  ; 8 (8)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|FrameValidFSM:FrameValidFSM_inst                                                                                                                                                    ; work         ;
-;       |FwdOutputCntrlr:FwdOutputCntrlr_inst|                              ; 19 (8)            ; 24 (1)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|FwdOutputCntrlr:FwdOutputCntrlr_inst                                                                                                                                                ;              ;
+;       |FwdOutputCntrlr:FwdOutputCntrlr_inst|                              ; 22 (11)           ; 24 (1)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|FwdOutputCntrlr:FwdOutputCntrlr_inst                                                                                                                                                ;              ;
 ;          |lengthValidReg:lengthValidReg_inst|                             ; 0 (0)             ; 12 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|FwdOutputCntrlr:FwdOutputCntrlr_inst|lengthValidReg:lengthValidReg_inst                                                                                                             ;              ;
 ;             |lpm_ff:lpm_ff_component|                                     ; 0 (0)             ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|FwdOutputCntrlr:FwdOutputCntrlr_inst|lengthValidReg:lengthValidReg_inst|lpm_ff:lpm_ff_component                                                                                     ;              ;
 ;          |outFrameLengthCounter:outFrameLengthCounter_inst|               ; 11 (0)            ; 11 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|FwdOutputCntrlr:FwdOutputCntrlr_inst|outFrameLengthCounter:outFrameLengthCounter_inst                                                                                               ;              ;
@@ -350,7 +350,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;          |LengthCounterFSM:LengthCounterFSM_int|                          ; 3 (3)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|LengthCounterSystem:length_counter_sys_inst|LengthCounterFSM:LengthCounterFSM_int                                                                                                   ;              ;
 ;       |Length_DCFF:length_buffer_inst|                                    ; 31 (0)            ; 56 (0)       ; 384         ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst                                                                                                                                                      ; work         ;
 ;          |dcfifo:dcfifo_component|                                        ; 31 (0)            ; 56 (0)       ; 384         ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component                                                                                                                              ; work         ;
-;             |dcfifo_ksh1:auto_generated|                                  ; 31 (8)            ; 56 (13)      ; 384         ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_ksh1:auto_generated                                                                                                   ; work         ;
+;             |dcfifo_ksh1:auto_generated|                                  ; 31 (4)            ; 56 (13)      ; 384         ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_ksh1:auto_generated                                                                                                   ; work         ;
 ;                |a_graycounter_3fc:wrptr_gp|                               ; 10 (10)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_ksh1:auto_generated|a_graycounter_3fc:wrptr_gp                                                                        ; work         ;
 ;                |a_graycounter_d86:rdptr_g1p|                              ; 10 (10)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_ksh1:auto_generated|a_graycounter_d86:rdptr_g1p                                                                       ; work         ;
 ;                |alt_synch_pipe_gcb:rs_dgwp|                               ; 0 (0)             ; 12 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_ksh1:auto_generated|alt_synch_pipe_gcb:rs_dgwp                                                                        ; work         ;
@@ -358,11 +358,12 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;                |alt_synch_pipe_kc8:ws_dgrp|                               ; 0 (0)             ; 12 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_ksh1:auto_generated|alt_synch_pipe_kc8:ws_dgrp                                                                        ; work         ;
 ;                   |dffpipe_fd9:dffpipe18|                                 ; 0 (0)             ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_ksh1:auto_generated|alt_synch_pipe_kc8:ws_dgrp|dffpipe_fd9:dffpipe18                                                  ; work         ;
 ;                |altsyncram_po61:fifo_ram|                                 ; 0 (0)             ; 0 (0)        ; 384         ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_ksh1:auto_generated|altsyncram_po61:fifo_ram                                                                          ; work         ;
-;                |cmpr_q16:wrfull_eq_comp|                                  ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_ksh1:auto_generated|cmpr_q16:wrfull_eq_comp                                                                           ;              ;
+;                |cmpr_q16:rdempty_eq_comp|                                 ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_ksh1:auto_generated|cmpr_q16:rdempty_eq_comp                                                                          ; work         ;
+;                |cmpr_q16:wrfull_eq_comp|                                  ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_ksh1:auto_generated|cmpr_q16:wrfull_eq_comp                                                                           ; work         ;
 ;                |dffpipe_ngh:rdaclr|                                       ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_ksh1:auto_generated|dffpipe_ngh:rdaclr                                                                                ; work         ;
-;       |SFD_FSM:sfd_fsm_inst|                                              ; 10 (6)            ; 7 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|SFD_FSM:sfd_fsm_inst                                                                                                                                                                ; work         ;
-;          |shift1_4bit:shift4bit_inst|                                     ; 4 (0)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|SFD_FSM:sfd_fsm_inst|shift1_4bit:shift4bit_inst                                                                                                                                     ;              ;
-;             |lpm_shiftreg:lpm_shiftreg_component|                         ; 4 (4)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|SFD_FSM:sfd_fsm_inst|shift1_4bit:shift4bit_inst|lpm_shiftreg:lpm_shiftreg_component                                                                                                 ; work         ;
+;       |SFD_FSM:sfd_fsm_inst|                                              ; 10 (6)            ; 7 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|SFD_FSM:sfd_fsm_inst                                                                                                                                                                ;              ;
+;          |shift1_4bit:shift4bit_inst|                                     ; 4 (0)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|SFD_FSM:sfd_fsm_inst|shift1_4bit:shift4bit_inst                                                                                                                                     ; work         ;
+;             |lpm_shiftreg:lpm_shiftreg_component|                         ; 4 (4)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|SFD_FSM:sfd_fsm_inst|shift1_4bit:shift4bit_inst|lpm_shiftreg:lpm_shiftreg_component                                                                                                 ;              ;
 ;       |SequenceNumberCounter:seq_counter_inst|                            ; 9 (0)             ; 10 (1)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|SequenceNumberCounter:seq_counter_inst                                                                                                                                              ; work         ;
 ;          |SequenceNumberCounter9BitVHD:SequenceNumberCounterNineBit_inst| ; 9 (0)             ; 9 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|SequenceNumberCounter:seq_counter_inst|SequenceNumberCounter9BitVHD:SequenceNumberCounterNineBit_inst                                                                               ; work         ;
 ;             |lpm_counter:lpm_counter_component|                           ; 9 (0)             ; 9 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|SequenceNumberCounter:seq_counter_inst|SequenceNumberCounter9BitVHD:SequenceNumberCounterNineBit_inst|lpm_counter:lpm_counter_component                                             ; work         ;
@@ -502,10 +503,10 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 ; Inverted Register                                                                                                                                                                                   ; Fan out ;
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
-; test_bench1:test_bench_inst|FwdOutputCntrlr:FwdOutputCntrlr_inst|y_current                                                                                                                          ; 28      ;
+; test_bench1:test_bench_inst|FwdOutputCntrlr:FwdOutputCntrlr_inst|y_current                                                                                                                          ; 19      ;
 ; test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|a_graycounter_q96:rdptr_g1p|sub_parity6a0 ; 1       ;
-; test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_ksh1:auto_generated|a_graycounter_3fc:wrptr_gp|sub_parity12a0                                             ; 1       ;
 ; test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_ksh1:auto_generated|a_graycounter_d86:rdptr_g1p|sub_parity6a0                                             ; 1       ;
+; test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_ksh1:auto_generated|a_graycounter_3fc:wrptr_gp|sub_parity12a0                                             ; 1       ;
 ; test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|a_graycounter_ggc:wrptr_g1p|sub_parity9a0 ; 1       ;
 ; Total number of inverted registers = 5                                                                                                                                                              ;         ;
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
@@ -1171,14 +1172,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+-----------------------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst"                            ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
-; Port    ; Type   ; Severity ; Details                                                                             ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
-; rdempty ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; wrfull  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst"                           ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; wrfull ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------+
@@ -1186,7 +1186,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port       ; Type   ; Severity ; Details                                                                             ;
 +------------+--------+----------+-------------------------------------------------------------------------------------+
-; read_empty ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; write_full ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +------------+--------+----------+-------------------------------------------------------------------------------------+
 
@@ -1206,15 +1205,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Tue Apr 21 02:33:06 2015
+    Info: Processing started: Tue Apr 21 03:38:47 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Receive_Port -c Receive_Port
-Info: Found 2 design units, including 1 entities, in source file /users/gift nyikayaramba/documents/academic/ece 559/ece-559/mii_to_rcv_restored/cntr12bit.vhd
+Info: Found 2 design units, including 1 entities, in source file /users/negatu/desktop/spring 2015 - dawning/ece-559/mii_to_rcv_restored/cntr12bit.vhd
     Info: Found design unit 1: cntr12bit-SYN
     Info: Found entity 1: cntr12bit
-Info: Found 2 design units, including 1 entities, in source file /users/gift nyikayaramba/documents/academic/ece 559/ece-559/mii_to_rcv_restored/framemem.vhd
+Info: Found 2 design units, including 1 entities, in source file /users/negatu/desktop/spring 2015 - dawning/ece-559/mii_to_rcv_restored/framemem.vhd
     Info: Found design unit 1: framemem-SYN
     Info: Found entity 1: framemem
-Info: Found 2 design units, including 1 entities, in source file /users/gift nyikayaramba/documents/academic/ece 559/ece-559/mii_to_rcv_restored/mii_to_rcv.vhd
+Info: Found 2 design units, including 1 entities, in source file /users/negatu/desktop/spring 2015 - dawning/ece-559/mii_to_rcv_restored/mii_to_rcv.vhd
     Info: Found design unit 1: MII_to_RCV-test_bench
     Info: Found entity 1: MII_to_RCV
 Info: Found 2 design units, including 1 entities, in source file sequencenumbercounter.vhd
@@ -1262,9 +1261,7 @@ Info: Found 2 design units, including 1 entities, in source file test_bench1.vhd
 Info: Found 2 design units, including 1 entities, in source file receive_port.vhd
     Info: Found design unit 1: Receive_Port-test_arch
     Info: Found entity 1: Receive_Port
-Info: Found 2 design units, including 1 entities, in source file crc_computer.vhd
-    Info: Found design unit 1: crc_computer-test_arch
-    Info: Found entity 1: crc_computer
+Warning: Can't analyze file -- file crc_computer.vhd is missing
 Info: Found 2 design units, including 1 entities, in source file crc_compute.vhd
     Info: Found design unit 1: crc_compute-crc_arch
     Info: Found entity 1: crc_compute
@@ -1295,9 +1292,8 @@ Info: Found 2 design units, including 1 entities, in source file framevalidfsm.v
     Info: Found entity 1: FrameValidFSM
 Info: Elaborating entity "test" for the top level hierarchy
 Info: Elaborating entity "test_bench1" for hierarchy "test_bench1:test_bench_inst"
-Warning (10036): Verilog HDL or VHDL warning at test_bench1.vhd(43): object "data_buffer_full" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at test_bench1.vhd(48): object "length_buffer_full" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at test_bench1.vhd(49): object "length_buffer_empty" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at test_bench1.vhd(47): object "data_buffer_full" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at test_bench1.vhd(53): object "length_buffer_full" assigned a value but never read
 Info: Elaborating entity "SFD_FSM" for hierarchy "test_bench1:test_bench_inst|SFD_FSM:sfd_fsm_inst"
 Warning (10631): VHDL Process Statement warning at SFD_FSM.vhd(46): inferring latch(es) for signal or variable "y_next", which holds its previous value in one or more paths through the process
 Info (10041): Inferred latch for "y_next.C" at SFD_FSM.vhd(46)
@@ -1540,15 +1536,15 @@ Critical Warning: Ignored Power-Up Level option on the following registers
 Info: 2 registers lost all their fanouts during netlist optimizations. The first 2 are displayed below.
     Info: Register "MII_to_RCV:phy_inst|y_current.done" lost all its fanouts during netlist optimizations.
     Info: Register "test_bench1:test_bench_inst|LengthCounterSystem:length_counter_sys_inst|LengthCounterFSM:LengthCounterFSM_int|state_reg.WAITING" lost all its fanouts during netlist optimizations.
-Info: Implemented 493 device resources after synthesis - the final resource count might be different
+Info: Implemented 501 device resources after synthesis - the final resource count might be different
     Info: Implemented 3 input pins
-    Info: Implemented 64 output pins
-    Info: Implemented 406 logic cells
+    Info: Implemented 68 output pins
+    Info: Implemented 410 logic cells
     Info: Implemented 20 RAM segments
 Info: Quartus II Analysis & Synthesis was successful. 0 errors, 20 warnings
-    Info: Peak virtual memory: 255 megabytes
-    Info: Processing ended: Tue Apr 21 02:33:12 2015
-    Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:06
+    Info: Peak virtual memory: 242 megabytes
+    Info: Processing ended: Tue Apr 21 03:38:52 2015
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:05
 
 

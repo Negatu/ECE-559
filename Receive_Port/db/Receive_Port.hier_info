@@ -67,6 +67,10 @@ test_sequence_counter[5] <= test_bench1:test_bench_inst.test_sequence_counter[5]
 test_sequence_counter[6] <= test_bench1:test_bench_inst.test_sequence_counter[6]
 test_sequence_counter[7] <= test_bench1:test_bench_inst.test_sequence_counter[7]
 test_sequence_counter[8] <= test_bench1:test_bench_inst.test_sequence_counter[8]
+test_length_read_empty <= test_bench1:test_bench_inst.test_length_read_empty
+test_data_read_empty <= test_bench1:test_bench_inst.test_data_read_empty
+test_length_read_enable <= test_bench1:test_bench_inst.test_length_read_enable
+test_data_read_enable <= test_bench1:test_bench_inst.test_data_read_enable
 test_sequence_invalidBit <= test_bench1:test_bench_inst.test_sequence_invalidBit
 
 
@@ -161,6 +165,10 @@ test_sequence_counter[5] <= SequenceNumberCounter:seq_counter_inst.SequenceCount
 test_sequence_counter[6] <= SequenceNumberCounter:seq_counter_inst.SequenceCount[6]
 test_sequence_counter[7] <= SequenceNumberCounter:seq_counter_inst.SequenceCount[7]
 test_sequence_counter[8] <= SequenceNumberCounter:seq_counter_inst.SequenceCount[8]
+test_length_read_empty <= Length_DCFF:length_buffer_inst.rdempty
+test_data_read_empty <= Data_Buffer:data_buffer_inst.read_empty
+test_length_read_enable <= FwdOutputCntrlr:FwdOutputCntrlr_inst.lengthBuffer_RE
+test_data_read_enable <= FwdOutputCntrlr:FwdOutputCntrlr_inst.dataBuffer_RE
 test_sequence_invalidBit <= FrameValidFSM:FrameValidFSM_inst.invalidBit
 
 
@@ -2175,8 +2183,10 @@ sclr => _.IN0
 clock => lengthValidReg:lengthValidReg_inst.clock
 clock => y_current.CLK
 clock => outFrameLengthCounter:outFrameLengthCounter_inst.clock
-reset => lengthValidReg:lengthValidReg_inst.aclr
+reset => comb.IN1
 reset => y_current.PRESET
+dataRdEmpty => process_2.IN0
+lengthRdEmpty => process_2.IN1
 inFrameLengthValue[0] => lengthValidReg:lengthValidReg_inst.data[0]
 inFrameLengthValue[1] => lengthValidReg:lengthValidReg_inst.data[1]
 inFrameLengthValue[2] => lengthValidReg:lengthValidReg_inst.data[2]
@@ -2189,7 +2199,7 @@ inFrameLengthValue[8] => lengthValidReg:lengthValidReg_inst.data[8]
 inFrameLengthValue[9] => lengthValidReg:lengthValidReg_inst.data[9]
 inFrameLengthValue[10] => lengthValidReg:lengthValidReg_inst.data[10]
 inFrameLengthValue[11] => lengthValidReg:lengthValidReg_inst.data[11]
-lengthBuffer_RE <= y_current.DB_MAX_OUTPUT_PORT_TYPE
+lengthBuffer_RE <= int_lengthBufferRE.DB_MAX_OUTPUT_PORT_TYPE
 dataBuffer_RE <= y_current.DB_MAX_OUTPUT_PORT_TYPE
 fwdFrameValid <= lengthValidReg:lengthValidReg_inst.q[11]
 fwdFrameLengthValue[0] <= lengthValidReg:lengthValidReg_inst.q[0]

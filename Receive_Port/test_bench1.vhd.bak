@@ -25,6 +25,10 @@ ENTITY test_bench1 IS
 		test_frame_valid : OUT STD_LOGIC;
 		test_input4bit : OUT STD_LOGIC_VECTOR(3 DOWNTO 0); 
 		test_sequence_counter: OUT STD_LOGIC_VECTOR(8 DOWNTO 0);
+		test_length_read_empty : OUT STD_LOGIC;
+		test_data_read_empty : OUT STD_LOGIC;
+		test_length_read_enable : OUT STD_LOGIC;
+		test_data_read_enable : OUT STD_LOGIC;
 		test_sequence_invalidBit : OUT STD_LOGIC
 		);
 END test_bench1;
@@ -42,6 +46,7 @@ ARCHITECTURE tb_arch OF test_bench1 IS
 	--SIGNAL data_buffer_write_enable : STD_LOGIC;
 	SIGNAL data_buffer_full : STD_LOGIC;
 	SIGNAL data_buffer_read_enable : STD_LOGIC;
+	SIGNAL data_buffer_empty : STD_LOGIC;
 	SIGNAL data_to_forwarding : STD_LOGIC_VECTOR(7 DOWNTO 0);
 	SIGNAL length_buffer_output : STD_LOGIC_VECTOR(11 DOWNTO 0);
 	SIGNAL length_read_enable : STD_LOGIC;
@@ -115,12 +120,12 @@ ARCHITECTURE tb_arch OF test_bench1 IS
 		Clk25Mhz, FrameValid, CRV, Reset : IN STD_LOGIC; 
 		
 		FrameAvailable : OUT STD_LOGIC;
-		SequenceCount : OUT STD_LOGIC_VECTOR(8 DOWNTO 0);
+		SequenceCount : OUT STD_LOGIC_VECTOR(8 DOWNTO 0)
 	);
 	END COMPONENT;
 	
 	COMPONENT FwdOutputCntrlr IS
-	PORT(clock,reset : in std_logic; 
+	PORT(clock,reset,  dataRdEmpty, lengthRdEmpty : in std_logic; 
 		 inFrameLengthValue: in std_logic_vector(11 downto 0);
 		 lengthBuffer_RE,  dataBuffer_RE, fwdFrameValid: out std_logic;
 		 fwdFrameLengthValue: out std_logic_vector(10 downto 0));
@@ -160,6 +165,7 @@ BEGIN
 		write_full => data_buffer_full,
 		read_enable => data_buffer_read_enable,
 		read_clk => clk50,
+		read_empty => data_buffer_empty,
 		data_out_8 => data_to_forwarding
 	);
 
@@ -184,9 +190,11 @@ BEGIN
 			lengthValue =>  frame_length_and_valid (10 DOWNTO 0)
 	);
 	
-		FwdOutputCntrlr_inst : FwdOutputCntrlr PORT MAP(
+	FwdOutputCntrlr_inst : FwdOutputCntrlr PORT MAP(
 		 clock => clk50,
 		 reset => reset,
+		 dataRdEmpty => data_buffer_empty,
+		 lengthRdEmpty => length_buffer_empty,
 		 inFrameLengthValue => length_buffer_output,
 		 lengthBuffer_RE => length_read_enable,
 		 dataBuffer_RE => data_buffer_read_enable,
@@ -210,7 +218,7 @@ BEGIN
 	   lengthValid  => length_valid,
 	   reset		=> reset,
 	   FrameValid	=> frame_valid,
-	   invalidBit => invalidBit_sig,
+	   invalidBit => invalidBit_sig
 	  );
 	
 	--frame_valid <= (length_valid AND check_result AND check_result_valid); ALTERNATIVE TO THE FRAME VALID FSM USED ABOVE
@@ -232,5 +240,7 @@ BEGIN
 	test_frame_valid <= frame_valid;
 	test_sequence_counter <= SequenceCount_sig;
 	test_sequence_invalidBit <= invalidBit_sig;
+	test_length_read_empty <= length_buffer_empty;
+	test_data_read_empty <= data_buffer_empty;
 
 END tb_arch;
