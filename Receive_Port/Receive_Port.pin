@@ -76,15 +76,15 @@ VCCIO3                       : A2        : power  :                   : 3.3V    
 GND*                         : A3        :        :                   :         : 3         :                
 GND*                         : A4        :        :                   :         : 3         :                
 GND*                         : A5        :        :                   :         : 3         :                
-test_length_value[2]         : A6        : output : 3.3-V LVTTL       :         : 3         : N              
-test_crc_cr                  : A7        : output : 3.3-V LVTTL       :         : 3         : N              
+test_input4bit[2]            : A6        : output : 3.3-V LVTTL       :         : 3         : N              
+test_data_read_enable        : A7        : output : 3.3-V LVTTL       :         : 3         : N              
 GND+                         : A8        :        :                   :         : 3         :                
 GND+                         : A9        :        :                   :         : 4         :                
-length_buffer_out_11bit[6]   : A10       : output : 3.3-V LVTTL       :         : 4         : N              
-test_length_read_enable      : A11       : output : 3.3-V LVTTL       :         : 4         : N              
-test_data_read_empty         : A12       : output : 3.3-V LVTTL       :         : 4         : N              
-test_input4bit[1]            : A13       : output : 3.3-V LVTTL       :         : 4         : N              
-test_data_read_enable        : A14       : output : 3.3-V LVTTL       :         : 4         : N              
+test_data_read_empty         : A10       : output : 3.3-V LVTTL       :         : 4         : N              
+data_buffer_out_8bit[3]      : A11       : output : 3.3-V LVTTL       :         : 4         : N              
+length_buffer_out_11bit[4]   : A12       : output : 3.3-V LVTTL       :         : 4         : N              
+frame_to_monitoring[0]       : A13       : output : 3.3-V LVTTL       :         : 4         : N              
+length_buffer_out_11bit[9]   : A14       : output : 3.3-V LVTTL       :         : 4         : N              
 VCCIO4                       : A15       : power  :                   : 3.3V    : 4         :                
 GND                          : A16       : gnd    :                   :         :           :                
 VCCIO2                       : B1        : power  :                   : 3.3V    : 2         :                
@@ -92,53 +92,53 @@ GND                          : B2        : gnd    :                   :         
 GND*                         : B3        :        :                   :         : 3         :                
 GND*                         : B4        :        :                   :         : 3         :                
 GND*                         : B5        :        :                   :         : 3         :                
-GND*                         : B6        :        :                   :         : 3         :                
-test_length_valid            : B7        : output : 3.3-V LVTTL       :         : 3         : N              
+test_input4bit[3]            : B6        : output : 3.3-V LVTTL       :         : 3         : N              
+test_crc_rdv                 : B7        : output : 3.3-V LVTTL       :         : 3         : N              
 GND+                         : B8        :        :                   :         : 3         :                
 GND+                         : B9        :        :                   :         : 4         :                
-length_buffer_out_11bit[7]   : B10       : output : 3.3-V LVTTL       :         : 4         : N              
-length_buffer_out_11bit[8]   : B11       : output : 3.3-V LVTTL       :         : 4         : N              
-data_buffer_out_8bit[6]      : B12       : output : 3.3-V LVTTL       :         : 4         : N              
-test_length_value[9]         : B13       : output : 3.3-V LVTTL       :         : 4         : N              
-GND*                         : B14       :        :                   :         : 4         :                
+test_length_read_empty       : B10       : output : 3.3-V LVTTL       :         : 4         : N              
+test_length_value[9]         : B11       : output : 3.3-V LVTTL       :         : 4         : N              
+frame_valid_out              : B12       : output : 3.3-V LVTTL       :         : 4         : N              
+length_buffer_out_11bit[0]   : B13       : output : 3.3-V LVTTL       :         : 4         : N              
+test_length_buffer_output[9] : B14       : output : 3.3-V LVTTL       :         : 4         : N              
 GND                          : B15       : gnd    :                   :         :           :                
 VCCIO5                       : B16       : power  :                   : 3.3V    : 5         :                
 GND*                         : C1        :        :                   :         : 2         :                
 GND*                         : C2        :        :                   :         : 2         :                
 ~ASDO~ / RESERVED_INPUT_WITH_WEAK_PULLUP : C3        : input  : 3.3-V LVTTL       :         : 2         : N              
 GND*                         : C4        :        :                   :         : 3         :                
-GND*                         : C5        :        :                   :         : 3         :                
+length_buffer_out_11bit[8]   : C5        : output : 3.3-V LVTTL       :         : 3         : N              
 GND*                         : C6        :        :                   :         : 3         :                
 VCCIO3                       : C7        : power  :                   : 3.3V    : 3         :                
 GND                          : C8        : gnd    :                   :         :           :                
 GND                          : C9        : gnd    :                   :         :           :                
 VCCIO4                       : C10       : power  :                   : 3.3V    : 4         :                
-data_buffer_out_8bit[7]      : C11       : output : 3.3-V LVTTL       :         : 4         : N              
-test_length_value[5]         : C12       : output : 3.3-V LVTTL       :         : 4         : N              
-test_crc_rdv                 : C13       : output : 3.3-V LVTTL       :         : 4         : N              
-GND*                         : C14       :        :                   :         : 5         :                
-test_length_value[10]        : C15       : output : 3.3-V LVTTL       :         : 5         : N              
-length_buffer_out_11bit[4]   : C16       : output : 3.3-V LVTTL       :         : 5         : N              
-test_length_value[8]         : D1        : output : 3.3-V LVTTL       :         : 2         : N              
-test_sequence_invalidBit     : D2        : output : 3.3-V LVTTL       :         : 2         : N              
-test_frame_valid             : D3        : output : 3.3-V LVTTL       :         : 2         : N              
-GND*                         : D4        :        :                   :         : 2         :                
+length_buffer_out_11bit[10]  : C11       : output : 3.3-V LVTTL       :         : 4         : N              
+test_frame_valid             : C12       : output : 3.3-V LVTTL       :         : 4         : N              
+test_sequence_invalidBit     : C13       : output : 3.3-V LVTTL       :         : 4         : N              
+test_length_buffer_output[11] : C14       : output : 3.3-V LVTTL       :         : 5         : N              
+test_length_buffer_output[3] : C15       : output : 3.3-V LVTTL       :         : 5         : N              
+length_buffer_out_11bit[1]   : C16       : output : 3.3-V LVTTL       :         : 5         : N              
+test_sequence_counter[6]     : D1        : output : 3.3-V LVTTL       :         : 2         : N              
+test_crc_crv                 : D2        : output : 3.3-V LVTTL       :         : 2         : N              
+frame_to_monitoring[3]       : D3        : output : 3.3-V LVTTL       :         : 2         : N              
+test_sequence_counter[2]     : D4        : output : 3.3-V LVTTL       :         : 2         : N              
 GND_PLL3                     : D5        : gnd    :                   :         :           :                
-GND*                         : D6        :        :                   :         : 3         :                
-GND*                         : D7        :        :                   :         : 3         :                
-test_length_value[7]         : D8        : output : 3.3-V LVTTL       :         : 3         : N              
-test_length_value[4]         : D9        : output : 3.3-V LVTTL       :         : 4         : N              
-test_length_value[0]         : D10       : output : 3.3-V LVTTL       :         : 4         : N              
-test_length_value[1]         : D11       : output : 3.3-V LVTTL       :         : 4         : N              
+test_input4bit[0]            : D6        : output : 3.3-V LVTTL       :         : 3         : N              
+data_buffer_out_8bit[5]      : D7        : output : 3.3-V LVTTL       :         : 3         : N              
+test_input4bit[1]            : D8        : output : 3.3-V LVTTL       :         : 3         : N              
+test_length_buffer_output[8] : D9        : output : 3.3-V LVTTL       :         : 4         : N              
+test_length_buffer_output[7] : D10       : output : 3.3-V LVTTL       :         : 4         : N              
+test_length_buffer_output[6] : D11       : output : 3.3-V LVTTL       :         : 4         : N              
 GND_PLL2                     : D12       : gnd    :                   :         :           :                
-test_input4bit[3]            : D13       : output : 3.3-V LVTTL       :         : 5         : N              
-GND*                         : D14       :        :                   :         : 5         :                
-test_length_read_empty       : D15       : output : 3.3-V LVTTL       :         : 5         : N              
-length_buffer_out_11bit[0]   : D16       : output : 3.3-V LVTTL       :         : 5         : N              
-GND*                         : E1        :        :                   :         : 2         :                
-frame_to_monitoring[11]      : E2        : output : 3.3-V LVTTL       :         : 2         : N              
-length_buffer_out_11bit[5]   : E3        : output : 3.3-V LVTTL       :         : 2         : N              
-length_buffer_out_11bit[1]   : E4        : output : 3.3-V LVTTL       :         : 2         : N              
+data_buffer_out_8bit[2]      : D13       : output : 3.3-V LVTTL       :         : 5         : N              
+data_buffer_out_8bit[6]      : D14       : output : 3.3-V LVTTL       :         : 5         : N              
+test_length_buffer_output[0] : D15       : output : 3.3-V LVTTL       :         : 5         : N              
+test_length_buffer_output[5] : D16       : output : 3.3-V LVTTL       :         : 5         : N              
+frame_to_monitoring[7]       : E1        : output : 3.3-V LVTTL       :         : 2         : N              
+frame_to_monitoring[8]       : E2        : output : 3.3-V LVTTL       :         : 2         : N              
+test_sequence_counter[0]     : E3        : output : 3.3-V LVTTL       :         : 2         : N              
+frame_to_monitoring[1]       : E4        : output : 3.3-V LVTTL       :         : 2         : N              
 VCCD_PLL3                    : E5        : power  :                   : 1.2V    :           :                
 GNDA_PLL3                    : E6        : gnd    :                   :         :           :                
 VCCIO3                       : E7        : power  :                   : 3.3V    : 3         :                
@@ -147,13 +147,13 @@ GND                          : E9        : gnd    :                   :         
 VCCIO4                       : E10       : power  :                   : 3.3V    : 4         :                
 GNDA_PLL2                    : E11       : gnd    :                   :         :           :                
 VCCA_PLL2                    : E12       : power  :                   : 1.2V    :           :                
-data_buffer_out_8bit[3]      : E13       : output : 3.3-V LVTTL       :         : 5         : N              
-GND*                         : E14       :        :                   :         : 5         :                
-data_buffer_out_8bit[4]      : E15       : output : 3.3-V LVTTL       :         : 5         : N              
-data_buffer_out_8bit[0]      : E16       : output : 3.3-V LVTTL       :         : 5         : N              
+test_length_value[1]         : E13       : output : 3.3-V LVTTL       :         : 5         : N              
+test_length_read_enable      : E14       : output : 3.3-V LVTTL       :         : 5         : N              
+test_length_we               : E15       : output : 3.3-V LVTTL       :         : 5         : N              
+test_length_buffer_output[1] : E16       : output : 3.3-V LVTTL       :         : 5         : N              
 DATA0                        : F1        : input  :                   :         : 2         :                
 TCK                          : F2        : input  :                   :         : 2         :                
-frame_to_monitoring[0]       : F3        : output : 3.3-V LVTTL       :         : 2         : N              
+length_buffer_out_11bit[6]   : F3        : output : 3.3-V LVTTL       :         : 2         : N              
 ~nCSO~ / RESERVED_INPUT_WITH_WEAK_PULLUP : F4        : input  : 3.3-V LVTTL       :         : 2         : N              
 GND_PLL3                     : F5        : gnd    :                   :         :           :                
 VCCA_PLL3                    : F6        : power  :                   : 1.2V    :           :                
@@ -163,14 +163,14 @@ VCCINT                       : F9        : power  :                   : 1.2V    
 VCCINT                       : F10       : power  :                   : 1.2V    :           :                
 VCCD_PLL2                    : F11       : power  :                   : 1.2V    :           :                
 GND_PLL2                     : F12       : gnd    :                   :         :           :                
-data_buffer_out_8bit[5]      : F13       : output : 3.3-V LVTTL       :         : 5         : N              
-test_input4bit[2]            : F14       : output : 3.3-V LVTTL       :         : 5         : N              
-frame_valid_out              : F15       : output : 3.3-V LVTTL       :         : 5         : N              
-length_buffer_out_11bit[9]   : F16       : output : 3.3-V LVTTL       :         : 5         : N              
+data_buffer_out_8bit[0]      : F13       : output : 3.3-V LVTTL       :         : 5         : N              
+length_buffer_out_11bit[7]   : F14       : output : 3.3-V LVTTL       :         : 5         : N              
+test_length_value[2]         : F15       : output : 3.3-V LVTTL       :         : 5         : N              
+test_length_value[8]         : F16       : output : 3.3-V LVTTL       :         : 5         : N              
 TMS                          : G1        : input  :                   :         : 2         :                
 TDO                          : G2        : output :                   :         : 2         :                
 VCCIO2                       : G3        : power  :                   : 3.3V    : 2         :                
-test_crc_crv                 : G4        : output : 3.3-V LVTTL       :         : 2         : N              
+test_sequence_counter[7]     : G4        : output : 3.3-V LVTTL       :         : 2         : N              
 nCE                          : G5        :        :                   :         : 2         :                
 GND                          : G6        : gnd    :                   :         :           :                
 VCCINT                       : G7        : power  :                   : 1.2V    :           :                
@@ -178,11 +178,11 @@ GND                          : G8        : gnd    :                   :         
 VCCINT                       : G9        : power  :                   : 1.2V    :           :                
 GND                          : G10       : gnd    :                   :         :           :                
 VCCINT                       : G11       : power  :                   : 1.2V    :           :                
-test_length_value[6]         : G12       : output : 3.3-V LVTTL       :         : 5         : N              
-length_buffer_out_11bit[3]   : G13       : output : 3.3-V LVTTL       :         : 5         : N              
+test_length_valid            : G12       : output : 3.3-V LVTTL       :         : 5         : N              
+test_length_value[7]         : G13       : output : 3.3-V LVTTL       :         : 5         : N              
 VCCIO5                       : G14       : power  :                   : 3.3V    : 5         :                
-test_input4bit[0]            : G15       : output : 3.3-V LVTTL       :         : 5         : N              
-GND*                         : G16       :        :                   :         : 5         :                
+data_buffer_out_8bit[4]      : G15       : output : 3.3-V LVTTL       :         : 5         : N              
+test_length_value[5]         : G16       : output : 3.3-V LVTTL       :         : 5         : N              
 GND+                         : H1        :        :                   :         : 2         :                
 reset                        : H2        : input  : 3.3-V LVTTL       :         : 2         : N              
 GND                          : H3        : gnd    :                   :         :           :                
@@ -194,15 +194,15 @@ GND                          : H8        : gnd    :                   :         
 GND                          : H9        : gnd    :                   :         :           :                
 VCCINT                       : H10       : power  :                   : 1.2V    :           :                
 VCCINT                       : H11       : power  :                   : 1.2V    :           :                
-data_buffer_out_8bit[1]      : H12       : output : 3.3-V LVTTL       :         : 5         : N              
-length_buffer_out_11bit[2]   : H13       : output : 3.3-V LVTTL       :         : 5         : N              
+test_length_value[4]         : H12       : output : 3.3-V LVTTL       :         : 5         : N              
+test_length_value[6]         : H13       : output : 3.3-V LVTTL       :         : 5         : N              
 GND                          : H14       : gnd    :                   :         :           :                
 GND+                         : H15       :        :                   :         : 5         :                
 GND+                         : H16       :        :                   :         : 5         :                
 clock50                      : J1        : input  : 3.3-V LVTTL       :         : 1         : N              
 clock25                      : J2        : input  : 3.3-V LVTTL       :         : 1         : N              
 GND                          : J3        : gnd    :                   :         :           :                
-frame_available_monitoring   : J4        : output : 3.3-V LVTTL       :         : 1         : N              
+test_sequence_counter[4]     : J4        : output : 3.3-V LVTTL       :         : 1         : N              
 nCONFIG                      : J5        :        :                   :         : 2         :                
 VCCINT                       : J6        : power  :                   : 1.2V    :           :                
 VCCINT                       : J7        : power  :                   : 1.2V    :           :                
@@ -210,16 +210,16 @@ GND                          : J8        : gnd    :                   :         
 GND                          : J9        : gnd    :                   :         :           :                
 VCCINT                       : J10       : power  :                   : 1.2V    :           :                
 GND                          : J11       : gnd    :                   :         :           :                
-data_buffer_out_8bit[2]      : J12       : output : 3.3-V LVTTL       :         : 5         : N              
+test_length_buffer_output[10] : J12       : output : 3.3-V LVTTL       :         : 5         : N              
 MSEL0                        : J13       :        :                   :         : 6         :                
 GND                          : J14       : gnd    :                   :         :           :                
 GND+                         : J15       :        :                   :         : 6         :                
 GND+                         : J16       :        :                   :         : 6         :                
-frame_to_monitoring[7]       : K1        : output : 3.3-V LVTTL       :         : 1         : N              
-test_sequence_counter[6]     : K2        : output : 3.3-V LVTTL       :         : 1         : N              
+test_sequence_counter[8]     : K1        : output : 3.3-V LVTTL       :         : 1         : N              
+frame_available_monitoring   : K2        : output : 3.3-V LVTTL       :         : 1         : N              
 VCCIO1                       : K3        : power  :                   : 3.3V    : 1         :                
-test_sequence_counter[4]     : K4        : output : 3.3-V LVTTL       :         : 1         : N              
-frame_to_monitoring[5]       : K5        : output : 3.3-V LVTTL       :         : 1         : N              
+test_sequence_counter[1]     : K4        : output : 3.3-V LVTTL       :         : 1         : N              
+frame_to_monitoring[9]       : K5        : output : 3.3-V LVTTL       :         : 1         : N              
 VCCINT                       : K6        : power  :                   : 1.2V    :           :                
 GND                          : K7        : gnd    :                   :         :           :                
 VCCINT                       : K8        : power  :                   : 1.2V    :           :                
@@ -229,11 +229,11 @@ GND                          : K11       : gnd    :                   :         
 MSEL1                        : K12       :        :                   :         : 6         :                
 GND*                         : K13       :        :                   :         : 6         :                
 VCCIO6                       : K14       : power  :                   : 3.3V    : 6         :                
-GND*                         : K15       :        :                   :         : 6         :                
-GND*                         : K16       :        :                   :         : 6         :                
-frame_to_monitoring[1]       : L1        : output : 3.3-V LVTTL       :         : 1         : N              
-test_sequence_counter[0]     : L2        : output : 3.3-V LVTTL       :         : 1         : N              
-frame_to_monitoring[2]       : L3        : output : 3.3-V LVTTL       :         : 1         : N              
+test_length_value[0]         : K15       : output : 3.3-V LVTTL       :         : 6         : N              
+test_length_value[3]         : K16       : output : 3.3-V LVTTL       :         : 6         : N              
+frame_to_monitoring[2]       : L1        : output : 3.3-V LVTTL       :         : 1         : N              
+frame_to_monitoring[5]       : L2        : output : 3.3-V LVTTL       :         : 1         : N              
+GND*                         : L3        :        :                   :         : 1         :                
 GND*                         : L4        :        :                   :         : 1         :                
 GND_PLL1                     : L5        : gnd    :                   :         :           :                
 VCCD_PLL1                    : L6        : power  :                   : 1.2V    :           :                
@@ -244,13 +244,13 @@ GND                          : L10       : gnd    :                   :         
 VCCA_PLL4                    : L11       : power  :                   : 1.2V    :           :                
 GND_PLL4                     : L12       : gnd    :                   :         :           :                
 CONF_DONE                    : L13       :        :                   :         : 6         :                
-GND*                         : L14       :        :                   :         : 6         :                
-GND*                         : L15       :        :                   :         : 6         :                
-GND*                         : L16       :        :                   :         : 6         :                
-test_sequence_counter[7]     : M1        : output : 3.3-V LVTTL       :         : 1         : N              
-frame_to_monitoring[8]       : M2        : output : 3.3-V LVTTL       :         : 1         : N              
-test_sequence_counter[1]     : M3        : output : 3.3-V LVTTL       :         : 1         : N              
-GND*                         : M4        :        :                   :         : 1         :                
+test_length_value[10]        : L14       : output : 3.3-V LVTTL       :         : 6         : N              
+frame_to_monitoring[6]       : L15       : output : 3.3-V LVTTL       :         : 6         : N              
+test_sequence_counter[5]     : L16       : output : 3.3-V LVTTL       :         : 6         : N              
+frame_to_monitoring[4]       : M1        : output : 3.3-V LVTTL       :         : 1         : N              
+GND*                         : M2        :        :                   :         : 1         :                
+test_sequence_counter[3]     : M3        : output : 3.3-V LVTTL       :         : 1         : N              
+frame_to_monitoring[10]      : M4        : output : 3.3-V LVTTL       :         : 1         : N              
 VCCA_PLL1                    : M5        : power  :                   : 1.2V    :           :                
 GNDA_PLL1                    : M6        : gnd    :                   :         :           :                
 VCCIO8                       : M7        : power  :                   : 3.3V    : 8         :                
@@ -262,49 +262,49 @@ VCCD_PLL4                    : M12       : power  :                   : 1.2V    
 nSTATUS                      : M13       :        :                   :         : 6         :                
 GND*                         : M14       :        :                   :         : 6         :                
 GND*                         : M15       :        :                   :         : 6         :                
-GND*                         : M16       :        :                   :         : 6         :                
-frame_to_monitoring[6]       : N1        : output : 3.3-V LVTTL       :         : 1         : N              
-test_sequence_counter[5]     : N2        : output : 3.3-V LVTTL       :         : 1         : N              
-frame_to_monitoring[9]       : N3        : output : 3.3-V LVTTL       :         : 1         : N              
-test_sequence_counter[8]     : N4        : output : 3.3-V LVTTL       :         : 1         : N              
+data_buffer_out_8bit[1]      : M16       : output : 3.3-V LVTTL       :         : 6         : N              
+GND*                         : N1        :        :                   :         : 1         :                
+GND*                         : N2        :        :                   :         : 1         :                
+GND*                         : N3        :        :                   :         : 1         :                
+GND*                         : N4        :        :                   :         : 1         :                
 GND_PLL1                     : N5        : gnd    :                   :         :           :                
 GND*                         : N6        :        :                   :         : 8         :                
 GND*                         : N7        :        :                   :         : 8         :                
 GND*                         : N8        :        :                   :         : 8         :                
 GND+                         : N9        :        :                   :         : 7         :                
 GND+                         : N10       :        :                   :         : 7         :                
-GND*                         : N11       :        :                   :         : 7         :                
+length_buffer_out_11bit[3]   : N11       : output : 3.3-V LVTTL       :         : 7         : N              
 GND_PLL4                     : N12       : gnd    :                   :         :           :                
 GND*                         : N13       :        :                   :         : 6         :                
 ~LVDS91p/nCEO~               : N14       : output : 3.3-V LVTTL       :         : 6         : N              
-GND*                         : N15       :        :                   :         : 6         :                
+length_buffer_out_11bit[5]   : N15       : output : 3.3-V LVTTL       :         : 6         : N              
 GND*                         : N16       :        :                   :         : 6         :                
-frame_to_monitoring[3]       : P1        : output : 3.3-V LVTTL       :         : 1         : N              
-test_sequence_counter[2]     : P2        : output : 3.3-V LVTTL       :         : 1         : N              
+GND*                         : P1        :        :                   :         : 1         :                
+GND*                         : P2        :        :                   :         : 1         :                
 GND*                         : P3        :        :                   :         : 1         :                
-GND*                         : P4        :        :                   :         : 8         :                
+frame_to_monitoring[11]      : P4        : output : 3.3-V LVTTL       :         : 8         : N              
 GND*                         : P5        :        :                   :         : 8         :                
-frame_to_monitoring[10]      : P6        : output : 3.3-V LVTTL       :         : 8         : N              
+GND*                         : P6        :        :                   :         : 8         :                
 VCCIO8                       : P7        : power  :                   : 3.3V    : 8         :                
 GND                          : P8        : gnd    :                   :         :           :                
 GND                          : P9        : gnd    :                   :         :           :                
 VCCIO7                       : P10       : power  :                   : 3.3V    : 7         :                
-test_length_we               : P11       : output : 3.3-V LVTTL       :         : 7         : N              
-GND*                         : P12       :        :                   :         : 7         :                
-GND*                         : P13       :        :                   :         : 7         :                
+GND*                         : P11       :        :                   :         : 7         :                
+test_crc_cr                  : P12       : output : 3.3-V LVTTL       :         : 7         : N              
+test_length_buffer_output[2] : P13       : output : 3.3-V LVTTL       :         : 7         : N              
 GND*                         : P14       :        :                   :         : 6         :                
 GND*                         : P15       :        :                   :         : 6         :                
 GND*                         : P16       :        :                   :         : 6         :                
 VCCIO1                       : R1        : power  :                   : 3.3V    : 1         :                
 GND                          : R2        : gnd    :                   :         :           :                
-frame_to_monitoring[4]       : R3        : output : 3.3-V LVTTL       :         : 8         : N              
+GND*                         : R3        :        :                   :         : 8         :                
 GND*                         : R4        :        :                   :         : 8         :                
 GND*                         : R5        :        :                   :         : 8         :                
 GND*                         : R6        :        :                   :         : 8         :                
 GND*                         : R7        :        :                   :         : 8         :                
 GND*                         : R8        :        :                   :         : 8         :                
 GND+                         : R9        :        :                   :         : 8         :                
-GND*                         : R10       :        :                   :         : 7         :                
+data_buffer_out_8bit[7]      : R10       : output : 3.3-V LVTTL       :         : 7         : N              
 GND*                         : R11       :        :                   :         : 7         :                
 GND*                         : R12       :        :                   :         : 7         :                
 GND*                         : R13       :        :                   :         : 7         :                
@@ -313,16 +313,16 @@ GND                          : R15       : gnd    :                   :         
 VCCIO6                       : R16       : power  :                   : 3.3V    : 6         :                
 GND                          : T1        : gnd    :                   :         :           :                
 VCCIO8                       : T2        : power  :                   : 3.3V    : 8         :                
-test_sequence_counter[3]     : T3        : output : 3.3-V LVTTL       :         : 8         : N              
+GND*                         : T3        :        :                   :         : 8         :                
 GND*                         : T4        :        :                   :         : 8         :                
 GND*                         : T5        :        :                   :         : 8         :                
 GND*                         : T6        :        :                   :         : 8         :                
 GND*                         : T7        :        :                   :         : 8         :                
 GND*                         : T8        :        :                   :         : 8         :                
 GND+                         : T9        :        :                   :         : 8         :                
-length_buffer_out_11bit[10]  : T10       : output : 3.3-V LVTTL       :         : 7         : N              
-test_length_value[3]         : T11       : output : 3.3-V LVTTL       :         : 7         : N              
-GND*                         : T12       :        :                   :         : 7         :                
+test_length_buffer_output[4] : T10       : output : 3.3-V LVTTL       :         : 7         : N              
+GND*                         : T11       :        :                   :         : 7         :                
+length_buffer_out_11bit[2]   : T12       : output : 3.3-V LVTTL       :         : 7         : N              
 GND*                         : T13       :        :                   :         : 7         :                
 GND*                         : T14       :        :                   :         : 7         :                
 VCCIO7                       : T15       : power  :                   : 3.3V    : 7         :                

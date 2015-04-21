@@ -29,6 +29,7 @@ ENTITY test_bench1 IS
 		test_data_read_empty : OUT STD_LOGIC;
 		test_length_read_enable : OUT STD_LOGIC;
 		test_data_read_enable : OUT STD_LOGIC;
+		test_length_buffer_output : OUT STD_LOGIC_VECTOR(11 DOWNTO 0);
 		test_sequence_invalidBit : OUT STD_LOGIC
 		);
 END test_bench1;
@@ -242,5 +243,7 @@ BEGIN
 	test_sequence_invalidBit <= invalidBit_sig;
 	test_length_read_empty <= length_buffer_empty;
 	test_data_read_empty <= data_buffer_empty;
+	test_data_read_enable <= data_buffer_read_enable;
+	test_length_read_enable <= length_read_enable;
 
 END tb_arch;

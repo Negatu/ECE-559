@@ -5,19 +5,19 @@ Timing Analyzer Summary
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 10.862 ns
-From           : test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|rdptr_g[11]
-To             : test_data_read_empty
-From Clock     : clock50
+Actual Time    : 11.292 ns
+From           : test_bench1:test_bench_inst|LengthCounterSystem:length_counter_sys_inst|LengthCounter:LengthCounter_inst|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|safe_q[8]
+To             : test_length_valid
+From Clock     : clock25
 To Clock       : --
 Failed Paths   : 0
 
 Type           : Clock Setup: 'clock25'
 Slack          : N/A
 Required Time  : None
-Actual Time    : 90.29 MHz ( period = 11.076 ns )
-From           : test_bench1:test_bench_inst|FrameValidFSM:FrameValidFSM_inst|state_next.WAITING_86
-To             : test_bench1:test_bench_inst|FrameValidFSM:FrameValidFSM_inst|state_reg.WAITING
+Actual Time    : 91.93 MHz ( period = 10.878 ns )
+From           : test_bench1:test_bench_inst|FrameValidFSM:FrameValidFSM_inst|state_next.LENGTH_IS_VALID_74
+To             : test_bench1:test_bench_inst|FrameValidFSM:FrameValidFSM_inst|state_reg.LENGTH_IS_VALID
 From Clock     : clock25
 To Clock       : clock25
 Failed Paths   : 0
@@ -25,9 +25,9 @@ Failed Paths   : 0
 Type           : Clock Setup: 'clock50'
 Slack          : N/A
 Required Time  : None
-Actual Time    : 173.52 MHz ( period = 5.763 ns )
-From           : test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_ksh1:auto_generated|rdptr_g[1]
-To             : test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_ksh1:auto_generated|a_graycounter_d86:rdptr_g1p|counter7a[3]
+Actual Time    : 178.32 MHz ( period = 5.608 ns )
+From           : test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|rdptr_g[7]
+To             : test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|altsyncram_qo61:fifo_ram|altsyncram_6ve1:altsyncram11|q_a[4]
 From Clock     : clock50
 To Clock       : clock50
 Failed Paths   : 0
@@ -37,7 +37,7 @@ Slack          : Not operational: Clock Skew > Data Delay
 Required Time  : None
 Actual Time    : N/A
 From           : test_bench1:test_bench_inst|FrameValidFSM:FrameValidFSM_inst|state_reg.WAITING
-To             : test_bench1:test_bench_inst|FrameValidFSM:FrameValidFSM_inst|state_next.LENGTH_IS_VALID_74
+To             : test_bench1:test_bench_inst|FrameValidFSM:FrameValidFSM_inst|state_next.WAITING_86
 From Clock     : clock25
 To Clock       : clock25
 Failed Paths   : 28

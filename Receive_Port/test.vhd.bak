@@ -26,6 +26,7 @@ ENTITY test IS
 		test_data_read_empty : OUT STD_LOGIC;
 		test_length_read_enable : OUT STD_LOGIC;
 		test_data_read_enable : OUT STD_LOGIC;
+		test_length_buffer_output : OUT STD_LOGIC_VECTOR(11 DOWNTO 0);
 		test_sequence_invalidBit : OUT STD_LOGIC
 		
 		);
@@ -63,6 +64,7 @@ ARCHITECTURE test_arch OF test IS
 			test_data_read_empty : OUT STD_LOGIC;
 			test_length_read_enable : OUT STD_LOGIC;
 			test_data_read_enable : OUT STD_LOGIC;
+			test_length_buffer_output : OUT STD_LOGIC_VECTOR(11 DOWNTO 0);
 			test_sequence_invalidBit : OUT STD_LOGIC
 		);
 	END COMPONENT;
@@ -107,6 +109,8 @@ ARCHITECTURE test_arch OF test IS
 			test_sequence_counter => test_sequence_counter,
 			test_sequence_invalidBit => test_sequence_invalidBit,
 			test_length_read_empty => test_length_read_empty,
+			test_length_read_enable => test_length_read_enable,
+			test_data_read_enable => test_data_read_enable,
 			test_data_read_empty => test_data_read_empty
 	);
 	
