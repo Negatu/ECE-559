@@ -23,7 +23,9 @@ ENTITY test_bench1 IS
 		test_crc_crv : OUT STD_LOGIC;
 		test_crc_cr : OUT STD_LOGIC;
 		test_frame_valid : OUT STD_LOGIC;
-		test_input4bit : OUT STD_LOGIC_VECTOR(3 DOWNTO 0) 
+		test_input4bit : OUT STD_LOGIC_VECTOR(3 DOWNTO 0); 
+		test_sequence_counter: OUT STD_LOGIC_VECTOR(8 DOWNTO 0);
+		test_sequence_invalidBit : OUT STD_LOGIC
 		);
 END test_bench1;
 
@@ -37,7 +39,7 @@ ARCHITECTURE tb_arch OF test_bench1 IS
 	SIGNAL length_buffer_write_enable : STD_LOGIC;
 	SIGNAL frame_valid : STD_LOGIC;
 	SIGNAL frame_length_and_valid : STD_LOGIC_VECTOR(11 DOWNTO 0); -- concatenation of frame valid and length
-	SIGNAL data_buffer_write_enable : STD_LOGIC;
+	--SIGNAL data_buffer_write_enable : STD_LOGIC;
 	SIGNAL data_buffer_full : STD_LOGIC;
 	SIGNAL data_buffer_read_enable : STD_LOGIC;
 	SIGNAL data_to_forwarding : STD_LOGIC_VECTOR(7 DOWNTO 0);
@@ -45,6 +47,8 @@ ARCHITECTURE tb_arch OF test_bench1 IS
 	SIGNAL length_read_enable : STD_LOGIC;
 	SIGNAL length_buffer_full : STD_LOGIC;
 	SIGNAL length_buffer_empty : STD_LOGIC;
+	SIGNAL invalidBit_sig : STD_LOGIC;
+	SIGNAL SequenceCount_sig : STD_LOGIC_VECTOR(8 DOWNTO 0);
 	
 	COMPONENT SFD_FSM
 		PORT (	Clock	: IN	STD_LOGIC;
@@ -108,11 +112,11 @@ ARCHITECTURE tb_arch OF test_bench1 IS
 	COMPONENT SequenceNumberCounter IS
 	PORT
 	(
-		Clk50Mhz, FrameValid, CRV, Reset : IN STD_LOGIC;
-		PortID : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
+		Clk25Mhz, FrameValid, CRV, Reset : IN STD_LOGIC; 
 		
 		FrameAvailable : OUT STD_LOGIC;
-		Frame : OUT STD_LOGIC_VECTOR(11 DOWNTO 0)
+		SequenceCount : OUT STD_LOGIC_VECTOR(8 DOWNTO 0);
+		invalidBit : OUT STD_LOGIC
 	);
 	END COMPONENT;
 	
@@ -145,9 +149,9 @@ BEGIN
 	
 	data_buffer_inst : Data_Buffer PORT MAP (
 		reset => reset, 
-		write_enable => data_buffer_write_enable,
+		write_enable => CRC_rdv, --data_buffer_write_enable,
 		write_clk => clk25,
-		data_in_4 => input_4bit,
+		data_in_4 => data_to_crc, --input_4bit,
 		write_full => data_buffer_full,
 		read_enable => data_buffer_read_enable,
 		read_clk => clk50,
@@ -186,14 +190,13 @@ BEGIN
 		  );
 	
 	seq_counter_inst : SequenceNumberCounter PORT MAP (
-		Clk50Mhz => clk25,
+		Clk25Mhz => clk25,
 		FrameValid => frame_valid,
 		CRV => check_result_valid,
 		Reset => reset,
-		PortID => "00",
 		FrameAvailable => frame_available_monitoring,
-		Frame => frame_to_monitoring
-		
+		invalidBit => invalidBit_sig,
+		SequenceCount => SequenceCount_sig
 	);
 	
 	frame_valid <= (length_valid AND check_result AND check_result_valid); 
@@ -201,6 +204,8 @@ BEGIN
 	--length_buffer_out_11bit <= length_buffer_output(10 DOWNTO 0);	--going to forwarding
 	--frame_valid_out <= length_buffer_output(11);	--going to forwarding
 	data_buffer_out_8bit <= data_to_forwarding;	--going to forwarding
+	
+	frame_to_monitoring <= "00" & SequenceCount_sig & invalidBit_sig;
 	
 	--test - probe inside wires of test_bench1;
 	test_crc_rdv <= data_buffer_read_enable;
@@ -211,5 +216,7 @@ BEGIN
 	test_crc_crv <= check_result_valid;
 	test_crc_cr <= check_result;
 	test_frame_valid <= frame_valid;
+	test_sequence_counter <= SequenceCount_sig;
+	test_sequence_invalidBit <= invalidBit_sig;
 
 END tb_arch;

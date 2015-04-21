@@ -19,11 +19,11 @@
 
 FUNCTION a_graycounter_d86 (aclr, clock, cnt_en)
 RETURNS ( q[5..0]);
-FUNCTION a_graycounter_6fc (aclr, clock, cnt_en)
+FUNCTION a_graycounter_4fc (aclr, clock, cnt_en)
 RETURNS ( q[5..0]);
 FUNCTION a_graycounter_3fc (aclr, clock, cnt_en)
 RETURNS ( q[5..0]);
-FUNCTION altsyncram_ro61 (aclr1, address_a[4..0], address_b[4..0], addressstall_b, clock0, clock1, clocken1, data_a[11..0], wren_a)
+FUNCTION altsyncram_po61 (aclr1, address_a[4..0], address_b[4..0], addressstall_b, clock0, clock1, clocken1, data_a[11..0], wren_a)
 RETURNS ( q_b[11..0]);
 FUNCTION dffpipe_ngh (clock, clrn, d[0..0])
 RETURNS ( q[0..0]);
@@ -35,7 +35,7 @@ FUNCTION cmpr_q16 (dataa[5..0], datab[5..0])
 RETURNS ( aeb);
 
 --synthesis_resources = M4K 1 reg 64 
-OPTIONS ALTERA_INTERNAL_OPTION = "AUTO_SHIFT_REGISTER_RECOGNITION=OFF;REMOVE_DUPLICATE_REGISTERS=OFF;suppress_da_rule_internal=d101;suppress_da_rule_internal=d102;suppress_da_rule_internal=s102;{-to p0addr} POWER_UP_LEVEL=LOW;{-to rdptr_g} suppress_da_rule_internal=r105;-name CUT ON -from rdptr_g -to ws_dgrp|dffpipe18|dffe19a;-name SDC_STATEMENT ""set_false_path -from *rdptr_g* -to *ws_dgrp|dffpipe_hd9:dffpipe18|dffe19a* "";-name CUT ON -from delayed_wrptr_g -to rs_dgwp|dffpipe15|dffe16a;-name SDC_STATEMENT ""set_false_path -from *delayed_wrptr_g* -to *rs_dgwp|dffpipe_ed9:dffpipe15|dffe16a* """;
+OPTIONS ALTERA_INTERNAL_OPTION = "AUTO_SHIFT_REGISTER_RECOGNITION=OFF;REMOVE_DUPLICATE_REGISTERS=OFF;suppress_da_rule_internal=d101;suppress_da_rule_internal=d102;suppress_da_rule_internal=s102;{-to p0addr} POWER_UP_LEVEL=LOW;{-to rdptr_g} suppress_da_rule_internal=r105;-name CUT ON -from rdptr_g -to ws_dgrp|dffpipe18|dffe19a;-name SDC_STATEMENT ""set_false_path -from *rdptr_g* -to *ws_dgrp|dffpipe_fd9:dffpipe18|dffe19a* "";-name CUT ON -from delayed_wrptr_g -to rs_dgwp|dffpipe15|dffe16a;-name SDC_STATEMENT ""set_false_path -from *delayed_wrptr_g* -to *rs_dgwp|dffpipe_ed9:dffpipe15|dffe16a* """;
 
 SUBDESIGN dcfifo_ksh1
 ( 
@@ -51,9 +51,9 @@ SUBDESIGN dcfifo_ksh1
 ) 
 VARIABLE 
 	rdptr_g1p : a_graycounter_d86;
-	wrptr_g1p : a_graycounter_6fc;
+	wrptr_g1p : a_graycounter_4fc;
 	wrptr_gp : a_graycounter_3fc;
-	fifo_ram : altsyncram_ro61;
+	fifo_ram : altsyncram_po61;
 	delayed_wrptr_g[5..0] : dffe;
 	p0addr : dffe
 		WITH (

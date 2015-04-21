@@ -20,7 +20,9 @@ ENTITY test IS
 		test_crc_crv : OUT STD_LOGIC;
 		test_crc_cr : OUT STD_LOGIC;
 		test_frame_valid : OUT STD_LOGIC;
-		test_input4bit : OUT STD_LOGIC_VECTOR(3 DOWNTO 0) 
+		test_input4bit : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+		test_sequence_counter: OUT STD_LOGIC_VECTOR(8 DOWNTO 0);
+		test_sequence_invalidBit : OUT STD_LOGIC
 		);
 END test;
 
@@ -50,7 +52,9 @@ ARCHITECTURE test_arch OF test IS
 			test_crc_crv : OUT STD_LOGIC;
 			test_crc_cr : OUT STD_LOGIC;
 			test_frame_valid : OUT STD_LOGIC;
-			test_input4bit : OUT STD_LOGIC_VECTOR(3 DOWNTO 0) 
+			test_input4bit : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+			test_sequence_counter: OUT STD_LOGIC_VECTOR(8 DOWNTO 0);
+			test_sequence_invalidBit : OUT STD_LOGIC
 		);
 	END COMPONENT;
 	
@@ -90,7 +94,9 @@ ARCHITECTURE test_arch OF test IS
 			test_crc_crv => test_crc_crv,
 			test_crc_cr => test_crc_cr,
 			test_frame_valid => test_frame_valid,
-			test_input4bit => test_input4bit
+			test_input4bit => test_input4bit,
+			test_sequence_counter => test_sequence_counter,
+			test_sequence_invalidBit => test_sequence_invalidBit
 	);
 	
 	phy_inst : MII_to_RCV PORT MAP (

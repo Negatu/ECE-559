@@ -17,7 +17,7 @@
 --  applicable agreement for further details.
 
 
-FUNCTION dffpipe_hd9 (clock, clrn, d[5..0])
+FUNCTION dffpipe_fd9 (clock, clrn, d[5..0])
 RETURNS ( q[5..0]);
 
 --synthesis_resources = reg 12 
@@ -31,7 +31,7 @@ SUBDESIGN alt_synch_pipe_kc8
 	q[5..0]	:	output;
 ) 
 VARIABLE 
-	dffpipe18 : dffpipe_hd9;
+	dffpipe18 : dffpipe_fd9;
 
 BEGIN 
 	dffpipe18.clock = clock;

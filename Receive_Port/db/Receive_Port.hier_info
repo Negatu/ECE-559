@@ -58,6 +58,16 @@ test_input4bit[0] <= test_bench1:test_bench_inst.test_input4bit[0]
 test_input4bit[1] <= test_bench1:test_bench_inst.test_input4bit[1]
 test_input4bit[2] <= test_bench1:test_bench_inst.test_input4bit[2]
 test_input4bit[3] <= test_bench1:test_bench_inst.test_input4bit[3]
+test_sequence_counter[0] <= test_bench1:test_bench_inst.test_sequence_counter[0]
+test_sequence_counter[1] <= test_bench1:test_bench_inst.test_sequence_counter[1]
+test_sequence_counter[2] <= test_bench1:test_bench_inst.test_sequence_counter[2]
+test_sequence_counter[3] <= test_bench1:test_bench_inst.test_sequence_counter[3]
+test_sequence_counter[4] <= test_bench1:test_bench_inst.test_sequence_counter[4]
+test_sequence_counter[5] <= test_bench1:test_bench_inst.test_sequence_counter[5]
+test_sequence_counter[6] <= test_bench1:test_bench_inst.test_sequence_counter[6]
+test_sequence_counter[7] <= test_bench1:test_bench_inst.test_sequence_counter[7]
+test_sequence_counter[8] <= test_bench1:test_bench_inst.test_sequence_counter[8]
+test_sequence_invalidBit <= test_bench1:test_bench_inst.test_sequence_invalidBit
 
 
 |test|test_bench1:test_bench_inst
@@ -66,7 +76,7 @@ clk25 => CRC_System:crc_system_inst.Clk
 clk25 => Data_Buffer:data_buffer_inst.write_clk
 clk25 => Length_DCFF:length_buffer_inst.wrclk
 clk25 => LengthCounterSystem:length_counter_sys_inst.clock
-clk25 => SequenceNumberCounter:seq_counter_inst.Clk50Mhz
+clk25 => SequenceNumberCounter:seq_counter_inst.Clk25Mhz
 clk50 => Data_Buffer:data_buffer_inst.read_clk
 clk50 => Length_DCFF:length_buffer_inst.rdclk
 clk50 => FwdOutputCntrlr:FwdOutputCntrlr_inst.clock
@@ -79,16 +89,12 @@ reset => FwdOutputCntrlr:FwdOutputCntrlr_inst.reset
 reset => SequenceNumberCounter:seq_counter_inst.Reset
 rdv => SFD_FSM:sfd_fsm_inst.sfd_rdv
 input_4bit[0] => SFD_FSM:sfd_fsm_inst.dataIn[0]
-input_4bit[0] => Data_Buffer:data_buffer_inst.data_in_4[0]
 input_4bit[0] => test_input4bit[0].DATAIN
 input_4bit[1] => SFD_FSM:sfd_fsm_inst.dataIn[1]
-input_4bit[1] => Data_Buffer:data_buffer_inst.data_in_4[1]
 input_4bit[1] => test_input4bit[1].DATAIN
 input_4bit[2] => SFD_FSM:sfd_fsm_inst.dataIn[2]
-input_4bit[2] => Data_Buffer:data_buffer_inst.data_in_4[2]
 input_4bit[2] => test_input4bit[2].DATAIN
 input_4bit[3] => SFD_FSM:sfd_fsm_inst.dataIn[3]
-input_4bit[3] => Data_Buffer:data_buffer_inst.data_in_4[3]
 input_4bit[3] => test_input4bit[3].DATAIN
 length_buffer_out_11bit[0] <= FwdOutputCntrlr:FwdOutputCntrlr_inst.fwdFrameLengthValue[0]
 length_buffer_out_11bit[1] <= FwdOutputCntrlr:FwdOutputCntrlr_inst.fwdFrameLengthValue[1]
@@ -110,18 +116,18 @@ data_buffer_out_8bit[4] <= Data_Buffer:data_buffer_inst.data_out_8[4]
 data_buffer_out_8bit[5] <= Data_Buffer:data_buffer_inst.data_out_8[5]
 data_buffer_out_8bit[6] <= Data_Buffer:data_buffer_inst.data_out_8[6]
 data_buffer_out_8bit[7] <= Data_Buffer:data_buffer_inst.data_out_8[7]
-frame_to_monitoring[0] <= SequenceNumberCounter:seq_counter_inst.Frame[0]
-frame_to_monitoring[1] <= SequenceNumberCounter:seq_counter_inst.Frame[1]
-frame_to_monitoring[2] <= SequenceNumberCounter:seq_counter_inst.Frame[2]
-frame_to_monitoring[3] <= SequenceNumberCounter:seq_counter_inst.Frame[3]
-frame_to_monitoring[4] <= SequenceNumberCounter:seq_counter_inst.Frame[4]
-frame_to_monitoring[5] <= SequenceNumberCounter:seq_counter_inst.Frame[5]
-frame_to_monitoring[6] <= SequenceNumberCounter:seq_counter_inst.Frame[6]
-frame_to_monitoring[7] <= SequenceNumberCounter:seq_counter_inst.Frame[7]
-frame_to_monitoring[8] <= SequenceNumberCounter:seq_counter_inst.Frame[8]
-frame_to_monitoring[9] <= SequenceNumberCounter:seq_counter_inst.Frame[9]
-frame_to_monitoring[10] <= SequenceNumberCounter:seq_counter_inst.Frame[10]
-frame_to_monitoring[11] <= SequenceNumberCounter:seq_counter_inst.Frame[11]
+frame_to_monitoring[0] <= SequenceNumberCounter:seq_counter_inst.invalidBit
+frame_to_monitoring[1] <= SequenceNumberCounter:seq_counter_inst.SequenceCount[0]
+frame_to_monitoring[2] <= SequenceNumberCounter:seq_counter_inst.SequenceCount[1]
+frame_to_monitoring[3] <= SequenceNumberCounter:seq_counter_inst.SequenceCount[2]
+frame_to_monitoring[4] <= SequenceNumberCounter:seq_counter_inst.SequenceCount[3]
+frame_to_monitoring[5] <= SequenceNumberCounter:seq_counter_inst.SequenceCount[4]
+frame_to_monitoring[6] <= SequenceNumberCounter:seq_counter_inst.SequenceCount[5]
+frame_to_monitoring[7] <= SequenceNumberCounter:seq_counter_inst.SequenceCount[6]
+frame_to_monitoring[8] <= SequenceNumberCounter:seq_counter_inst.SequenceCount[7]
+frame_to_monitoring[9] <= SequenceNumberCounter:seq_counter_inst.SequenceCount[8]
+frame_to_monitoring[10] <= <GND>
+frame_to_monitoring[11] <= <GND>
 frame_available_monitoring <= SequenceNumberCounter:seq_counter_inst.FrameAvailable
 test_crc_rdv <= FwdOutputCntrlr:FwdOutputCntrlr_inst.dataBuffer_RE
 test_length_value[0] <= LengthCounterSystem:length_counter_sys_inst.lengthValue[0]
@@ -144,6 +150,16 @@ test_input4bit[0] <= input_4bit[0].DB_MAX_OUTPUT_PORT_TYPE
 test_input4bit[1] <= input_4bit[1].DB_MAX_OUTPUT_PORT_TYPE
 test_input4bit[2] <= input_4bit[2].DB_MAX_OUTPUT_PORT_TYPE
 test_input4bit[3] <= input_4bit[3].DB_MAX_OUTPUT_PORT_TYPE
+test_sequence_counter[0] <= SequenceNumberCounter:seq_counter_inst.SequenceCount[0]
+test_sequence_counter[1] <= SequenceNumberCounter:seq_counter_inst.SequenceCount[1]
+test_sequence_counter[2] <= SequenceNumberCounter:seq_counter_inst.SequenceCount[2]
+test_sequence_counter[3] <= SequenceNumberCounter:seq_counter_inst.SequenceCount[3]
+test_sequence_counter[4] <= SequenceNumberCounter:seq_counter_inst.SequenceCount[4]
+test_sequence_counter[5] <= SequenceNumberCounter:seq_counter_inst.SequenceCount[5]
+test_sequence_counter[6] <= SequenceNumberCounter:seq_counter_inst.SequenceCount[6]
+test_sequence_counter[7] <= SequenceNumberCounter:seq_counter_inst.SequenceCount[7]
+test_sequence_counter[8] <= SequenceNumberCounter:seq_counter_inst.SequenceCount[8]
+test_sequence_invalidBit <= SequenceNumberCounter:seq_counter_inst.invalidBit
 
 
 |test|test_bench1:test_bench_inst|SFD_FSM:sfd_fsm_inst
@@ -1454,40 +1470,40 @@ wrusedw[4] <= <GND>
 
 
 |test|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_ksh1:auto_generated
-aclr => a_graycounter_6fc:wrptr_g1p.aclr
+aclr => a_graycounter_4fc:wrptr_g1p.aclr
 aclr => a_graycounter_3fc:wrptr_gp.aclr
-aclr => altsyncram_ro61:fifo_ram.aclr1
+aclr => altsyncram_po61:fifo_ram.aclr1
 aclr => delayed_wrptr_g[5].IN0
 aclr => rdptr_g[5].IN0
 aclr => _.IN0
 aclr => _.IN0
 aclr => _.IN0
-data[0] => altsyncram_ro61:fifo_ram.data_a[0]
-data[1] => altsyncram_ro61:fifo_ram.data_a[1]
-data[2] => altsyncram_ro61:fifo_ram.data_a[2]
-data[3] => altsyncram_ro61:fifo_ram.data_a[3]
-data[4] => altsyncram_ro61:fifo_ram.data_a[4]
-data[5] => altsyncram_ro61:fifo_ram.data_a[5]
-data[6] => altsyncram_ro61:fifo_ram.data_a[6]
-data[7] => altsyncram_ro61:fifo_ram.data_a[7]
-data[8] => altsyncram_ro61:fifo_ram.data_a[8]
-data[9] => altsyncram_ro61:fifo_ram.data_a[9]
-data[10] => altsyncram_ro61:fifo_ram.data_a[10]
-data[11] => altsyncram_ro61:fifo_ram.data_a[11]
-q[0] <= altsyncram_ro61:fifo_ram.q_b[0]
-q[1] <= altsyncram_ro61:fifo_ram.q_b[1]
-q[2] <= altsyncram_ro61:fifo_ram.q_b[2]
-q[3] <= altsyncram_ro61:fifo_ram.q_b[3]
-q[4] <= altsyncram_ro61:fifo_ram.q_b[4]
-q[5] <= altsyncram_ro61:fifo_ram.q_b[5]
-q[6] <= altsyncram_ro61:fifo_ram.q_b[6]
-q[7] <= altsyncram_ro61:fifo_ram.q_b[7]
-q[8] <= altsyncram_ro61:fifo_ram.q_b[8]
-q[9] <= altsyncram_ro61:fifo_ram.q_b[9]
-q[10] <= altsyncram_ro61:fifo_ram.q_b[10]
-q[11] <= altsyncram_ro61:fifo_ram.q_b[11]
+data[0] => altsyncram_po61:fifo_ram.data_a[0]
+data[1] => altsyncram_po61:fifo_ram.data_a[1]
+data[2] => altsyncram_po61:fifo_ram.data_a[2]
+data[3] => altsyncram_po61:fifo_ram.data_a[3]
+data[4] => altsyncram_po61:fifo_ram.data_a[4]
+data[5] => altsyncram_po61:fifo_ram.data_a[5]
+data[6] => altsyncram_po61:fifo_ram.data_a[6]
+data[7] => altsyncram_po61:fifo_ram.data_a[7]
+data[8] => altsyncram_po61:fifo_ram.data_a[8]
+data[9] => altsyncram_po61:fifo_ram.data_a[9]
+data[10] => altsyncram_po61:fifo_ram.data_a[10]
+data[11] => altsyncram_po61:fifo_ram.data_a[11]
+q[0] <= altsyncram_po61:fifo_ram.q_b[0]
+q[1] <= altsyncram_po61:fifo_ram.q_b[1]
+q[2] <= altsyncram_po61:fifo_ram.q_b[2]
+q[3] <= altsyncram_po61:fifo_ram.q_b[3]
+q[4] <= altsyncram_po61:fifo_ram.q_b[4]
+q[5] <= altsyncram_po61:fifo_ram.q_b[5]
+q[6] <= altsyncram_po61:fifo_ram.q_b[6]
+q[7] <= altsyncram_po61:fifo_ram.q_b[7]
+q[8] <= altsyncram_po61:fifo_ram.q_b[8]
+q[9] <= altsyncram_po61:fifo_ram.q_b[9]
+q[10] <= altsyncram_po61:fifo_ram.q_b[10]
+q[11] <= altsyncram_po61:fifo_ram.q_b[11]
 rdclk => a_graycounter_d86:rdptr_g1p.clock
-rdclk => altsyncram_ro61:fifo_ram.clock1
+rdclk => altsyncram_po61:fifo_ram.clock1
 rdclk => _.IN0
 rdclk => alt_synch_pipe_gcb:rs_dgwp.clock
 rdclk => p0addr.CLK
@@ -1499,9 +1515,9 @@ rdclk => rdptr_g[1].CLK
 rdclk => rdptr_g[0].CLK
 rdempty <= int_rdempty.DB_MAX_OUTPUT_PORT_TYPE
 rdreq => valid_rdreq.IN0
-wrclk => a_graycounter_6fc:wrptr_g1p.clock
+wrclk => a_graycounter_4fc:wrptr_g1p.clock
 wrclk => a_graycounter_3fc:wrptr_gp.clock
-wrclk => altsyncram_ro61:fifo_ram.clock0
+wrclk => altsyncram_po61:fifo_ram.clock0
 wrclk => alt_synch_pipe_kc8:ws_dgrp.clock
 wrclk => delayed_wrptr_g[5].CLK
 wrclk => delayed_wrptr_g[4].CLK
@@ -1550,7 +1566,7 @@ q[4] <= counter7a[4].DB_MAX_OUTPUT_PORT_TYPE
 q[5] <= counter7a[5].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|test|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_ksh1:auto_generated|a_graycounter_6fc:wrptr_g1p
+|test|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_ksh1:auto_generated|a_graycounter_4fc:wrptr_g1p
 aclr => counter8a1.IN0
 aclr => counter8a0.IN0
 aclr => parity9.IN0
@@ -1620,7 +1636,7 @@ q[4] <= counter13a[4].DB_MAX_OUTPUT_PORT_TYPE
 q[5] <= counter13a[5].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|test|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_ksh1:auto_generated|altsyncram_ro61:fifo_ram
+|test|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_ksh1:auto_generated|altsyncram_po61:fifo_ram
 aclr1 => ram_block14a0.CLR1
 aclr1 => ram_block14a1.CLR1
 aclr1 => ram_block14a2.CLR1
@@ -1915,23 +1931,23 @@ q[5] <= dffe17a[5].DB_MAX_OUTPUT_PORT_TYPE
 
 
 |test|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_ksh1:auto_generated|alt_synch_pipe_kc8:ws_dgrp
-clock => dffpipe_hd9:dffpipe18.clock
-clrn => dffpipe_hd9:dffpipe18.clrn
-d[0] => dffpipe_hd9:dffpipe18.d[0]
-d[1] => dffpipe_hd9:dffpipe18.d[1]
-d[2] => dffpipe_hd9:dffpipe18.d[2]
-d[3] => dffpipe_hd9:dffpipe18.d[3]
-d[4] => dffpipe_hd9:dffpipe18.d[4]
-d[5] => dffpipe_hd9:dffpipe18.d[5]
-q[0] <= dffpipe_hd9:dffpipe18.q[0]
-q[1] <= dffpipe_hd9:dffpipe18.q[1]
-q[2] <= dffpipe_hd9:dffpipe18.q[2]
-q[3] <= dffpipe_hd9:dffpipe18.q[3]
-q[4] <= dffpipe_hd9:dffpipe18.q[4]
-q[5] <= dffpipe_hd9:dffpipe18.q[5]
+clock => dffpipe_fd9:dffpipe18.clock
+clrn => dffpipe_fd9:dffpipe18.clrn
+d[0] => dffpipe_fd9:dffpipe18.d[0]
+d[1] => dffpipe_fd9:dffpipe18.d[1]
+d[2] => dffpipe_fd9:dffpipe18.d[2]
+d[3] => dffpipe_fd9:dffpipe18.d[3]
+d[4] => dffpipe_fd9:dffpipe18.d[4]
+d[5] => dffpipe_fd9:dffpipe18.d[5]
+q[0] <= dffpipe_fd9:dffpipe18.q[0]
+q[1] <= dffpipe_fd9:dffpipe18.q[1]
+q[2] <= dffpipe_fd9:dffpipe18.q[2]
+q[3] <= dffpipe_fd9:dffpipe18.q[3]
+q[4] <= dffpipe_fd9:dffpipe18.q[4]
+q[5] <= dffpipe_fd9:dffpipe18.q[5]
 
 
-|test|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_ksh1:auto_generated|alt_synch_pipe_kc8:ws_dgrp|dffpipe_hd9:dffpipe18
+|test|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_ksh1:auto_generated|alt_synch_pipe_kc8:ws_dgrp|dffpipe_fd9:dffpipe18
 clock => dffe19a[5].CLK
 clock => dffe19a[4].CLK
 clock => dffe19a[3].CLK
@@ -2460,40 +2476,24 @@ datab[10] => data_wire[7].IN1
 
 
 |test|test_bench1:test_bench_inst|SequenceNumberCounter:seq_counter_inst
-Clk50Mhz => SequenceNumberCounter9BitVHD:SequenceNumberCounterNineBit_inst.clock
-Clk50Mhz => Frame[0]~reg0.CLK
-Clk50Mhz => Frame[1]~reg0.CLK
-Clk50Mhz => Frame[2]~reg0.CLK
-Clk50Mhz => Frame[3]~reg0.CLK
-Clk50Mhz => Frame[4]~reg0.CLK
-Clk50Mhz => Frame[5]~reg0.CLK
-Clk50Mhz => Frame[6]~reg0.CLK
-Clk50Mhz => Frame[7]~reg0.CLK
-Clk50Mhz => Frame[8]~reg0.CLK
-Clk50Mhz => Frame[9]~reg0.CLK
-Clk50Mhz => Frame[10]~reg0.CLK
-Clk50Mhz => Frame[11]~reg0.CLK
-Clk50Mhz => FrameAvailable~reg0.CLK
-Clk50Mhz => invalidBit.CLK
-FrameValid => invalidBit.DATAIN
+Clk25Mhz => SequenceNumberCounter9BitVHD:SequenceNumberCounterNineBit_inst.clock
+Clk25Mhz => FrameAvailable~reg0.CLK
+Clk25Mhz => invalidBit~reg0.CLK
+FrameValid => invalidBit~reg0.DATAIN
 CRV => SequenceNumberCounter9BitVHD:SequenceNumberCounterNineBit_inst.cnt_en
 CRV => FrameAvailable~reg0.DATAIN
 Reset => SequenceNumberCounter9BitVHD:SequenceNumberCounterNineBit_inst.aclr
-PortID[0] => Frame[10]~reg0.DATAIN
-PortID[1] => Frame[11]~reg0.DATAIN
 FrameAvailable <= FrameAvailable~reg0.DB_MAX_OUTPUT_PORT_TYPE
-Frame[0] <= Frame[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-Frame[1] <= Frame[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-Frame[2] <= Frame[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-Frame[3] <= Frame[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-Frame[4] <= Frame[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-Frame[5] <= Frame[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-Frame[6] <= Frame[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-Frame[7] <= Frame[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-Frame[8] <= Frame[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-Frame[9] <= Frame[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-Frame[10] <= Frame[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-Frame[11] <= Frame[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SequenceCount[0] <= SequenceNumberCounter9BitVHD:SequenceNumberCounterNineBit_inst.q[0]
+SequenceCount[1] <= SequenceNumberCounter9BitVHD:SequenceNumberCounterNineBit_inst.q[1]
+SequenceCount[2] <= SequenceNumberCounter9BitVHD:SequenceNumberCounterNineBit_inst.q[2]
+SequenceCount[3] <= SequenceNumberCounter9BitVHD:SequenceNumberCounterNineBit_inst.q[3]
+SequenceCount[4] <= SequenceNumberCounter9BitVHD:SequenceNumberCounterNineBit_inst.q[4]
+SequenceCount[5] <= SequenceNumberCounter9BitVHD:SequenceNumberCounterNineBit_inst.q[5]
+SequenceCount[6] <= SequenceNumberCounter9BitVHD:SequenceNumberCounterNineBit_inst.q[6]
+SequenceCount[7] <= SequenceNumberCounter9BitVHD:SequenceNumberCounterNineBit_inst.q[7]
+SequenceCount[8] <= SequenceNumberCounter9BitVHD:SequenceNumberCounterNineBit_inst.q[8]
+invalidBit <= invalidBit~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |test|test_bench1:test_bench_inst|SequenceNumberCounter:seq_counter_inst|SequenceNumberCounter9BitVHD:SequenceNumberCounterNineBit_inst
