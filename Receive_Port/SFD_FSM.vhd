@@ -7,6 +7,8 @@ ENTITY SFD_FSM IS
 			sfd_rdv : IN	STD_LOGIC;
 			Reset	: IN	STD_LOGIC;
 			dataIn	: IN	STD_LOGIC_VECTOR(3 DOWNTO 0);
+			
+			dataOut : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
 			crc_rdv		: OUT	STD_LOGIC 
 		  );
 END SFD_FSM;
@@ -18,6 +20,18 @@ ARCHITECTURE behavior OF SFD_FSM IS
 	--C is the reset state where crcEnable is asserted
 	TYPE State_type IS ( A, B, C);
 	SIGNAL y_current, y_next	: State_type;
+	
+	COMPONENT shift1_4bit
+		PORT
+		(
+			clock		: IN STD_LOGIC ;
+			data		: IN STD_LOGIC_VECTOR (3 DOWNTO 0);
+			load		: IN STD_LOGIC ;
+			q		: OUT STD_LOGIC_VECTOR (3 DOWNTO 0)
+		);
+	END COMPONENT;
+	
+	
 BEGIN
 -- state update 
 	PROCESS(Reset,Clock)
@@ -54,5 +68,13 @@ BEGIN
 		ELSE crc_rdv <= '0';
 		END IF;
 	END PROCESS;
+	
+	--pass through 4bit input
+	shift4bit_inst : shift1_4bit PORT MAP (
+		clock => Clock,
+		data => dataIn,
+		load => sfd_rdv,
+		q => dataOut
+	);
 
 END behavior;

@@ -429,10 +429,10 @@ VECTOR("C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE 559/ECE-559/MII_to_RCV
 VECTOR("C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/MII_to_RCV_restored/db/MII_to_RCV.sim.vwf")
 {
 	ZOOM{
-		ZBEGIN = 0;
-		ZEND = 504181;
+		ZBEGIN = 331421;
+		ZEND = 761957;
 		NUMERATOR = 712;
-		DENOMINATOR = 504181;
+		DENOMINATOR = 430536;
 		TOP_INDEX = 0;
 	}
 	CLOCK{

@@ -13,6 +13,15 @@ ARCHITECTURE CRC_FSM_arch OF CRC_FSM IS
 	type state_type is
 				(RESET, INIT, WAIT_STATE, RUN, CHECK);
 	signal state_reg, state_next: state_type;
+	
+	component shift1_1bit 
+		port(
+			aclr		: IN STD_LOGIC ;
+			clock		: IN STD_LOGIC ;
+			shiftin		: IN STD_LOGIC ;
+			shiftout	: OUT STD_LOGIC 
+		);
+	end component;
 
 	begin
 		process(clk, reset_sig)  -- STATE REGISTER UPDATE
@@ -73,7 +82,13 @@ ARCHITECTURE CRC_FSM_arch OF CRC_FSM IS
 			end case;
 		end process;
 		
-		check_result <= not(or_reduce(CRC_out));
+		shift_check_result : shift1_1bit PORT MAP (
+			aclr => reset_sig,
+			clock => clk,
+			shiftin	=> not(or_reduce(CRC_out)),
+			shiftout => check_result
+		);
+		
 		
 
 END CRC_FSM_arch;
