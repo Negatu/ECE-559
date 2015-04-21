@@ -115,8 +115,7 @@ ARCHITECTURE tb_arch OF test_bench1 IS
 		Clk25Mhz, FrameValid, CRV, Reset : IN STD_LOGIC; 
 		
 		FrameAvailable : OUT STD_LOGIC;
-		SequenceCount : OUT STD_LOGIC_VECTOR(8 DOWNTO 0);
-		invalidBit : OUT STD_LOGIC
+		SequenceCount : OUT STD_LOGIC_VECTOR(8 DOWNTO 0)
 	);
 	END COMPONENT;
 	
@@ -125,6 +124,12 @@ ARCHITECTURE tb_arch OF test_bench1 IS
 		 inFrameLengthValue: in std_logic_vector(11 downto 0);
 		 lengthBuffer_RE,  dataBuffer_RE, fwdFrameValid: out std_logic;
 		 fwdFrameLengthValue: out std_logic_vector(10 downto 0));
+	END COMPONENT;
+	
+	COMPONENT FrameValidFSM IS 
+	PORT( clk, Check_Result, CRV, lengthValid, reset:	in std_logic;
+	  FrameValid:			out std_logic;
+	  invalidBit : OUT STD_LOGIC);
 	END COMPONENT;
 
 BEGIN
@@ -195,11 +200,20 @@ BEGIN
 		CRV => check_result_valid,
 		Reset => reset,
 		FrameAvailable => frame_available_monitoring,
-		invalidBit => invalidBit_sig,
 		SequenceCount => SequenceCount_sig
 	);
 	
-	frame_valid <= (length_valid AND check_result AND check_result_valid); 
+	FrameValidFSM_inst : FrameValidFSM PORT MAP(
+	   clk			=> clk25,
+	   Check_Result => check_result,
+	   CRV			=> check_result_valid,
+	   lengthValid  => length_valid,
+	   reset		=> reset,
+	   FrameValid	=> frame_valid,
+	   invalidBit => invalidBit_sig
+	  );
+	
+	--frame_valid <= (length_valid AND check_result AND check_result_valid); ALTERNATIVE TO THE FRAME VALID FSM USED ABOVE
 	frame_length_and_valid(11) <= frame_valid;
 	--length_buffer_out_11bit <= length_buffer_output(10 DOWNTO 0);	--going to forwarding
 	--frame_valid_out <= length_buffer_output(11);	--going to forwarding

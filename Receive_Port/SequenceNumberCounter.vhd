@@ -9,8 +9,7 @@ ENTITY SequenceNumberCounter IS
 		Clk25Mhz, FrameValid, CRV, Reset : IN STD_LOGIC; --changed clock to a 50 MHz clock
 		
 		FrameAvailable : OUT STD_LOGIC;
-		SequenceCount : OUT STD_LOGIC_VECTOR(8 DOWNTO 0);
-		invalidBit : OUT STD_LOGIC
+		SequenceCount : OUT STD_LOGIC_VECTOR(8 DOWNTO 0)
 	);
 		
 END SequenceNumberCounter;
@@ -42,7 +41,6 @@ BEGIN
 	PROCESS(Clk25Mhz)
 	BEGIN
 		if rising_edge(Clk25Mhz) then
-			invalidBit <= NOT frameValid;
 			FrameAvailable <= CRV;
 		end if;
 				

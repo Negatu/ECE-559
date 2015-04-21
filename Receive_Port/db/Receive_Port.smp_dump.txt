@@ -7,6 +7,12 @@ y_current.waitx 0 0 1 0 1
 y_current.run 0 1 0 0 1 
 y_current.done 1 0 0 0 1 
 
+State Machine - |test|test_bench1:test_bench_inst|FrameValidFSM:FrameValidFSM_inst|state_reg
+Name state_reg.FRAME_IS_VALID state_reg.LENGTH_IS_VALID state_reg.WAITING 
+state_reg.WAITING 0 0 0 
+state_reg.LENGTH_IS_VALID 0 1 1 
+state_reg.FRAME_IS_VALID 1 0 1 
+
 State Machine - |test|test_bench1:test_bench_inst|LengthCounterSystem:length_counter_sys_inst|LengthCounterFSM:LengthCounterFSM_int|state_reg
 Name state_reg.WRITEOUT state_reg.COUNT state_reg.WAITING state_reg.RESET 
 state_reg.RESET 0 0 0 0 

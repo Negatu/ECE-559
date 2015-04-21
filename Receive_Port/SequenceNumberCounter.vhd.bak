@@ -17,9 +17,6 @@ END SequenceNumberCounter;
 
 
 ARCHITECTURE SequenceNumberCounter_arch OF SequenceNumberCounter IS 	
-	
-	SIGNAL invalidBit : STD_LOGIC;
-	SIGNAL sequenceCounter : STD_LOGIC_VECTOR(8 DOWNTO 0);
 		
 COMPONENT SequenceNumberCounter9BitVHD
 	PORT
@@ -38,7 +35,7 @@ BEGIN
 		aclr	 => Reset,
 		clock	 => Clk25Mhz,
 		cnt_en	 => CRV,
-		q		 => sequenceCounter
+		q		 => sequenceCount
 	);
 	
 	-- status update 
@@ -47,7 +44,6 @@ BEGIN
 		if rising_edge(Clk25Mhz) then
 			invalidBit <= NOT frameValid;
 			FrameAvailable <= CRV;
-			Frame <= PortID & sequenceCounter & invalidBit;
 		end if;
 				
 	END PROCESS;

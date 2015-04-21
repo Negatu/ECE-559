@@ -77,6 +77,7 @@ clk25 => Data_Buffer:data_buffer_inst.write_clk
 clk25 => Length_DCFF:length_buffer_inst.wrclk
 clk25 => LengthCounterSystem:length_counter_sys_inst.clock
 clk25 => SequenceNumberCounter:seq_counter_inst.Clk25Mhz
+clk25 => FrameValidFSM:FrameValidFSM_inst.clk
 clk50 => Data_Buffer:data_buffer_inst.read_clk
 clk50 => Length_DCFF:length_buffer_inst.rdclk
 clk50 => FwdOutputCntrlr:FwdOutputCntrlr_inst.clock
@@ -87,6 +88,7 @@ reset => Length_DCFF:length_buffer_inst.aclr
 reset => LengthCounterSystem:length_counter_sys_inst.reset
 reset => FwdOutputCntrlr:FwdOutputCntrlr_inst.reset
 reset => SequenceNumberCounter:seq_counter_inst.Reset
+reset => FrameValidFSM:FrameValidFSM_inst.reset
 rdv => SFD_FSM:sfd_fsm_inst.sfd_rdv
 input_4bit[0] => SFD_FSM:sfd_fsm_inst.dataIn[0]
 input_4bit[0] => test_input4bit[0].DATAIN
@@ -116,7 +118,7 @@ data_buffer_out_8bit[4] <= Data_Buffer:data_buffer_inst.data_out_8[4]
 data_buffer_out_8bit[5] <= Data_Buffer:data_buffer_inst.data_out_8[5]
 data_buffer_out_8bit[6] <= Data_Buffer:data_buffer_inst.data_out_8[6]
 data_buffer_out_8bit[7] <= Data_Buffer:data_buffer_inst.data_out_8[7]
-frame_to_monitoring[0] <= SequenceNumberCounter:seq_counter_inst.invalidBit
+frame_to_monitoring[0] <= FrameValidFSM:FrameValidFSM_inst.invalidBit
 frame_to_monitoring[1] <= SequenceNumberCounter:seq_counter_inst.SequenceCount[0]
 frame_to_monitoring[2] <= SequenceNumberCounter:seq_counter_inst.SequenceCount[1]
 frame_to_monitoring[3] <= SequenceNumberCounter:seq_counter_inst.SequenceCount[2]
@@ -145,7 +147,7 @@ test_length_valid <= LengthCounterSystem:length_counter_sys_inst.lengthValid
 test_length_we <= LengthCounterSystem:length_counter_sys_inst.buffer_WE
 test_crc_crv <= CRC_System:crc_system_inst.CRC_result_valid
 test_crc_cr <= CRC_System:crc_system_inst.CRC_check_result
-test_frame_valid <= frame_valid.DB_MAX_OUTPUT_PORT_TYPE
+test_frame_valid <= FrameValidFSM:FrameValidFSM_inst.FrameValid
 test_input4bit[0] <= input_4bit[0].DB_MAX_OUTPUT_PORT_TYPE
 test_input4bit[1] <= input_4bit[1].DB_MAX_OUTPUT_PORT_TYPE
 test_input4bit[2] <= input_4bit[2].DB_MAX_OUTPUT_PORT_TYPE
@@ -159,7 +161,7 @@ test_sequence_counter[5] <= SequenceNumberCounter:seq_counter_inst.SequenceCount
 test_sequence_counter[6] <= SequenceNumberCounter:seq_counter_inst.SequenceCount[6]
 test_sequence_counter[7] <= SequenceNumberCounter:seq_counter_inst.SequenceCount[7]
 test_sequence_counter[8] <= SequenceNumberCounter:seq_counter_inst.SequenceCount[8]
-test_sequence_invalidBit <= SequenceNumberCounter:seq_counter_inst.invalidBit
+test_sequence_invalidBit <= FrameValidFSM:FrameValidFSM_inst.invalidBit
 
 
 |test|test_bench1:test_bench_inst|SFD_FSM:sfd_fsm_inst
@@ -2478,8 +2480,7 @@ datab[10] => data_wire[7].IN1
 |test|test_bench1:test_bench_inst|SequenceNumberCounter:seq_counter_inst
 Clk25Mhz => SequenceNumberCounter9BitVHD:SequenceNumberCounterNineBit_inst.clock
 Clk25Mhz => FrameAvailable~reg0.CLK
-Clk25Mhz => invalidBit~reg0.CLK
-FrameValid => invalidBit~reg0.DATAIN
+FrameValid => ~NO_FANOUT~
 CRV => SequenceNumberCounter9BitVHD:SequenceNumberCounterNineBit_inst.cnt_en
 CRV => FrameAvailable~reg0.DATAIN
 Reset => SequenceNumberCounter9BitVHD:SequenceNumberCounterNineBit_inst.aclr
@@ -2493,7 +2494,6 @@ SequenceCount[5] <= SequenceNumberCounter9BitVHD:SequenceNumberCounterNineBit_in
 SequenceCount[6] <= SequenceNumberCounter9BitVHD:SequenceNumberCounterNineBit_inst.q[6]
 SequenceCount[7] <= SequenceNumberCounter9BitVHD:SequenceNumberCounterNineBit_inst.q[7]
 SequenceCount[8] <= SequenceNumberCounter9BitVHD:SequenceNumberCounterNineBit_inst.q[8]
-invalidBit <= invalidBit~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |test|test_bench1:test_bench_inst|SequenceNumberCounter:seq_counter_inst|SequenceNumberCounter9BitVHD:SequenceNumberCounterNineBit_inst
@@ -2591,6 +2591,19 @@ q[5] <= counter_reg_bit1a[5].REGOUT
 q[6] <= counter_reg_bit1a[6].REGOUT
 q[7] <= counter_reg_bit1a[7].REGOUT
 q[8] <= counter_reg_bit1a[8].REGOUT
+
+
+|test|test_bench1:test_bench_inst|FrameValidFSM:FrameValidFSM_inst
+clk => state_reg~1.DATAIN
+Check_Result => state_next.FRAME_IS_VALID.DATAA
+Check_Result => state_next.LENGTH_IS_VALID.IN0
+Check_Result => Selector2.IN2
+CRV => state_next.LENGTH_IS_VALID.IN1
+lengthValid => Selector2.IN1
+lengthValid => Selector0.IN1
+reset => state_reg~3.DATAIN
+FrameValid <= FrameValid.DB_MAX_OUTPUT_PORT_TYPE
+invalidBit <= invalidBit.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |test|MII_to_RCV:phy_inst
