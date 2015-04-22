@@ -1,7 +1,7 @@
 Quartus II Archive log --	C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/Receive_Port.qarlog
 
 Archive:	C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/Receive_Port.qar
-Date:		Sun Apr 19 22:10:15 2015
+Date:		Wed Apr 22 00:03:47 2015
 Quartus II		9.1 Build 350 03/24/2010 SP 2 SJ Web Edition
 
 	=========== Files Selected: ===========
@@ -16,6 +16,8 @@ C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/Data_DCFF.qip
 C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/Data_DCFF.vhd
 C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/Data_DCFF_inst.vhd
 C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/Data_DCFF_syn.v
+C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/FrameValidFSM.vhd
+C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/FrameValidFSM.vwf
 C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/FwdOutputCntrlr.vhd
 C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/LengthCounter.vhd
 C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/LengthCounterFSM.vhd
@@ -35,22 +37,28 @@ C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/crc32x4r.vhd
 C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/crcFSM.vhd
 C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/crc_compute.vhd
 C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/crc_compute.vwf
+C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/crc_computer.vhd
+C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/crc_system_test.vhd
+C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/crc_system_test.vwf
 C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/crcreg32.vhd
 C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/Receive_Port.sim.cvwf
 C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/frameLengthValueComp.vhd
 C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/lengthValidReg.vhd
 C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/lengthcountersystem.vhd
-C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/myframemem.mif
 C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/outFrameLengthCounter.vhd
+C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/shift1_1bit.qip
+C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/shift1_1bit.vhd
+C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/shift1_4bit.qip
+C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/shift1_4bit.vhd
+C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/shift1_4bit.vwf
 C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/shift2.vhd
 C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/shift2bit.qip
 C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/shift2bit.vhd
 C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/tbrom4.vhd
 C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/test.vhd
-C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/test.vwf
 C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/test_bench1.vhd
 c:/altera/91sp2/quartus/bin/assignment_defaults.qdf
-	======= Total: 45 files to archive =======
+	======= Total: 53 files to archive =======
 
 	================ Status: ===============
 All files archived successfully.

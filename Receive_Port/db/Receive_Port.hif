@@ -3180,7 +3180,6 @@ aclr
 }
 # hierarchies {
 test_bench1:test_bench_inst|LengthCounterSystem:length_counter_sys_inst|LengthCounter:LengthCounter_inst|lpm_counter:lpm_counter_component
-MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component
 }
 # macro_sequence
 
@@ -3247,7 +3246,6 @@ aclr
 }
 # hierarchies {
 test_bench1:test_bench_inst|LengthCounterSystem:length_counter_sys_inst|LengthCounter:LengthCounter_inst|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated
-MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated
 }
 # macro_sequence
 
@@ -4425,9 +4423,6 @@ aclr0
 -1
 3
 }
-# hierarchies {
-MII_to_RCV:phy_inst|framemem:frame_test_mem|altsyncram:altsyncram_component
-}
 # macro_sequence
 
 # end
@@ -4494,9 +4489,6 @@ aclr0
 # memory_file {
 myframemem.mif
 b9c766cf36dc6d821178582dd332ad24
-}
-# hierarchies {
-MII_to_RCV:phy_inst|framemem:frame_test_mem|altsyncram:altsyncram_component|altsyncram_e781:auto_generated
 }
 # macro_sequence
 
@@ -4646,9 +4638,6 @@ ON
 PARAMETER_STRING
 USR
 }
-# hierarchies {
-MII_to_RCV:phy_inst
-}
 # lmf
 |altera|91sp2|quartus|lmf|maxplus2.lmf
 a36c8ec425c8a2589af98b2d4daabc3
@@ -4689,9 +4678,6 @@ USR
 PARAMETER_STRING
 USR
 }
-# hierarchies {
-MII_to_RCV:phy_inst|framemem:frame_test_mem
-}
 # lmf
 |altera|91sp2|quartus|lmf|maxplus2.lmf
 a36c8ec425c8a2589af98b2d4daabc3
@@ -4728,9 +4714,6 @@ ON
 PARAMETER_STRING
 USR
 }
-# hierarchies {
-MII_to_RCV:phy_inst|cntr12bit:cntrx
-}
 # lmf
 |altera|91sp2|quartus|lmf|maxplus2.lmf
 a36c8ec425c8a2589af98b2d4daabc3
@@ -4761,6 +4744,36 @@ ON
 AUTO_ROM_RECOGNITION
 ON
 }
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+Receive_Port
+# storage
+db|Receive_Port.(1).cnf
+db|Receive_Port.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+receive_port.vhd
+65c7d09c2535d2b458b4ac3edd14c68
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
 # hierarchies {
 |
 }
@@ -4773,8 +4786,8 @@ a36c8ec425c8a2589af98b2d4daabc3
 # entity
 test_bench1
 # storage
-db|Receive_Port.(1).cnf
-db|Receive_Port.(1).cnf
+db|Receive_Port.(63).cnf
+db|Receive_Port.(63).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
@@ -4782,7 +4795,7 @@ ON
 # case_insensitive
 # source_file
 test_bench1.vhd
-ee2ca6203e1efd583a77eefd3eb1b1
+b2cbc932e9f63741bd2c15fad07e74e3
 5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -4808,22 +4821,6 @@ USR
 PARAMETER_STRING
 USR
  constraint(frame_to_monitoring)
-11 downto 0
-PARAMETER_STRING
-USR
- constraint(test_length_value)
-10 downto 0
-PARAMETER_STRING
-USR
- constraint(test_input4bit)
-3 downto 0
-PARAMETER_STRING
-USR
- constraint(test_sequence_counter)
-8 downto 0
-PARAMETER_STRING
-USR
- constraint(test_length_buffer_output)
 11 downto 0
 PARAMETER_STRING
 USR

@@ -8,7 +8,6 @@ ENTITY test_bench1 IS
 		
 		length_buffer_out_11bit : OUT STD_LOGIC_VECTOR (10 DOWNTO 0);	--going to forwarding
 		frame_valid_out : OUT STD_LOGIC;	--going to forwarding
-		
 		data_buffer_out_8bit : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);	--going to forwarding
 		
 		frame_to_monitoring : OUT STD_LOGIC_VECTOR(11 DOWNTO 0); -- going to monitoring.

@@ -244,6 +244,7 @@ BEGIN
 	test_length_read_empty <= length_buffer_empty;
 	test_data_read_empty <= data_buffer_empty;
 	test_data_read_enable <= data_buffer_read_enable;
+	test_length_buffer_output <= length_buffer_output;
 	test_length_read_enable <= length_read_enable;
 
 END tb_arch;

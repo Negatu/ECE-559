@@ -1,5 +1,5 @@
 Archive Project report for Receive_Port
-Sun Apr 19 22:10:15 2015
+Wed Apr 22 00:03:47 2015
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -35,7 +35,7 @@ applicable agreement for further details.
 +----------------------------------------------------------------+
 ; Archive Project Summary                                        ;
 +------------------------+---------------------------------------+
-; Archive Project Status ; Successful - Sun Apr 19 22:10:15 2015 ;
+; Archive Project Status ; Successful - Wed Apr 22 00:03:47 2015 ;
 ; Revision Name          ; Receive_Port                          ;
 ; Top-level Entity Name  ; Receive_Port                          ;
 ; Family                 ; Cyclone II                            ;
@@ -56,9 +56,9 @@ Info: ----------------------------------------------------------
 Info: Generated report 'Receive_Port.archive.rpt'
 Info: Evaluation of Tcl script c:/altera/91sp2/quartus/common/tcl/apps/qpm/qar.tcl was successful
 Info: Quartus II Shell was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 147 megabytes
-    Info: Processing ended: Sun Apr 19 22:10:15 2015
-    Info: Elapsed time: 00:00:02
+    Info: Peak virtual memory: 149 megabytes
+    Info: Processing ended: Wed Apr 22 00:03:47 2015
+    Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:01
 
 
@@ -78,8 +78,11 @@ Info: Quartus II Shell was successful. 0 errors, 0 warnings
 ; crc32x4r.vhd                                                                             ;
 ; crc_compute.vhd                                                                          ;
 ; crc_compute.vwf                                                                          ;
+; crc_computer.vhd                                                                         ;
 ; CRC_FSM.vhd                                                                              ;
 ; CRC_System.vhd                                                                           ;
+; crc_system_test.vhd                                                                      ;
+; crc_system_test.vwf                                                                      ;
 ; crcFSM.vhd                                                                               ;
 ; crcreg32.vhd                                                                             ;
 ; Data_Buffer.vhd                                                                          ;
@@ -90,6 +93,8 @@ Info: Quartus II Shell was successful. 0 errors, 0 warnings
 ; Data_DCFF_syn.v                                                                          ;
 ; db/Receive_Port.sim.cvwf                                                                 ;
 ; frameLengthValueComp.vhd                                                                 ;
+; FrameValidFSM.vhd                                                                        ;
+; FrameValidFSM.vwf                                                                        ;
 ; FwdOutputCntrlr.vhd                                                                      ;
 ; Length_DCFF.qip                                                                          ;
 ; Length_DCFF.vhd                                                                          ;
@@ -98,7 +103,6 @@ Info: Quartus II Shell was successful. 0 errors, 0 warnings
 ; LengthCounterSystem.vhd                                                                  ;
 ; lengthcountersystem.vhd                                                                  ;
 ; lengthValidReg.vhd                                                                       ;
-; myframemem.mif                                                                           ;
 ; outFrameLengthCounter.vhd                                                                ;
 ; Receive_Port.qpf                                                                         ;
 ; Receive_Port.qsf                                                                         ;
@@ -108,12 +112,16 @@ Info: Quartus II Shell was successful. 0 errors, 0 warnings
 ; SequenceNumberCounter9BitVHD.vhd                                                         ;
 ; SFD_FSM.vhd                                                                              ;
 ; SFD_FSM.vwf                                                                              ;
+; shift1_1bit.qip                                                                          ;
+; shift1_1bit.vhd                                                                          ;
+; shift1_4bit.qip                                                                          ;
+; shift1_4bit.vhd                                                                          ;
+; shift1_4bit.vwf                                                                          ;
 ; shift2.vhd                                                                               ;
 ; shift2bit.qip                                                                            ;
 ; shift2bit.vhd                                                                            ;
 ; tbrom4.vhd                                                                               ;
 ; test.vhd                                                                                 ;
-; test.vwf                                                                                 ;
 ; test_bench1.vhd                                                                          ;
 +------------------------------------------------------------------------------------------+
 
