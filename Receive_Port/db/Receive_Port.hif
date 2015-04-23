@@ -20,49 +20,6 @@ VHSM_ON
 -- Start VHDL Libraries --
 -- End VHDL Libraries --
 # entity
-SFD_FSM
-# storage
-db|Receive_Port.(2).cnf
-db|Receive_Port.(2).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-sfd_fsm.vhd
-5f16201cc2674939aacfff947a3a1f
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
- constraint(datain)
-3 downto 0
-PARAMETER_STRING
-USR
- constraint(dataout)
-3 downto 0
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-test_bench1:test_bench_inst|SFD_FSM:sfd_fsm_inst
-}
-# lmf
-|altera|91sp2|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
-# macro_sequence
-
-# end
-# entity
 shift1_4bit
 # storage
 db|Receive_Port.(3).cnf
@@ -2934,45 +2891,6 @@ test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_compone
 
 # end
 # entity
-LengthCounterSystem
-# storage
-db|Receive_Port.(39).cnf
-db|Receive_Port.(39).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-lengthcountersystem.vhd
-5c99bf6bf2fc796734a10551893552
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
- constraint(lengthvalue)
-10 downto 0
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-test_bench1:test_bench_inst|LengthCounterSystem:length_counter_sys_inst
-}
-# lmf
-|altera|91sp2|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
-# macro_sequence
-
-# end
-# entity
 LengthCounterFSM
 # storage
 db|Receive_Port.(40).cnf
@@ -4533,39 +4451,6 @@ a36c8ec425c8a2589af98b2d4daabc3
 
 # end
 # entity
-FrameValidFSM
-# storage
-db|Receive_Port.(62).cnf
-db|Receive_Port.(62).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-framevalidfsm.vhd
-6df5d4abd467186b1ab9e49e3839b9a
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# hierarchies {
-test_bench1:test_bench_inst|FrameValidFSM:FrameValidFSM_inst
-}
-# lmf
-|altera|91sp2|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
-# macro_sequence
-
-# end
-# entity
 FwdOutputCntrlr
 # storage
 db|Receive_Port.(44).cnf
@@ -4827,6 +4712,121 @@ USR
 }
 # hierarchies {
 test_bench1:test_bench_inst
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+SFD_FSM
+# storage
+db|Receive_Port.(2).cnf
+db|Receive_Port.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+sfd_fsm.vhd
+bcbb836536e04bd42024cfec8a4a5d9b
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(datain)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(dataout)
+3 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+test_bench1:test_bench_inst|SFD_FSM:sfd_fsm_inst
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+LengthCounterSystem
+# storage
+db|Receive_Port.(39).cnf
+db|Receive_Port.(39).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+lengthcountersystem.vhd
+dc58bcf19f0eda8cc8f1c2c8140926b
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(lengthvalue)
+10 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+test_bench1:test_bench_inst|LengthCounterSystem:length_counter_sys_inst
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+FrameValidFSM
+# storage
+db|Receive_Port.(62).cnf
+db|Receive_Port.(62).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+framevalidfsm.vhd
+55e15e4dc1bb8107a6c1c9f82e2323
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+test_bench1:test_bench_inst|FrameValidFSM:FrameValidFSM_inst
 }
 # lmf
 |altera|91sp2|quartus|lmf|maxplus2.lmf

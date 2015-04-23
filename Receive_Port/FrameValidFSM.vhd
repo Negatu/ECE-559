@@ -34,12 +34,11 @@ architecture simple_arch of FrameValidFSM is
 						state_next <= WAITING;
 					end if;
 				when LENGTH_IS_VALID =>
+					state_next <= WAITING;
 					if (Check_Result='1') then
 						if (CRV = '1') then
 							state_next <= FRAME_IS_VALID;
 						end if;
-					else 
-						state_next <= WAITING;
 					end if;
 				when FRAME_IS_VALID =>
 					state_next <= WAITING;

@@ -155,9 +155,9 @@ test_sequence_invalidBit <= FrameValidFSM:FrameValidFSM_inst.invalidBit
 |Receive_Port|test_bench1:test_bench_inst|SFD_FSM:sfd_fsm_inst
 Clock => shift1_4bit:shift4bit_inst.clock
 Clock => y_current~1.DATAIN
+sfd_rdv => Selector1.IN2
 sfd_rdv => shift1_4bit:shift4bit_inst.load
 sfd_rdv => Selector0.IN2
-sfd_rdv => Selector3.IN2
 Reset => y_current~3.DATAIN
 dataIn[0] => shift1_4bit:shift4bit_inst.data[0]
 dataIn[0] => Equal0.IN1
@@ -2585,11 +2585,11 @@ q[8] <= counter_reg_bit1a[8].REGOUT
 
 |Receive_Port|test_bench1:test_bench_inst|FrameValidFSM:FrameValidFSM_inst
 clk => state_reg~1.DATAIN
-Check_Result => state_next.FRAME_IS_VALID.DATAA
-Check_Result => state_next.LENGTH_IS_VALID.IN0
-Check_Result => Selector2.IN2
-CRV => state_next.LENGTH_IS_VALID.IN1
-lengthValid => Selector2.IN1
+Check_Result => state_next.OUTPUTSELECT
+Check_Result => state_next.OUTPUTSELECT
+CRV => state_next.DATAB
+CRV => state_next.DATAB
+lengthValid => state_next.LENGTH_IS_VALID.DATAB
 lengthValid => Selector0.IN1
 reset => state_reg~3.DATAIN
 FrameValid <= FrameValid.DB_MAX_OUTPUT_PORT_TYPE

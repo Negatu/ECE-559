@@ -56,7 +56,7 @@ BEGIN
 				END IF;
 			WHEN C =>
 				IF sfd_rdv = '0' THEN y_next <= A;
-				ELSIF sfd_rdv = '1' THEN y_next <= C;
+				ELSE y_next <= C;
 				END IF;				
 		END CASE;
 	END PROCESS;
