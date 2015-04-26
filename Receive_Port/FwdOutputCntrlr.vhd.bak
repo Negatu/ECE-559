@@ -40,9 +40,9 @@ architecture RegCountArch of FwdOutputCntrlr is
 	);
     END component;
     	
-	TYPE State_type IS ( NotEqual, Equal);
+	TYPE State_type IS ( NotEqual, Equal, RegWrite);
 	SIGNAL y_current, y_next	: State_type;
-	signal counter_reset_sig, clear_length_reg, int_lengthBufferRE, equal_true : std_logic; -- used to clear the counter after each frame
+	signal counter_reset_sig, clear_length_reg, int_lengthBufferRE, equal_true, length_reg_we : std_logic; -- used to clear the counter after each frame
 	signal int_FrameLengthValue : std_logic_vector(11 downto 0);
 	signal counterValue : std_logic_vector (10 downto 0);
 	
@@ -52,7 +52,7 @@ architecture RegCountArch of FwdOutputCntrlr is
 		    aclr		=>  reset or clear_length_reg,
 		    clock		=> clock,
 			data     	=> inFrameLengthValue,
-			enable		=> int_lengthBufferRE,
+			enable		=> length_reg_we,
 			q           => int_FrameLengthValue
 	
 		);
@@ -87,8 +87,10 @@ architecture RegCountArch of FwdOutputCntrlr is
 				END IF;
 			WHEN Equal =>
 				IF dataRdEmpty = '1' or lengthRdEmpty = '1' THEN y_next <= Equal;
-				ELSE y_next <=  NotEqual;
+				ELSE y_next <=  RegWrite;
 				END IF;
+			WHEN RegWrite =>
+					y_next <= NotEqual;
 		END CASE;
 	END PROCESS;
 	
@@ -98,6 +100,7 @@ architecture RegCountArch of FwdOutputCntrlr is
 		IF (y_current = Equal) THEN 
 				dataBuffer_RE <= '0';
 				counter_reset_sig <= '1';
+				length_reg_we <= '0';
 				IF dataRdEmpty = '1' or lengthRdEmpty = '1' THEN 
 					int_lengthBufferRE <= '0';
 					clear_length_reg <= '1';
@@ -108,15 +111,24 @@ architecture RegCountArch of FwdOutputCntrlr is
 				END IF;
 				
 				
-		ELSE (y_current = NotEqual)
+		ELSIF (y_current = NotEqual) THEN
 			dataBuffer_RE <= '1';
 			int_lengthBufferRE <= '0';
 			counter_reset_sig <= '0';
 			clear_length_reg <= '0';
+			length_reg_we <= '0';
+		
+		ELSE
+			dataBuffer_RE <= '0';
+			int_lengthBufferRE <= '0';
+			counter_reset_sig <= '1';
+			clear_length_reg <= '0';
+			length_reg_we <= '1';
+		
 		END IF;
 	END PROCESS;
 	fwdFrameLengthValue <= int_FrameLengthValue(10 downto 0);
-	fwdFrameValid		<= int_FrameLengthValue(11);
+	fwdFrameValid		<= int_FrameLengthValue(2);
 	lengthBuffer_RE <= int_lengthBufferRE;
 	
 end RegCountArch;

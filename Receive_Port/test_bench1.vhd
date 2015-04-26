@@ -48,6 +48,7 @@ ARCHITECTURE tb_arch OF test_bench1 IS
 	SIGNAL data_buffer_read_enable : STD_LOGIC;
 	SIGNAL data_buffer_empty : STD_LOGIC;
 	SIGNAL data_to_forwarding : STD_LOGIC_VECTOR(7 DOWNTO 0);
+	SIGNAL data_buffer_output_signal : STD_LOGIC_VECTOR(7 DOWNTO 0);
 	SIGNAL length_buffer_output : STD_LOGIC_VECTOR(11 DOWNTO 0);
 	SIGNAL length_read_enable : STD_LOGIC;
 	SIGNAL length_buffer_full : STD_LOGIC;
@@ -166,7 +167,7 @@ BEGIN
 		read_enable => data_buffer_read_enable,
 		read_clk => clk50,
 		read_empty => data_buffer_empty,
-		data_out_8 => data_to_forwarding
+		data_out_8 => data_buffer_output_signal
 	);
 
 	length_buffer_inst : Length_DCFF PORT MAP (
@@ -225,6 +226,9 @@ BEGIN
 	frame_length_and_valid(11) <= frame_valid;
 	--length_buffer_out_11bit <= length_buffer_output(10 DOWNTO 0);	--going to forwarding
 	--frame_valid_out <= length_buffer_output(11);	--going to forwarding
+	
+	data_to_forwarding(3 DOWNTO 0) <= data_buffer_output_signal(7 DOWNTO 4);
+	data_to_forwarding(7 DOWNTO 4) <= data_buffer_output_signal(3 DOWNTO 0);
 	data_buffer_out_8bit <= data_to_forwarding;	--going to forwarding
 	
 	frame_to_monitoring <= "00" & SequenceCount_sig & invalidBit_sig;

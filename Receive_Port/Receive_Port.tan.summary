@@ -2,54 +2,34 @@
 Timing Analyzer Summary
 --------------------------------------------------------------------------------------
 
-Type           : Worst-case tsu
-Slack          : N/A
-Required Time  : None
-Actual Time    : 5.556 ns
-From           : input_4bit[1]
-To             : test_bench1:test_bench_inst|SFD_FSM:sfd_fsm_inst|y_current.A
-From Clock     : --
-To Clock       : clk25
-Failed Paths   : 0
-
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 9.030 ns
-From           : test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|altsyncram_qo61:fifo_ram|altsyncram_6ve1:altsyncram11|q_a[4]
-To             : data_buffer_out_8bit[4]
-From Clock     : clk50
+Actual Time    : 11.643 ns
+From           : test_bench1:test_bench_inst|LengthCounterSystem:length_counter_sys_inst|LengthCounter:LengthCounter_inst|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|safe_q[4]
+To             : test_length_valid
+From Clock     : clock25
 To Clock       : --
 Failed Paths   : 0
 
-Type           : Worst-case th
+Type           : Clock Setup: 'clock50'
 Slack          : N/A
 Required Time  : None
-Actual Time    : -3.502 ns
-From           : input_4bit[3]
-To             : test_bench1:test_bench_inst|SFD_FSM:sfd_fsm_inst|shift1_4bit:shift4bit_inst|lpm_shiftreg:lpm_shiftreg_component|dffs[3]
-From Clock     : --
-To Clock       : clk25
+Actual Time    : 171.35 MHz ( period = 5.836 ns )
+From           : test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|rdptr_g[6]
+To             : test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|altsyncram_qo61:fifo_ram|altsyncram_6ve1:altsyncram11|q_a[6]
+From Clock     : clock50
+To Clock       : clock50
 Failed Paths   : 0
 
-Type           : Clock Setup: 'clk50'
+Type           : Clock Setup: 'clock25'
 Slack          : N/A
 Required Time  : None
-Actual Time    : 156.99 MHz ( period = 6.370 ns )
-From           : test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|rdptr_g[7]
-To             : test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|altsyncram_qo61:fifo_ram|altsyncram_6ve1:altsyncram11|q_a[5]
-From Clock     : clk50
-To Clock       : clk50
-Failed Paths   : 0
-
-Type           : Clock Setup: 'clk25'
-Slack          : N/A
-Required Time  : None
-Actual Time    : 181.06 MHz ( period = 5.523 ns )
-From           : test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|alt_synch_pipe_1e8:ws_dgrp|dffpipe_se9:dffpipe17|dffe19a[4]
-To             : test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|altsyncram_qo61:fifo_ram|altsyncram_6ve1:altsyncram11|ram_block12a0~portb_address_reg11
-From Clock     : clk25
-To Clock       : clk25
+Actual Time    : 189.68 MHz ( period = 5.272 ns )
+From           : test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|wrptr_g[7]
+To             : test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|altsyncram_qo61:fifo_ram|altsyncram_6ve1:altsyncram11|ram_block12a1~portb_address_reg11
+From Clock     : clock25
+To Clock       : clock25
 Failed Paths   : 0
 
 Type           : Total number of failed paths
