@@ -4,9 +4,10 @@ use ieee.std_logic_misc.all;
 
 entity FwdOutputCntrlr is
 	port(clock,reset, dataRdEmpty, lengthRdEmpty : in std_logic; 
-		 inFrameLengthValue: in std_logic_vector(11 downto 0);
+		 inFrameLengthValue: in std_logic_vector(20 downto 0);--11 bit length value + valid fram bit + 9 bit sequence number
 		 lengthBuffer_RE,  dataBuffer_RE, fwdFrameValid: out std_logic;
-		 fwdFrameLengthValue: out std_logic_vector(10 downto 0));
+		 fwdFrameLengthValue: out std_logic_vector(10 downto 0);
+		 fwdSequenceNumbr : out std_logic_vector (8 downto 0));
 end FwdOutputCntrlr;
 
 architecture RegCountArch of FwdOutputCntrlr is
@@ -119,7 +120,7 @@ architecture RegCountArch of FwdOutputCntrlr is
 			length_reg_we <= '0';
 		
 		ELSE
-			dataBuffer_RE <= '0';
+			dataBuffer_RE <= '1';
 			int_lengthBufferRE <= '0';
 			counter_reset_sig <= '1';
 			clear_length_reg <= '0';

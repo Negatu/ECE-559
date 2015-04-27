@@ -24,6 +24,7 @@ ENTITY test_bench1 IS
 		test_frame_valid : OUT STD_LOGIC;
 		test_input4bit : OUT STD_LOGIC_VECTOR(3 DOWNTO 0); 
 		test_sequence_counter: OUT STD_LOGIC_VECTOR(8 DOWNTO 0);
+		test_sequence_counter_fwd : OUT STD_LOGIC_VECTOR(8 DOWNTO 0);
 		test_length_read_empty : OUT STD_LOGIC;
 		test_data_read_empty : OUT STD_LOGIC;
 		test_length_read_enable : OUT STD_LOGIC;
@@ -46,19 +47,20 @@ ARCHITECTURE tb_arch OF test_bench1 IS
 	SIGNAL length_buffer_write_enable : STD_LOGIC;
 	SIGNAL length_buffer_write_enable_out : STD_LOGIC;
 	SIGNAL frame_valid : STD_LOGIC;
-	SIGNAL frame_length_and_valid : STD_LOGIC_VECTOR(11 DOWNTO 0); -- concatenation of frame valid and length
+	SIGNAL frame_length_and_valid : STD_LOGIC_VECTOR(20 DOWNTO 0); -- concatenation of frame valid, length, and sequence number
 	--SIGNAL data_buffer_write_enable : STD_LOGIC;
 	SIGNAL data_buffer_full : STD_LOGIC;
 	SIGNAL data_buffer_read_enable : STD_LOGIC;
 	SIGNAL data_buffer_empty : STD_LOGIC;
 	SIGNAL data_to_forwarding : STD_LOGIC_VECTOR(7 DOWNTO 0);
 	SIGNAL data_buffer_output_signal : STD_LOGIC_VECTOR(7 DOWNTO 0);
-	SIGNAL length_buffer_output : STD_LOGIC_VECTOR(11 DOWNTO 0);
+	SIGNAL length_buffer_output : STD_LOGIC_VECTOR(20 DOWNTO 0);
 	SIGNAL length_read_enable : STD_LOGIC;
 	SIGNAL length_buffer_full : STD_LOGIC;
 	SIGNAL length_buffer_empty : STD_LOGIC;
 	SIGNAL invalidBit_sig : STD_LOGIC;
 	SIGNAL SequenceCount_sig : STD_LOGIC_VECTOR(8 DOWNTO 0);
+	SIGNAL SequenceCount_sig_fwd : STD_LOGIC_VECTOR(8 DOWNTO 0);
 	
 	COMPONENT SFD_FSM
 		PORT (	Clock	: IN	STD_LOGIC;
@@ -89,12 +91,12 @@ ARCHITECTURE tb_arch OF test_bench1 IS
 	COMPONENT Length_DCFF
 		PORT(
 			aclr		: IN STD_LOGIC  := '0';
-			data		: IN STD_LOGIC_VECTOR (11 DOWNTO 0);
+			data		: IN STD_LOGIC_VECTOR (20 DOWNTO 0);
 			rdclk		: IN STD_LOGIC ;
 			rdreq		: IN STD_LOGIC ;
 			wrclk		: IN STD_LOGIC ;
 			wrreq		: IN STD_LOGIC ;
-			q		: OUT STD_LOGIC_VECTOR (11 DOWNTO 0);
+			q		: OUT STD_LOGIC_VECTOR (20 DOWNTO 0);
 			rdempty		: OUT STD_LOGIC ;
 			wrfull		: OUT STD_LOGIC 
 		);
@@ -142,9 +144,10 @@ ARCHITECTURE tb_arch OF test_bench1 IS
 	
 	COMPONENT FwdOutputCntrlr IS
 	PORT(clock,reset,  dataRdEmpty, lengthRdEmpty : in std_logic; 
-		 inFrameLengthValue: in std_logic_vector(11 downto 0);
+		 inFrameLengthValue: in std_logic_vector(20 downto 0);
 		 lengthBuffer_RE,  dataBuffer_RE, fwdFrameValid: out std_logic;
-		 fwdFrameLengthValue: out std_logic_vector(10 downto 0));
+		 fwdFrameLengthValue: out std_logic_vector(10 downto 0);
+		 fwdSequenceNumbr : out std_logic_vector (8 downto 0));
 	END COMPONENT;
 	
 	COMPONENT FrameValidFSM IS 
@@ -189,7 +192,7 @@ BEGIN
 		wrclk => clk25,
 		aclr => reset, 
 		data =>  frame_length_and_valid,
-		wrreq => length_buffer_write_enable,
+		wrreq => length_buffer_write_enable_out,
 		rdclk => clk50,
 		rdreq => length_read_enable,
 		q	  => length_buffer_output,
@@ -232,7 +235,8 @@ BEGIN
 		 lengthBuffer_RE => length_read_enable,
 		 dataBuffer_RE => data_buffer_read_enable,
 		 fwdFrameValid => frame_valid_out,
-		 fwdFrameLengthValue => length_buffer_out_11bit
+		 fwdFrameLengthValue => length_buffer_out_11bit,
+		 fwdSequenceNumbr => SequenceCount_sig_fwd
 		  );
 	
 	seq_counter_inst : SequenceNumberCounter PORT MAP (
@@ -272,6 +276,7 @@ BEGIN
 	
 	--frame_valid <= (length_valid AND check_result AND check_result_valid); ALTERNATIVE TO THE FRAME VALID FSM USED ABOVE
 	frame_length_and_valid(11) <= frame_valid;
+	frame_length_and_valid(20 downto 12) <= SequenceCount_sig;
 	--length_buffer_out_11bit <= length_buffer_output(10 DOWNTO 0);	--going to forwarding
 	--frame_valid_out <= length_buffer_output(11);	--going to forwarding
 	
@@ -295,7 +300,7 @@ BEGIN
 	test_length_read_empty <= length_buffer_empty;
 	test_data_read_empty <= data_buffer_empty;
 	test_data_read_enable <= data_buffer_read_enable;
-	test_length_buffer_output <= length_buffer_output;
+	test_length_buffer_output <= length_buffer_output (11 downto 0);
 	test_length_read_enable <= length_read_enable;
 
 END tb_arch;
