@@ -56,19 +56,20 @@ BEGIN
 				END IF;
 			WHEN C =>
 				IF sfd_rdv = '0' THEN y_next <= A;
-				ELSIF sfd_rdv = '1' THEN y_next <= C;
+				ELSE y_next <= C;
 				END IF;				
 		END CASE;
 	END PROCESS;
 	
 -- output logic
-	PROCESS(y_current)
+	PROCESS(y_current, dataIn)
 	BEGIN
 		IF (y_current = C) THEN crc_rdv <= '1';
 		ELSE crc_rdv <= '0';
 		END IF;
 	END PROCESS;
 	
+	--pass through 4bit input
 	shift4bit_inst : shift1_4bit PORT MAP (
 		clock => Clock,
 		data => dataIn,

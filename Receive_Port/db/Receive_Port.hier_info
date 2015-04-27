@@ -99,6 +99,7 @@ test_sequence_invalidBit <= test_bench1:test_bench_inst.test_sequence_invalidBit
 clk25 => SFD_FSM:sfd_fsm_inst.Clock
 clk25 => CRC_System:crc_system_inst.Clk
 clk25 => Data_Buffer:data_buffer_inst.write_clk
+clk25 => shift1_1bit:shift1_1bit_instCRC_RDV.clock
 clk25 => Length_DCFF:length_buffer_inst.wrclk
 clk25 => LengthCounterSystem:length_counter_sys_inst.clock
 clk25 => shift1_1bit:shift1_1bit_instLengthWE.clock
@@ -113,6 +114,7 @@ clk50 => FwdOutputCntrlr:FwdOutputCntrlr_inst.clock
 reset => SFD_FSM:sfd_fsm_inst.Reset
 reset => CRC_System:crc_system_inst.reset
 reset => Data_Buffer:data_buffer_inst.reset
+reset => shift1_1bit:shift1_1bit_instCRC_RDV.aclr
 reset => Length_DCFF:length_buffer_inst.aclr
 reset => LengthCounterSystem:length_counter_sys_inst.reset
 reset => shift1_1bit:shift1_1bit_instLengthWE.aclr
@@ -1447,6 +1449,28 @@ clock => counter_reg_bit20a[0].CLK
 cnt_en => _.IN0
 cout <= cout_actual.DB_MAX_OUTPUT_PORT_TYPE
 q[0] <= safe_q[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test|test_bench1:test_bench_inst|shift1_1bit:shift1_1bit_instCRC_RDV
+aclr => lpm_shiftreg:lpm_shiftreg_component.aclr
+clock => lpm_shiftreg:lpm_shiftreg_component.clock
+shiftin => lpm_shiftreg:lpm_shiftreg_component.shiftin
+shiftout <= lpm_shiftreg:lpm_shiftreg_component.shiftout
+
+
+|test|test_bench1:test_bench_inst|shift1_1bit:shift1_1bit_instCRC_RDV|lpm_shiftreg:lpm_shiftreg_component
+data[0] => _.IN1
+clock => dffs[0].CLK
+enable => dffs[0].ENA
+shiftin => _.IN1
+load => _.IN0
+load => _.IN0
+aclr => dffs[0].IN0
+aset => ~NO_FANOUT~
+sclr => _.IN0
+sset => _.IN0
+q[0] <= q[0].DB_MAX_OUTPUT_PORT_TYPE
+shiftout <= dffs[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
 |test|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst

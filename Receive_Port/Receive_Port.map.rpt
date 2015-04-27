@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Receive_Port
-Mon Apr 27 10:05:20 2015
+Mon Apr 27 10:42:22 2015
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -53,25 +53,26 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
  45. Parameter Settings for User Entity Instance: test_bench1:test_bench_inst|CRC_System:crc_system_inst|CRC_FSM:CRC_FSM_inst|shift1_1bit:shift_check_result|lpm_shiftreg:lpm_shiftreg_component
  46. Parameter Settings for User Entity Instance: test_bench1:test_bench_inst|CRC_System:crc_system_inst|crc32x4r:crc32x4r_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component
  47. Parameter Settings for User Entity Instance: test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component
- 48. Parameter Settings for User Entity Instance: test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component
- 49. Parameter Settings for User Entity Instance: test_bench1:test_bench_inst|LengthCounterSystem:length_counter_sys_inst|LengthCounter:LengthCounter_inst|lpm_counter:lpm_counter_component
- 50. Parameter Settings for User Entity Instance: test_bench1:test_bench_inst|shift1_1bit:shift1_1bit_instLengthWE|lpm_shiftreg:lpm_shiftreg_component
- 51. Parameter Settings for User Entity Instance: test_bench1:test_bench_inst|shift1_1bit:shift1_1bit_instLengthVal|lpm_shiftreg:lpm_shiftreg_component
- 52. Parameter Settings for User Entity Instance: test_bench1:test_bench_inst|FwdOutputCntrlr:FwdOutputCntrlr_inst|lengthValidReg:lengthValidReg_inst|lpm_ff:lpm_ff_component
- 53. Parameter Settings for User Entity Instance: test_bench1:test_bench_inst|FwdOutputCntrlr:FwdOutputCntrlr_inst|outFrameLengthCounter:outFrameLengthCounter_inst|lpm_counter:lpm_counter_component
- 54. Parameter Settings for User Entity Instance: test_bench1:test_bench_inst|FwdOutputCntrlr:FwdOutputCntrlr_inst|frameLengthValueComp:frameLengthValueComp_inst|lpm_compare:lpm_compare_component
- 55. Parameter Settings for User Entity Instance: test_bench1:test_bench_inst|SequenceNumberCounter:seq_counter_inst|SequenceNumberCounter9BitVHD:SequenceNumberCounterNineBit_inst|lpm_counter:lpm_counter_component
- 56. Parameter Settings for User Entity Instance: test_bench1:test_bench_inst|shift1_1bit:shift1_1bit_instCR|lpm_shiftreg:lpm_shiftreg_component
- 57. Parameter Settings for User Entity Instance: test_bench1:test_bench_inst|shift1_1bit:shift1_1bit_instLengthCRV|lpm_shiftreg:lpm_shiftreg_component
- 58. Parameter Settings for User Entity Instance: MII_to_RCV:phy_inst|framemem:frame_test_mem|altsyncram:altsyncram_component
- 59. Parameter Settings for User Entity Instance: MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component
- 60. lpm_shiftreg Parameter Settings by Entity Instance
- 61. dcfifo Parameter Settings by Entity Instance
- 62. altsyncram Parameter Settings by Entity Instance
- 63. Port Connectivity Checks: "test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst"
- 64. Port Connectivity Checks: "test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst"
- 65. Port Connectivity Checks: "test_bench1:test_bench_inst|CRC_System:crc_system_inst|crc32x4r:crc32x4r_inst|crcreg32:crcreg32r"
- 66. Analysis & Synthesis Messages
+ 48. Parameter Settings for User Entity Instance: test_bench1:test_bench_inst|shift1_1bit:shift1_1bit_instCRC_RDV|lpm_shiftreg:lpm_shiftreg_component
+ 49. Parameter Settings for User Entity Instance: test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component
+ 50. Parameter Settings for User Entity Instance: test_bench1:test_bench_inst|LengthCounterSystem:length_counter_sys_inst|LengthCounter:LengthCounter_inst|lpm_counter:lpm_counter_component
+ 51. Parameter Settings for User Entity Instance: test_bench1:test_bench_inst|shift1_1bit:shift1_1bit_instLengthWE|lpm_shiftreg:lpm_shiftreg_component
+ 52. Parameter Settings for User Entity Instance: test_bench1:test_bench_inst|shift1_1bit:shift1_1bit_instLengthVal|lpm_shiftreg:lpm_shiftreg_component
+ 53. Parameter Settings for User Entity Instance: test_bench1:test_bench_inst|FwdOutputCntrlr:FwdOutputCntrlr_inst|lengthValidReg:lengthValidReg_inst|lpm_ff:lpm_ff_component
+ 54. Parameter Settings for User Entity Instance: test_bench1:test_bench_inst|FwdOutputCntrlr:FwdOutputCntrlr_inst|outFrameLengthCounter:outFrameLengthCounter_inst|lpm_counter:lpm_counter_component
+ 55. Parameter Settings for User Entity Instance: test_bench1:test_bench_inst|FwdOutputCntrlr:FwdOutputCntrlr_inst|frameLengthValueComp:frameLengthValueComp_inst|lpm_compare:lpm_compare_component
+ 56. Parameter Settings for User Entity Instance: test_bench1:test_bench_inst|SequenceNumberCounter:seq_counter_inst|SequenceNumberCounter9BitVHD:SequenceNumberCounterNineBit_inst|lpm_counter:lpm_counter_component
+ 57. Parameter Settings for User Entity Instance: test_bench1:test_bench_inst|shift1_1bit:shift1_1bit_instCR|lpm_shiftreg:lpm_shiftreg_component
+ 58. Parameter Settings for User Entity Instance: test_bench1:test_bench_inst|shift1_1bit:shift1_1bit_instLengthCRV|lpm_shiftreg:lpm_shiftreg_component
+ 59. Parameter Settings for User Entity Instance: MII_to_RCV:phy_inst|framemem:frame_test_mem|altsyncram:altsyncram_component
+ 60. Parameter Settings for User Entity Instance: MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component
+ 61. lpm_shiftreg Parameter Settings by Entity Instance
+ 62. dcfifo Parameter Settings by Entity Instance
+ 63. altsyncram Parameter Settings by Entity Instance
+ 64. Port Connectivity Checks: "test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst"
+ 65. Port Connectivity Checks: "test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst"
+ 66. Port Connectivity Checks: "test_bench1:test_bench_inst|CRC_System:crc_system_inst|crc32x4r:crc32x4r_inst|crcreg32:crcreg32r"
+ 67. Analysis & Synthesis Messages
 
 
 
@@ -97,15 +98,15 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +------------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Apr 27 10:05:20 2015        ;
+; Analysis & Synthesis Status        ; Successful - Mon Apr 27 10:42:22 2015        ;
 ; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                      ; Receive_Port                                 ;
 ; Top-level Entity Name              ; test                                         ;
 ; Family                             ; Cyclone II                                   ;
-; Total logic elements               ; 412                                          ;
+; Total logic elements               ; 413                                          ;
 ;     Total combinational functions  ; 252                                          ;
-;     Dedicated logic registers      ; 311                                          ;
-; Total registers                    ; 311                                          ;
+;     Dedicated logic registers      ; 312                                          ;
+; Total registers                    ; 312                                          ;
 ; Total pins                         ; 92                                           ;
 ; Total virtual pins                 ; 0                                            ;
 ; Total memory bits                  ; 21,152                                       ;
@@ -277,7 +278,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 412   ;
+; Estimated Total logic elements              ; 413   ;
 ;                                             ;       ;
 ; Total combinational functions               ; 252   ;
 ; Logic element usage by number of LUT inputs ;       ;
@@ -289,15 +290,15 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;     -- normal mode                          ; 211   ;
 ;     -- arithmetic mode                      ; 41    ;
 ;                                             ;       ;
-; Total registers                             ; 311   ;
-;     -- Dedicated logic registers            ; 311   ;
+; Total registers                             ; 312   ;
+;     -- Dedicated logic registers            ; 312   ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
 ; I/O pins                                    ; 92    ;
 ; Total memory bits                           ; 21152 ;
 ; Maximum fan-out node                        ; reset ;
-; Maximum fan-out                             ; 277   ;
-; Total fan-out                               ; 2535  ;
+; Maximum fan-out                             ; 278   ;
+; Total fan-out                               ; 2538  ;
 ; Average fan-out                             ; 3.71  ;
 +---------------------------------------------+-------+
 
@@ -307,7 +308,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                                                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                   ; Library Name ;
 +---------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |test                                                                     ; 252 (1)           ; 311 (0)      ; 21152       ; 0            ; 0       ; 0         ; 92   ; 0            ; |test                                                                                                                                                                                                                 ; work         ;
+; |test                                                                     ; 252 (1)           ; 312 (0)      ; 21152       ; 0            ; 0       ; 0         ; 92   ; 0            ; |test                                                                                                                                                                                                                 ; work         ;
 ;    |MII_to_RCV:phy_inst|                                                  ; 26 (13)           ; 25 (13)      ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|MII_to_RCV:phy_inst                                                                                                                                                                                             ; work         ;
 ;       |cntr12bit:cntrx|                                                   ; 13 (0)            ; 12 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|MII_to_RCV:phy_inst|cntr12bit:cntrx                                                                                                                                                                             ; work         ;
 ;          |lpm_counter:lpm_counter_component|                              ; 13 (0)            ; 12 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component                                                                                                                                           ; work         ;
@@ -315,7 +316,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;       |framemem:frame_test_mem|                                           ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|MII_to_RCV:phy_inst|framemem:frame_test_mem                                                                                                                                                                     ; work         ;
 ;          |altsyncram:altsyncram_component|                                ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|MII_to_RCV:phy_inst|framemem:frame_test_mem|altsyncram:altsyncram_component                                                                                                                                     ; work         ;
 ;             |altsyncram_e781:auto_generated|                              ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|MII_to_RCV:phy_inst|framemem:frame_test_mem|altsyncram:altsyncram_component|altsyncram_e781:auto_generated                                                                                                      ; work         ;
-;    |test_bench1:test_bench_inst|                                          ; 225 (0)           ; 286 (0)      ; 17056       ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst                                                                                                                                                                                     ;              ;
+;    |test_bench1:test_bench_inst|                                          ; 225 (0)           ; 287 (0)      ; 17056       ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst                                                                                                                                                                                     ;              ;
 ;       |CRC_System:crc_system_inst|                                        ; 56 (0)            ; 38 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|CRC_System:crc_system_inst                                                                                                                                                          ; work         ;
 ;          |CRC_FSM:CRC_FSM_inst|                                           ; 16 (16)           ; 6 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|CRC_System:crc_system_inst|CRC_FSM:CRC_FSM_inst                                                                                                                                     ; work         ;
 ;             |shift1_1bit:shift_check_result|                              ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|CRC_System:crc_system_inst|CRC_FSM:CRC_FSM_inst|shift1_1bit:shift_check_result                                                                                                      ; work         ;
@@ -332,11 +333,11 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;                   |alt_synch_pipe_1e8:ws_dgrp|                            ; 0 (0)             ; 24 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|alt_synch_pipe_1e8:ws_dgrp                            ;              ;
 ;                      |dffpipe_se9:dffpipe17|                              ; 0 (0)             ; 24 (24)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|alt_synch_pipe_1e8:ws_dgrp|dffpipe_se9:dffpipe17      ;              ;
 ;                   |alt_synch_pipe_tdb:rs_dgwp|                            ; 0 (0)             ; 24 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|alt_synch_pipe_tdb:rs_dgwp                            ; work         ;
-;                      |dffpipe_re9:dffpipe14|                              ; 0 (0)             ; 24 (24)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|alt_synch_pipe_tdb:rs_dgwp|dffpipe_re9:dffpipe14      ; work         ;
+;                      |dffpipe_re9:dffpipe14|                              ; 0 (0)             ; 24 (24)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|alt_synch_pipe_tdb:rs_dgwp|dffpipe_re9:dffpipe14      ;              ;
 ;                   |altsyncram_qo61:fifo_ram|                              ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|altsyncram_qo61:fifo_ram                              ; work         ;
 ;                      |altsyncram_6ve1:altsyncram11|                       ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|altsyncram_qo61:fifo_ram|altsyncram_6ve1:altsyncram11 ; work         ;
 ;                   |cmpr_736:rdempty_eq_comp|                              ; 9 (9)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|cmpr_736:rdempty_eq_comp                              ;              ;
-;                   |cmpr_736:wrfull_eq_comp|                               ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|cmpr_736:wrfull_eq_comp                               ;              ;
+;                   |cmpr_736:wrfull_eq_comp|                               ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|cmpr_736:wrfull_eq_comp                               ; work         ;
 ;                   |cntr_jvd:cntr_b|                                       ; 2 (2)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|cntr_jvd:cntr_b                                       ; work         ;
 ;                   |dffpipe_ngh:rdaclr|                                    ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|dffpipe_ngh:rdaclr                                    ; work         ;
 ;       |FrameValidFSM:FrameValidFSM_inst|                                  ; 2 (2)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|FrameValidFSM:FrameValidFSM_inst                                                                                                                                                    ; work         ;
@@ -365,15 +366,17 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;                   |dffpipe_hd9:dffpipe9|                                  ; 0 (0)             ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_lsh1:auto_generated|alt_synch_pipe_lc8:ws_dgrp|dffpipe_hd9:dffpipe9                                                   ; work         ;
 ;                |altsyncram_ro61:fifo_ram|                                 ; 0 (0)             ; 0 (0)        ; 672         ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_lsh1:auto_generated|altsyncram_ro61:fifo_ram                                                                          ; work         ;
 ;                |cmpr_q16:rdempty_eq_comp|                                 ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_lsh1:auto_generated|cmpr_q16:rdempty_eq_comp                                                                          ; work         ;
-;                |cmpr_q16:wrfull_eq_comp|                                  ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_lsh1:auto_generated|cmpr_q16:wrfull_eq_comp                                                                           ; work         ;
+;                |cmpr_q16:wrfull_eq_comp|                                  ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_lsh1:auto_generated|cmpr_q16:wrfull_eq_comp                                                                           ;              ;
 ;                |dffpipe_ngh:rdaclr|                                       ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_lsh1:auto_generated|dffpipe_ngh:rdaclr                                                                                ; work         ;
-;       |SFD_FSM:sfd_fsm_inst|                                              ; 10 (6)            ; 7 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|SFD_FSM:sfd_fsm_inst                                                                                                                                                                ;              ;
-;          |shift1_4bit:shift4bit_inst|                                     ; 4 (0)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|SFD_FSM:sfd_fsm_inst|shift1_4bit:shift4bit_inst                                                                                                                                     ; work         ;
-;             |lpm_shiftreg:lpm_shiftreg_component|                         ; 4 (4)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|SFD_FSM:sfd_fsm_inst|shift1_4bit:shift4bit_inst|lpm_shiftreg:lpm_shiftreg_component                                                                                                 ;              ;
+;       |SFD_FSM:sfd_fsm_inst|                                              ; 10 (6)            ; 7 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|SFD_FSM:sfd_fsm_inst                                                                                                                                                                ; work         ;
+;          |shift1_4bit:shift4bit_inst|                                     ; 4 (0)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|SFD_FSM:sfd_fsm_inst|shift1_4bit:shift4bit_inst                                                                                                                                     ;              ;
+;             |lpm_shiftreg:lpm_shiftreg_component|                         ; 4 (4)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|SFD_FSM:sfd_fsm_inst|shift1_4bit:shift4bit_inst|lpm_shiftreg:lpm_shiftreg_component                                                                                                 ; work         ;
 ;       |SequenceNumberCounter:seq_counter_inst|                            ; 9 (0)             ; 10 (1)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|SequenceNumberCounter:seq_counter_inst                                                                                                                                              ;              ;
 ;          |SequenceNumberCounter9BitVHD:SequenceNumberCounterNineBit_inst| ; 9 (0)             ; 9 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|SequenceNumberCounter:seq_counter_inst|SequenceNumberCounter9BitVHD:SequenceNumberCounterNineBit_inst                                                                               ;              ;
-;             |lpm_counter:lpm_counter_component|                           ; 9 (0)             ; 9 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|SequenceNumberCounter:seq_counter_inst|SequenceNumberCounter9BitVHD:SequenceNumberCounterNineBit_inst|lpm_counter:lpm_counter_component                                             ;              ;
+;             |lpm_counter:lpm_counter_component|                           ; 9 (0)             ; 9 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|SequenceNumberCounter:seq_counter_inst|SequenceNumberCounter9BitVHD:SequenceNumberCounterNineBit_inst|lpm_counter:lpm_counter_component                                             ; work         ;
 ;                |cntr_mni:auto_generated|                                  ; 9 (9)             ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|SequenceNumberCounter:seq_counter_inst|SequenceNumberCounter9BitVHD:SequenceNumberCounterNineBit_inst|lpm_counter:lpm_counter_component|cntr_mni:auto_generated                     ; work         ;
+;       |shift1_1bit:shift1_1bit_instCRC_RDV|                               ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|shift1_1bit:shift1_1bit_instCRC_RDV                                                                                                                                                 ; work         ;
+;          |lpm_shiftreg:lpm_shiftreg_component|                            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|shift1_1bit:shift1_1bit_instCRC_RDV|lpm_shiftreg:lpm_shiftreg_component                                                                                                             ; work         ;
 ;       |shift1_1bit:shift1_1bit_instCR|                                    ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|shift1_1bit:shift1_1bit_instCR                                                                                                                                                      ; work         ;
 ;          |lpm_shiftreg:lpm_shiftreg_component|                            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|shift1_1bit:shift1_1bit_instCR|lpm_shiftreg:lpm_shiftreg_component                                                                                                                  ; work         ;
 ;       |shift1_1bit:shift1_1bit_instLengthCRV|                             ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|test_bench1:test_bench_inst|shift1_1bit:shift1_1bit_instLengthCRV                                                                                                                                               ; work         ;
@@ -489,10 +492,10 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 311   ;
+; Total registers                              ; 312   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 35    ;
-; Number of registers using Asynchronous Clear ; 295   ;
+; Number of registers using Asynchronous Clear ; 296   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 145   ;
 ; Number of registers using Preset             ; 0     ;
@@ -877,6 +880,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: test_bench1:test_bench_inst|shift1_1bit:shift1_1bit_instCRC_RDV|lpm_shiftreg:lpm_shiftreg_component ;
++------------------------+------------+------------------------------------------------------------------------------------------------------------+
+; Parameter Name         ; Value      ; Type                                                                                                       ;
++------------------------+------------+------------------------------------------------------------------------------------------------------------+
+; LPM_WIDTH              ; 1          ; Signed Integer                                                                                             ;
+; LPM_DIRECTION          ; RIGHT      ; Untyped                                                                                                    ;
+; LPM_AVALUE             ; UNUSED     ; Untyped                                                                                                    ;
+; LPM_SVALUE             ; UNUSED     ; Untyped                                                                                                    ;
+; DEVICE_FAMILY          ; Cyclone II ; Untyped                                                                                                    ;
+; AUTO_CARRY_CHAINS      ; ON         ; AUTO_CARRY                                                                                                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF        ; IGNORE_CARRY                                                                                               ;
+; AUTO_CASCADE_CHAINS    ; ON         ; AUTO_CASCADE                                                                                               ;
+; IGNORE_CASCADE_BUFFERS ; OFF        ; IGNORE_CASCADE                                                                                             ;
++------------------------+------------+------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +---------------------------------------------------------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component ;
 +-------------------------+-------------+-----------------------------------------------------------------------------------------+
@@ -1196,7 +1217,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Name                       ; Value                                                                                                                                          ;
 +----------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-; Number of entity instances ; 7                                                                                                                                              ;
+; Number of entity instances ; 8                                                                                                                                              ;
 ; Entity Instance            ; test_bench1:test_bench_inst|SFD_FSM:sfd_fsm_inst|shift1_4bit:shift4bit_inst|lpm_shiftreg:lpm_shiftreg_component                                ;
 ;     -- LPM_WIDTH           ; 4                                                                                                                                              ;
 ;     -- LPM_DIRECTION       ; RIGHT                                                                                                                                          ;
@@ -1206,6 +1227,9 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Entity Instance            ; test_bench1:test_bench_inst|CRC_System:crc_system_inst|crc32x4r:crc32x4r_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component           ;
 ;     -- LPM_WIDTH           ; 32                                                                                                                                             ;
 ;     -- LPM_DIRECTION       ; LEFT                                                                                                                                           ;
+; Entity Instance            ; test_bench1:test_bench_inst|shift1_1bit:shift1_1bit_instCRC_RDV|lpm_shiftreg:lpm_shiftreg_component                                            ;
+;     -- LPM_WIDTH           ; 1                                                                                                                                              ;
+;     -- LPM_DIRECTION       ; RIGHT                                                                                                                                          ;
 ; Entity Instance            ; test_bench1:test_bench_inst|shift1_1bit:shift1_1bit_instLengthWE|lpm_shiftreg:lpm_shiftreg_component                                           ;
 ;     -- LPM_WIDTH           ; 1                                                                                                                                              ;
 ;     -- LPM_DIRECTION       ; RIGHT                                                                                                                                          ;
@@ -1289,7 +1313,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Mon Apr 27 10:05:14 2015
+    Info: Processing started: Mon Apr 27 10:42:17 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Receive_Port -c Receive_Port
 Info: Found 2 design units, including 1 entities, in source file /users/talal/desktop/ece559/finalproject/ece-559/mii_to_rcv_restored/cntr12bit.vhd
     Info: Found design unit 1: cntr12bit-SYN
@@ -1396,8 +1420,8 @@ Info: Found 2 design units, including 1 entities, in source file lengthcounter.v
     Info: Found entity 1: LengthCounter
 Info: Elaborating entity "test" for the top level hierarchy
 Info: Elaborating entity "test_bench1" for hierarchy "test_bench1:test_bench_inst"
-Warning (10036): Verilog HDL or VHDL warning at test_bench1.vhd(52): object "data_buffer_full" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at test_bench1.vhd(59): object "length_buffer_full" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at test_bench1.vhd(53): object "data_buffer_full" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at test_bench1.vhd(60): object "length_buffer_full" assigned a value but never read
 Info: Elaborating entity "SFD_FSM" for hierarchy "test_bench1:test_bench_inst|SFD_FSM:sfd_fsm_inst"
 Info: Elaborating entity "shift1_4bit" for hierarchy "test_bench1:test_bench_inst|SFD_FSM:sfd_fsm_inst|shift1_4bit:shift4bit_inst"
 Info: Elaborating entity "lpm_shiftreg" for hierarchy "test_bench1:test_bench_inst|SFD_FSM:sfd_fsm_inst|shift1_4bit:shift4bit_inst|lpm_shiftreg:lpm_shiftreg_component"
@@ -1609,15 +1633,15 @@ Warning: Output pins are stuck at VCC or GND
 Info: 2 registers lost all their fanouts during netlist optimizations. The first 2 are displayed below.
     Info: Register "MII_to_RCV:phy_inst|y_current.done" lost all its fanouts during netlist optimizations.
     Info: Register "test_bench1:test_bench_inst|LengthCounterSystem:length_counter_sys_inst|LengthCounterFSM:LengthCounterFSM_int|state_reg.WAITING" lost all its fanouts during netlist optimizations.
-Info: Implemented 537 device resources after synthesis - the final resource count might be different
+Info: Implemented 538 device resources after synthesis - the final resource count might be different
     Info: Implemented 3 input pins
     Info: Implemented 89 output pins
-    Info: Implemented 416 logic cells
+    Info: Implemented 417 logic cells
     Info: Implemented 29 RAM segments
 Info: Quartus II Analysis & Synthesis was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 254 megabytes
-    Info: Processing ended: Mon Apr 27 10:05:20 2015
-    Info: Elapsed time: 00:00:06
+    Info: Peak virtual memory: 256 megabytes
+    Info: Processing ended: Mon Apr 27 10:42:22 2015
+    Info: Elapsed time: 00:00:05
     Info: Total CPU time (on all processors): 00:00:06
 
 

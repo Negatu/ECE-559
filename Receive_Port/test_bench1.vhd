@@ -37,6 +37,7 @@ END test_bench1;
 ARCHITECTURE tb_arch OF test_bench1 IS 
 
 	SIGNAL CRC_rdv : STD_LOGIC;
+	SIGNAL CRC_rdv_out : STD_LOGIC;
 	SIGNAL data_to_crc : STD_LOGIC_VECTOR(3 DOWNTO 0);
 	SIGNAL check_result_valid : STD_LOGIC;
 	SIGNAL check_result : STD_LOGIC;
@@ -178,7 +179,7 @@ BEGIN
 	
 	data_buffer_inst : Data_Buffer PORT MAP (
 		reset => reset, 
-		write_enable => CRC_rdv, --data_buffer_write_enable,
+		write_enable => CRC_rdv_out, --data_buffer_write_enable,
 		write_clk => clk25,
 		data_in_4 => data_to_crc, --input_4bit,
 		write_full => data_buffer_full,
@@ -186,6 +187,14 @@ BEGIN
 		read_clk => clk50,
 		read_empty => data_buffer_empty,
 		data_out_8 => data_buffer_output_signal
+	);
+	
+	shift1_1bit_instCRC_RDV : shift1_1bit PORT MAP
+	(
+		aclr		=> reset,
+		clock		=> clk25,
+		shiftin		=> CRC_rdv,
+		shiftout    => CRC_rdv_out
 	);
 
 	length_buffer_inst : Length_DCFF PORT MAP (
