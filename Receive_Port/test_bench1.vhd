@@ -39,8 +39,12 @@ ARCHITECTURE tb_arch OF test_bench1 IS
 	SIGNAL data_to_crc : STD_LOGIC_VECTOR(3 DOWNTO 0);
 	SIGNAL check_result_valid : STD_LOGIC;
 	SIGNAL check_result : STD_LOGIC;
+	SIGNAL check_result_valid_out : STD_LOGIC;
+	SIGNAL check_result_out : STD_LOGIC;
 	SIGNAL length_valid : STD_LOGIC;
+	SIGNAL length_valid_out : STD_LOGIC;
 	SIGNAL length_buffer_write_enable : STD_LOGIC;
+	SIGNAL length_buffer_write_enable_out : STD_LOGIC;
 	SIGNAL frame_valid : STD_LOGIC;
 	SIGNAL frame_length_and_valid : STD_LOGIC_VECTOR(11 DOWNTO 0); -- concatenation of frame valid and length
 	--SIGNAL data_buffer_write_enable : STD_LOGIC;
@@ -104,6 +108,17 @@ ARCHITECTURE tb_arch OF test_bench1 IS
 		data_out_8 : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
 		);
 	END COMPONENT;
+	
+	COMPONENT shift1_1bit IS
+	PORT
+	(
+		aclr		: IN STD_LOGIC ;
+		clock		: IN STD_LOGIC ;
+		shiftin		: IN STD_LOGIC ;
+		shiftout    : OUT STD_LOGIC 
+	);
+	END COMPONENT;
+	
 	
 	COMPONENT shift2bit IS
 		PORT
@@ -174,7 +189,7 @@ BEGIN
 		wrclk => clk25,
 		aclr => reset, 
 		data =>  frame_length_and_valid,
-		wrreq => length_buffer_write_enable,
+		wrreq => length_buffer_write_enable_out,
 		rdclk => clk50,
 		rdreq => length_read_enable,
 		q	  => length_buffer_output,
@@ -190,6 +205,23 @@ BEGIN
 			buffer_WE => length_buffer_write_enable,
 			lengthValue =>  frame_length_and_valid (10 DOWNTO 0)
 	);
+	
+	shift1_1bit_instLengthWE : shift1_1bit PORT MAP
+	(
+		aclr		=> reset,
+		clock		=> clk25,
+		shiftin		=> length_buffer_write_enable,
+		shiftout    => length_buffer_write_enable_out
+	);
+	
+	shift1_1bit_instLengthVal : shift1_1bit PORT MAP
+	(
+		aclr		=> reset,
+		clock		=> clk25,
+		shiftin		=> length_valid,
+		shiftout    => length_valid_out
+	);
+	
 	
 	FwdOutputCntrlr_inst : FwdOutputCntrlr PORT MAP(
 		 clock => clk50,
@@ -214,13 +246,29 @@ BEGIN
 	
 	FrameValidFSM_inst : FrameValidFSM PORT MAP(
 	   clk			=> clk25,
-	   Check_Result => check_result,
-	   CRV			=> check_result_valid,
-	   lengthValid  => length_valid,
+	   Check_Result => check_result_out,
+	   CRV			=> check_result_valid_out,
+	   lengthValid  => length_valid_out,
 	   reset		=> reset,
 	   FrameValid	=> frame_valid,
 	   invalidBit => invalidBit_sig
 	  );
+	  
+	  shift1_1bit_instCR : shift1_1bit PORT MAP
+	(
+		aclr		=> reset,
+		clock		=> clk25,
+		shiftin		=> check_result,
+		shiftout    => check_result_out
+	);
+	
+	shift1_1bit_instLengthCRV : shift1_1bit PORT MAP
+	(
+		aclr		=> reset,
+		clock		=> clk25,
+		shiftin		=> check_result_valid,
+		shiftout    => check_result_valid_out
+	);
 	
 	--frame_valid <= (length_valid AND check_result AND check_result_valid); ALTERNATIVE TO THE FRAME VALID FSM USED ABOVE
 	frame_length_and_valid(11) <= frame_valid;
@@ -237,10 +285,10 @@ BEGIN
 	test_crc_rdv <= data_buffer_read_enable;
 	test_input4bit <= input_4bit;
 	test_length_value <= frame_length_and_valid(10 DOWNTO 0);
-	test_length_valid <= length_valid;
-	test_length_we <= length_buffer_write_enable;
-	test_crc_crv <= check_result_valid;
-	test_crc_cr <= check_result;
+	test_length_valid <= length_valid_out;
+	test_length_we <= length_buffer_write_enable_out;
+	test_crc_crv <= check_result_valid_out;
+	test_crc_cr <= check_result_out;
 	test_frame_valid <= frame_valid;
 	test_sequence_counter <= SequenceCount_sig;
 	test_sequence_invalidBit <= invalidBit_sig;

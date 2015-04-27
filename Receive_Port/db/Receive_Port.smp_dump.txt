@@ -7,12 +7,6 @@ y_current.waitx 0 0 1 0 1
 y_current.run 0 1 0 0 1 
 y_current.done 1 0 0 0 1 
 
-State Machine - |test|test_bench1:test_bench_inst|FrameValidFSM:FrameValidFSM_inst|state_reg
-Name state_reg.FRAME_IS_VALID state_reg.LENGTH_IS_VALID state_reg.WAITING 
-state_reg.WAITING 0 0 0 
-state_reg.LENGTH_IS_VALID 0 1 1 
-state_reg.FRAME_IS_VALID 1 0 1 
-
 State Machine - |test|test_bench1:test_bench_inst|FwdOutputCntrlr:FwdOutputCntrlr_inst|y_current
 Name y_current.RegWrite y_current.NotEqual y_current.Equal 
 y_current.Equal 0 0 0 

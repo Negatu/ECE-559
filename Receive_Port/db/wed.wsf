@@ -4259,11 +4259,11 @@ VECTOR("C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/Re
 VECTOR("C:/Users/talal/Desktop/ECE559/FinalProject/ECE-559/Receive_Port/db/Receive_Port.sim.cvwf")
 {
 	ZOOM{
-		ZBEGIN = 6914873;
-		ZEND = 7065145;
+		ZBEGIN = 6779423;
+		ZEND = 7087943;
 		NUMERATOR = 888;
-		DENOMINATOR = 150272;
-		TOP_INDEX = 0;
+		DENOMINATOR = 296821;
+		TOP_INDEX = 38;
 	}
 	CLOCK{
 		PERIOD = 10000;

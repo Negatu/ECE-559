@@ -92,8 +92,12 @@ clk25 => CRC_System:crc_system_inst.Clk
 clk25 => Data_Buffer:data_buffer_inst.write_clk
 clk25 => Length_DCFF:length_buffer_inst.wrclk
 clk25 => LengthCounterSystem:length_counter_sys_inst.clock
+clk25 => shift1_1bit:shift1_1bit_instLengthWE.clock
+clk25 => shift1_1bit:shift1_1bit_instLengthVal.clock
 clk25 => SequenceNumberCounter:seq_counter_inst.Clk25Mhz
 clk25 => FrameValidFSM:FrameValidFSM_inst.clk
+clk25 => shift1_1bit:shift1_1bit_instCR.clock
+clk25 => shift1_1bit:shift1_1bit_instLengthCRV.clock
 clk50 => Data_Buffer:data_buffer_inst.read_clk
 clk50 => Length_DCFF:length_buffer_inst.rdclk
 clk50 => FwdOutputCntrlr:FwdOutputCntrlr_inst.clock
@@ -102,9 +106,13 @@ reset => CRC_System:crc_system_inst.reset
 reset => Data_Buffer:data_buffer_inst.reset
 reset => Length_DCFF:length_buffer_inst.aclr
 reset => LengthCounterSystem:length_counter_sys_inst.reset
+reset => shift1_1bit:shift1_1bit_instLengthWE.aclr
+reset => shift1_1bit:shift1_1bit_instLengthVal.aclr
 reset => FwdOutputCntrlr:FwdOutputCntrlr_inst.reset
 reset => SequenceNumberCounter:seq_counter_inst.Reset
 reset => FrameValidFSM:FrameValidFSM_inst.reset
+reset => shift1_1bit:shift1_1bit_instCR.aclr
+reset => shift1_1bit:shift1_1bit_instLengthCRV.aclr
 rdv => SFD_FSM:sfd_fsm_inst.sfd_rdv
 input_4bit[0] => SFD_FSM:sfd_fsm_inst.dataIn[0]
 input_4bit[0] => test_input4bit[0].DATAIN
@@ -159,10 +167,10 @@ test_length_value[7] <= LengthCounterSystem:length_counter_sys_inst.lengthValue[
 test_length_value[8] <= LengthCounterSystem:length_counter_sys_inst.lengthValue[8]
 test_length_value[9] <= LengthCounterSystem:length_counter_sys_inst.lengthValue[9]
 test_length_value[10] <= LengthCounterSystem:length_counter_sys_inst.lengthValue[10]
-test_length_valid <= LengthCounterSystem:length_counter_sys_inst.lengthValid
-test_length_we <= LengthCounterSystem:length_counter_sys_inst.buffer_WE
-test_crc_crv <= CRC_System:crc_system_inst.CRC_result_valid
-test_crc_cr <= CRC_System:crc_system_inst.CRC_check_result
+test_length_valid <= shift1_1bit:shift1_1bit_instLengthVal.shiftout
+test_length_we <= shift1_1bit:shift1_1bit_instLengthWE.shiftout
+test_crc_crv <= shift1_1bit:shift1_1bit_instLengthCRV.shiftout
+test_crc_cr <= shift1_1bit:shift1_1bit_instCR.shiftout
 test_frame_valid <= FrameValidFSM:FrameValidFSM_inst.FrameValid
 test_input4bit[0] <= input_4bit[0].DB_MAX_OUTPUT_PORT_TYPE
 test_input4bit[1] <= input_4bit[1].DB_MAX_OUTPUT_PORT_TYPE
@@ -2203,6 +2211,50 @@ sclr => _.IN0
 sclr => _.IN0
 
 
+|test|test_bench1:test_bench_inst|shift1_1bit:shift1_1bit_instLengthWE
+aclr => lpm_shiftreg:lpm_shiftreg_component.aclr
+clock => lpm_shiftreg:lpm_shiftreg_component.clock
+shiftin => lpm_shiftreg:lpm_shiftreg_component.shiftin
+shiftout <= lpm_shiftreg:lpm_shiftreg_component.shiftout
+
+
+|test|test_bench1:test_bench_inst|shift1_1bit:shift1_1bit_instLengthWE|lpm_shiftreg:lpm_shiftreg_component
+data[0] => _.IN1
+clock => dffs[0].CLK
+enable => dffs[0].ENA
+shiftin => _.IN1
+load => _.IN0
+load => _.IN0
+aclr => dffs[0].IN0
+aset => ~NO_FANOUT~
+sclr => _.IN0
+sset => _.IN0
+q[0] <= q[0].DB_MAX_OUTPUT_PORT_TYPE
+shiftout <= dffs[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test|test_bench1:test_bench_inst|shift1_1bit:shift1_1bit_instLengthVal
+aclr => lpm_shiftreg:lpm_shiftreg_component.aclr
+clock => lpm_shiftreg:lpm_shiftreg_component.clock
+shiftin => lpm_shiftreg:lpm_shiftreg_component.shiftin
+shiftout <= lpm_shiftreg:lpm_shiftreg_component.shiftout
+
+
+|test|test_bench1:test_bench_inst|shift1_1bit:shift1_1bit_instLengthVal|lpm_shiftreg:lpm_shiftreg_component
+data[0] => _.IN1
+clock => dffs[0].CLK
+enable => dffs[0].ENA
+shiftin => _.IN1
+load => _.IN0
+load => _.IN0
+aclr => dffs[0].IN0
+aset => ~NO_FANOUT~
+sclr => _.IN0
+sset => _.IN0
+q[0] <= q[0].DB_MAX_OUTPUT_PORT_TYPE
+shiftout <= dffs[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
 |test|test_bench1:test_bench_inst|FwdOutputCntrlr:FwdOutputCntrlr_inst
 clock => lengthValidReg:lengthValidReg_inst.clock
 clock => outFrameLengthCounter:outFrameLengthCounter_inst.clock
@@ -2628,16 +2680,57 @@ q[8] <= counter_reg_bit1a[8].REGOUT
 
 
 |test|test_bench1:test_bench_inst|FrameValidFSM:FrameValidFSM_inst
-clk => state_reg~1.DATAIN
-Check_Result => state_next.OUTPUTSELECT
-Check_Result => state_next.OUTPUTSELECT
-CRV => state_next.DATAB
-CRV => state_next.DATAB
-lengthValid => state_next.LENGTH_IS_VALID.DATAB
-lengthValid => Selector0.IN1
-reset => state_reg~3.DATAIN
+clk => state_reg.CLK
+Check_Result => process_2.IN0
+CRV => process_2.IN1
+lengthValid => state_next.DATAB
+reset => state_reg.ACLR
 FrameValid <= FrameValid.DB_MAX_OUTPUT_PORT_TYPE
 invalidBit <= invalidBit.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test|test_bench1:test_bench_inst|shift1_1bit:shift1_1bit_instCR
+aclr => lpm_shiftreg:lpm_shiftreg_component.aclr
+clock => lpm_shiftreg:lpm_shiftreg_component.clock
+shiftin => lpm_shiftreg:lpm_shiftreg_component.shiftin
+shiftout <= lpm_shiftreg:lpm_shiftreg_component.shiftout
+
+
+|test|test_bench1:test_bench_inst|shift1_1bit:shift1_1bit_instCR|lpm_shiftreg:lpm_shiftreg_component
+data[0] => _.IN1
+clock => dffs[0].CLK
+enable => dffs[0].ENA
+shiftin => _.IN1
+load => _.IN0
+load => _.IN0
+aclr => dffs[0].IN0
+aset => ~NO_FANOUT~
+sclr => _.IN0
+sset => _.IN0
+q[0] <= q[0].DB_MAX_OUTPUT_PORT_TYPE
+shiftout <= dffs[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test|test_bench1:test_bench_inst|shift1_1bit:shift1_1bit_instLengthCRV
+aclr => lpm_shiftreg:lpm_shiftreg_component.aclr
+clock => lpm_shiftreg:lpm_shiftreg_component.clock
+shiftin => lpm_shiftreg:lpm_shiftreg_component.shiftin
+shiftout <= lpm_shiftreg:lpm_shiftreg_component.shiftout
+
+
+|test|test_bench1:test_bench_inst|shift1_1bit:shift1_1bit_instLengthCRV|lpm_shiftreg:lpm_shiftreg_component
+data[0] => _.IN1
+clock => dffs[0].CLK
+enable => dffs[0].ENA
+shiftin => _.IN1
+load => _.IN0
+load => _.IN0
+aclr => dffs[0].IN0
+aset => ~NO_FANOUT~
+sclr => _.IN0
+sset => _.IN0
+q[0] <= q[0].DB_MAX_OUTPUT_PORT_TYPE
+shiftout <= dffs[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
 |test|MII_to_RCV:phy_inst
