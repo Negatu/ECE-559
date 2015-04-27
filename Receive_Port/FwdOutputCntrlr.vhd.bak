@@ -128,7 +128,7 @@ architecture RegCountArch of FwdOutputCntrlr is
 		END IF;
 	END PROCESS;
 	fwdFrameLengthValue <= int_FrameLengthValue(10 downto 0);
-	fwdFrameValid		<= int_FrameLengthValue(2);
+	fwdFrameValid		<= int_FrameLengthValue(11);
 	lengthBuffer_RE <= int_lengthBufferRE;
 	
 end RegCountArch;

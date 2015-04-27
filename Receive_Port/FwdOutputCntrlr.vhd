@@ -119,7 +119,7 @@ architecture RegCountArch of FwdOutputCntrlr is
 			length_reg_we <= '0';
 		
 		ELSE
-			dataBuffer_RE <= '0';
+			dataBuffer_RE <= '1';
 			int_lengthBufferRE <= '0';
 			counter_reset_sig <= '1';
 			clear_length_reg <= '0';

@@ -4459,127 +4459,6 @@ a36c8ec425c8a2589af98b2d4daabc3
 
 # end
 # entity
-MII_to_RCV
-# storage
-db|Receive_Port.(57).cnf
-db|Receive_Port.(57).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-|users|negatu|desktop|spring 2015 - dawning|ece-559|mii_to_rcv_restored|mii_to_rcv.vhd
-61252449c8055ed2d74ccb2bdab84
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
- constraint(rcv_data)
-3 downto 0
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-MII_to_RCV:phy_inst
-}
-# lmf
-|altera|91sp2|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
-# macro_sequence
-
-# end
-# entity
-framemem
-# storage
-db|Receive_Port.(58).cnf
-db|Receive_Port.(58).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-|users|negatu|desktop|spring 2015 - dawning|ece-559|mii_to_rcv_restored|framemem.vhd
-81f1f1e0ec7148e39ae439b2ca691ce8
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
- constraint(address)
-9 downto 0
-PARAMETER_STRING
-USR
- constraint(q)
-3 downto 0
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-MII_to_RCV:phy_inst|framemem:frame_test_mem
-}
-# lmf
-|altera|91sp2|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
-# macro_sequence
-
-# end
-# entity
-cntr12bit
-# storage
-db|Receive_Port.(61).cnf
-db|Receive_Port.(61).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-|users|negatu|desktop|spring 2015 - dawning|ece-559|mii_to_rcv_restored|cntr12bit.vhd
-31fb789ff8cc51f9698ce62c7238c3a9
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
- constraint(q)
-11 downto 0
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-MII_to_RCV:phy_inst|cntr12bit:cntrx
-}
-# lmf
-|altera|91sp2|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
-# macro_sequence
-
-# end
-# entity
 test
 # storage
 db|Receive_Port.(0).cnf
@@ -4825,7 +4704,89 @@ a36c8ec425c8a2589af98b2d4daabc3
 
 # end
 # entity
-FwdOutputCntrlr
+MII_to_RCV
+# storage
+db|Receive_Port.(58).cnf
+db|Receive_Port.(58).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|users|talal|desktop|ece559|finalproject|ece-559|mii_to_rcv_restored|mii_to_rcv.vhd
+61252449c8055ed2d74ccb2bdab84
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(rcv_data)
+3 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+MII_to_RCV:phy_inst
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+framemem
+# storage
+db|Receive_Port.(61).cnf
+db|Receive_Port.(61).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|users|talal|desktop|ece559|finalproject|ece-559|mii_to_rcv_restored|framemem.vhd
+81f1f1e0ec7148e39ae439b2ca691ce8
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(address)
+9 downto 0
+PARAMETER_STRING
+USR
+ constraint(q)
+3 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+MII_to_RCV:phy_inst|framemem:frame_test_mem
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+cntr12bit
 # storage
 db|Receive_Port.(63).cnf
 db|Receive_Port.(63).cnf
@@ -4835,8 +4796,47 @@ ON
 }
 # case_insensitive
 # source_file
+|users|talal|desktop|ece559|finalproject|ece-559|mii_to_rcv_restored|cntr12bit.vhd
+31fb789ff8cc51f9698ce62c7238c3a9
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(q)
+11 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+MII_to_RCV:phy_inst|cntr12bit:cntrx
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+FwdOutputCntrlr
+# storage
+db|Receive_Port.(57).cnf
+db|Receive_Port.(57).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
 fwdoutputcntrlr.vhd
-e84375ec6f1c3fb1081f56391d2570
+7a8de624194b8ad01f72906dcd47417
 5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
