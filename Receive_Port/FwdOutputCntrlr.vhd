@@ -42,7 +42,7 @@ architecture RegCountArch of FwdOutputCntrlr is
     END component;
     	
 	TYPE State_type IS ( NotEqual, Equal, RegWrite);
-	SIGNAL y_current, y_next	: State_type;
+	SIGNAL y_current, y_next : State_type;
 	signal counter_reset_sig, clear_length_reg, int_lengthBufferRE, equal_true, length_reg_we : std_logic; -- used to clear the counter after each frame
 	signal int_FrameLengthValue : std_logic_vector(20 downto 0);
 	signal counterValue : std_logic_vector (10 downto 0);

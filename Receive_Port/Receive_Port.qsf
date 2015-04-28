@@ -69,7 +69,16 @@ set_global_assignment -name VHDL_FILE tbrom4.vhd
 set_global_assignment -name VHDL_FILE CRC_FSM.vhd
 set_global_assignment -name VHDL_FILE CRC_System.vhd
 set_global_assignment -name QIP_FILE Data_DCFF.qip
+set_global_assignment -name IP_TOOL_NAME FIFO -qip Data_DCFF.qip
+set_global_assignment -name IP_TOOL_VERSION 9.1 -qip Data_DCFF.qip
+set_global_assignment -name VHDL_FILE Data_DCFF.vhd -qip Data_DCFF.qip
+set_global_assignment -name MISC_FILE Data_DCFF_inst.vhd -qip Data_DCFF.qip
+set_global_assignment -name MISC_FILE Data_DCFF.cmp -qip Data_DCFF.qip
+set_global_assignment -name MISC_FILE Data_DCFF_syn.v -qip Data_DCFF.qip
 set_global_assignment -name QIP_FILE Length_DCFF.qip
+set_global_assignment -name IP_TOOL_NAME FIFO -qip Length_DCFF.qip
+set_global_assignment -name IP_TOOL_VERSION 9.1 -qip Length_DCFF.qip
+set_global_assignment -name VHDL_FILE Length_DCFF.vhd -qip Length_DCFF.qip
 set_global_assignment -name VHDL_FILE Data_Buffer.vhd
 set_global_assignment -name VHDL_FILE test_bench1.vhd
 set_global_assignment -name VHDL_FILE Receive_Port.vhd
@@ -82,16 +91,30 @@ set_global_assignment -name VHDL_FILE test.vhd
 set_global_assignment -name VHDL_FILE SFD_FSM.vhd
 set_global_assignment -name VECTOR_WAVEFORM_FILE SFD_FSM.vwf
 set_global_assignment -name QIP_FILE shift2bit.qip
+set_global_assignment -name IP_TOOL_NAME LPM_SHIFTREG -qip shift2bit.qip
+set_global_assignment -name IP_TOOL_VERSION 9.1 -qip shift2bit.qip
+set_global_assignment -name VHDL_FILE shift2bit.vhd -qip shift2bit.qip
 set_global_assignment -name VHDL_FILE crc_system_test.vhd
 set_global_assignment -name VECTOR_WAVEFORM_FILE crc_system_test.vwf
 set_global_assignment -name VHDL_FILE test_shhift1_4bit.vhd
 set_global_assignment -name QIP_FILE shift1_4bit.qip
+set_global_assignment -name IP_TOOL_NAME LPM_SHIFTREG -qip shift1_4bit.qip
+set_global_assignment -name IP_TOOL_VERSION 9.1 -qip shift1_4bit.qip
+set_global_assignment -name VHDL_FILE shift1_4bit.vhd -qip shift1_4bit.qip
 set_global_assignment -name VECTOR_WAVEFORM_FILE shift1_4bit.vwf
 set_global_assignment -name QIP_FILE shift1_1bit.qip
+set_global_assignment -name IP_TOOL_NAME LPM_SHIFTREG -qip shift1_1bit.qip
+set_global_assignment -name IP_TOOL_VERSION 9.1 -qip shift1_1bit.qip
+set_global_assignment -name VHDL_FILE shift1_1bit.vhd -qip shift1_1bit.qip
 set_global_assignment -name VHDL_FILE FrameValidFSM.vhd
 set_global_assignment -name VECTOR_WAVEFORM_FILE FrameValidFSM.vwf
 set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE test.vwf
 set_global_assignment -name QIP_FILE lengthValidReg.qip
+set_global_assignment -name IP_TOOL_NAME LPM_FF -qip lengthValidReg.qip
+set_global_assignment -name IP_TOOL_VERSION 9.1 -qip lengthValidReg.qip
+set_global_assignment -name VHDL_FILE lengthValidReg.vhd -qip lengthValidReg.qip
+set_global_assignment -name MISC_FILE lengthValidReg.bsf -qip lengthValidReg.qip
+set_global_assignment -name MISC_FILE lengthValidReg.cmp -qip lengthValidReg.qip
 set_global_assignment -name VHDL_FILE fwdoutputcntrlr.vhd
 set_global_assignment -name VHDL_FILE frameLengthValueComp.vhd
 set_global_assignment -name VHDL_FILE outFrameLengthCounter.vhd
@@ -100,6 +123,8 @@ set_global_assignment -name VHDL_FILE LengthCounter.vhd
 set_global_assignment -name USE_CONFIGURATION_DEVICE ON
 set_global_assignment -name MISC_FILE "C:/Users/talal/Desktop/ECE559/FinalProject/ECE-559/Receive_Port/Receive_Port.dpf"
 set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
+set_location_assignment PIN_N2 -to clock50
+set_location_assignment PIN_N25 -to clock25
 set_location_assignment PIN_N26 -to reset
 set_location_assignment PIN_P18 -to frame_valid_out
 set_location_assignment PIN_L20 -to frame_available_monitoring
@@ -114,6 +139,15 @@ set_location_assignment PIN_E25 -to length_buffer_out_11bit[3]
 set_location_assignment PIN_E26 -to length_buffer_out_11bit[2]
 set_location_assignment PIN_J22 -to length_buffer_out_11bit[1]
 set_location_assignment PIN_D25 -to length_buffer_out_11bit[0]
+set_location_assignment PIN_H25 -to test_sequence_counter_fwd[8]
+set_location_assignment PIN_J24 -to test_sequence_counter_fwd[7]
+set_location_assignment PIN_J23 -to test_sequence_counter_fwd[6]
+set_location_assignment PIN_H24 -to test_sequence_counter_fwd[5]
+set_location_assignment PIN_H23 -to test_sequence_counter_fwd[4]
+set_location_assignment PIN_G25 -to test_sequence_counter_fwd[3]
+set_location_assignment PIN_K22 -to test_sequence_counter_fwd[2]
+set_location_assignment PIN_G24 -to test_sequence_counter_fwd[1]
+set_location_assignment PIN_G23 -to test_sequence_counter_fwd[0]
 set_location_assignment PIN_L21 -to data_buffer_out_8bit[7]
 set_location_assignment PIN_K24 -to data_buffer_out_8bit[6]
 set_location_assignment PIN_K23 -to data_buffer_out_8bit[5]
@@ -134,6 +168,8 @@ set_location_assignment PIN_M23 -to frame_to_monitoring[3]
 set_location_assignment PIN_M22 -to frame_to_monitoring[2]
 set_location_assignment PIN_K26 -to frame_to_monitoring[1]
 set_location_assignment PIN_K25 -to frame_to_monitoring[0]
+set_location_assignment PIN_J25 -to triggerStart
+set_location_assignment PIN_J26 -to triggerEnd
 set_location_assignment PIN_P25 -to port_id[1]
 set_location_assignment PIN_AE14 -to port_id[0]
 set_location_assignment PIN_T24 -to clk25
@@ -155,8 +191,13 @@ set_location_assignment PIN_K22 -to sequence_count_fwd[2]
 set_location_assignment PIN_G24 -to sequence_count_fwd[1]
 set_location_assignment PIN_G23 -to sequence_count_fwd[0]
 set_location_assignment PIN_J25 -to trigger
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
-set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity test -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -entity test -section_id Top
+set_global_assignment -name LL_ROOT_REGION ON -entity test -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -entity test -section_id "Root Region"
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity test -section_id Top
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity Receive_Port -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -entity Receive_Port -section_id Top
+set_global_assignment -name LL_ROOT_REGION ON -entity Receive_Port -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -entity Receive_Port -section_id "Root Region"
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity Receive_Port -section_id Top

@@ -1,5 +1,6 @@
 library ieee ;
 use ieee.std_logic_1164.all;
+USE ieee.std_logic_misc.all;
 --use ieee.std_logic_unsigned.all;
 
 entity FrameValidFSM is 
@@ -10,8 +11,7 @@ end FrameValidFSM;
 
 
 architecture simple_arch of FrameValidFSM is
-	type state_type is
-				(WAITING, LENGTH_IS_VALID);
+	type state_type is (WAITING, LENGTH_IS_VALID);
 				--(WAITING, LENGTH_IS_VALID, FRAME_IS_VALID);
 	
 	signal state_reg, state_next: state_type;

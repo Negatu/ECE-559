@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 State Machine - |Receive_Port|test_bench1:test_bench_inst|FwdOutputCntrlr:FwdOutputCntrlr_inst|y_current
 Name y_current.RegWrite y_current.NotEqual y_current.Equal 
 y_current.Equal 0 0 0 
@@ -25,3 +26,12 @@ Name y_current.C y_current.B y_current.A
 y_current.A 0 0 0 
 y_current.B 0 1 1 
 y_current.C 1 0 1 
+=======
+State Machine - |crc_compute|MII_to_RCV:phy_inst|y_current
+Name y_current.done y_current.run y_current.waitx y_current.wait4run y_current.reset 
+y_current.reset 0 0 0 0 0 
+y_current.wait4run 0 0 0 1 1 
+y_current.waitx 0 0 1 0 1 
+y_current.run 0 1 0 0 1 
+y_current.done 1 0 0 0 1 
+>>>>>>> ca5943ec5eacd2e0f43015dc9a277b999122c09d

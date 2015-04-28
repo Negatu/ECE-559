@@ -578,105 +578,6 @@ VECTOR("C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/crc_c
 	}
 }
 
-VECTOR("C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/SFD_FSM.vwf")
-{
-	ZOOM{
-		ZBEGIN = 0;
-		ZEND = 668000;
-		NUMERATOR = 835;
-		DENOMINATOR = 668000;
-		TOP_INDEX = 0;
-	}
-	CLOCK{
-		PERIOD = 40000;
-		OFFSET = 0;
-		DUTY_CYCLE = 50;
-	}
-	RANDOM_VALUE{
-		INTERVAL_TYPE = HALF_GRID;
-	}
-	LINE{
-		SIGNAL = "Clock";
-		INDEX = 0;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "crc_rdv";
-		INDEX = 1;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "dataIn";
-		INDEX = 2;
-		FORMAT = T;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "dataIn[3]";
-		INDEX = 3;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "dataIn[2]";
-		INDEX = 4;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "dataIn[1]";
-		INDEX = 5;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "dataIn[0]";
-		INDEX = 6;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "Reset";
-		INDEX = 7;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "sfd_rdv";
-		INDEX = 8;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "y_current";
-		INDEX = 9;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-}
-
 VECTOR("C:/Users/Gift Nyikayaramba/Documents/Academic/ECE 559/ECE-559/Receive_Port/test.vwf")
 {
 	ZOOM{
@@ -1655,73 +1556,6 @@ VECTOR("C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/crc_c
 	LINE{
 		SIGNAL = "reset";
 		INDEX = 41;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-}
-
-VECTOR("C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/crc_system_test.vwf")
-{
-	ZOOM{
-		ZBEGIN = 0;
-		ZEND = 357200;
-		NUMERATOR = 893;
-		DENOMINATOR = 357200;
-		TOP_INDEX = 0;
-	}
-	CLOCK{
-		PERIOD = 40000;
-		OFFSET = 0;
-		DUTY_CYCLE = 50;
-	}
-	RANDOM_VALUE{
-		INTERVAL_TYPE = HALF_GRID;
-	}
-	LINE{
-		SIGNAL = "check_result";
-		INDEX = 0;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "check_result_valid";
-		INDEX = 1;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "clock25";
-		INDEX = 2;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "reset";
-		INDEX = 3;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "crc_rdv_out";
-		INDEX = 4;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "mii_rdv_out";
-		INDEX = 5;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -3517,745 +3351,6 @@ VECTOR("C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/Recei
 	}
 }
 
-VECTOR("C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/Receive_Port.sim.cvwf")
-{
-	ZOOM{
-		ZBEGIN = 0;
-		ZEND = 318241;
-		NUMERATOR = 694;
-		DENOMINATOR = 206411;
-		TOP_INDEX = 0;
-	}
-	CLOCK{
-		PERIOD = 10000;
-		OFFSET = 0;
-		DUTY_CYCLE = 50;
-	}
-	RANDOM_VALUE{
-		INTERVAL_TYPE = HALF_GRID;
-	}
-	LINE{
-		SIGNAL = "clock25";
-		INDEX = 0;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "clock50";
-		INDEX = 1;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "reset";
-		INDEX = 2;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "data_buffer_out_8bit";
-		INDEX = 3;
-		FORMAT = T;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "data_buffer_out_8bit[7]";
-		INDEX = 4;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "data_buffer_out_8bit[6]";
-		INDEX = 5;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "data_buffer_out_8bit[5]";
-		INDEX = 6;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "data_buffer_out_8bit[4]";
-		INDEX = 7;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "data_buffer_out_8bit[3]";
-		INDEX = 8;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "data_buffer_out_8bit[2]";
-		INDEX = 9;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "data_buffer_out_8bit[1]";
-		INDEX = 10;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "data_buffer_out_8bit[0]";
-		INDEX = 11;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "length_buffer_out_11bit";
-		INDEX = 12;
-		FORMAT = T;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "length_buffer_out_11bit[10]";
-		INDEX = 13;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "length_buffer_out_11bit[9]";
-		INDEX = 14;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "length_buffer_out_11bit[8]";
-		INDEX = 15;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "length_buffer_out_11bit[7]";
-		INDEX = 16;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "length_buffer_out_11bit[6]";
-		INDEX = 17;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "length_buffer_out_11bit[5]";
-		INDEX = 18;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "length_buffer_out_11bit[4]";
-		INDEX = 19;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "length_buffer_out_11bit[3]";
-		INDEX = 20;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "length_buffer_out_11bit[2]";
-		INDEX = 21;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "length_buffer_out_11bit[1]";
-		INDEX = 22;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "length_buffer_out_11bit[0]";
-		INDEX = 23;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_buffer_output";
-		INDEX = 24;
-		FORMAT = T;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_buffer_output[11]";
-		INDEX = 25;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_buffer_output[10]";
-		INDEX = 26;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_buffer_output[9]";
-		INDEX = 27;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_buffer_output[8]";
-		INDEX = 28;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_buffer_output[7]";
-		INDEX = 29;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_buffer_output[6]";
-		INDEX = 30;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_buffer_output[5]";
-		INDEX = 31;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_buffer_output[4]";
-		INDEX = 32;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_buffer_output[3]";
-		INDEX = 33;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_buffer_output[2]";
-		INDEX = 34;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_buffer_output[1]";
-		INDEX = 35;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_buffer_output[0]";
-		INDEX = 36;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "frame_valid_out";
-		INDEX = 37;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_value";
-		INDEX = 38;
-		FORMAT = T;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_value[10]";
-		INDEX = 39;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_value[9]";
-		INDEX = 40;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_value[8]";
-		INDEX = 41;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_value[7]";
-		INDEX = 42;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_value[6]";
-		INDEX = 43;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_value[5]";
-		INDEX = 44;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_value[4]";
-		INDEX = 45;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_value[3]";
-		INDEX = 46;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_value[2]";
-		INDEX = 47;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_value[1]";
-		INDEX = 48;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_value[0]";
-		INDEX = 49;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_read_enable";
-		INDEX = 50;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_data_read_enable";
-		INDEX = 51;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_read_empty";
-		INDEX = 52;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_data_read_empty";
-		INDEX = 53;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_input4bit";
-		INDEX = 54;
-		FORMAT = T;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_input4bit[3]";
-		INDEX = 55;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_input4bit[2]";
-		INDEX = 56;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_input4bit[1]";
-		INDEX = 57;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_input4bit[0]";
-		INDEX = 58;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_crc_rdv";
-		INDEX = 59;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_we";
-		INDEX = 60;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_crc_cr";
-		INDEX = 61;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_crc_crv";
-		INDEX = 62;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "frame_available_monitoring";
-		INDEX = 63;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "frame_to_monitoring";
-		INDEX = 64;
-		FORMAT = T;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "frame_to_monitoring[11]";
-		INDEX = 65;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "frame_to_monitoring[10]";
-		INDEX = 66;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "frame_to_monitoring[9]";
-		INDEX = 67;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "frame_to_monitoring[8]";
-		INDEX = 68;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "frame_to_monitoring[7]";
-		INDEX = 69;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "frame_to_monitoring[6]";
-		INDEX = 70;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "frame_to_monitoring[5]";
-		INDEX = 71;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "frame_to_monitoring[4]";
-		INDEX = 72;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "frame_to_monitoring[3]";
-		INDEX = 73;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "frame_to_monitoring[2]";
-		INDEX = 74;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "frame_to_monitoring[1]";
-		INDEX = 75;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "frame_to_monitoring[0]";
-		INDEX = 76;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_valid";
-		INDEX = 77;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_frame_valid";
-		INDEX = 78;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_sequence_counter";
-		INDEX = 79;
-		FORMAT = T;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_sequence_counter[8]";
-		INDEX = 80;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_sequence_counter[7]";
-		INDEX = 81;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_sequence_counter[6]";
-		INDEX = 82;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_sequence_counter[5]";
-		INDEX = 83;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_sequence_counter[4]";
-		INDEX = 84;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_sequence_counter[3]";
-		INDEX = 85;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_sequence_counter[2]";
-		INDEX = 86;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_sequence_counter[1]";
-		INDEX = 87;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_sequence_counter[0]";
-		INDEX = 88;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_sequence_invalidBit";
-		INDEX = 89;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-}
-
 VECTOR("C:/Users/talal/Desktop/ECE559/FinalProject/ECE-559/Receive_Port/test.vwf")
 {
 	ZOOM{
@@ -5075,11 +4170,787 @@ VECTOR("C:/Users/talal/Desktop/ECE559/FinalProject/ECE-559/Receive_Port/test.vwf
 	}
 }
 
+VECTOR("C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/SFD_FSM.vwf")
+{
+	ZOOM{
+<<<<<<< HEAD
+		ZBEGIN = 8200933;
+		ZEND = 8419172;
+		NUMERATOR = 1346;
+		DENOMINATOR = 218239;
+		TOP_INDEX = 1;
+=======
+		ZBEGIN = 0;
+		ZEND = 668000;
+		NUMERATOR = 835;
+		DENOMINATOR = 668000;
+		TOP_INDEX = 0;
+>>>>>>> ca5943ec5eacd2e0f43015dc9a277b999122c09d
+	}
+	CLOCK{
+		PERIOD = 40000;
+		OFFSET = 0;
+		DUTY_CYCLE = 50;
+	}
+	RANDOM_VALUE{
+		INTERVAL_TYPE = HALF_GRID;
+	}
+	LINE{
+		SIGNAL = "Clock";
+		INDEX = 0;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "crc_rdv";
+		INDEX = 1;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "dataIn";
+		INDEX = 2;
+		FORMAT = T;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "dataIn[3]";
+		INDEX = 3;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "dataIn[2]";
+		INDEX = 4;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "dataIn[1]";
+		INDEX = 5;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "dataIn[0]";
+		INDEX = 6;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "Reset";
+		INDEX = 7;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "sfd_rdv";
+		INDEX = 8;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "y_current";
+		INDEX = 9;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+}
+
+VECTOR("C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/LengthCounterSystem.vwf")
+{
+	ZOOM{
+		ZBEGIN = 0;
+		ZEND = 0;
+		NUMERATOR = 0;
+		DENOMINATOR = 0;
+		TOP_INDEX = 0;
+	}
+	CLOCK{
+		PERIOD = 10000;
+		OFFSET = 0;
+		DUTY_CYCLE = 50;
+	}
+	RANDOM_VALUE{
+		INTERVAL_TYPE = HALF_GRID;
+	}
+	LINE{
+		SIGNAL = "clock";
+		INDEX = 0;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "CRC_rdv";
+		INDEX = 1;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "reset";
+		INDEX = 2;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "lengthValid";
+		INDEX = 3;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "buffer_WE";
+		INDEX = 4;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "lengthValue";
+		INDEX = 5;
+		FORMAT = T;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "lengthValue[11]";
+		INDEX = 6;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "lengthValue[10]";
+		INDEX = 7;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "lengthValue[9]";
+		INDEX = 8;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "lengthValue[8]";
+		INDEX = 9;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "lengthValue[7]";
+		INDEX = 10;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "lengthValue[6]";
+		INDEX = 11;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "lengthValue[5]";
+		INDEX = 12;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "lengthValue[4]";
+		INDEX = 13;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "lengthValue[3]";
+		INDEX = 14;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "lengthValue[2]";
+		INDEX = 15;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "lengthValue[1]";
+		INDEX = 16;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "lengthValue[0]";
+		INDEX = 17;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+}
+
+VECTOR("C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/crc_system_test.vwf")
+{
+	ZOOM{
+		ZBEGIN = 0;
+		ZEND = 357200;
+		NUMERATOR = 893;
+		DENOMINATOR = 357200;
+		TOP_INDEX = 0;
+	}
+	CLOCK{
+		PERIOD = 40000;
+		OFFSET = 0;
+		DUTY_CYCLE = 50;
+	}
+<<<<<<< HEAD
+	LINE{
+		SIGNAL = "frame_available_monitoring";
+		INDEX = 35;
+=======
+	RANDOM_VALUE{
+		INTERVAL_TYPE = HALF_GRID;
+	}
+	LINE{
+		SIGNAL = "check_result";
+		INDEX = 0;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "check_result_valid";
+		INDEX = 1;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "clock25";
+		INDEX = 2;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "reset";
+		INDEX = 3;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "crc_rdv_out";
+		INDEX = 4;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "mii_rdv_out";
+		INDEX = 5;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+}
+
+VECTOR("C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/Receive_Port.sim.cvwf")
+{
+	ZOOM{
+		ZBEGIN = 6482977;
+		ZEND = 6701727;
+		NUMERATOR = 872;
+		DENOMINATOR = 218750;
+		TOP_INDEX = 1;
+	}
+	CLOCK{
+		PERIOD = 10000;
+		OFFSET = 0;
+		DUTY_CYCLE = 50;
+	}
+	RANDOM_VALUE{
+		INTERVAL_TYPE = HALF_GRID;
+	}
+	LINE{
+		SIGNAL = "clock25";
+		INDEX = 0;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "comp_en";
+		INDEX = 1;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "init";
+		INDEX = 2;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "out_input";
+		INDEX = 3;
+		FORMAT = T;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "out_input[3]";
+		INDEX = 4;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "out_input[2]";
+		INDEX = 5;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "out_input[1]";
+		INDEX = 6;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "out_input[0]";
+		INDEX = 7;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "outCRC";
+		INDEX = 8;
+		FORMAT = T;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "outCRC[31]";
+		INDEX = 9;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "outCRC[30]";
+		INDEX = 10;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "outCRC[29]";
+		INDEX = 11;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "outCRC[28]";
+		INDEX = 12;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "outCRC[27]";
+		INDEX = 13;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "outCRC[26]";
+		INDEX = 14;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "outCRC[25]";
+		INDEX = 15;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "outCRC[24]";
+		INDEX = 16;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "outCRC[23]";
+		INDEX = 17;
+>>>>>>> ca5943ec5eacd2e0f43015dc9a277b999122c09d
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+<<<<<<< HEAD
+		SIGNAL = "frame_to_monitoring";
+		INDEX = 36;
+		FORMAT = T;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "frame_to_monitoring[11]";
+		INDEX = 37;
+=======
+		SIGNAL = "outCRC[22]";
+		INDEX = 18;
+>>>>>>> ca5943ec5eacd2e0f43015dc9a277b999122c09d
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+<<<<<<< HEAD
+		SIGNAL = "frame_to_monitoring[10]";
+		INDEX = 38;
+=======
+		SIGNAL = "outCRC[21]";
+		INDEX = 19;
+>>>>>>> ca5943ec5eacd2e0f43015dc9a277b999122c09d
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+<<<<<<< HEAD
+		SIGNAL = "frame_to_monitoring[9]";
+		INDEX = 39;
+=======
+		SIGNAL = "outCRC[20]";
+		INDEX = 20;
+>>>>>>> ca5943ec5eacd2e0f43015dc9a277b999122c09d
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+<<<<<<< HEAD
+		SIGNAL = "frame_to_monitoring[8]";
+		INDEX = 40;
+=======
+		SIGNAL = "outCRC[19]";
+		INDEX = 21;
+>>>>>>> ca5943ec5eacd2e0f43015dc9a277b999122c09d
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+<<<<<<< HEAD
+		SIGNAL = "frame_to_monitoring[7]";
+		INDEX = 41;
+=======
+		SIGNAL = "outCRC[18]";
+		INDEX = 22;
+>>>>>>> ca5943ec5eacd2e0f43015dc9a277b999122c09d
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+<<<<<<< HEAD
+		SIGNAL = "frame_to_monitoring[6]";
+		INDEX = 42;
+=======
+		SIGNAL = "outCRC[17]";
+		INDEX = 23;
+>>>>>>> ca5943ec5eacd2e0f43015dc9a277b999122c09d
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+<<<<<<< HEAD
+		SIGNAL = "frame_to_monitoring[5]";
+		INDEX = 43;
+=======
+		SIGNAL = "outCRC[16]";
+		INDEX = 24;
+>>>>>>> ca5943ec5eacd2e0f43015dc9a277b999122c09d
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+<<<<<<< HEAD
+		SIGNAL = "frame_to_monitoring[4]";
+		INDEX = 44;
+=======
+		SIGNAL = "outCRC[15]";
+		INDEX = 25;
+>>>>>>> ca5943ec5eacd2e0f43015dc9a277b999122c09d
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+<<<<<<< HEAD
+		SIGNAL = "frame_to_monitoring[3]";
+		INDEX = 45;
+=======
+		SIGNAL = "outCRC[14]";
+		INDEX = 26;
+>>>>>>> ca5943ec5eacd2e0f43015dc9a277b999122c09d
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+<<<<<<< HEAD
+		SIGNAL = "frame_to_monitoring[2]";
+		INDEX = 46;
+=======
+		SIGNAL = "outCRC[13]";
+		INDEX = 27;
+>>>>>>> ca5943ec5eacd2e0f43015dc9a277b999122c09d
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+<<<<<<< HEAD
+		SIGNAL = "frame_to_monitoring[1]";
+		INDEX = 47;
+=======
+		SIGNAL = "outCRC[12]";
+		INDEX = 28;
+>>>>>>> ca5943ec5eacd2e0f43015dc9a277b999122c09d
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+<<<<<<< HEAD
+		SIGNAL = "frame_to_monitoring[0]";
+		INDEX = 48;
+=======
+		SIGNAL = "outCRC[11]";
+		INDEX = 29;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "outCRC[10]";
+		INDEX = 30;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "outCRC[9]";
+		INDEX = 31;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "outCRC[8]";
+		INDEX = 32;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "outCRC[7]";
+		INDEX = 33;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "outCRC[6]";
+		INDEX = 34;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "outCRC[5]";
+		INDEX = 35;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "outCRC[4]";
+		INDEX = 36;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "outCRC[3]";
+		INDEX = 37;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "outCRC[2]";
+		INDEX = 38;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "outCRC[1]";
+		INDEX = 39;
+>>>>>>> ca5943ec5eacd2e0f43015dc9a277b999122c09d
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+<<<<<<< HEAD
+		SIGNAL = "triggerStart";
+		INDEX = 49;
+=======
+		SIGNAL = "outCRC[0]";
+		INDEX = 40;
+>>>>>>> ca5943ec5eacd2e0f43015dc9a277b999122c09d
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+<<<<<<< HEAD
+		SIGNAL = "triggerEnd";
+		INDEX = 50;
+=======
+		SIGNAL = "reset";
+		INDEX = 41;
+>>>>>>> ca5943ec5eacd2e0f43015dc9a277b999122c09d
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+}
+
 VECTOR("C:/Users/talal/Desktop/ECE559/FinalProject/ECE-559/Receive_Port/db/Receive_Port.sim.cvwf")
 {
 	ZOOM{
-		ZBEGIN = 8200933;
-		ZEND = 8419172;
+		ZBEGIN = 8215160;
+		ZEND = 8367570;
 		NUMERATOR = 1346;
 		DENOMINATOR = 218239;
 		TOP_INDEX = 1;
