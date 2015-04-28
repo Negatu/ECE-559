@@ -1,13 +1,7 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="Receive_Port">
-		<CBX_INST_ENTRY INSTANCE_NAME="|test|test_bench1:test_bench_inst|FwdOutputCntrlr:FwdOutputCntrlr_inst|frameLengthValueComp:frameLengthValueComp_inst|lpm_compare:lpm_compare_component" CBX_FILE_NAME="cmpr_nig.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|test|test_bench1:test_bench_inst|FwdOutputCntrlr:FwdOutputCntrlr_inst|outFrameLengthCounter:outFrameLengthCounter_inst|lpm_counter:lpm_counter_component" CBX_FILE_NAME="cntr_q4i.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|test|test_bench1:test_bench_inst|LengthCounterSystem:length_counter_sys_inst|LengthCounter:LengthCounter_inst|lpm_counter:lpm_counter_component" CBX_FILE_NAME="cntr_k7j.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|test|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component" CBX_FILE_NAME="dcfifo_lsh1.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|test|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component" CBX_FILE_NAME="cntr_k7j.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|test|MII_to_RCV:phy_inst|framemem:frame_test_mem|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_e781.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|test|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component" CBX_FILE_NAME="dcfifo_30i1.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|test|test_bench1:test_bench_inst|SequenceNumberCounter:seq_counter_inst|SequenceNumberCounter9BitVHD:SequenceNumberCounterNineBit_inst|lpm_counter:lpm_counter_component" CBX_FILE_NAME="cntr_mni.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|crc_system_test|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component" CBX_FILE_NAME="cntr_k7j.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|crc_system_test|MII_to_RCV:phy_inst|framemem:frame_test_mem|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_e781.tdf"/>
 	</PROJECT>
 </LOG_ROOT>
