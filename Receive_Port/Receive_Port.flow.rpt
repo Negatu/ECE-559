@@ -1,5 +1,5 @@
 Flow report for Receive_Port
-Mon Apr 27 23:35:41 2015
+Tue Apr 28 11:06:33 2015
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Flow Summary                                                                      ;
 +------------------------------------+----------------------------------------------+
-; Flow Status                        ; Successful - Mon Apr 27 23:35:41 2015        ;
+; Flow Status                        ; Successful - Tue Apr 28 11:06:33 2015        ;
 ; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                      ; Receive_Port                                 ;
 ; Top-level Entity Name              ; test                                         ;
@@ -46,11 +46,11 @@ applicable agreement for further details.
 ; Device                             ; EP2C35F672C6                                 ;
 ; Timing Models                      ; Final                                        ;
 ; Met timing requirements            ; Yes                                          ;
-; Total logic elements               ; 383 / 33,216 ( 1 % )                         ;
-;     Total combinational functions  ; 258 / 33,216 ( < 1 % )                       ;
+; Total logic elements               ; 382 / 33,216 ( 1 % )                         ;
+;     Total combinational functions  ; 257 / 33,216 ( < 1 % )                       ;
 ;     Dedicated logic registers      ; 313 / 33,216 ( < 1 % )                       ;
 ; Total registers                    ; 313                                          ;
-; Total pins                         ; 92 / 475 ( 19 % )                            ;
+; Total pins                         ; 49 / 475 ( 10 % )                            ;
 ; Total virtual pins                 ; 0                                            ;
 ; Total memory bits                  ; 21,152 / 483,840 ( 4 % )                     ;
 ; Embedded Multiplier 9-bit elements ; 0 / 70 ( 0 % )                               ;
@@ -63,7 +63,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/27/2015 23:35:22 ;
+; Start date & time ; 04/28/2015 11:06:14 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Receive_Port        ;
 +-------------------+---------------------+
@@ -74,7 +74,7 @@ applicable agreement for further details.
 +------------------------------------+----------------------------------------------------------------------------------+---------------+---------------------+----------------+
 ; Assignment Name                    ; Value                                                                            ; Default Value ; Entity Name         ; Section Id     ;
 +------------------------------------+----------------------------------------------------------------------------------+---------------+---------------------+----------------+
-; COMPILER_SIGNATURE_ID              ; 110865359222957.143019212214680                                                  ; --            ; --                  ; --             ;
+; COMPILER_SIGNATURE_ID              ; 110865359222957.143023357413172                                                  ; --            ; --                  ; --             ;
 ; IP_TOOL_NAME                       ; FIFO                                                                             ; --            ; --                  ; --             ;
 ; IP_TOOL_NAME                       ; FIFO                                                                             ; --            ; --                  ; --             ;
 ; IP_TOOL_NAME                       ; LPM_SHIFTREG                                                                     ; --            ; --                  ; --             ;
@@ -111,11 +111,11 @@ applicable agreement for further details.
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name             ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis    ; 00:00:06     ; 1.0                     ; 254 MB              ; 00:00:06                           ;
+; Analysis & Synthesis    ; 00:00:05     ; 1.0                     ; 254 MB              ; 00:00:05                           ;
 ; Fitter                  ; 00:00:08     ; 1.0                     ; 267 MB              ; 00:00:08                           ;
-; Assembler               ; 00:00:03     ; 1.0                     ; 251 MB              ; 00:00:03                           ;
-; Classic Timing Analyzer ; 00:00:00     ; 1.0                     ; 161 MB              ; 00:00:01                           ;
-; Total                   ; 00:00:17     ; --                      ; --                  ; 00:00:18                           ;
+; Assembler               ; 00:00:03     ; 1.0                     ; 251 MB              ; 00:00:02                           ;
+; Classic Timing Analyzer ; 00:00:00     ; 1.0                     ; 160 MB              ; 00:00:00                           ;
+; Total                   ; 00:00:16     ; --                      ; --                  ; 00:00:15                           ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

@@ -4,7 +4,7 @@ USE ieee.std_logic_1164.all;
 ENTITY test IS
 	PORT
 	(   clock25, clock50, reset : IN STD_LOGIC;
-		
+		port_id	   : IN STD_LOGIC_VECTOR (1 DOWNTO 0);
 		length_buffer_out_11bit : OUT STD_LOGIC_VECTOR (10 DOWNTO 0);	--going to forwarding
 		frame_valid_out : OUT STD_LOGIC;	--going to forwarding
 		
@@ -12,23 +12,24 @@ ENTITY test IS
 		
 		frame_to_monitoring : OUT STD_LOGIC_VECTOR(11 DOWNTO 0); -- going to monitoring.
 		frame_available_monitoring : OUT STD_LOGIC; -- going to monitoring.
-		
-		test_crc_rdv : OUT STD_LOGIC;
-		test_length_value : OUT STD_LOGIC_VECTOR(10 DOWNTO 0);
-		test_length_valid : OUT STD_LOGIC;
-		test_length_we : OUT STD_LOGIC;
-		test_crc_crv : OUT STD_LOGIC;
-		test_crc_cr : OUT STD_LOGIC;
-		test_frame_valid : OUT STD_LOGIC;
-		test_input4bit : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
-		test_sequence_counter: OUT STD_LOGIC_VECTOR(8 DOWNTO 0);
-		test_sequence_counter_fwd : OUT STD_LOGIC_VECTOR(8 DOWNTO 0);
-		test_length_read_empty : OUT STD_LOGIC;
-		test_data_read_empty : OUT STD_LOGIC;
-		test_length_read_enable : OUT STD_LOGIC;
-		test_data_read_enable : OUT STD_LOGIC;
-		test_length_buffer_output : OUT STD_LOGIC_VECTOR(11 DOWNTO 0);
-		test_sequence_invalidBit : OUT STD_LOGIC
+		triggerStart					   : OUT STD_LOGIC; --trigger for logic analyzer
+		triggerEnd						   : OUT STD_LOGIC;
+		--test_crc_rdv : OUT STD_LOGIC;
+		--test_length_value : OUT STD_LOGIC_VECTOR(10 DOWNTO 0);
+		--test_length_valid : OUT STD_LOGIC;
+		--test_length_we : OUT STD_LOGIC;
+		--test_crc_crv : OUT STD_LOGIC;
+		--test_crc_cr : OUT STD_LOGIC;
+		--test_frame_valid : OUT STD_LOGIC;
+		--test_input4bit : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+		--test_sequence_counter: OUT STD_LOGIC_VECTOR(8 DOWNTO 0);
+		test_sequence_counter_fwd : OUT STD_LOGIC_VECTOR(8 DOWNTO 0)
+		--test_length_read_empty : OUT STD_LOGIC;
+		--test_data_read_empty : OUT STD_LOGIC;
+		--test_length_read_enable : OUT STD_LOGIC;
+		--test_data_read_enable : OUT STD_LOGIC;
+		--test_length_buffer_output : OUT STD_LOGIC_VECTOR(11 DOWNTO 0);
+		--test_sequence_invalidBit : OUT STD_LOGIC
 		
 		);
 END test;
@@ -40,6 +41,22 @@ ARCHITECTURE test_arch OF test IS
 	SIGNAL Flip	: STD_LOGIC;
 	SIGNAL NotFlip	: STD_LOGIC;
 	
+	--supressed as signals for logic analyzer
+	SIGNAL test_crc_rdv :  STD_LOGIC;
+	SIGNAL test_length_value : STD_LOGIC_VECTOR(10 DOWNTO 0);
+    SIGNAL test_length_valid : STD_LOGIC;
+	SIGNAL test_length_we : STD_LOGIC;
+    SIGNAL test_crc_crv : STD_LOGIC;
+	SIGNAL test_crc_cr : STD_LOGIC;
+	SIGNAL test_frame_valid : STD_LOGIC;
+	SIGNAL test_input4bit : STD_LOGIC_VECTOR(3 DOWNTO 0);
+	SIGNAL test_sequence_counter: STD_LOGIC_VECTOR(8 DOWNTO 0);
+	SIGNAL test_length_read_empty : STD_LOGIC;
+	SIGNAL test_data_read_empty : STD_LOGIC;
+	SIGNAL test_length_read_enable : STD_LOGIC;
+	SIGNAL test_data_read_enable : STD_LOGIC;
+	SIGNAL test_length_buffer_output : STD_LOGIC_VECTOR(11 DOWNTO 0);
+    SIGNAL test_sequence_invalidBit :  STD_LOGIC;
 	
 	COMPONENT shift1_1bit IS
 	PORT
@@ -55,7 +72,7 @@ ARCHITECTURE test_arch OF test IS
 		PORT(
 			clk25, clk50, reset, rdv : IN STD_LOGIC;
 			input_4bit : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-			
+			port_id	   : IN STD_LOGIC_VECTOR (1 DOWNTO 0);
 			length_buffer_out_11bit : OUT STD_LOGIC_VECTOR (10 DOWNTO 0);	
 			frame_valid_out : OUT STD_LOGIC;	
 			
@@ -111,7 +128,7 @@ ARCHITECTURE test_arch OF test IS
 			
 			rdv => rdv_signal,
 			input_4bit => data_signal,
-			
+			port_id => port_id,
 			length_buffer_out_11bit => length_buffer_out_11bit,
 			frame_valid_out => frame_valid_out,	
 			
@@ -146,5 +163,6 @@ ARCHITECTURE test_arch OF test IS
 	);
 	
 	NotFlip <= not(Flip);
-	
+	triggerStart <= reset;
+	triggerEnd   <= test_data_read_enable;
 	END test_arch;

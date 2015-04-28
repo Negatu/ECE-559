@@ -4923,110 +4923,6 @@ a36c8ec425c8a2589af98b2d4daabc3
 
 # end
 # entity
-test
-# storage
-db|Receive_Port.(0).cnf
-db|Receive_Port.(0).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-test.vhd
-b3463b82de1e8496c2f8e160cd474d5
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# hierarchies {
-|
-}
-# lmf
-|altera|91sp2|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
-# macro_sequence
-
-# end
-# entity
-test_bench1
-# storage
-db|Receive_Port.(1).cnf
-db|Receive_Port.(1).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-test_bench1.vhd
-d5c43384bdec1bacea5fcc74d8fbb3b
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
- constraint(input_4bit)
-3 downto 0
-PARAMETER_STRING
-USR
- constraint(length_buffer_out_11bit)
-10 downto 0
-PARAMETER_STRING
-USR
- constraint(data_buffer_out_8bit)
-7 downto 0
-PARAMETER_STRING
-USR
- constraint(frame_to_monitoring)
-11 downto 0
-PARAMETER_STRING
-USR
- constraint(test_length_value)
-10 downto 0
-PARAMETER_STRING
-USR
- constraint(test_input4bit)
-3 downto 0
-PARAMETER_STRING
-USR
- constraint(test_sequence_counter)
-8 downto 0
-PARAMETER_STRING
-USR
- constraint(test_sequence_counter_fwd)
-8 downto 0
-PARAMETER_STRING
-USR
- constraint(test_length_buffer_output)
-11 downto 0
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-test_bench1:test_bench_inst
-}
-# lmf
-|altera|91sp2|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
-# macro_sequence
-
-# end
-# entity
 FwdOutputCntrlr
 # storage
 db|Receive_Port.(44).cnf
@@ -5066,6 +4962,114 @@ USR
 }
 # hierarchies {
 test_bench1:test_bench_inst|FwdOutputCntrlr:FwdOutputCntrlr_inst
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+test
+# storage
+db|Receive_Port.(0).cnf
+db|Receive_Port.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+test.vhd
+3551674b293717fd9efa98eb56df6
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+|
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+test_bench1
+# storage
+db|Receive_Port.(1).cnf
+db|Receive_Port.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+test_bench1.vhd
+e312111df6a5d0c197f8e521517b
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(input_4bit)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(port_id)
+1 downto 0
+PARAMETER_STRING
+USR
+ constraint(length_buffer_out_11bit)
+10 downto 0
+PARAMETER_STRING
+USR
+ constraint(data_buffer_out_8bit)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(frame_to_monitoring)
+11 downto 0
+PARAMETER_STRING
+USR
+ constraint(test_length_value)
+10 downto 0
+PARAMETER_STRING
+USR
+ constraint(test_input4bit)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(test_sequence_counter)
+8 downto 0
+PARAMETER_STRING
+USR
+ constraint(test_sequence_counter_fwd)
+8 downto 0
+PARAMETER_STRING
+USR
+ constraint(test_length_buffer_output)
+11 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+test_bench1:test_bench_inst
 }
 # lmf
 |altera|91sp2|quartus|lmf|maxplus2.lmf

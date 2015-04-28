@@ -5078,11 +5078,11 @@ VECTOR("C:/Users/talal/Desktop/ECE559/FinalProject/ECE-559/Receive_Port/test.vwf
 VECTOR("C:/Users/talal/Desktop/ECE559/FinalProject/ECE-559/Receive_Port/db/Receive_Port.sim.cvwf")
 {
 	ZOOM{
-		ZBEGIN = 6882352;
-		ZEND = 7166100;
-		NUMERATOR = 923;
-		DENOMINATOR = 283748;
-		TOP_INDEX = 0;
+		ZBEGIN = 8250601;
+		ZEND = 8563101;
+		NUMERATOR = 1346;
+		DENOMINATOR = 312500;
+		TOP_INDEX = 1;
 	}
 	CLOCK{
 		PERIOD = 10000;
