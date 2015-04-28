@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-Fitter Status : Successful - Tue Apr 28 15:16:15 2015
+Fitter Status : Successful - Tue Apr 28 17:16:08 2015
 Quartus II Version : 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition
 Revision Name : Receive_Port
 Top-level Entity Name : Receive_Port
@@ -13,21 +12,5 @@ Total registers : 287
 Total pins : 55 / 475 ( 12 % )
 Total virtual pins : 0
 Total memory bits : 17,056 / 483,840 ( 4 % )
-=======
-Fitter Status : Successful - Tue Apr 28 16:58:57 2015
-Quartus II Version : 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition
-Revision Name : Receive_Port
-Top-level Entity Name : crc_compute
-Family : Cyclone II
-Device : EP2C35F672C6
-Timing Models : Final
-Total logic elements : 72 / 33,216 ( < 1 % )
-    Total combinational functions : 65 / 33,216 ( < 1 % )
-    Dedicated logic registers : 58 / 33,216 ( < 1 % )
-Total registers : 58
-Total pins : 40 / 475 ( 8 % )
-Total virtual pins : 0
-Total memory bits : 4,096 / 483,840 ( < 1 % )
->>>>>>> ca5943ec5eacd2e0f43015dc9a277b999122c09d
 Embedded Multiplier 9-bit elements : 0 / 70 ( 0 % )
 Total PLLs : 0 / 4 ( 0 % )

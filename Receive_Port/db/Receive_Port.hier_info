@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 |Receive_Port
 clk25 => test_bench1:test_bench_inst.clk25
 clk25 => clk25_out.DATAIN
@@ -285,38 +284,38 @@ reset_sig => state_reg~3.DATAIN
 rdv => state_next.RUN.DATAB
 rdv => Selector0.IN2
 rdv => state_next.CHECK.DATAB
-CRC_out[0] => WideOr1.IN0
-CRC_out[1] => WideOr1.IN1
-CRC_out[2] => WideOr1.IN2
-CRC_out[3] => WideOr1.IN3
-CRC_out[4] => WideOr1.IN4
-CRC_out[5] => WideOr1.IN5
-CRC_out[6] => WideOr1.IN6
-CRC_out[7] => WideOr1.IN7
-CRC_out[8] => WideOr1.IN8
-CRC_out[9] => WideOr1.IN9
-CRC_out[10] => WideOr1.IN10
-CRC_out[11] => WideOr1.IN11
-CRC_out[12] => WideOr1.IN12
-CRC_out[13] => WideOr1.IN13
-CRC_out[14] => WideOr1.IN14
-CRC_out[15] => WideOr1.IN15
-CRC_out[16] => WideOr1.IN16
-CRC_out[17] => WideOr1.IN17
-CRC_out[18] => WideOr1.IN18
-CRC_out[19] => WideOr1.IN19
-CRC_out[20] => WideOr1.IN20
-CRC_out[21] => WideOr1.IN21
-CRC_out[22] => WideOr1.IN22
-CRC_out[23] => WideOr1.IN23
-CRC_out[24] => WideOr1.IN24
-CRC_out[25] => WideOr1.IN25
-CRC_out[26] => WideOr1.IN26
-CRC_out[27] => WideOr1.IN27
-CRC_out[28] => WideOr1.IN28
-CRC_out[29] => WideOr1.IN29
-CRC_out[30] => WideOr1.IN30
-CRC_out[31] => WideOr1.IN31
+CRC_out[0] => CRC_compare:compare_instn.dataa[0]
+CRC_out[1] => CRC_compare:compare_instn.dataa[1]
+CRC_out[2] => CRC_compare:compare_instn.dataa[2]
+CRC_out[3] => CRC_compare:compare_instn.dataa[3]
+CRC_out[4] => CRC_compare:compare_instn.dataa[4]
+CRC_out[5] => CRC_compare:compare_instn.dataa[5]
+CRC_out[6] => CRC_compare:compare_instn.dataa[6]
+CRC_out[7] => CRC_compare:compare_instn.dataa[7]
+CRC_out[8] => CRC_compare:compare_instn.dataa[8]
+CRC_out[9] => CRC_compare:compare_instn.dataa[9]
+CRC_out[10] => CRC_compare:compare_instn.dataa[10]
+CRC_out[11] => CRC_compare:compare_instn.dataa[11]
+CRC_out[12] => CRC_compare:compare_instn.dataa[12]
+CRC_out[13] => CRC_compare:compare_instn.dataa[13]
+CRC_out[14] => CRC_compare:compare_instn.dataa[14]
+CRC_out[15] => CRC_compare:compare_instn.dataa[15]
+CRC_out[16] => CRC_compare:compare_instn.dataa[16]
+CRC_out[17] => CRC_compare:compare_instn.dataa[17]
+CRC_out[18] => CRC_compare:compare_instn.dataa[18]
+CRC_out[19] => CRC_compare:compare_instn.dataa[19]
+CRC_out[20] => CRC_compare:compare_instn.dataa[20]
+CRC_out[21] => CRC_compare:compare_instn.dataa[21]
+CRC_out[22] => CRC_compare:compare_instn.dataa[22]
+CRC_out[23] => CRC_compare:compare_instn.dataa[23]
+CRC_out[24] => CRC_compare:compare_instn.dataa[24]
+CRC_out[25] => CRC_compare:compare_instn.dataa[25]
+CRC_out[26] => CRC_compare:compare_instn.dataa[26]
+CRC_out[27] => CRC_compare:compare_instn.dataa[27]
+CRC_out[28] => CRC_compare:compare_instn.dataa[28]
+CRC_out[29] => CRC_compare:compare_instn.dataa[29]
+CRC_out[30] => CRC_compare:compare_instn.dataa[30]
+CRC_out[31] => CRC_compare:compare_instn.dataa[31]
 init_sig <= init_sig.DB_MAX_OUTPUT_PORT_TYPE
 compute_enable <= compute_enable.DB_MAX_OUTPUT_PORT_TYPE
 check_result <= shift1_1bit:shift_check_result.shiftout
@@ -339,328 +338,225 @@ load => _.IN0
 load => _.IN0
 aclr => dffs[0].IN0
 aset => ~NO_FANOUT~
-=======
-|crc_compute
-clock25 => MII_to_RCV:phy_inst.Clock25
-clock25 => crc32x4r:crc_inst.Clock
-reset => MII_to_RCV:phy_inst.Resetx
-reset => crc32x4r:crc_inst.Reset
-init => crc32x4r:crc_inst.init
-comp_en => crc32x4r:crc_inst.compute_enable
-out_input[0] <= MII_to_RCV:phy_inst.rcv_data[0]
-out_input[1] <= MII_to_RCV:phy_inst.rcv_data[1]
-out_input[2] <= MII_to_RCV:phy_inst.rcv_data[2]
-out_input[3] <= MII_to_RCV:phy_inst.rcv_data[3]
-outCRC[0] <= crc32x4r:crc_inst.CRC_out[0]
-outCRC[1] <= crc32x4r:crc_inst.CRC_out[1]
-outCRC[2] <= crc32x4r:crc_inst.CRC_out[2]
-outCRC[3] <= crc32x4r:crc_inst.CRC_out[3]
-outCRC[4] <= crc32x4r:crc_inst.CRC_out[4]
-outCRC[5] <= crc32x4r:crc_inst.CRC_out[5]
-outCRC[6] <= crc32x4r:crc_inst.CRC_out[6]
-outCRC[7] <= crc32x4r:crc_inst.CRC_out[7]
-outCRC[8] <= crc32x4r:crc_inst.CRC_out[8]
-outCRC[9] <= crc32x4r:crc_inst.CRC_out[9]
-outCRC[10] <= crc32x4r:crc_inst.CRC_out[10]
-outCRC[11] <= crc32x4r:crc_inst.CRC_out[11]
-outCRC[12] <= crc32x4r:crc_inst.CRC_out[12]
-outCRC[13] <= crc32x4r:crc_inst.CRC_out[13]
-outCRC[14] <= crc32x4r:crc_inst.CRC_out[14]
-outCRC[15] <= crc32x4r:crc_inst.CRC_out[15]
-outCRC[16] <= crc32x4r:crc_inst.CRC_out[16]
-outCRC[17] <= crc32x4r:crc_inst.CRC_out[17]
-outCRC[18] <= crc32x4r:crc_inst.CRC_out[18]
-outCRC[19] <= crc32x4r:crc_inst.CRC_out[19]
-outCRC[20] <= crc32x4r:crc_inst.CRC_out[20]
-outCRC[21] <= crc32x4r:crc_inst.CRC_out[21]
-outCRC[22] <= crc32x4r:crc_inst.CRC_out[22]
-outCRC[23] <= crc32x4r:crc_inst.CRC_out[23]
-outCRC[24] <= crc32x4r:crc_inst.CRC_out[24]
-outCRC[25] <= crc32x4r:crc_inst.CRC_out[25]
-outCRC[26] <= crc32x4r:crc_inst.CRC_out[26]
-outCRC[27] <= crc32x4r:crc_inst.CRC_out[27]
-outCRC[28] <= crc32x4r:crc_inst.CRC_out[28]
-outCRC[29] <= crc32x4r:crc_inst.CRC_out[29]
-outCRC[30] <= crc32x4r:crc_inst.CRC_out[30]
-outCRC[31] <= crc32x4r:crc_inst.CRC_out[31]
-
-
-|crc_compute|MII_to_RCV:phy_inst
-Clock25 => framemem:frame_test_mem.clock
-Clock25 => addr_curr[0].CLK
-Clock25 => addr_curr[1].CLK
-Clock25 => addr_curr[2].CLK
-Clock25 => addr_curr[3].CLK
-Clock25 => addr_curr[4].CLK
-Clock25 => addr_curr[5].CLK
-Clock25 => addr_curr[6].CLK
-Clock25 => addr_curr[7].CLK
-Clock25 => addr_curr[8].CLK
-Clock25 => addr_curr[9].CLK
-Clock25 => cntr12bit:cntrx.clock
-Clock25 => y_current~1.DATAIN
-Resetx => framemem:frame_test_mem.aclr
-Resetx => addr_curr[0].ACLR
-Resetx => addr_curr[1].ACLR
-Resetx => addr_curr[2].ACLR
-Resetx => addr_curr[3].ACLR
-Resetx => addr_curr[4].ACLR
-Resetx => addr_curr[5].ACLR
-Resetx => addr_curr[6].ACLR
-Resetx => addr_curr[7].ACLR
-Resetx => addr_curr[8].ACLR
-Resetx => addr_curr[9].ACLR
-Resetx => cntr12bit:cntrx.aclr
-Resetx => y_current~3.DATAIN
-rcv_data_valid <= rcv_data_valid.DB_MAX_OUTPUT_PORT_TYPE
-rcv_data[0] <= framemem:frame_test_mem.q[0]
-rcv_data[1] <= framemem:frame_test_mem.q[1]
-rcv_data[2] <= framemem:frame_test_mem.q[2]
-rcv_data[3] <= framemem:frame_test_mem.q[3]
-
-
-|crc_compute|MII_to_RCV:phy_inst|framemem:frame_test_mem
-aclr => altsyncram:altsyncram_component.aclr0
-address[0] => altsyncram:altsyncram_component.address_a[0]
-address[1] => altsyncram:altsyncram_component.address_a[1]
-address[2] => altsyncram:altsyncram_component.address_a[2]
-address[3] => altsyncram:altsyncram_component.address_a[3]
-address[4] => altsyncram:altsyncram_component.address_a[4]
-address[5] => altsyncram:altsyncram_component.address_a[5]
-address[6] => altsyncram:altsyncram_component.address_a[6]
-address[7] => altsyncram:altsyncram_component.address_a[7]
-address[8] => altsyncram:altsyncram_component.address_a[8]
-address[9] => altsyncram:altsyncram_component.address_a[9]
-clock => altsyncram:altsyncram_component.clock0
-q[0] <= altsyncram:altsyncram_component.q_a[0]
-q[1] <= altsyncram:altsyncram_component.q_a[1]
-q[2] <= altsyncram:altsyncram_component.q_a[2]
-q[3] <= altsyncram:altsyncram_component.q_a[3]
-
-
-|crc_compute|MII_to_RCV:phy_inst|framemem:frame_test_mem|altsyncram:altsyncram_component
-wren_a => ~NO_FANOUT~
-rden_a => ~NO_FANOUT~
-wren_b => ~NO_FANOUT~
-rden_b => ~NO_FANOUT~
-data_a[0] => ~NO_FANOUT~
-data_a[1] => ~NO_FANOUT~
-data_a[2] => ~NO_FANOUT~
-data_a[3] => ~NO_FANOUT~
-data_b[0] => ~NO_FANOUT~
-address_a[0] => altsyncram_mo71:auto_generated.address_a[0]
-address_a[1] => altsyncram_mo71:auto_generated.address_a[1]
-address_a[2] => altsyncram_mo71:auto_generated.address_a[2]
-address_a[3] => altsyncram_mo71:auto_generated.address_a[3]
-address_a[4] => altsyncram_mo71:auto_generated.address_a[4]
-address_a[5] => altsyncram_mo71:auto_generated.address_a[5]
-address_a[6] => altsyncram_mo71:auto_generated.address_a[6]
-address_a[7] => altsyncram_mo71:auto_generated.address_a[7]
-address_a[8] => altsyncram_mo71:auto_generated.address_a[8]
-address_a[9] => altsyncram_mo71:auto_generated.address_a[9]
-address_b[0] => ~NO_FANOUT~
-addressstall_a => ~NO_FANOUT~
-addressstall_b => ~NO_FANOUT~
-clock0 => altsyncram_mo71:auto_generated.clock0
-clock1 => ~NO_FANOUT~
-clocken0 => ~NO_FANOUT~
-clocken1 => ~NO_FANOUT~
-clocken2 => ~NO_FANOUT~
-clocken3 => ~NO_FANOUT~
-aclr0 => altsyncram_mo71:auto_generated.aclr0
-aclr1 => ~NO_FANOUT~
-byteena_a[0] => ~NO_FANOUT~
-byteena_b[0] => ~NO_FANOUT~
-q_a[0] <= altsyncram_mo71:auto_generated.q_a[0]
-q_a[1] <= altsyncram_mo71:auto_generated.q_a[1]
-q_a[2] <= altsyncram_mo71:auto_generated.q_a[2]
-q_a[3] <= altsyncram_mo71:auto_generated.q_a[3]
-q_b[0] <= <GND>
-eccstatus[0] <= <GND>
-eccstatus[1] <= <GND>
-eccstatus[2] <= <GND>
-
-
-|crc_compute|MII_to_RCV:phy_inst|framemem:frame_test_mem|altsyncram:altsyncram_component|altsyncram_mo71:auto_generated
-aclr0 => ram_block1a0.CLR0
-aclr0 => ram_block1a1.CLR0
-aclr0 => ram_block1a2.CLR0
-aclr0 => ram_block1a3.CLR0
-address_a[0] => ram_block1a0.PORTAADDR
-address_a[0] => ram_block1a1.PORTAADDR
-address_a[0] => ram_block1a2.PORTAADDR
-address_a[0] => ram_block1a3.PORTAADDR
-address_a[1] => ram_block1a0.PORTAADDR1
-address_a[1] => ram_block1a1.PORTAADDR1
-address_a[1] => ram_block1a2.PORTAADDR1
-address_a[1] => ram_block1a3.PORTAADDR1
-address_a[2] => ram_block1a0.PORTAADDR2
-address_a[2] => ram_block1a1.PORTAADDR2
-address_a[2] => ram_block1a2.PORTAADDR2
-address_a[2] => ram_block1a3.PORTAADDR2
-address_a[3] => ram_block1a0.PORTAADDR3
-address_a[3] => ram_block1a1.PORTAADDR3
-address_a[3] => ram_block1a2.PORTAADDR3
-address_a[3] => ram_block1a3.PORTAADDR3
-address_a[4] => ram_block1a0.PORTAADDR4
-address_a[4] => ram_block1a1.PORTAADDR4
-address_a[4] => ram_block1a2.PORTAADDR4
-address_a[4] => ram_block1a3.PORTAADDR4
-address_a[5] => ram_block1a0.PORTAADDR5
-address_a[5] => ram_block1a1.PORTAADDR5
-address_a[5] => ram_block1a2.PORTAADDR5
-address_a[5] => ram_block1a3.PORTAADDR5
-address_a[6] => ram_block1a0.PORTAADDR6
-address_a[6] => ram_block1a1.PORTAADDR6
-address_a[6] => ram_block1a2.PORTAADDR6
-address_a[6] => ram_block1a3.PORTAADDR6
-address_a[7] => ram_block1a0.PORTAADDR7
-address_a[7] => ram_block1a1.PORTAADDR7
-address_a[7] => ram_block1a2.PORTAADDR7
-address_a[7] => ram_block1a3.PORTAADDR7
-address_a[8] => ram_block1a0.PORTAADDR8
-address_a[8] => ram_block1a1.PORTAADDR8
-address_a[8] => ram_block1a2.PORTAADDR8
-address_a[8] => ram_block1a3.PORTAADDR8
-address_a[9] => ram_block1a0.PORTAADDR9
-address_a[9] => ram_block1a1.PORTAADDR9
-address_a[9] => ram_block1a2.PORTAADDR9
-address_a[9] => ram_block1a3.PORTAADDR9
-clock0 => ram_block1a0.CLK0
-clock0 => ram_block1a1.CLK0
-clock0 => ram_block1a2.CLK0
-clock0 => ram_block1a3.CLK0
-q_a[0] <= ram_block1a0.PORTADATAOUT
-q_a[1] <= ram_block1a1.PORTADATAOUT
-q_a[2] <= ram_block1a2.PORTADATAOUT
-q_a[3] <= ram_block1a3.PORTADATAOUT
-
-
-|crc_compute|MII_to_RCV:phy_inst|cntr12bit:cntrx
-aclr => lpm_counter:lpm_counter_component.aclr
-clock => lpm_counter:lpm_counter_component.clock
-cnt_en => lpm_counter:lpm_counter_component.cnt_en
-sclr => lpm_counter:lpm_counter_component.sclr
-q[0] <= lpm_counter:lpm_counter_component.q[0]
-q[1] <= lpm_counter:lpm_counter_component.q[1]
-q[2] <= lpm_counter:lpm_counter_component.q[2]
-q[3] <= lpm_counter:lpm_counter_component.q[3]
-q[4] <= lpm_counter:lpm_counter_component.q[4]
-q[5] <= lpm_counter:lpm_counter_component.q[5]
-q[6] <= lpm_counter:lpm_counter_component.q[6]
-q[7] <= lpm_counter:lpm_counter_component.q[7]
-q[8] <= lpm_counter:lpm_counter_component.q[8]
-q[9] <= lpm_counter:lpm_counter_component.q[9]
-q[10] <= lpm_counter:lpm_counter_component.q[10]
-q[11] <= lpm_counter:lpm_counter_component.q[11]
-
-
-|crc_compute|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component
-clock => cntr_k7j:auto_generated.clock
-clk_en => ~NO_FANOUT~
-cnt_en => cntr_k7j:auto_generated.cnt_en
-updown => ~NO_FANOUT~
-aclr => cntr_k7j:auto_generated.aclr
-aset => ~NO_FANOUT~
-aconst => ~NO_FANOUT~
-aload => ~NO_FANOUT~
-sclr => cntr_k7j:auto_generated.sclr
-sset => ~NO_FANOUT~
-sconst => ~NO_FANOUT~
-sload => ~NO_FANOUT~
-data[0] => ~NO_FANOUT~
-data[1] => ~NO_FANOUT~
-data[2] => ~NO_FANOUT~
-data[3] => ~NO_FANOUT~
-data[4] => ~NO_FANOUT~
-data[5] => ~NO_FANOUT~
-data[6] => ~NO_FANOUT~
-data[7] => ~NO_FANOUT~
-data[8] => ~NO_FANOUT~
-data[9] => ~NO_FANOUT~
-data[10] => ~NO_FANOUT~
-data[11] => ~NO_FANOUT~
-cin => ~NO_FANOUT~
-q[0] <= cntr_k7j:auto_generated.q[0]
-q[1] <= cntr_k7j:auto_generated.q[1]
-q[2] <= cntr_k7j:auto_generated.q[2]
-q[3] <= cntr_k7j:auto_generated.q[3]
-q[4] <= cntr_k7j:auto_generated.q[4]
-q[5] <= cntr_k7j:auto_generated.q[5]
-q[6] <= cntr_k7j:auto_generated.q[6]
-q[7] <= cntr_k7j:auto_generated.q[7]
-q[8] <= cntr_k7j:auto_generated.q[8]
-q[9] <= cntr_k7j:auto_generated.q[9]
-q[10] <= cntr_k7j:auto_generated.q[10]
-q[11] <= cntr_k7j:auto_generated.q[11]
-cout <= <GND>
-eq[0] <= <GND>
-eq[1] <= <GND>
-eq[2] <= <GND>
-eq[3] <= <GND>
-eq[4] <= <GND>
-eq[5] <= <GND>
-eq[6] <= <GND>
-eq[7] <= <GND>
-eq[8] <= <GND>
-eq[9] <= <GND>
-eq[10] <= <GND>
-eq[11] <= <GND>
-eq[12] <= <GND>
-eq[13] <= <GND>
-eq[14] <= <GND>
-eq[15] <= <GND>
-
-
-|crc_compute|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated
-aclr => counter_reg_bit1a[11].ACLR
-aclr => counter_reg_bit1a[10].ACLR
-aclr => counter_reg_bit1a[9].ACLR
-aclr => counter_reg_bit1a[8].ACLR
-aclr => counter_reg_bit1a[7].ACLR
-aclr => counter_reg_bit1a[6].ACLR
-aclr => counter_reg_bit1a[5].ACLR
-aclr => counter_reg_bit1a[4].ACLR
-aclr => counter_reg_bit1a[3].ACLR
-aclr => counter_reg_bit1a[2].ACLR
-aclr => counter_reg_bit1a[1].ACLR
-aclr => counter_reg_bit1a[0].ACLR
-clock => counter_reg_bit1a[11].CLK
-clock => counter_reg_bit1a[10].CLK
-clock => counter_reg_bit1a[9].CLK
-clock => counter_reg_bit1a[8].CLK
-clock => counter_reg_bit1a[7].CLK
-clock => counter_reg_bit1a[6].CLK
-clock => counter_reg_bit1a[5].CLK
-clock => counter_reg_bit1a[4].CLK
-clock => counter_reg_bit1a[3].CLK
-clock => counter_reg_bit1a[2].CLK
-clock => counter_reg_bit1a[1].CLK
-clock => counter_reg_bit1a[0].CLK
-cnt_en => _.IN1
-q[0] <= counter_reg_bit1a[0].REGOUT
-q[1] <= counter_reg_bit1a[1].REGOUT
-q[2] <= counter_reg_bit1a[2].REGOUT
-q[3] <= counter_reg_bit1a[3].REGOUT
-q[4] <= counter_reg_bit1a[4].REGOUT
-q[5] <= counter_reg_bit1a[5].REGOUT
-q[6] <= counter_reg_bit1a[6].REGOUT
-q[7] <= counter_reg_bit1a[7].REGOUT
-q[8] <= counter_reg_bit1a[8].REGOUT
-q[9] <= counter_reg_bit1a[9].REGOUT
-q[10] <= counter_reg_bit1a[10].REGOUT
-q[11] <= counter_reg_bit1a[11].REGOUT
 sclr => _.IN0
-sclr => _.IN0
->>>>>>> ca5943ec5eacd2e0f43015dc9a277b999122c09d
-sclr => _.IN0
+sset => _.IN0
+q[0] <= q[0].DB_MAX_OUTPUT_PORT_TYPE
+shiftout <= dffs[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-<<<<<<< HEAD
+|Receive_Port|test_bench1:test_bench_inst|CRC_System:crc_system_inst|CRC_FSM:CRC_FSM_inst|CRC_compare:compare_instn
+dataa[0] => lpm_compare:lpm_compare_component.dataa[0]
+dataa[1] => lpm_compare:lpm_compare_component.dataa[1]
+dataa[2] => lpm_compare:lpm_compare_component.dataa[2]
+dataa[3] => lpm_compare:lpm_compare_component.dataa[3]
+dataa[4] => lpm_compare:lpm_compare_component.dataa[4]
+dataa[5] => lpm_compare:lpm_compare_component.dataa[5]
+dataa[6] => lpm_compare:lpm_compare_component.dataa[6]
+dataa[7] => lpm_compare:lpm_compare_component.dataa[7]
+dataa[8] => lpm_compare:lpm_compare_component.dataa[8]
+dataa[9] => lpm_compare:lpm_compare_component.dataa[9]
+dataa[10] => lpm_compare:lpm_compare_component.dataa[10]
+dataa[11] => lpm_compare:lpm_compare_component.dataa[11]
+dataa[12] => lpm_compare:lpm_compare_component.dataa[12]
+dataa[13] => lpm_compare:lpm_compare_component.dataa[13]
+dataa[14] => lpm_compare:lpm_compare_component.dataa[14]
+dataa[15] => lpm_compare:lpm_compare_component.dataa[15]
+dataa[16] => lpm_compare:lpm_compare_component.dataa[16]
+dataa[17] => lpm_compare:lpm_compare_component.dataa[17]
+dataa[18] => lpm_compare:lpm_compare_component.dataa[18]
+dataa[19] => lpm_compare:lpm_compare_component.dataa[19]
+dataa[20] => lpm_compare:lpm_compare_component.dataa[20]
+dataa[21] => lpm_compare:lpm_compare_component.dataa[21]
+dataa[22] => lpm_compare:lpm_compare_component.dataa[22]
+dataa[23] => lpm_compare:lpm_compare_component.dataa[23]
+dataa[24] => lpm_compare:lpm_compare_component.dataa[24]
+dataa[25] => lpm_compare:lpm_compare_component.dataa[25]
+dataa[26] => lpm_compare:lpm_compare_component.dataa[26]
+dataa[27] => lpm_compare:lpm_compare_component.dataa[27]
+dataa[28] => lpm_compare:lpm_compare_component.dataa[28]
+dataa[29] => lpm_compare:lpm_compare_component.dataa[29]
+dataa[30] => lpm_compare:lpm_compare_component.dataa[30]
+dataa[31] => lpm_compare:lpm_compare_component.dataa[31]
+datab[0] => lpm_compare:lpm_compare_component.datab[0]
+datab[1] => lpm_compare:lpm_compare_component.datab[1]
+datab[2] => lpm_compare:lpm_compare_component.datab[2]
+datab[3] => lpm_compare:lpm_compare_component.datab[3]
+datab[4] => lpm_compare:lpm_compare_component.datab[4]
+datab[5] => lpm_compare:lpm_compare_component.datab[5]
+datab[6] => lpm_compare:lpm_compare_component.datab[6]
+datab[7] => lpm_compare:lpm_compare_component.datab[7]
+datab[8] => lpm_compare:lpm_compare_component.datab[8]
+datab[9] => lpm_compare:lpm_compare_component.datab[9]
+datab[10] => lpm_compare:lpm_compare_component.datab[10]
+datab[11] => lpm_compare:lpm_compare_component.datab[11]
+datab[12] => lpm_compare:lpm_compare_component.datab[12]
+datab[13] => lpm_compare:lpm_compare_component.datab[13]
+datab[14] => lpm_compare:lpm_compare_component.datab[14]
+datab[15] => lpm_compare:lpm_compare_component.datab[15]
+datab[16] => lpm_compare:lpm_compare_component.datab[16]
+datab[17] => lpm_compare:lpm_compare_component.datab[17]
+datab[18] => lpm_compare:lpm_compare_component.datab[18]
+datab[19] => lpm_compare:lpm_compare_component.datab[19]
+datab[20] => lpm_compare:lpm_compare_component.datab[20]
+datab[21] => lpm_compare:lpm_compare_component.datab[21]
+datab[22] => lpm_compare:lpm_compare_component.datab[22]
+datab[23] => lpm_compare:lpm_compare_component.datab[23]
+datab[24] => lpm_compare:lpm_compare_component.datab[24]
+datab[25] => lpm_compare:lpm_compare_component.datab[25]
+datab[26] => lpm_compare:lpm_compare_component.datab[26]
+datab[27] => lpm_compare:lpm_compare_component.datab[27]
+datab[28] => lpm_compare:lpm_compare_component.datab[28]
+datab[29] => lpm_compare:lpm_compare_component.datab[29]
+datab[30] => lpm_compare:lpm_compare_component.datab[30]
+datab[31] => lpm_compare:lpm_compare_component.datab[31]
+AeB <= lpm_compare:lpm_compare_component.AeB
+
+
+|Receive_Port|test_bench1:test_bench_inst|CRC_System:crc_system_inst|CRC_FSM:CRC_FSM_inst|CRC_compare:compare_instn|lpm_compare:lpm_compare_component
+dataa[0] => cmpr_qig:auto_generated.dataa[0]
+dataa[1] => cmpr_qig:auto_generated.dataa[1]
+dataa[2] => cmpr_qig:auto_generated.dataa[2]
+dataa[3] => cmpr_qig:auto_generated.dataa[3]
+dataa[4] => cmpr_qig:auto_generated.dataa[4]
+dataa[5] => cmpr_qig:auto_generated.dataa[5]
+dataa[6] => cmpr_qig:auto_generated.dataa[6]
+dataa[7] => cmpr_qig:auto_generated.dataa[7]
+dataa[8] => cmpr_qig:auto_generated.dataa[8]
+dataa[9] => cmpr_qig:auto_generated.dataa[9]
+dataa[10] => cmpr_qig:auto_generated.dataa[10]
+dataa[11] => cmpr_qig:auto_generated.dataa[11]
+dataa[12] => cmpr_qig:auto_generated.dataa[12]
+dataa[13] => cmpr_qig:auto_generated.dataa[13]
+dataa[14] => cmpr_qig:auto_generated.dataa[14]
+dataa[15] => cmpr_qig:auto_generated.dataa[15]
+dataa[16] => cmpr_qig:auto_generated.dataa[16]
+dataa[17] => cmpr_qig:auto_generated.dataa[17]
+dataa[18] => cmpr_qig:auto_generated.dataa[18]
+dataa[19] => cmpr_qig:auto_generated.dataa[19]
+dataa[20] => cmpr_qig:auto_generated.dataa[20]
+dataa[21] => cmpr_qig:auto_generated.dataa[21]
+dataa[22] => cmpr_qig:auto_generated.dataa[22]
+dataa[23] => cmpr_qig:auto_generated.dataa[23]
+dataa[24] => cmpr_qig:auto_generated.dataa[24]
+dataa[25] => cmpr_qig:auto_generated.dataa[25]
+dataa[26] => cmpr_qig:auto_generated.dataa[26]
+dataa[27] => cmpr_qig:auto_generated.dataa[27]
+dataa[28] => cmpr_qig:auto_generated.dataa[28]
+dataa[29] => cmpr_qig:auto_generated.dataa[29]
+dataa[30] => cmpr_qig:auto_generated.dataa[30]
+dataa[31] => cmpr_qig:auto_generated.dataa[31]
+datab[0] => cmpr_qig:auto_generated.datab[0]
+datab[1] => cmpr_qig:auto_generated.datab[1]
+datab[2] => cmpr_qig:auto_generated.datab[2]
+datab[3] => cmpr_qig:auto_generated.datab[3]
+datab[4] => cmpr_qig:auto_generated.datab[4]
+datab[5] => cmpr_qig:auto_generated.datab[5]
+datab[6] => cmpr_qig:auto_generated.datab[6]
+datab[7] => cmpr_qig:auto_generated.datab[7]
+datab[8] => cmpr_qig:auto_generated.datab[8]
+datab[9] => cmpr_qig:auto_generated.datab[9]
+datab[10] => cmpr_qig:auto_generated.datab[10]
+datab[11] => cmpr_qig:auto_generated.datab[11]
+datab[12] => cmpr_qig:auto_generated.datab[12]
+datab[13] => cmpr_qig:auto_generated.datab[13]
+datab[14] => cmpr_qig:auto_generated.datab[14]
+datab[15] => cmpr_qig:auto_generated.datab[15]
+datab[16] => cmpr_qig:auto_generated.datab[16]
+datab[17] => cmpr_qig:auto_generated.datab[17]
+datab[18] => cmpr_qig:auto_generated.datab[18]
+datab[19] => cmpr_qig:auto_generated.datab[19]
+datab[20] => cmpr_qig:auto_generated.datab[20]
+datab[21] => cmpr_qig:auto_generated.datab[21]
+datab[22] => cmpr_qig:auto_generated.datab[22]
+datab[23] => cmpr_qig:auto_generated.datab[23]
+datab[24] => cmpr_qig:auto_generated.datab[24]
+datab[25] => cmpr_qig:auto_generated.datab[25]
+datab[26] => cmpr_qig:auto_generated.datab[26]
+datab[27] => cmpr_qig:auto_generated.datab[27]
+datab[28] => cmpr_qig:auto_generated.datab[28]
+datab[29] => cmpr_qig:auto_generated.datab[29]
+datab[30] => cmpr_qig:auto_generated.datab[30]
+datab[31] => cmpr_qig:auto_generated.datab[31]
+clock => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+clken => ~NO_FANOUT~
+alb <= <GND>
+aeb <= cmpr_qig:auto_generated.aeb
+agb <= <GND>
+aleb <= <GND>
+aneb <= <GND>
+ageb <= <GND>
+
+
+|Receive_Port|test_bench1:test_bench_inst|CRC_System:crc_system_inst|CRC_FSM:CRC_FSM_inst|CRC_compare:compare_instn|lpm_compare:lpm_compare_component|cmpr_qig:auto_generated
+aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
+dataa[0] => data_wire[4].IN0
+dataa[1] => data_wire[4].IN0
+dataa[2] => data_wire[5].IN0
+dataa[3] => data_wire[5].IN0
+dataa[4] => data_wire[6].IN0
+dataa[5] => data_wire[6].IN0
+dataa[6] => data_wire[7].IN0
+dataa[7] => data_wire[7].IN0
+dataa[8] => data_wire[8].IN0
+dataa[9] => data_wire[8].IN0
+dataa[10] => data_wire[9].IN0
+dataa[11] => data_wire[9].IN0
+dataa[12] => data_wire[10].IN0
+dataa[13] => data_wire[10].IN0
+dataa[14] => data_wire[11].IN0
+dataa[15] => data_wire[11].IN0
+dataa[16] => data_wire[12].IN0
+dataa[17] => data_wire[12].IN0
+dataa[18] => data_wire[13].IN0
+dataa[19] => data_wire[13].IN0
+dataa[20] => data_wire[14].IN0
+dataa[21] => data_wire[14].IN0
+dataa[22] => data_wire[15].IN0
+dataa[23] => data_wire[15].IN0
+dataa[24] => data_wire[16].IN0
+dataa[25] => data_wire[16].IN0
+dataa[26] => data_wire[17].IN0
+dataa[27] => data_wire[17].IN0
+dataa[28] => data_wire[18].IN0
+dataa[29] => data_wire[18].IN0
+dataa[30] => data_wire[19].IN0
+dataa[31] => data_wire[19].IN0
+datab[0] => data_wire[4].IN1
+datab[1] => data_wire[4].IN1
+datab[2] => data_wire[5].IN1
+datab[3] => data_wire[5].IN1
+datab[4] => data_wire[6].IN1
+datab[5] => data_wire[6].IN1
+datab[6] => data_wire[7].IN1
+datab[7] => data_wire[7].IN1
+datab[8] => data_wire[8].IN1
+datab[9] => data_wire[8].IN1
+datab[10] => data_wire[9].IN1
+datab[11] => data_wire[9].IN1
+datab[12] => data_wire[10].IN1
+datab[13] => data_wire[10].IN1
+datab[14] => data_wire[11].IN1
+datab[15] => data_wire[11].IN1
+datab[16] => data_wire[12].IN1
+datab[17] => data_wire[12].IN1
+datab[18] => data_wire[13].IN1
+datab[19] => data_wire[13].IN1
+datab[20] => data_wire[14].IN1
+datab[21] => data_wire[14].IN1
+datab[22] => data_wire[15].IN1
+datab[23] => data_wire[15].IN1
+datab[24] => data_wire[16].IN1
+datab[25] => data_wire[16].IN1
+datab[26] => data_wire[17].IN1
+datab[27] => data_wire[17].IN1
+datab[28] => data_wire[18].IN1
+datab[29] => data_wire[18].IN1
+datab[30] => data_wire[19].IN1
+datab[31] => data_wire[19].IN1
+
+
 |Receive_Port|test_bench1:test_bench_inst|CRC_System:crc_system_inst|crc32x4r:crc32x4r_inst
-=======
-|crc_compute|crc32x4r:crc_inst
->>>>>>> ca5943ec5eacd2e0f43015dc9a277b999122c09d
 Clock => crcreg32:crcreg32r.clock
 Reset => crcreg32:crcreg32r.aclr
 compute_enable => crcreg_clock_enable.IN0
@@ -704,11 +600,7 @@ CRC_out[30] <= crcreg32:crcreg32r.q[30]
 CRC_out[31] <= crcreg32:crcreg32r.q[31]
 
 
-<<<<<<< HEAD
 |Receive_Port|test_bench1:test_bench_inst|CRC_System:crc_system_inst|crc32x4r:crc32x4r_inst|crcreg32:crcreg32r
-=======
-|crc_compute|crc32x4r:crc_inst|crcreg32:crcreg32r
->>>>>>> ca5943ec5eacd2e0f43015dc9a277b999122c09d
 aclr => lpm_shiftreg:lpm_shiftreg_component.aclr
 clock => lpm_shiftreg:lpm_shiftreg_component.clock
 data[0] => lpm_shiftreg:lpm_shiftreg_component.data[0]
@@ -780,11 +672,7 @@ q[30] <= lpm_shiftreg:lpm_shiftreg_component.q[30]
 q[31] <= lpm_shiftreg:lpm_shiftreg_component.q[31]
 
 
-<<<<<<< HEAD
 |Receive_Port|test_bench1:test_bench_inst|CRC_System:crc_system_inst|crc32x4r:crc32x4r_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component
-=======
-|crc_compute|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component
->>>>>>> ca5943ec5eacd2e0f43015dc9a277b999122c09d
 data[0] => _.IN1
 data[1] => _.IN1
 data[2] => _.IN1
@@ -985,7 +873,6 @@ q[31] <= dffs[31].DB_MAX_OUTPUT_PORT_TYPE
 shiftout <= shiftout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-<<<<<<< HEAD
 |Receive_Port|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst
 reset => Data_DCFF:DCFF_inst.aclr
 write_enable => Data_DCFF:DCFF_inst.wrreq
@@ -3363,5 +3250,3 @@ q[0] <= q[0].DB_MAX_OUTPUT_PORT_TYPE
 shiftout <= dffs[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-=======
->>>>>>> ca5943ec5eacd2e0f43015dc9a277b999122c09d
