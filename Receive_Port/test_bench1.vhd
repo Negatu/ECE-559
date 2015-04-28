@@ -275,6 +275,7 @@ BEGIN
 		shiftout    => check_result_out
 	);
 	
+	
 	shift1_1bit_instLengthCRV : shift1_1bit PORT MAP
 	(
 		aclr		=> reset,
@@ -294,6 +295,7 @@ BEGIN
 	data_buffer_out_8bit <= data_to_forwarding;	--going to forwarding
 	
 	frame_to_monitoring <= "00" & SequenceCount_sig & invalidBit_sig;
+	
 	
 	--test - probe inside wires of test_bench1;
 	test_crc_rdv <= data_buffer_read_enable;

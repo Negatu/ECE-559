@@ -37,6 +37,7 @@ END test_bench1;
 ARCHITECTURE tb_arch OF test_bench1 IS 
 
 	SIGNAL CRC_rdv : STD_LOGIC;
+	SIGNAL CRC_rdv_out : STD_LOGIC;
 	SIGNAL data_to_crc : STD_LOGIC_VECTOR(3 DOWNTO 0);
 	SIGNAL check_result_valid : STD_LOGIC;
 	SIGNAL check_result : STD_LOGIC;
@@ -274,6 +275,7 @@ BEGIN
 		shiftout    => check_result_out
 	);
 	
+	
 	shift1_1bit_instLengthCRV : shift1_1bit PORT MAP
 	(
 		aclr		=> reset,
@@ -293,6 +295,7 @@ BEGIN
 	data_buffer_out_8bit <= data_to_forwarding;	--going to forwarding
 	
 	frame_to_monitoring <= "00" & SequenceCount_sig & invalidBit_sig;
+	NotFlip <= not(Flip);
 	
 	--test - probe inside wires of test_bench1;
 	test_crc_rdv <= data_buffer_read_enable;

@@ -1,6 +1,6 @@
 |test
-clock25 => test_bench1:test_bench_inst.clk25
-clock25 => MII_to_RCV:phy_inst.Clock25
+clock25 => ~NO_FANOUT~
+clock50 => shift1_1bit:shift1_1bit_instFlip.clock
 clock50 => test_bench1:test_bench_inst.clk50
 reset => test_bench1:test_bench_inst.reset
 reset => MII_to_RCV:phy_inst.Resetx
@@ -93,6 +93,28 @@ test_length_buffer_output[9] <= test_bench1:test_bench_inst.test_length_buffer_o
 test_length_buffer_output[10] <= test_bench1:test_bench_inst.test_length_buffer_output[10]
 test_length_buffer_output[11] <= test_bench1:test_bench_inst.test_length_buffer_output[11]
 test_sequence_invalidBit <= test_bench1:test_bench_inst.test_sequence_invalidBit
+
+
+|test|shift1_1bit:shift1_1bit_instFlip
+aclr => lpm_shiftreg:lpm_shiftreg_component.aclr
+clock => lpm_shiftreg:lpm_shiftreg_component.clock
+shiftin => lpm_shiftreg:lpm_shiftreg_component.shiftin
+shiftout <= lpm_shiftreg:lpm_shiftreg_component.shiftout
+
+
+|test|shift1_1bit:shift1_1bit_instFlip|lpm_shiftreg:lpm_shiftreg_component
+data[0] => _.IN1
+clock => dffs[0].CLK
+enable => dffs[0].ENA
+shiftin => _.IN1
+load => _.IN0
+load => _.IN0
+aclr => dffs[0].IN0
+aset => ~NO_FANOUT~
+sclr => _.IN0
+sset => _.IN0
+q[0] <= q[0].DB_MAX_OUTPUT_PORT_TYPE
+shiftout <= dffs[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
 |test|test_bench1:test_bench_inst

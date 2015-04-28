@@ -22,6 +22,7 @@ ENTITY test IS
 		test_frame_valid : OUT STD_LOGIC;
 		test_input4bit : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
 		test_sequence_counter: OUT STD_LOGIC_VECTOR(8 DOWNTO 0);
+		test_sequence_counter_fwd : OUT STD_LOGIC_VECTOR(8 DOWNTO 0);
 		test_length_read_empty : OUT STD_LOGIC;
 		test_data_read_empty : OUT STD_LOGIC;
 		test_length_read_enable : OUT STD_LOGIC;
@@ -36,7 +37,19 @@ ARCHITECTURE test_arch OF test IS
 
 	SIGNAL rdv_signal : STD_LOGIC;
 	SIGNAL data_signal : STD_LOGIC_VECTOR( 3 DOWNTO 0 );
+	SIGNAL Flip	: STD_LOGIC;
+	SIGNAL NotFlip	: STD_LOGIC;
 	
+	
+	COMPONENT shift1_1bit IS
+	PORT
+	(
+		aclr		: IN STD_LOGIC ;
+		clock		: IN STD_LOGIC ;
+		shiftin		: IN STD_LOGIC ;
+		shiftout    : OUT STD_LOGIC 
+	);
+	END COMPONENT;
 	
 	COMPONENT test_bench1
 		PORT(
@@ -83,8 +96,16 @@ ARCHITECTURE test_arch OF test IS
 	
 	BEGIN
 	
+	shift1_1bit_instFlip : shift1_1bit PORT MAP
+	(
+		aclr		=> '0',
+		clock		=> clk50,
+		shiftin		=> NotFlip,
+		shiftout    => Flip
+	);
+	
 	test_bench_inst : test_bench1  PORT MAP (
-			clk25 => clock25, 
+			clk25 => Flip, 
 			clk50 => clock50,
 			reset => reset,
 			
@@ -118,11 +139,12 @@ ARCHITECTURE test_arch OF test IS
 	);
 	
 	phy_inst : MII_to_RCV PORT MAP (
-			Clock25	=> clock25,
+			Clock25	=> Flip,
 			Resetx	=> reset,
 			rcv_data_valid	=> rdv_signal,
 			rcv_data => data_signal	
 	);
 	
+	NotFlip <= not(Flip);
 	
 	END test_arch;
