@@ -5,31 +5,21 @@ Timing Analyzer Summary
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 11.643 ns
-From           : test_bench1:test_bench_inst|LengthCounterSystem:length_counter_sys_inst|LengthCounter:LengthCounter_inst|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated|safe_q[4]
-To             : test_length_valid
-From Clock     : clock25
+Actual Time    : 12.929 ns
+From           : test_bench1:test_bench_inst|SequenceNumberCounter:seq_counter_inst|SequenceNumberCounter9BitVHD:SequenceNumberCounterNineBit_inst|lpm_counter:lpm_counter_component|cntr_mni:auto_generated|safe_q[4]
+To             : frame_to_monitoring[5]
+From Clock     : clock50
 To Clock       : --
 Failed Paths   : 0
 
 Type           : Clock Setup: 'clock50'
 Slack          : N/A
 Required Time  : None
-Actual Time    : 171.35 MHz ( period = 5.836 ns )
-From           : test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|rdptr_g[6]
-To             : test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|altsyncram_qo61:fifo_ram|altsyncram_6ve1:altsyncram11|q_a[6]
+Actual Time    : 209.34 MHz ( period = 4.777 ns )
+From           : test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|rdptr_g[3]
+To             : test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|altsyncram_qo61:fifo_ram|altsyncram_6ve1:altsyncram11|q_a[5]
 From Clock     : clock50
 To Clock       : clock50
-Failed Paths   : 0
-
-Type           : Clock Setup: 'clock25'
-Slack          : N/A
-Required Time  : None
-Actual Time    : 189.68 MHz ( period = 5.272 ns )
-From           : test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|wrptr_g[7]
-To             : test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|altsyncram_qo61:fifo_ram|altsyncram_6ve1:altsyncram11|ram_block12a1~portb_address_reg11
-From Clock     : clock25
-To Clock       : clock25
 Failed Paths   : 0
 
 Type           : Total number of failed paths

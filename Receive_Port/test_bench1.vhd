@@ -24,6 +24,7 @@ ENTITY test_bench1 IS
 		test_frame_valid : OUT STD_LOGIC;
 		test_input4bit : OUT STD_LOGIC_VECTOR(3 DOWNTO 0); 
 		test_sequence_counter: OUT STD_LOGIC_VECTOR(8 DOWNTO 0);
+		test_sequence_counter_fwd : OUT STD_LOGIC_VECTOR(8 DOWNTO 0);
 		test_length_read_empty : OUT STD_LOGIC;
 		test_data_read_empty : OUT STD_LOGIC;
 		test_length_read_enable : OUT STD_LOGIC;
@@ -36,25 +37,31 @@ END test_bench1;
 ARCHITECTURE tb_arch OF test_bench1 IS 
 
 	SIGNAL CRC_rdv : STD_LOGIC;
+	SIGNAL CRC_rdv_out : STD_LOGIC;
 	SIGNAL data_to_crc : STD_LOGIC_VECTOR(3 DOWNTO 0);
 	SIGNAL check_result_valid : STD_LOGIC;
 	SIGNAL check_result : STD_LOGIC;
+	SIGNAL check_result_valid_out : STD_LOGIC;
+	SIGNAL check_result_out : STD_LOGIC;
 	SIGNAL length_valid : STD_LOGIC;
+	SIGNAL length_valid_out : STD_LOGIC;
 	SIGNAL length_buffer_write_enable : STD_LOGIC;
+	SIGNAL length_buffer_write_enable_out : STD_LOGIC;
 	SIGNAL frame_valid : STD_LOGIC;
-	SIGNAL frame_length_and_valid : STD_LOGIC_VECTOR(11 DOWNTO 0); -- concatenation of frame valid and length
+	SIGNAL frame_length_and_valid : STD_LOGIC_VECTOR(20 DOWNTO 0); -- concatenation of frame valid, length, and sequence number
 	--SIGNAL data_buffer_write_enable : STD_LOGIC;
 	SIGNAL data_buffer_full : STD_LOGIC;
 	SIGNAL data_buffer_read_enable : STD_LOGIC;
 	SIGNAL data_buffer_empty : STD_LOGIC;
 	SIGNAL data_to_forwarding : STD_LOGIC_VECTOR(7 DOWNTO 0);
 	SIGNAL data_buffer_output_signal : STD_LOGIC_VECTOR(7 DOWNTO 0);
-	SIGNAL length_buffer_output : STD_LOGIC_VECTOR(11 DOWNTO 0);
+	SIGNAL length_buffer_output : STD_LOGIC_VECTOR(20 DOWNTO 0);
 	SIGNAL length_read_enable : STD_LOGIC;
 	SIGNAL length_buffer_full : STD_LOGIC;
 	SIGNAL length_buffer_empty : STD_LOGIC;
 	SIGNAL invalidBit_sig : STD_LOGIC;
 	SIGNAL SequenceCount_sig : STD_LOGIC_VECTOR(8 DOWNTO 0);
+	SIGNAL SequenceCount_sig_fwd : STD_LOGIC_VECTOR(8 DOWNTO 0);
 	
 	COMPONENT SFD_FSM
 		PORT (	Clock	: IN	STD_LOGIC;
@@ -85,12 +92,12 @@ ARCHITECTURE tb_arch OF test_bench1 IS
 	COMPONENT Length_DCFF
 		PORT(
 			aclr		: IN STD_LOGIC  := '0';
-			data		: IN STD_LOGIC_VECTOR (11 DOWNTO 0);
+			data		: IN STD_LOGIC_VECTOR (20 DOWNTO 0);
 			rdclk		: IN STD_LOGIC ;
 			rdreq		: IN STD_LOGIC ;
 			wrclk		: IN STD_LOGIC ;
 			wrreq		: IN STD_LOGIC ;
-			q		: OUT STD_LOGIC_VECTOR (11 DOWNTO 0);
+			q		: OUT STD_LOGIC_VECTOR (20 DOWNTO 0);
 			rdempty		: OUT STD_LOGIC ;
 			wrfull		: OUT STD_LOGIC 
 		);
@@ -104,6 +111,17 @@ ARCHITECTURE tb_arch OF test_bench1 IS
 		data_out_8 : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
 		);
 	END COMPONENT;
+	
+	COMPONENT shift1_1bit IS
+	PORT
+	(
+		aclr		: IN STD_LOGIC ;
+		clock		: IN STD_LOGIC ;
+		shiftin		: IN STD_LOGIC ;
+		shiftout    : OUT STD_LOGIC 
+	);
+	END COMPONENT;
+	
 	
 	COMPONENT shift2bit IS
 		PORT
@@ -127,9 +145,10 @@ ARCHITECTURE tb_arch OF test_bench1 IS
 	
 	COMPONENT FwdOutputCntrlr IS
 	PORT(clock,reset,  dataRdEmpty, lengthRdEmpty : in std_logic; 
-		 inFrameLengthValue: in std_logic_vector(11 downto 0);
+		 inFrameLengthValue: in std_logic_vector(20 downto 0);
 		 lengthBuffer_RE,  dataBuffer_RE, fwdFrameValid: out std_logic;
-		 fwdFrameLengthValue: out std_logic_vector(10 downto 0));
+		 fwdFrameLengthValue: out std_logic_vector(10 downto 0);
+		 fwdSequenceNumbr : out std_logic_vector (8 downto 0));
 	END COMPONENT;
 	
 	COMPONENT FrameValidFSM IS 
@@ -160,7 +179,7 @@ BEGIN
 	
 	data_buffer_inst : Data_Buffer PORT MAP (
 		reset => reset, 
-		write_enable => CRC_rdv, --data_buffer_write_enable,
+		write_enable => CRC_rdv_out, --data_buffer_write_enable,
 		write_clk => clk25,
 		data_in_4 => data_to_crc, --input_4bit,
 		write_full => data_buffer_full,
@@ -169,12 +188,20 @@ BEGIN
 		read_empty => data_buffer_empty,
 		data_out_8 => data_buffer_output_signal
 	);
+	
+	shift1_1bit_instCRC_RDV : shift1_1bit PORT MAP
+	(
+		aclr		=> reset,
+		clock		=> clk25,
+		shiftin		=> CRC_rdv,
+		shiftout    => CRC_rdv_out
+	);
 
 	length_buffer_inst : Length_DCFF PORT MAP (
 		wrclk => clk25,
 		aclr => reset, 
 		data =>  frame_length_and_valid,
-		wrreq => length_buffer_write_enable,
+		wrreq => length_buffer_write_enable_out,
 		rdclk => clk50,
 		rdreq => length_read_enable,
 		q	  => length_buffer_output,
@@ -191,6 +218,23 @@ BEGIN
 			lengthValue =>  frame_length_and_valid (10 DOWNTO 0)
 	);
 	
+	shift1_1bit_instLengthWE : shift1_1bit PORT MAP
+	(
+		aclr		=> reset,
+		clock		=> clk25,
+		shiftin		=> length_buffer_write_enable,
+		shiftout    => length_buffer_write_enable_out
+	);
+	
+	shift1_1bit_instLengthVal : shift1_1bit PORT MAP
+	(
+		aclr		=> reset,
+		clock		=> clk25,
+		shiftin		=> length_valid,
+		shiftout    => length_valid_out
+	);
+	
+	
 	FwdOutputCntrlr_inst : FwdOutputCntrlr PORT MAP(
 		 clock => clk50,
 		 reset => reset,
@@ -200,7 +244,8 @@ BEGIN
 		 lengthBuffer_RE => length_read_enable,
 		 dataBuffer_RE => data_buffer_read_enable,
 		 fwdFrameValid => frame_valid_out,
-		 fwdFrameLengthValue => length_buffer_out_11bit
+		 fwdFrameLengthValue => length_buffer_out_11bit,
+		 fwdSequenceNumbr => SequenceCount_sig_fwd
 		  );
 	
 	seq_counter_inst : SequenceNumberCounter PORT MAP (
@@ -214,16 +259,34 @@ BEGIN
 	
 	FrameValidFSM_inst : FrameValidFSM PORT MAP(
 	   clk			=> clk25,
-	   Check_Result => check_result,
-	   CRV			=> check_result_valid,
-	   lengthValid  => length_valid,
+	   Check_Result => check_result_out,
+	   CRV			=> check_result_valid_out,
+	   lengthValid  => length_valid_out,
 	   reset		=> reset,
 	   FrameValid	=> frame_valid,
 	   invalidBit => invalidBit_sig
 	  );
+	  
+	  shift1_1bit_instCR : shift1_1bit PORT MAP
+	(
+		aclr		=> reset,
+		clock		=> clk25,
+		shiftin		=> check_result,
+		shiftout    => check_result_out
+	);
+	
+	
+	shift1_1bit_instLengthCRV : shift1_1bit PORT MAP
+	(
+		aclr		=> reset,
+		clock		=> clk25,
+		shiftin		=> check_result_valid,
+		shiftout    => check_result_valid_out
+	);
 	
 	--frame_valid <= (length_valid AND check_result AND check_result_valid); ALTERNATIVE TO THE FRAME VALID FSM USED ABOVE
 	frame_length_and_valid(11) <= frame_valid;
+	frame_length_and_valid(20 downto 12) <= SequenceCount_sig;
 	--length_buffer_out_11bit <= length_buffer_output(10 DOWNTO 0);	--going to forwarding
 	--frame_valid_out <= length_buffer_output(11);	--going to forwarding
 	
@@ -233,21 +296,23 @@ BEGIN
 	
 	frame_to_monitoring <= "00" & SequenceCount_sig & invalidBit_sig;
 	
+	
 	--test - probe inside wires of test_bench1;
 	test_crc_rdv <= data_buffer_read_enable;
 	test_input4bit <= input_4bit;
 	test_length_value <= frame_length_and_valid(10 DOWNTO 0);
-	test_length_valid <= length_valid;
-	test_length_we <= length_buffer_write_enable;
-	test_crc_crv <= check_result_valid;
-	test_crc_cr <= check_result;
+	test_length_valid <= length_valid_out;
+	test_length_we <= length_buffer_write_enable_out;
+	test_crc_crv <= check_result_valid_out;
+	test_crc_cr <= check_result_out;
 	test_frame_valid <= frame_valid;
 	test_sequence_counter <= SequenceCount_sig;
+	test_sequence_counter_fwd <= SequenceCount_sig_fwd;
 	test_sequence_invalidBit <= invalidBit_sig;
 	test_length_read_empty <= length_buffer_empty;
 	test_data_read_empty <= data_buffer_empty;
 	test_data_read_enable <= data_buffer_read_enable;
-	test_length_buffer_output <= length_buffer_output;
+	test_length_buffer_output <= length_buffer_output (11 downto 0);
 	test_length_read_enable <= length_read_enable;
 
 END tb_arch;

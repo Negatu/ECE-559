@@ -4,9 +4,10 @@ use ieee.std_logic_misc.all;
 
 entity FwdOutputCntrlr is
 	port(clock,reset, dataRdEmpty, lengthRdEmpty : in std_logic; 
-		 inFrameLengthValue: in std_logic_vector(11 downto 0);
+		 inFrameLengthValue: in std_logic_vector(20 downto 0);--11 bit length value + valid fram bit + 9 bit sequence number
 		 lengthBuffer_RE,  dataBuffer_RE, fwdFrameValid: out std_logic;
-		 fwdFrameLengthValue: out std_logic_vector(10 downto 0));
+		 fwdFrameLengthValue: out std_logic_vector(10 downto 0);
+		 fwdSequenceNumbr : out std_logic_vector (8 downto 0));
 end FwdOutputCntrlr;
 
 architecture RegCountArch of FwdOutputCntrlr is
@@ -16,9 +17,9 @@ architecture RegCountArch of FwdOutputCntrlr is
 	(
 		aclr		: IN STD_LOGIC ;
 		clock		: IN STD_LOGIC ;
-		data		: IN STD_LOGIC_VECTOR (11 DOWNTO 0);
+		data		: IN STD_LOGIC_VECTOR (20 DOWNTO 0);
 		enable		: IN STD_LOGIC ;
-		q		    : OUT STD_LOGIC_VECTOR (11 DOWNTO 0)
+		q		    : OUT STD_LOGIC_VECTOR (20 DOWNTO 0)
 	);
     END component;
 
@@ -43,7 +44,7 @@ architecture RegCountArch of FwdOutputCntrlr is
 	TYPE State_type IS ( NotEqual, Equal, RegWrite);
 	SIGNAL y_current, y_next	: State_type;
 	signal counter_reset_sig, clear_length_reg, int_lengthBufferRE, equal_true, length_reg_we : std_logic; -- used to clear the counter after each frame
-	signal int_FrameLengthValue : std_logic_vector(11 downto 0);
+	signal int_FrameLengthValue : std_logic_vector(20 downto 0);
 	signal counterValue : std_logic_vector (10 downto 0);
 	
 	begin
@@ -119,7 +120,7 @@ architecture RegCountArch of FwdOutputCntrlr is
 			length_reg_we <= '0';
 		
 		ELSE
-			dataBuffer_RE <= '0';
+			dataBuffer_RE <= '1';
 			int_lengthBufferRE <= '0';
 			counter_reset_sig <= '1';
 			clear_length_reg <= '0';
@@ -128,7 +129,8 @@ architecture RegCountArch of FwdOutputCntrlr is
 		END IF;
 	END PROCESS;
 	fwdFrameLengthValue <= int_FrameLengthValue(10 downto 0);
-	fwdFrameValid		<= int_FrameLengthValue(2);
+	fwdFrameValid		<= int_FrameLengthValue(11);
+	fwdSequenceNumbr	<= int_frameLengthValue(20 downto 12);
 	lengthBuffer_RE <= int_lengthBufferRE;
 	
 end RegCountArch;

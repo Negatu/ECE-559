@@ -11,7 +11,8 @@ end FrameValidFSM;
 
 architecture simple_arch of FrameValidFSM is
 	type state_type is
-				(WAITING, LENGTH_IS_VALID, FRAME_IS_VALID);
+				(WAITING, LENGTH_IS_VALID);
+				--(WAITING, LENGTH_IS_VALID, FRAME_IS_VALID);
 	
 	signal state_reg, state_next: state_type;
 
@@ -24,7 +25,8 @@ architecture simple_arch of FrameValidFSM is
 			end if;
 		end process;
 
-		process(state_reg, Check_Result, CRV, lengthValid) -- NEXT STATE LOGIC
+		--process(state_reg, Check_Result, CRV, lengthValid) -- NEXT STATE LOGIC
+		process(state_reg, lengthValid)
 		begin
 			case state_reg is 
 				when WAITING =>
@@ -35,28 +37,34 @@ architecture simple_arch of FrameValidFSM is
 					end if;
 				when LENGTH_IS_VALID =>
 					state_next <= WAITING;
-					if (Check_Result='1') then
-						if (CRV = '1') then
-							state_next <= FRAME_IS_VALID;
-						end if;
-					end if;
-				when FRAME_IS_VALID =>
-					state_next <= WAITING;
+					--if (Check_Result='1') then
+						--if (CRV = '1') then
+							--state_next <= FRAME_IS_VALID;
+						--end if;
+					--end if;
+			    --when FRAME_IS_VALID =>
+					--state_next <= WAITING;
 			end case;
 		end process;
 
-		process(state_reg) -- MOORE OUTPUT
+		process(state_reg, Check_Result, CRV) -- OUTPUT
 		begin
 			case state_reg is
 				when WAITING =>
 					FrameValid <= '0';
 					invalidBit <= '1';
 				when LENGTH_IS_VALID => 
-					FrameValid <= '0';
-					invalidBit <= '1';
-				when FRAME_IS_VALID =>
-					FrameValid <= '1';
-					invalidBit <= '0';
+					if (Check_Result='1' and CRV = '1') then
+						FrameValid <= '1';
+						invalidBit <= '0';
+					else
+						FrameValid <= '0';
+						invalidBit <= '1';
+					end if;
+					
+				--when FRAME_IS_VALID =>
+					--FrameValid <= '1';
+					--invalidBit <= '0';
 			end case;
 		end process;
 	end simple_arch;
