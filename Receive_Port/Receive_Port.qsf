@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY "Cyclone II"
 set_global_assignment -name DEVICE EP2C35F672C6
-set_global_assignment -name TOP_LEVEL_ENTITY crc_system_test
+set_global_assignment -name TOP_LEVEL_ENTITY crc_compute
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION "9.1 SP2"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "23:45:12  MARCH 24, 2015"
 set_global_assignment -name LAST_QUARTUS_VERSION "9.1 SP2"
@@ -55,47 +55,6 @@ set_global_assignment -name PARTITION_COLOR 16764057 -entity lengthcountersystem
 set_global_assignment -name LL_ROOT_REGION ON -entity lengthcountersystem -section_id "Root Region"
 set_global_assignment -name LL_MEMBER_STATE LOCKED -entity lengthcountersystem -section_id "Root Region"
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity lengthcountersystem -section_id Top
-set_global_assignment -name VHDL_FILE ../MII_to_RCV_restored/cntr12bit.vhd
-set_global_assignment -name VHDL_FILE ../MII_to_RCV_restored/framemem.vhd
-set_global_assignment -name VHDL_FILE ../MII_to_RCV_restored/MII_to_RCV.vhd
-set_global_assignment -name VHDL_FILE SequenceNumberCounter.vhd
-set_global_assignment -name VHDL_FILE SequenceNumberCounter9BitVHD.vhd
-set_global_assignment -name VHDL_FILE counter12.vhd
-set_global_assignment -name VHDL_FILE crc32x4r.vhd
-set_global_assignment -name VHDL_FILE crcFSM.vhd
-set_global_assignment -name VHDL_FILE crcreg32.vhd
-set_global_assignment -name VHDL_FILE shift2.vhd
-set_global_assignment -name VHDL_FILE tbrom4.vhd
-set_global_assignment -name VHDL_FILE CRC_FSM.vhd
-set_global_assignment -name VHDL_FILE CRC_System.vhd
-set_global_assignment -name QIP_FILE Data_DCFF.qip
-set_global_assignment -name QIP_FILE Length_DCFF.qip
-set_global_assignment -name VHDL_FILE Data_Buffer.vhd
-set_global_assignment -name VHDL_FILE test_bench1.vhd
-set_global_assignment -name VHDL_FILE Receive_Port.vhd
-set_global_assignment -name VECTOR_WAVEFORM_FILE Receive_Port.vwf
-set_global_assignment -name VHDL_FILE crc_computer.vhd
-set_global_assignment -name VHDL_FILE crc_compute.vhd
-set_global_assignment -name VECTOR_WAVEFORM_FILE crc_compute.vwf
-set_global_assignment -name VHDL_FILE lengthcountersystem.vhd
-set_global_assignment -name VHDL_FILE test.vhd
-set_global_assignment -name VHDL_FILE SFD_FSM.vhd
-set_global_assignment -name VECTOR_WAVEFORM_FILE SFD_FSM.vwf
-set_global_assignment -name QIP_FILE shift2bit.qip
-set_global_assignment -name VHDL_FILE crc_system_test.vhd
-set_global_assignment -name VECTOR_WAVEFORM_FILE crc_system_test.vwf
-set_global_assignment -name VHDL_FILE test_shhift1_4bit.vhd
-set_global_assignment -name QIP_FILE shift1_4bit.qip
-set_global_assignment -name VECTOR_WAVEFORM_FILE shift1_4bit.vwf
-set_global_assignment -name QIP_FILE shift1_1bit.qip
-set_global_assignment -name VHDL_FILE FrameValidFSM.vhd
-set_global_assignment -name VECTOR_WAVEFORM_FILE FrameValidFSM.vwf
-set_global_assignment -name QIP_FILE lengthValidReg.qip
-set_global_assignment -name VHDL_FILE fwdoutputcntrlr.vhd
-set_global_assignment -name VHDL_FILE frameLengthValueComp.vhd
-set_global_assignment -name VHDL_FILE outFrameLengthCounter.vhd
-set_global_assignment -name VHDL_FILE LengthCounterFSM.vhd
-set_global_assignment -name VHDL_FILE LengthCounter.vhd
 set_global_assignment -name MISC_FILE "C:/Users/talal/Desktop/ECE559/FinalProject/ECE-559/Receive_Port/Receive_Port.dpf"
 set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
 set_location_assignment PIN_N2 -to clock50
@@ -149,5 +108,47 @@ set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
 set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
-set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE crc_system_test.vwf
+set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE crc_compute.vwf
+set_global_assignment -name VHDL_FILE ../MII_to_RCV_restored/cntr12bit.vhd
+set_global_assignment -name VHDL_FILE ../MII_to_RCV_restored/framemem.vhd
+set_global_assignment -name VHDL_FILE ../MII_to_RCV_restored/MII_to_RCV.vhd
+set_global_assignment -name VHDL_FILE SequenceNumberCounter.vhd
+set_global_assignment -name VHDL_FILE SequenceNumberCounter9BitVHD.vhd
+set_global_assignment -name VHDL_FILE counter12.vhd
+set_global_assignment -name VHDL_FILE crc32x4r.vhd
+set_global_assignment -name VHDL_FILE crcFSM.vhd
+set_global_assignment -name VHDL_FILE crcreg32.vhd
+set_global_assignment -name VHDL_FILE shift2.vhd
+set_global_assignment -name VHDL_FILE tbrom4.vhd
+set_global_assignment -name VHDL_FILE CRC_FSM.vhd
+set_global_assignment -name VHDL_FILE CRC_System.vhd
+set_global_assignment -name QIP_FILE Data_DCFF.qip
+set_global_assignment -name QIP_FILE Length_DCFF.qip
+set_global_assignment -name VHDL_FILE Data_Buffer.vhd
+set_global_assignment -name VHDL_FILE test_bench1.vhd
+set_global_assignment -name VHDL_FILE Receive_Port.vhd
+set_global_assignment -name VECTOR_WAVEFORM_FILE Receive_Port.vwf
+set_global_assignment -name VHDL_FILE crc_computer.vhd
+set_global_assignment -name VHDL_FILE crc_compute.vhd
+set_global_assignment -name VECTOR_WAVEFORM_FILE crc_compute.vwf
+set_global_assignment -name VHDL_FILE lengthcountersystem.vhd
+set_global_assignment -name VHDL_FILE test.vhd
+set_global_assignment -name VHDL_FILE SFD_FSM.vhd
+set_global_assignment -name VECTOR_WAVEFORM_FILE SFD_FSM.vwf
+set_global_assignment -name QIP_FILE shift2bit.qip
+set_global_assignment -name VHDL_FILE crc_system_test.vhd
+set_global_assignment -name VECTOR_WAVEFORM_FILE crc_system_test.vwf
+set_global_assignment -name VHDL_FILE test_shhift1_4bit.vhd
+set_global_assignment -name QIP_FILE shift1_4bit.qip
+set_global_assignment -name VECTOR_WAVEFORM_FILE shift1_4bit.vwf
+set_global_assignment -name QIP_FILE shift1_1bit.qip
+set_global_assignment -name VHDL_FILE FrameValidFSM.vhd
+set_global_assignment -name VECTOR_WAVEFORM_FILE FrameValidFSM.vwf
+set_global_assignment -name QIP_FILE lengthValidReg.qip
+set_global_assignment -name VHDL_FILE fwdoutputcntrlr.vhd
+set_global_assignment -name VHDL_FILE frameLengthValueComp.vhd
+set_global_assignment -name VHDL_FILE outFrameLengthCounter.vhd
+set_global_assignment -name VHDL_FILE LengthCounterFSM.vhd
+set_global_assignment -name VHDL_FILE LengthCounter.vhd
+set_global_assignment -name QIP_FILE CRC_compare.qip
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

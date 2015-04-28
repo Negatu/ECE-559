@@ -1,17 +1,49 @@
-|crc_system_test
+|crc_compute
 clock25 => MII_to_RCV:phy_inst.Clock25
-clock25 => SFD_FSM:sfd_fsm_inst.Clock
-clock25 => CRC_System:crc_system_inst.Clk
+clock25 => crc32x4r:crc_inst.Clock
 reset => MII_to_RCV:phy_inst.Resetx
-reset => SFD_FSM:sfd_fsm_inst.Reset
-reset => CRC_System:crc_system_inst.reset
-mii_rdv_out <= MII_to_RCV:phy_inst.rcv_data_valid
-crc_rdv_out <= SFD_FSM:sfd_fsm_inst.crc_rdv
-check_result <= CRC_System:crc_system_inst.CRC_check_result
-check_result_valid <= CRC_System:crc_system_inst.CRC_result_valid
+reset => crc32x4r:crc_inst.Reset
+init => crc32x4r:crc_inst.init
+comp_en => crc32x4r:crc_inst.compute_enable
+out_input[0] <= MII_to_RCV:phy_inst.rcv_data[0]
+out_input[1] <= MII_to_RCV:phy_inst.rcv_data[1]
+out_input[2] <= MII_to_RCV:phy_inst.rcv_data[2]
+out_input[3] <= MII_to_RCV:phy_inst.rcv_data[3]
+outCRC[0] <= crc32x4r:crc_inst.CRC_out[0]
+outCRC[1] <= crc32x4r:crc_inst.CRC_out[1]
+outCRC[2] <= crc32x4r:crc_inst.CRC_out[2]
+outCRC[3] <= crc32x4r:crc_inst.CRC_out[3]
+outCRC[4] <= crc32x4r:crc_inst.CRC_out[4]
+outCRC[5] <= crc32x4r:crc_inst.CRC_out[5]
+outCRC[6] <= crc32x4r:crc_inst.CRC_out[6]
+outCRC[7] <= crc32x4r:crc_inst.CRC_out[7]
+outCRC[8] <= crc32x4r:crc_inst.CRC_out[8]
+outCRC[9] <= crc32x4r:crc_inst.CRC_out[9]
+outCRC[10] <= crc32x4r:crc_inst.CRC_out[10]
+outCRC[11] <= crc32x4r:crc_inst.CRC_out[11]
+outCRC[12] <= crc32x4r:crc_inst.CRC_out[12]
+outCRC[13] <= crc32x4r:crc_inst.CRC_out[13]
+outCRC[14] <= crc32x4r:crc_inst.CRC_out[14]
+outCRC[15] <= crc32x4r:crc_inst.CRC_out[15]
+outCRC[16] <= crc32x4r:crc_inst.CRC_out[16]
+outCRC[17] <= crc32x4r:crc_inst.CRC_out[17]
+outCRC[18] <= crc32x4r:crc_inst.CRC_out[18]
+outCRC[19] <= crc32x4r:crc_inst.CRC_out[19]
+outCRC[20] <= crc32x4r:crc_inst.CRC_out[20]
+outCRC[21] <= crc32x4r:crc_inst.CRC_out[21]
+outCRC[22] <= crc32x4r:crc_inst.CRC_out[22]
+outCRC[23] <= crc32x4r:crc_inst.CRC_out[23]
+outCRC[24] <= crc32x4r:crc_inst.CRC_out[24]
+outCRC[25] <= crc32x4r:crc_inst.CRC_out[25]
+outCRC[26] <= crc32x4r:crc_inst.CRC_out[26]
+outCRC[27] <= crc32x4r:crc_inst.CRC_out[27]
+outCRC[28] <= crc32x4r:crc_inst.CRC_out[28]
+outCRC[29] <= crc32x4r:crc_inst.CRC_out[29]
+outCRC[30] <= crc32x4r:crc_inst.CRC_out[30]
+outCRC[31] <= crc32x4r:crc_inst.CRC_out[31]
 
 
-|crc_system_test|MII_to_RCV:phy_inst
+|crc_compute|MII_to_RCV:phy_inst
 Clock25 => framemem:frame_test_mem.clock
 Clock25 => addr_curr[0].CLK
 Clock25 => addr_curr[1].CLK
@@ -45,7 +77,7 @@ rcv_data[2] <= framemem:frame_test_mem.q[2]
 rcv_data[3] <= framemem:frame_test_mem.q[3]
 
 
-|crc_system_test|MII_to_RCV:phy_inst|framemem:frame_test_mem
+|crc_compute|MII_to_RCV:phy_inst|framemem:frame_test_mem
 aclr => altsyncram:altsyncram_component.aclr0
 address[0] => altsyncram:altsyncram_component.address_a[0]
 address[1] => altsyncram:altsyncram_component.address_a[1]
@@ -64,7 +96,7 @@ q[2] <= altsyncram:altsyncram_component.q_a[2]
 q[3] <= altsyncram:altsyncram_component.q_a[3]
 
 
-|crc_system_test|MII_to_RCV:phy_inst|framemem:frame_test_mem|altsyncram:altsyncram_component
+|crc_compute|MII_to_RCV:phy_inst|framemem:frame_test_mem|altsyncram:altsyncram_component
 wren_a => ~NO_FANOUT~
 rden_a => ~NO_FANOUT~
 wren_b => ~NO_FANOUT~
@@ -74,40 +106,40 @@ data_a[1] => ~NO_FANOUT~
 data_a[2] => ~NO_FANOUT~
 data_a[3] => ~NO_FANOUT~
 data_b[0] => ~NO_FANOUT~
-address_a[0] => altsyncram_e781:auto_generated.address_a[0]
-address_a[1] => altsyncram_e781:auto_generated.address_a[1]
-address_a[2] => altsyncram_e781:auto_generated.address_a[2]
-address_a[3] => altsyncram_e781:auto_generated.address_a[3]
-address_a[4] => altsyncram_e781:auto_generated.address_a[4]
-address_a[5] => altsyncram_e781:auto_generated.address_a[5]
-address_a[6] => altsyncram_e781:auto_generated.address_a[6]
-address_a[7] => altsyncram_e781:auto_generated.address_a[7]
-address_a[8] => altsyncram_e781:auto_generated.address_a[8]
-address_a[9] => altsyncram_e781:auto_generated.address_a[9]
+address_a[0] => altsyncram_mo71:auto_generated.address_a[0]
+address_a[1] => altsyncram_mo71:auto_generated.address_a[1]
+address_a[2] => altsyncram_mo71:auto_generated.address_a[2]
+address_a[3] => altsyncram_mo71:auto_generated.address_a[3]
+address_a[4] => altsyncram_mo71:auto_generated.address_a[4]
+address_a[5] => altsyncram_mo71:auto_generated.address_a[5]
+address_a[6] => altsyncram_mo71:auto_generated.address_a[6]
+address_a[7] => altsyncram_mo71:auto_generated.address_a[7]
+address_a[8] => altsyncram_mo71:auto_generated.address_a[8]
+address_a[9] => altsyncram_mo71:auto_generated.address_a[9]
 address_b[0] => ~NO_FANOUT~
 addressstall_a => ~NO_FANOUT~
 addressstall_b => ~NO_FANOUT~
-clock0 => altsyncram_e781:auto_generated.clock0
+clock0 => altsyncram_mo71:auto_generated.clock0
 clock1 => ~NO_FANOUT~
 clocken0 => ~NO_FANOUT~
 clocken1 => ~NO_FANOUT~
 clocken2 => ~NO_FANOUT~
 clocken3 => ~NO_FANOUT~
-aclr0 => altsyncram_e781:auto_generated.aclr0
+aclr0 => altsyncram_mo71:auto_generated.aclr0
 aclr1 => ~NO_FANOUT~
 byteena_a[0] => ~NO_FANOUT~
 byteena_b[0] => ~NO_FANOUT~
-q_a[0] <= altsyncram_e781:auto_generated.q_a[0]
-q_a[1] <= altsyncram_e781:auto_generated.q_a[1]
-q_a[2] <= altsyncram_e781:auto_generated.q_a[2]
-q_a[3] <= altsyncram_e781:auto_generated.q_a[3]
+q_a[0] <= altsyncram_mo71:auto_generated.q_a[0]
+q_a[1] <= altsyncram_mo71:auto_generated.q_a[1]
+q_a[2] <= altsyncram_mo71:auto_generated.q_a[2]
+q_a[3] <= altsyncram_mo71:auto_generated.q_a[3]
 q_b[0] <= <GND>
 eccstatus[0] <= <GND>
 eccstatus[1] <= <GND>
 eccstatus[2] <= <GND>
 
 
-|crc_system_test|MII_to_RCV:phy_inst|framemem:frame_test_mem|altsyncram:altsyncram_component|altsyncram_e781:auto_generated
+|crc_compute|MII_to_RCV:phy_inst|framemem:frame_test_mem|altsyncram:altsyncram_component|altsyncram_mo71:auto_generated
 aclr0 => ram_block1a0.CLR0
 aclr0 => ram_block1a1.CLR0
 aclr0 => ram_block1a2.CLR0
@@ -162,7 +194,7 @@ q_a[2] <= ram_block1a2.PORTADATAOUT
 q_a[3] <= ram_block1a3.PORTADATAOUT
 
 
-|crc_system_test|MII_to_RCV:phy_inst|cntr12bit:cntrx
+|crc_compute|MII_to_RCV:phy_inst|cntr12bit:cntrx
 aclr => lpm_counter:lpm_counter_component.aclr
 clock => lpm_counter:lpm_counter_component.clock
 cnt_en => lpm_counter:lpm_counter_component.cnt_en
@@ -181,7 +213,7 @@ q[10] <= lpm_counter:lpm_counter_component.q[10]
 q[11] <= lpm_counter:lpm_counter_component.q[11]
 
 
-|crc_system_test|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component
+|crc_compute|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component
 clock => cntr_k7j:auto_generated.clock
 clk_en => ~NO_FANOUT~
 cnt_en => cntr_k7j:auto_generated.cnt_en
@@ -238,7 +270,7 @@ eq[14] <= <GND>
 eq[15] <= <GND>
 
 
-|crc_system_test|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated
+|crc_compute|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated
 aclr => counter_reg_bit1a[11].ACLR
 aclr => counter_reg_bit1a[10].ACLR
 aclr => counter_reg_bit1a[9].ACLR
@@ -281,161 +313,7 @@ sclr => _.IN0
 sclr => _.IN0
 
 
-|crc_system_test|SFD_FSM:sfd_fsm_inst
-Clock => shift1_4bit:shift4bit_inst.clock
-Clock => y_current~1.DATAIN
-sfd_rdv => Selector1.IN2
-sfd_rdv => shift1_4bit:shift4bit_inst.load
-sfd_rdv => Selector0.IN2
-Reset => y_current~3.DATAIN
-dataIn[0] => shift1_4bit:shift4bit_inst.data[0]
-dataIn[0] => Equal0.IN1
-dataIn[0] => Equal1.IN3
-dataIn[1] => shift1_4bit:shift4bit_inst.data[1]
-dataIn[1] => Equal0.IN3
-dataIn[1] => Equal1.IN2
-dataIn[2] => shift1_4bit:shift4bit_inst.data[2]
-dataIn[2] => Equal0.IN0
-dataIn[2] => Equal1.IN0
-dataIn[3] => shift1_4bit:shift4bit_inst.data[3]
-dataIn[3] => Equal0.IN2
-dataIn[3] => Equal1.IN1
-dataOut[0] <= shift1_4bit:shift4bit_inst.q[0]
-dataOut[1] <= shift1_4bit:shift4bit_inst.q[1]
-dataOut[2] <= shift1_4bit:shift4bit_inst.q[2]
-dataOut[3] <= shift1_4bit:shift4bit_inst.q[3]
-crc_rdv <= crc_rdv.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|crc_system_test|SFD_FSM:sfd_fsm_inst|shift1_4bit:shift4bit_inst
-clock => lpm_shiftreg:lpm_shiftreg_component.clock
-data[0] => lpm_shiftreg:lpm_shiftreg_component.data[0]
-data[1] => lpm_shiftreg:lpm_shiftreg_component.data[1]
-data[2] => lpm_shiftreg:lpm_shiftreg_component.data[2]
-data[3] => lpm_shiftreg:lpm_shiftreg_component.data[3]
-load => lpm_shiftreg:lpm_shiftreg_component.load
-q[0] <= lpm_shiftreg:lpm_shiftreg_component.q[0]
-q[1] <= lpm_shiftreg:lpm_shiftreg_component.q[1]
-q[2] <= lpm_shiftreg:lpm_shiftreg_component.q[2]
-q[3] <= lpm_shiftreg:lpm_shiftreg_component.q[3]
-
-
-|crc_system_test|SFD_FSM:sfd_fsm_inst|shift1_4bit:shift4bit_inst|lpm_shiftreg:lpm_shiftreg_component
-data[0] => _.IN1
-data[1] => _.IN1
-data[2] => _.IN1
-data[3] => _.IN1
-clock => dffs[3].CLK
-clock => dffs[2].CLK
-clock => dffs[1].CLK
-clock => dffs[0].CLK
-enable => dffs[3].ENA
-enable => dffs[2].ENA
-enable => dffs[1].ENA
-enable => dffs[0].ENA
-shiftin => _.IN1
-load => _.IN0
-load => _.IN0
-load => _.IN0
-load => _.IN0
-load => _.IN0
-aclr => ~NO_FANOUT~
-aset => ~NO_FANOUT~
-sclr => _.IN0
-sset => _.IN0
-sset => _.IN0
-sset => _.IN0
-sset => _.IN0
-q[0] <= dffs[0].DB_MAX_OUTPUT_PORT_TYPE
-q[1] <= dffs[1].DB_MAX_OUTPUT_PORT_TYPE
-q[2] <= dffs[2].DB_MAX_OUTPUT_PORT_TYPE
-q[3] <= dffs[3].DB_MAX_OUTPUT_PORT_TYPE
-shiftout <= shiftout.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|crc_system_test|CRC_System:crc_system_inst
-Clk => CRC_FSM:CRC_FSM_inst.clk
-Clk => crc32x4r:crc32x4r_inst.Clock
-reset => CRC_FSM:CRC_FSM_inst.reset_sig
-reset => crc32x4r:crc32x4r_inst.Reset
-rdv => CRC_FSM:CRC_FSM_inst.rdv
-data_in_4[0] => crc32x4r:crc32x4r_inst.u4[0]
-data_in_4[1] => crc32x4r:crc32x4r_inst.u4[1]
-data_in_4[2] => crc32x4r:crc32x4r_inst.u4[2]
-data_in_4[3] => crc32x4r:crc32x4r_inst.u4[3]
-CRC_result_valid <= CRC_FSM:CRC_FSM_inst.crv
-CRC_check_result <= CRC_FSM:CRC_FSM_inst.check_result
-
-
-|crc_system_test|CRC_System:crc_system_inst|CRC_FSM:CRC_FSM_inst
-clk => shift1_1bit:shift_check_result.clock
-clk => state_reg~1.DATAIN
-reset_sig => shift1_1bit:shift_check_result.aclr
-reset_sig => state_reg~3.DATAIN
-rdv => state_next.RUN.DATAB
-rdv => Selector0.IN2
-rdv => state_next.CHECK.DATAB
-CRC_out[0] => WideOr1.IN0
-CRC_out[1] => WideOr1.IN1
-CRC_out[2] => WideOr1.IN2
-CRC_out[3] => WideOr1.IN3
-CRC_out[4] => WideOr1.IN4
-CRC_out[5] => WideOr1.IN5
-CRC_out[6] => WideOr1.IN6
-CRC_out[7] => WideOr1.IN7
-CRC_out[8] => WideOr1.IN8
-CRC_out[9] => WideOr1.IN9
-CRC_out[10] => WideOr1.IN10
-CRC_out[11] => WideOr1.IN11
-CRC_out[12] => WideOr1.IN12
-CRC_out[13] => WideOr1.IN13
-CRC_out[14] => WideOr1.IN14
-CRC_out[15] => WideOr1.IN15
-CRC_out[16] => WideOr1.IN16
-CRC_out[17] => WideOr1.IN17
-CRC_out[18] => WideOr1.IN18
-CRC_out[19] => WideOr1.IN19
-CRC_out[20] => WideOr1.IN20
-CRC_out[21] => WideOr1.IN21
-CRC_out[22] => WideOr1.IN22
-CRC_out[23] => WideOr1.IN23
-CRC_out[24] => WideOr1.IN24
-CRC_out[25] => WideOr1.IN25
-CRC_out[26] => WideOr1.IN26
-CRC_out[27] => WideOr1.IN27
-CRC_out[28] => WideOr1.IN28
-CRC_out[29] => WideOr1.IN29
-CRC_out[30] => WideOr1.IN30
-CRC_out[31] => WideOr1.IN31
-init_sig <= init_sig.DB_MAX_OUTPUT_PORT_TYPE
-compute_enable <= compute_enable.DB_MAX_OUTPUT_PORT_TYPE
-check_result <= shift1_1bit:shift_check_result.shiftout
-crv <= crv.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|crc_system_test|CRC_System:crc_system_inst|CRC_FSM:CRC_FSM_inst|shift1_1bit:shift_check_result
-aclr => lpm_shiftreg:lpm_shiftreg_component.aclr
-clock => lpm_shiftreg:lpm_shiftreg_component.clock
-shiftin => lpm_shiftreg:lpm_shiftreg_component.shiftin
-shiftout <= lpm_shiftreg:lpm_shiftreg_component.shiftout
-
-
-|crc_system_test|CRC_System:crc_system_inst|CRC_FSM:CRC_FSM_inst|shift1_1bit:shift_check_result|lpm_shiftreg:lpm_shiftreg_component
-data[0] => _.IN1
-clock => dffs[0].CLK
-enable => dffs[0].ENA
-shiftin => _.IN1
-load => _.IN0
-load => _.IN0
-aclr => dffs[0].IN0
-aset => ~NO_FANOUT~
-sclr => _.IN0
-sset => _.IN0
-q[0] <= q[0].DB_MAX_OUTPUT_PORT_TYPE
-shiftout <= dffs[0].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|crc_system_test|CRC_System:crc_system_inst|crc32x4r:crc32x4r_inst
+|crc_compute|crc32x4r:crc_inst
 Clock => crcreg32:crcreg32r.clock
 Reset => crcreg32:crcreg32r.aclr
 compute_enable => crcreg_clock_enable.IN0
@@ -479,7 +357,7 @@ CRC_out[30] <= crcreg32:crcreg32r.q[30]
 CRC_out[31] <= crcreg32:crcreg32r.q[31]
 
 
-|crc_system_test|CRC_System:crc_system_inst|crc32x4r:crc32x4r_inst|crcreg32:crcreg32r
+|crc_compute|crc32x4r:crc_inst|crcreg32:crcreg32r
 aclr => lpm_shiftreg:lpm_shiftreg_component.aclr
 clock => lpm_shiftreg:lpm_shiftreg_component.clock
 data[0] => lpm_shiftreg:lpm_shiftreg_component.data[0]
@@ -551,7 +429,7 @@ q[30] <= lpm_shiftreg:lpm_shiftreg_component.q[30]
 q[31] <= lpm_shiftreg:lpm_shiftreg_component.q[31]
 
 
-|crc_system_test|CRC_System:crc_system_inst|crc32x4r:crc32x4r_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component
+|crc_compute|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component
 data[0] => _.IN1
 data[1] => _.IN1
 data[2] => _.IN1

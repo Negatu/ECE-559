@@ -1,19 +1,5 @@
 
-State Machine - |crc_system_test|CRC_System:crc_system_inst|CRC_FSM:CRC_FSM_inst|state_reg
-Name state_reg.CHECK state_reg.RUN state_reg.WAIT_STATE state_reg.INIT state_reg.RESET 
-state_reg.RESET 0 0 0 0 0 
-state_reg.INIT 0 0 0 1 1 
-state_reg.WAIT_STATE 0 0 1 0 1 
-state_reg.RUN 0 1 0 0 1 
-state_reg.CHECK 1 0 0 0 1 
-
-State Machine - |crc_system_test|SFD_FSM:sfd_fsm_inst|y_current
-Name y_current.C y_current.B y_current.A 
-y_current.A 0 0 0 
-y_current.B 0 1 1 
-y_current.C 1 0 1 
-
-State Machine - |crc_system_test|MII_to_RCV:phy_inst|y_current
+State Machine - |crc_compute|MII_to_RCV:phy_inst|y_current
 Name y_current.done y_current.run y_current.waitx y_current.wait4run y_current.reset 
 y_current.reset 0 0 0 0 0 
 y_current.wait4run 0 0 0 1 1 

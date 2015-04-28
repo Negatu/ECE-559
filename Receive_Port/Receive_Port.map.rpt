@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Receive_Port
-Tue Apr 28 12:40:17 2015
+Tue Apr 28 16:58:50 2015
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -14,22 +14,19 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis RAM Summary
-  9. State Machine - |crc_system_test|CRC_System:crc_system_inst|CRC_FSM:CRC_FSM_inst|state_reg
- 10. State Machine - |crc_system_test|SFD_FSM:sfd_fsm_inst|y_current
- 11. State Machine - |crc_system_test|MII_to_RCV:phy_inst|y_current
- 12. Registers Removed During Synthesis
- 13. General Register Statistics
- 14. Source assignments for MII_to_RCV:phy_inst|framemem:frame_test_mem|altsyncram:altsyncram_component|altsyncram_e781:auto_generated
- 15. Source assignments for MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component
- 16. Parameter Settings for User Entity Instance: MII_to_RCV:phy_inst|framemem:frame_test_mem|altsyncram:altsyncram_component
- 17. Parameter Settings for User Entity Instance: MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component
- 18. Parameter Settings for User Entity Instance: SFD_FSM:sfd_fsm_inst|shift1_4bit:shift4bit_inst|lpm_shiftreg:lpm_shiftreg_component
- 19. Parameter Settings for User Entity Instance: CRC_System:crc_system_inst|CRC_FSM:CRC_FSM_inst|shift1_1bit:shift_check_result|lpm_shiftreg:lpm_shiftreg_component
- 20. Parameter Settings for User Entity Instance: CRC_System:crc_system_inst|crc32x4r:crc32x4r_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component
- 21. altsyncram Parameter Settings by Entity Instance
- 22. lpm_shiftreg Parameter Settings by Entity Instance
- 23. Port Connectivity Checks: "CRC_System:crc_system_inst|crc32x4r:crc32x4r_inst|crcreg32:crcreg32r"
- 24. Analysis & Synthesis Messages
+  9. State Machine - |crc_compute|MII_to_RCV:phy_inst|y_current
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Source assignments for MII_to_RCV:phy_inst|framemem:frame_test_mem|altsyncram:altsyncram_component|altsyncram_mo71:auto_generated
+ 13. Source assignments for MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component
+ 14. Parameter Settings for User Entity Instance: MII_to_RCV:phy_inst|framemem:frame_test_mem|altsyncram:altsyncram_component
+ 15. Parameter Settings for User Entity Instance: MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component
+ 16. Parameter Settings for User Entity Instance: crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component
+ 17. altsyncram Parameter Settings by Entity Instance
+ 18. lpm_shiftreg Parameter Settings by Entity Instance
+ 19. Port Connectivity Checks: "crc32x4r:crc_inst|crcreg32:crcreg32r"
+ 20. Port Connectivity Checks: "MII_to_RCV:phy_inst"
+ 21. Analysis & Synthesis Messages
 
 
 
@@ -55,16 +52,16 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +------------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Apr 28 12:40:17 2015        ;
+; Analysis & Synthesis Status        ; Successful - Tue Apr 28 16:58:50 2015        ;
 ; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                      ; Receive_Port                                 ;
-; Top-level Entity Name              ; crc_system_test                              ;
+; Top-level Entity Name              ; crc_compute                                  ;
 ; Family                             ; Cyclone II                                   ;
-; Total logic elements               ; 104                                          ;
-;     Total combinational functions  ; 93                                           ;
-;     Dedicated logic registers      ; 70                                           ;
-; Total registers                    ; 70                                           ;
-; Total pins                         ; 6                                            ;
+; Total logic elements               ; 75                                           ;
+;     Total combinational functions  ; 64                                           ;
+;     Dedicated logic registers      ; 58                                           ;
+; Total registers                    ; 58                                           ;
+; Total pins                         ; 40                                           ;
 ; Total virtual pins                 ; 0                                            ;
 ; Total memory bits                  ; 4,096                                        ;
 ; Embedded Multiplier 9-bit elements ; 0                                            ;
@@ -78,7 +75,7 @@ applicable agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; EP2C35F672C6       ;                    ;
-; Top-level entity name                                                      ; crc_system_test    ; Receive_Port       ;
+; Top-level entity name                                                      ; crc_compute        ; Receive_Port       ;
 ; Family name                                                                ; Cyclone II         ; Stratix II         ;
 ; Use Generated Physical Constraints File                                    ; Off                ;                    ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
@@ -172,15 +169,10 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; ../MII_to_RCV_restored/MII_to_RCV.vhd ; yes             ; User VHDL File                         ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/MII_to_RCV_restored/MII_to_RCV.vhd  ;
 ; crc32x4r.vhd                          ; yes             ; User VHDL File                         ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/crc32x4r.vhd           ;
 ; crcreg32.vhd                          ; yes             ; User Wizard-Generated File             ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/crcreg32.vhd           ;
-; CRC_FSM.vhd                           ; yes             ; User VHDL File                         ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/CRC_FSM.vhd            ;
-; CRC_System.vhd                        ; yes             ; User VHDL File                         ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/CRC_System.vhd         ;
-; SFD_FSM.vhd                           ; yes             ; User VHDL File                         ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/SFD_FSM.vhd            ;
-; crc_system_test.vhd                   ; yes             ; User VHDL File                         ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/crc_system_test.vhd    ;
-; shift1_4bit.vhd                       ; yes             ; User Wizard-Generated File             ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/shift1_4bit.vhd        ;
-; shift1_1bit.vhd                       ; yes             ; User Wizard-Generated File             ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/shift1_1bit.vhd        ;
+; crc_compute.vhd                       ; yes             ; User VHDL File                         ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/crc_compute.vhd        ;
 ; altsyncram.tdf                        ; yes             ; Megafunction                           ; c:/altera/91sp2/quartus/libraries/megafunctions/altsyncram.tdf                            ;
-; db/altsyncram_e781.tdf                ; yes             ; Auto-Generated Megafunction            ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/altsyncram_e781.tdf ;
-; myframemem.mif                        ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/myframemem.mif         ;
+; db/altsyncram_mo71.tdf                ; yes             ; Auto-Generated Megafunction            ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/altsyncram_mo71.tdf ;
+; tbrom4.mif                            ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/tbrom4.mif             ;
 ; lpm_counter.tdf                       ; yes             ; Megafunction                           ; c:/altera/91sp2/quartus/libraries/megafunctions/lpm_counter.tdf                           ;
 ; db/cntr_k7j.tdf                       ; yes             ; Auto-Generated Megafunction            ; C:/Users/Negatu/Desktop/Spring 2015 - Dawning/ECE-559/Receive_Port/db/cntr_k7j.tdf        ;
 ; lpm_shiftreg.tdf                      ; yes             ; Megafunction                           ; c:/altera/91sp2/quartus/libraries/megafunctions/lpm_shiftreg.tdf                          ;
@@ -192,96 +184,63 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+---------+
 ; Resource                                    ; Usage   ;
 +---------------------------------------------+---------+
-; Estimated Total logic elements              ; 104     ;
+; Estimated Total logic elements              ; 75      ;
 ;                                             ;         ;
-; Total combinational functions               ; 93      ;
+; Total combinational functions               ; 64      ;
 ; Logic element usage by number of LUT inputs ;         ;
-;     -- 4 input functions                    ; 53      ;
-;     -- 3 input functions                    ; 12      ;
-;     -- <=2 input functions                  ; 28      ;
+;     -- 4 input functions                    ; 32      ;
+;     -- 3 input functions                    ; 8       ;
+;     -- <=2 input functions                  ; 24      ;
 ;                                             ;         ;
 ; Logic elements by mode                      ;         ;
-;     -- normal mode                          ; 82      ;
+;     -- normal mode                          ; 53      ;
 ;     -- arithmetic mode                      ; 11      ;
 ;                                             ;         ;
-; Total registers                             ; 70      ;
-;     -- Dedicated logic registers            ; 70      ;
+; Total registers                             ; 58      ;
+;     -- Dedicated logic registers            ; 58      ;
 ;     -- I/O registers                        ; 0       ;
 ;                                             ;         ;
-; I/O pins                                    ; 6       ;
+; I/O pins                                    ; 40      ;
 ; Total memory bits                           ; 4096    ;
 ; Maximum fan-out node                        ; clock25 ;
-; Maximum fan-out                             ; 74      ;
-; Total fan-out                               ; 636     ;
-; Average fan-out                             ; 3.68    ;
+; Maximum fan-out                             ; 62      ;
+; Total fan-out                               ; 532     ;
+; Average fan-out                             ; 3.20    ;
 +---------------------------------------------+---------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                ;
-+---------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node                        ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                 ; Library Name ;
-+---------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |crc_system_test                                  ; 93 (1)            ; 70 (0)       ; 4096        ; 0            ; 0       ; 0         ; 6    ; 0            ; |crc_system_test                                                                                                                    ; work         ;
-;    |CRC_System:crc_system_inst|                   ; 55 (0)            ; 37 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |crc_system_test|CRC_System:crc_system_inst                                                                                         ;              ;
-;       |CRC_FSM:CRC_FSM_inst|                      ; 16 (16)           ; 5 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |crc_system_test|CRC_System:crc_system_inst|CRC_FSM:CRC_FSM_inst                                                                    ;              ;
-;          |shift1_1bit:shift_check_result|         ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |crc_system_test|CRC_System:crc_system_inst|CRC_FSM:CRC_FSM_inst|shift1_1bit:shift_check_result                                     ;              ;
-;             |lpm_shiftreg:lpm_shiftreg_component| ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |crc_system_test|CRC_System:crc_system_inst|CRC_FSM:CRC_FSM_inst|shift1_1bit:shift_check_result|lpm_shiftreg:lpm_shiftreg_component ;              ;
-;       |crc32x4r:crc32x4r_inst|                    ; 39 (7)            ; 32 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |crc_system_test|CRC_System:crc_system_inst|crc32x4r:crc32x4r_inst                                                                  ;              ;
-;          |crcreg32:crcreg32r|                     ; 32 (0)            ; 32 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |crc_system_test|CRC_System:crc_system_inst|crc32x4r:crc32x4r_inst|crcreg32:crcreg32r                                               ;              ;
-;             |lpm_shiftreg:lpm_shiftreg_component| ; 32 (32)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |crc_system_test|CRC_System:crc_system_inst|crc32x4r:crc32x4r_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component           ;              ;
-;    |MII_to_RCV:phy_inst|                          ; 27 (14)           ; 26 (14)      ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |crc_system_test|MII_to_RCV:phy_inst                                                                                                ;              ;
-;       |cntr12bit:cntrx|                           ; 13 (0)            ; 12 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |crc_system_test|MII_to_RCV:phy_inst|cntr12bit:cntrx                                                                                ;              ;
-;          |lpm_counter:lpm_counter_component|      ; 13 (0)            ; 12 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |crc_system_test|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component                                              ;              ;
-;             |cntr_k7j:auto_generated|             ; 13 (13)           ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |crc_system_test|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated                      ;              ;
-;       |framemem:frame_test_mem|                   ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |crc_system_test|MII_to_RCV:phy_inst|framemem:frame_test_mem                                                                        ;              ;
-;          |altsyncram:altsyncram_component|        ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |crc_system_test|MII_to_RCV:phy_inst|framemem:frame_test_mem|altsyncram:altsyncram_component                                        ;              ;
-;             |altsyncram_e781:auto_generated|      ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |crc_system_test|MII_to_RCV:phy_inst|framemem:frame_test_mem|altsyncram:altsyncram_component|altsyncram_e781:auto_generated         ;              ;
-;    |SFD_FSM:sfd_fsm_inst|                         ; 10 (6)            ; 7 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |crc_system_test|SFD_FSM:sfd_fsm_inst                                                                                               ;              ;
-;       |shift1_4bit:shift4bit_inst|                ; 4 (0)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |crc_system_test|SFD_FSM:sfd_fsm_inst|shift1_4bit:shift4bit_inst                                                                    ;              ;
-;          |lpm_shiftreg:lpm_shiftreg_component|    ; 4 (4)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |crc_system_test|SFD_FSM:sfd_fsm_inst|shift1_4bit:shift4bit_inst|lpm_shiftreg:lpm_shiftreg_component                                ;              ;
-+---------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                 ;
++------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                     ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                     ; Library Name ;
++------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------+--------------+
+; |crc_compute                                   ; 64 (1)            ; 58 (0)       ; 4096        ; 0            ; 0       ; 0         ; 40   ; 0            ; |crc_compute                                                                                                            ; work         ;
+;    |MII_to_RCV:phy_inst|                       ; 25 (12)           ; 26 (14)      ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |crc_compute|MII_to_RCV:phy_inst                                                                                        ;              ;
+;       |cntr12bit:cntrx|                        ; 13 (0)            ; 12 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |crc_compute|MII_to_RCV:phy_inst|cntr12bit:cntrx                                                                        ;              ;
+;          |lpm_counter:lpm_counter_component|   ; 13 (0)            ; 12 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |crc_compute|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component                                      ;              ;
+;             |cntr_k7j:auto_generated|          ; 13 (13)           ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |crc_compute|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated              ;              ;
+;       |framemem:frame_test_mem|                ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |crc_compute|MII_to_RCV:phy_inst|framemem:frame_test_mem                                                                ;              ;
+;          |altsyncram:altsyncram_component|     ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |crc_compute|MII_to_RCV:phy_inst|framemem:frame_test_mem|altsyncram:altsyncram_component                                ;              ;
+;             |altsyncram_mo71:auto_generated|   ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |crc_compute|MII_to_RCV:phy_inst|framemem:frame_test_mem|altsyncram:altsyncram_component|altsyncram_mo71:auto_generated ;              ;
+;    |crc32x4r:crc_inst|                         ; 38 (6)            ; 32 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |crc_compute|crc32x4r:crc_inst                                                                                          ;              ;
+;       |crcreg32:crcreg32r|                     ; 32 (0)            ; 32 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |crc_compute|crc32x4r:crc_inst|crcreg32:crcreg32r                                                                       ;              ;
+;          |lpm_shiftreg:lpm_shiftreg_component| ; 32 (32)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |crc_compute|crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component                                   ;              ;
++------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                                        ;
-+-----------------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+----------------+
-; Name                                                                                                                  ; Type ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF            ;
-+-----------------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+----------------+
-; MII_to_RCV:phy_inst|framemem:frame_test_mem|altsyncram:altsyncram_component|altsyncram_e781:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 1024         ; 4            ; --           ; --           ; 4096 ; myframemem.mif ;
-+-----------------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+----------------+
-
-
-Encoding Type:  One-Hot
-+------------------------------------------------------------------------------------------------------------------+
-; State Machine - |crc_system_test|CRC_System:crc_system_inst|CRC_FSM:CRC_FSM_inst|state_reg                       ;
-+----------------------+-----------------+---------------+----------------------+----------------+-----------------+
-; Name                 ; state_reg.CHECK ; state_reg.RUN ; state_reg.WAIT_STATE ; state_reg.INIT ; state_reg.RESET ;
-+----------------------+-----------------+---------------+----------------------+----------------+-----------------+
-; state_reg.RESET      ; 0               ; 0             ; 0                    ; 0              ; 0               ;
-; state_reg.INIT       ; 0               ; 0             ; 0                    ; 1              ; 1               ;
-; state_reg.WAIT_STATE ; 0               ; 0             ; 1                    ; 0              ; 1               ;
-; state_reg.RUN        ; 0               ; 1             ; 0                    ; 0              ; 1               ;
-; state_reg.CHECK      ; 1               ; 0             ; 0                    ; 0              ; 1               ;
-+----------------------+-----------------+---------------+----------------------+----------------+-----------------+
-
-
-Encoding Type:  One-Hot
-+-----------------------------------------------------------------+
-; State Machine - |crc_system_test|SFD_FSM:sfd_fsm_inst|y_current ;
-+-------------+-------------+-------------+-----------------------+
-; Name        ; y_current.C ; y_current.B ; y_current.A           ;
-+-------------+-------------+-------------+-----------------------+
-; y_current.A ; 0           ; 0           ; 0                     ;
-; y_current.B ; 0           ; 1           ; 1                     ;
-; y_current.C ; 1           ; 0           ; 1                     ;
-+-------------+-------------+-------------+-----------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                    ;
++-----------------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+------------+
+; Name                                                                                                                  ; Type ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF        ;
++-----------------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+------------+
+; MII_to_RCV:phy_inst|framemem:frame_test_mem|altsyncram:altsyncram_component|altsyncram_mo71:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 1024         ; 4            ; --           ; --           ; 4096 ; tbrom4.mif ;
++-----------------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+------------+
 
 
 Encoding Type:  One-Hot
 +--------------------------------------------------------------------------------------------------------------+
-; State Machine - |crc_system_test|MII_to_RCV:phy_inst|y_current                                               ;
+; State Machine - |crc_compute|MII_to_RCV:phy_inst|y_current                                                   ;
 +--------------------+----------------+---------------+-----------------+--------------------+-----------------+
 ; Name               ; y_current.done ; y_current.run ; y_current.waitx ; y_current.wait4run ; y_current.reset ;
 +--------------------+----------------+---------------+-----------------+--------------------+-----------------+
@@ -293,15 +252,14 @@ Encoding Type:  One-Hot
 +--------------------+----------------+---------------+-----------------+--------------------+-----------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                ;
-+-----------------------------------------------------------------+-------------------------------------------------+
-; Register name                                                   ; Reason for Removal                              ;
-+-----------------------------------------------------------------+-------------------------------------------------+
-; MII_to_RCV:phy_inst|y_current.done                              ; Lost fanout                                     ;
-; CRC_System:crc_system_inst|CRC_FSM:CRC_FSM_inst|state_reg.RESET ; Merged with MII_to_RCV:phy_inst|y_current.reset ;
-; Total Number of Removed Registers = 2                           ;                                                 ;
-+-----------------------------------------------------------------+-------------------------------------------------+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; MII_to_RCV:phy_inst|y_current.done    ; Lost fanout        ;
+; Total Number of Removed Registers = 1 ;                    ;
++---------------------------------------+--------------------+
 
 
 +------------------------------------------------------+
@@ -309,10 +267,10 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 70    ;
+; Total registers                              ; 58    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 12    ;
-; Number of registers using Asynchronous Clear ; 66    ;
+; Number of registers using Asynchronous Clear ; 58    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 54    ;
 ; Number of registers using Preset             ; 0     ;
@@ -320,7 +278,7 @@ Encoding Type:  One-Hot
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for MII_to_RCV:phy_inst|framemem:frame_test_mem|altsyncram:altsyncram_component|altsyncram_e781:auto_generated ;
+; Source assignments for MII_to_RCV:phy_inst|framemem:frame_test_mem|altsyncram:altsyncram_component|altsyncram_mo71:auto_generated ;
 +---------------------------------+--------------------+------+---------------------------------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                                                  ;
 +---------------------------------+--------------------+------+---------------------------------------------------------------------+
@@ -382,7 +340,7 @@ Encoding Type:  One-Hot
 ; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                                      ;
 ; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                                      ;
 ; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                                      ;
-; INIT_FILE                          ; myframemem.mif       ; Untyped                                                      ;
+; INIT_FILE                          ; tbrom4.mif           ; Untyped                                                      ;
 ; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                                      ;
 ; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                                      ;
 ; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                                      ;
@@ -393,7 +351,7 @@ Encoding Type:  One-Hot
 ; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                                      ;
 ; ENABLE_ECC                         ; FALSE                ; Untyped                                                      ;
 ; DEVICE_FAMILY                      ; Cyclone II           ; Untyped                                                      ;
-; CBXI_PARAMETER                     ; altsyncram_e781      ; Untyped                                                      ;
+; CBXI_PARAMETER                     ; altsyncram_mo71      ; Untyped                                                      ;
 +------------------------------------+----------------------+--------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -425,57 +383,21 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: SFD_FSM:sfd_fsm_inst|shift1_4bit:shift4bit_inst|lpm_shiftreg:lpm_shiftreg_component ;
-+------------------------+------------+--------------------------------------------------------------------------------------------+
-; Parameter Name         ; Value      ; Type                                                                                       ;
-+------------------------+------------+--------------------------------------------------------------------------------------------+
-; LPM_WIDTH              ; 4          ; Signed Integer                                                                             ;
-; LPM_DIRECTION          ; RIGHT      ; Untyped                                                                                    ;
-; LPM_AVALUE             ; UNUSED     ; Untyped                                                                                    ;
-; LPM_SVALUE             ; UNUSED     ; Untyped                                                                                    ;
-; DEVICE_FAMILY          ; Cyclone II ; Untyped                                                                                    ;
-; AUTO_CARRY_CHAINS      ; ON         ; AUTO_CARRY                                                                                 ;
-; IGNORE_CARRY_BUFFERS   ; OFF        ; IGNORE_CARRY                                                                               ;
-; AUTO_CASCADE_CHAINS    ; ON         ; AUTO_CASCADE                                                                               ;
-; IGNORE_CASCADE_BUFFERS ; OFF        ; IGNORE_CASCADE                                                                             ;
-+------------------------+------------+--------------------------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: CRC_System:crc_system_inst|CRC_FSM:CRC_FSM_inst|shift1_1bit:shift_check_result|lpm_shiftreg:lpm_shiftreg_component ;
-+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------+
-; Parameter Name         ; Value      ; Type                                                                                                                      ;
-+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------+
-; LPM_WIDTH              ; 1          ; Signed Integer                                                                                                            ;
-; LPM_DIRECTION          ; RIGHT      ; Untyped                                                                                                                   ;
-; LPM_AVALUE             ; UNUSED     ; Untyped                                                                                                                   ;
-; LPM_SVALUE             ; UNUSED     ; Untyped                                                                                                                   ;
-; DEVICE_FAMILY          ; Cyclone II ; Untyped                                                                                                                   ;
-; AUTO_CARRY_CHAINS      ; ON         ; AUTO_CARRY                                                                                                                ;
-; IGNORE_CARRY_BUFFERS   ; OFF        ; IGNORE_CARRY                                                                                                              ;
-; AUTO_CASCADE_CHAINS    ; ON         ; AUTO_CASCADE                                                                                                              ;
-; IGNORE_CASCADE_BUFFERS ; OFF        ; IGNORE_CASCADE                                                                                                            ;
-+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: CRC_System:crc_system_inst|crc32x4r:crc32x4r_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component ;
-+------------------------+------------+-----------------------------------------------------------------------------------------------------------------+
-; Parameter Name         ; Value      ; Type                                                                                                            ;
-+------------------------+------------+-----------------------------------------------------------------------------------------------------------------+
-; LPM_WIDTH              ; 32         ; Signed Integer                                                                                                  ;
-; LPM_DIRECTION          ; LEFT       ; Untyped                                                                                                         ;
-; LPM_AVALUE             ; UNUSED     ; Untyped                                                                                                         ;
-; LPM_SVALUE             ; UNUSED     ; Untyped                                                                                                         ;
-; DEVICE_FAMILY          ; Cyclone II ; Untyped                                                                                                         ;
-; AUTO_CARRY_CHAINS      ; ON         ; AUTO_CARRY                                                                                                      ;
-; IGNORE_CARRY_BUFFERS   ; OFF        ; IGNORE_CARRY                                                                                                    ;
-; AUTO_CASCADE_CHAINS    ; ON         ; AUTO_CASCADE                                                                                                    ;
-; IGNORE_CASCADE_BUFFERS ; OFF        ; IGNORE_CASCADE                                                                                                  ;
-+------------------------+------------+-----------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component ;
++------------------------+------------+---------------------------------------------------------------------------------+
+; Parameter Name         ; Value      ; Type                                                                            ;
++------------------------+------------+---------------------------------------------------------------------------------+
+; LPM_WIDTH              ; 32         ; Signed Integer                                                                  ;
+; LPM_DIRECTION          ; LEFT       ; Untyped                                                                         ;
+; LPM_AVALUE             ; UNUSED     ; Untyped                                                                         ;
+; LPM_SVALUE             ; UNUSED     ; Untyped                                                                         ;
+; DEVICE_FAMILY          ; Cyclone II ; Untyped                                                                         ;
+; AUTO_CARRY_CHAINS      ; ON         ; AUTO_CARRY                                                                      ;
+; IGNORE_CARRY_BUFFERS   ; OFF        ; IGNORE_CARRY                                                                    ;
+; AUTO_CASCADE_CHAINS    ; ON         ; AUTO_CASCADE                                                                    ;
+; IGNORE_CASCADE_BUFFERS ; OFF        ; IGNORE_CASCADE                                                                  ;
++------------------------+------------+---------------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -499,31 +421,34 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+-----------------------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; lpm_shiftreg Parameter Settings by Entity Instance                                                                                              ;
-+----------------------------+--------------------------------------------------------------------------------------------------------------------+
-; Name                       ; Value                                                                                                              ;
-+----------------------------+--------------------------------------------------------------------------------------------------------------------+
-; Number of entity instances ; 3                                                                                                                  ;
-; Entity Instance            ; SFD_FSM:sfd_fsm_inst|shift1_4bit:shift4bit_inst|lpm_shiftreg:lpm_shiftreg_component                                ;
-;     -- LPM_WIDTH           ; 4                                                                                                                  ;
-;     -- LPM_DIRECTION       ; RIGHT                                                                                                              ;
-; Entity Instance            ; CRC_System:crc_system_inst|CRC_FSM:CRC_FSM_inst|shift1_1bit:shift_check_result|lpm_shiftreg:lpm_shiftreg_component ;
-;     -- LPM_WIDTH           ; 1                                                                                                                  ;
-;     -- LPM_DIRECTION       ; RIGHT                                                                                                              ;
-; Entity Instance            ; CRC_System:crc_system_inst|crc32x4r:crc32x4r_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component           ;
-;     -- LPM_WIDTH           ; 32                                                                                                                 ;
-;     -- LPM_DIRECTION       ; LEFT                                                                                                               ;
-+----------------------------+--------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------+
+; lpm_shiftreg Parameter Settings by Entity Instance                                                    ;
++----------------------------+--------------------------------------------------------------------------+
+; Name                       ; Value                                                                    ;
++----------------------------+--------------------------------------------------------------------------+
+; Number of entity instances ; 1                                                                        ;
+; Entity Instance            ; crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component ;
+;     -- LPM_WIDTH           ; 32                                                                       ;
+;     -- LPM_DIRECTION       ; LEFT                                                                     ;
++----------------------------+--------------------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "CRC_System:crc_system_inst|crc32x4r:crc32x4r_inst|crcreg32:crcreg32r" ;
-+------+-------+----------+------------------------------------------------------------------------+
-; Port ; Type  ; Severity ; Details                                                                ;
-+------+-------+----------+------------------------------------------------------------------------+
-; load ; Input ; Info     ; Stuck at VCC                                                           ;
-+------+-------+----------+------------------------------------------------------------------------+
++------------------------------------------------------------------+
+; Port Connectivity Checks: "crc32x4r:crc_inst|crcreg32:crcreg32r" ;
++------+-------+----------+----------------------------------------+
+; Port ; Type  ; Severity ; Details                                ;
++------+-------+----------+----------------------------------------+
+; load ; Input ; Info     ; Stuck at VCC                           ;
++------+-------+----------+----------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "MII_to_RCV:phy_inst"                                                                          ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port           ; Type   ; Severity ; Details                                                                             ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; rcv_data_valid ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-------------------------------+
@@ -532,7 +457,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Tue Apr 28 12:40:14 2015
+    Info: Processing started: Tue Apr 28 16:58:48 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Receive_Port -c Receive_Port
 Info: Found 2 design units, including 1 entities, in source file /users/negatu/desktop/spring 2015 - dawning/ece-559/mii_to_rcv_restored/cntr12bit.vhd
     Info: Found design unit 1: cntr12bit-SYN
@@ -637,7 +562,11 @@ Info: Found 2 design units, including 1 entities, in source file lengthcounterfs
 Info: Found 2 design units, including 1 entities, in source file lengthcounter.vhd
     Info: Found design unit 1: lengthcounter-SYN
     Info: Found entity 1: LengthCounter
-Info: Elaborating entity "crc_system_test" for the top level hierarchy
+Info: Found 2 design units, including 1 entities, in source file crc_compare.vhd
+    Info: Found design unit 1: crc_compare-SYN
+    Info: Found entity 1: CRC_compare
+Info: Elaborating entity "crc_compute" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at crc_compute.vhd(21): object "rdv_signal" assigned a value but never read
 Info: Elaborating entity "MII_to_RCV" for hierarchy "MII_to_RCV:phy_inst"
 Info: Elaborating entity "framemem" for hierarchy "MII_to_RCV:phy_inst|framemem:frame_test_mem"
 Info: Elaborating entity "altsyncram" for hierarchy "MII_to_RCV:phy_inst|framemem:frame_test_mem|altsyncram:altsyncram_component"
@@ -645,7 +574,7 @@ Info: Elaborated megafunction instantiation "MII_to_RCV:phy_inst|framemem:frame_
 Info: Instantiated megafunction "MII_to_RCV:phy_inst|framemem:frame_test_mem|altsyncram:altsyncram_component" with the following parameter:
     Info: Parameter "clock_enable_input_a" = "BYPASS"
     Info: Parameter "clock_enable_output_a" = "BYPASS"
-    Info: Parameter "init_file" = "myframemem.mif"
+    Info: Parameter "init_file" = "tbrom4.mif"
     Info: Parameter "intended_device_family" = "Cyclone II"
     Info: Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
     Info: Parameter "lpm_type" = "altsyncram"
@@ -656,9 +585,9 @@ Info: Instantiated megafunction "MII_to_RCV:phy_inst|framemem:frame_test_mem|alt
     Info: Parameter "widthad_a" = "10"
     Info: Parameter "width_a" = "4"
     Info: Parameter "width_byteena_a" = "1"
-Info: Found 1 design units, including 1 entities, in source file db/altsyncram_e781.tdf
-    Info: Found entity 1: altsyncram_e781
-Info: Elaborating entity "altsyncram_e781" for hierarchy "MII_to_RCV:phy_inst|framemem:frame_test_mem|altsyncram:altsyncram_component|altsyncram_e781:auto_generated"
+Info: Found 1 design units, including 1 entities, in source file db/altsyncram_mo71.tdf
+    Info: Found entity 1: altsyncram_mo71
+Info: Elaborating entity "altsyncram_mo71" for hierarchy "MII_to_RCV:phy_inst|framemem:frame_test_mem|altsyncram:altsyncram_component|altsyncram_mo71:auto_generated"
 Info: Elaborating entity "cntr12bit" for hierarchy "MII_to_RCV:phy_inst|cntr12bit:cntrx"
 Info: Elaborating entity "lpm_counter" for hierarchy "MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component"
 Info: Elaborated megafunction instantiation "MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component"
@@ -670,28 +599,11 @@ Info: Instantiated megafunction "MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter
 Info: Found 1 design units, including 1 entities, in source file db/cntr_k7j.tdf
     Info: Found entity 1: cntr_k7j
 Info: Elaborating entity "cntr_k7j" for hierarchy "MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated"
-Info: Elaborating entity "SFD_FSM" for hierarchy "SFD_FSM:sfd_fsm_inst"
-Info: Elaborating entity "shift1_4bit" for hierarchy "SFD_FSM:sfd_fsm_inst|shift1_4bit:shift4bit_inst"
-Info: Elaborating entity "lpm_shiftreg" for hierarchy "SFD_FSM:sfd_fsm_inst|shift1_4bit:shift4bit_inst|lpm_shiftreg:lpm_shiftreg_component"
-Info: Elaborated megafunction instantiation "SFD_FSM:sfd_fsm_inst|shift1_4bit:shift4bit_inst|lpm_shiftreg:lpm_shiftreg_component"
-Info: Instantiated megafunction "SFD_FSM:sfd_fsm_inst|shift1_4bit:shift4bit_inst|lpm_shiftreg:lpm_shiftreg_component" with the following parameter:
-    Info: Parameter "lpm_direction" = "RIGHT"
-    Info: Parameter "lpm_type" = "LPM_SHIFTREG"
-    Info: Parameter "lpm_width" = "4"
-Info: Elaborating entity "CRC_System" for hierarchy "CRC_System:crc_system_inst"
-Info: Elaborating entity "CRC_FSM" for hierarchy "CRC_System:crc_system_inst|CRC_FSM:CRC_FSM_inst"
-Info: Elaborating entity "shift1_1bit" for hierarchy "CRC_System:crc_system_inst|CRC_FSM:CRC_FSM_inst|shift1_1bit:shift_check_result"
-Info: Elaborating entity "lpm_shiftreg" for hierarchy "CRC_System:crc_system_inst|CRC_FSM:CRC_FSM_inst|shift1_1bit:shift_check_result|lpm_shiftreg:lpm_shiftreg_component"
-Info: Elaborated megafunction instantiation "CRC_System:crc_system_inst|CRC_FSM:CRC_FSM_inst|shift1_1bit:shift_check_result|lpm_shiftreg:lpm_shiftreg_component"
-Info: Instantiated megafunction "CRC_System:crc_system_inst|CRC_FSM:CRC_FSM_inst|shift1_1bit:shift_check_result|lpm_shiftreg:lpm_shiftreg_component" with the following parameter:
-    Info: Parameter "lpm_direction" = "RIGHT"
-    Info: Parameter "lpm_type" = "LPM_SHIFTREG"
-    Info: Parameter "lpm_width" = "1"
-Info: Elaborating entity "crc32x4r" for hierarchy "CRC_System:crc_system_inst|crc32x4r:crc32x4r_inst"
-Info: Elaborating entity "crcreg32" for hierarchy "CRC_System:crc_system_inst|crc32x4r:crc32x4r_inst|crcreg32:crcreg32r"
-Info: Elaborating entity "lpm_shiftreg" for hierarchy "CRC_System:crc_system_inst|crc32x4r:crc32x4r_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component"
-Info: Elaborated megafunction instantiation "CRC_System:crc_system_inst|crc32x4r:crc32x4r_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component"
-Info: Instantiated megafunction "CRC_System:crc_system_inst|crc32x4r:crc32x4r_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component" with the following parameter:
+Info: Elaborating entity "crc32x4r" for hierarchy "crc32x4r:crc_inst"
+Info: Elaborating entity "crcreg32" for hierarchy "crc32x4r:crc_inst|crcreg32:crcreg32r"
+Info: Elaborating entity "lpm_shiftreg" for hierarchy "crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component"
+Info: Elaborated megafunction instantiation "crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component"
+Info: Instantiated megafunction "crc32x4r:crc_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component" with the following parameter:
     Info: Parameter "lpm_direction" = "LEFT"
     Info: Parameter "lpm_type" = "LPM_SHIFTREG"
     Info: Parameter "lpm_width" = "32"
@@ -721,15 +633,15 @@ Warning: Ignored assignments for entity "LengthCounterSystem" -- entity does not
     Warning: Assignment for entity set_global_assignment -name PARTITION_IMPORT_PIN_ASSIGNMENTS ON -entity LengthCounterSystem -section_id Top was ignored
     Warning: Assignment for entity set_global_assignment -name PARTITION_IMPORT_PROMOTE_ASSIGNMENTS ON -entity LengthCounterSystem -section_id Top was ignored
     Warning: Assignment for entity set_global_assignment -name PARTITION_TYPE STANDARD_PARTITION -entity LengthCounterSystem -section_id Top was ignored
-Info: Implemented 115 device resources after synthesis - the final resource count might be different
-    Info: Implemented 2 input pins
-    Info: Implemented 4 output pins
-    Info: Implemented 105 logic cells
+Info: Implemented 120 device resources after synthesis - the final resource count might be different
+    Info: Implemented 4 input pins
+    Info: Implemented 36 output pins
+    Info: Implemented 76 logic cells
     Info: Implemented 4 RAM segments
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 25 warnings
-    Info: Peak virtual memory: 237 megabytes
-    Info: Processing ended: Tue Apr 28 12:40:17 2015
-    Info: Elapsed time: 00:00:03
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 26 warnings
+    Info: Peak virtual memory: 235 megabytes
+    Info: Processing ended: Tue Apr 28 16:58:50 2015
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:03
 
 

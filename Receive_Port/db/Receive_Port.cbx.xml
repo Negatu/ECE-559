@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="Receive_Port">
-		<CBX_INST_ENTRY INSTANCE_NAME="|crc_system_test|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component" CBX_FILE_NAME="cntr_k7j.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|crc_system_test|MII_to_RCV:phy_inst|framemem:frame_test_mem|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_e781.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|crc_compute|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component" CBX_FILE_NAME="cntr_k7j.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|crc_compute|MII_to_RCV:phy_inst|framemem:frame_test_mem|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_mo71.tdf"/>
 	</PROJECT>
 </LOG_ROOT>

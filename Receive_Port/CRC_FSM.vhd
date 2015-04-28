@@ -14,6 +14,8 @@ ARCHITECTURE CRC_FSM_arch OF CRC_FSM IS
 				(RESET, INIT, WAIT_STATE, RUN, CHECK);
 	signal state_reg, state_next: state_type;
 	
+	signal compare_result : std_logic;
+	
 	component shift1_1bit 
 		port(
 			aclr		: IN STD_LOGIC ;
@@ -22,6 +24,15 @@ ARCHITECTURE CRC_FSM_arch OF CRC_FSM IS
 			shiftout	: OUT STD_LOGIC 
 		);
 	end component;
+	
+	Component CRC_compare 
+	PORT
+	(
+		dataa		: IN STD_LOGIC_VECTOR (31 DOWNTO 0);
+		datab		: IN STD_LOGIC_VECTOR (31 DOWNTO 0);
+		AeB		: OUT STD_LOGIC 
+	);
+	END component;
 
 	begin
 		process(clk, reset_sig)  -- STATE REGISTER UPDATE
@@ -85,8 +96,15 @@ ARCHITECTURE CRC_FSM_arch OF CRC_FSM IS
 		shift_check_result : shift1_1bit PORT MAP (
 			aclr => reset_sig,
 			clock => clk,
-			shiftin	=> not(or_reduce(CRC_out)),
+			shiftin	=> compare_result,
 			shiftout => check_result
+		);
+		
+		compare_instn : CRC_compare PORT MAP
+		(
+			dataa => CRC_out,
+			datab => "11000111000001001101110101111011",
+			AeB	=> compare_result 
 		);
 		
 		
