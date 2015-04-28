@@ -1,12 +1,20 @@
-|test
-clock25 => ~NO_FANOUT~
-clock50 => shift1_1bit:shift1_1bit_instFlip.clock
-clock50 => test_bench1:test_bench_inst.clk50
+|Receive_Port
+clk25 => test_bench1:test_bench_inst.clk25
+clk25 => clk25_out.DATAIN
+clk50 => test_bench1:test_bench_inst.clk50
+clk50 => clk50_out.DATAIN
 reset => test_bench1:test_bench_inst.reset
-reset => MII_to_RCV:phy_inst.Resetx
-reset => triggerStart.DATAIN
+reset => trigger.DATAIN
+rdv => test_bench1:test_bench_inst.rdv
+input_4bit[0] => test_bench1:test_bench_inst.input_4bit[0]
+input_4bit[1] => test_bench1:test_bench_inst.input_4bit[1]
+input_4bit[2] => test_bench1:test_bench_inst.input_4bit[2]
+input_4bit[3] => test_bench1:test_bench_inst.input_4bit[3]
 port_id[0] => test_bench1:test_bench_inst.port_id[0]
 port_id[1] => test_bench1:test_bench_inst.port_id[1]
+trigger <= reset.DB_MAX_OUTPUT_PORT_TYPE
+clk25_out <= clk25.DB_MAX_OUTPUT_PORT_TYPE
+clk50_out <= clk50.DB_MAX_OUTPUT_PORT_TYPE
 length_buffer_out_11bit[0] <= test_bench1:test_bench_inst.length_buffer_out_11bit[0]
 length_buffer_out_11bit[1] <= test_bench1:test_bench_inst.length_buffer_out_11bit[1]
 length_buffer_out_11bit[2] <= test_bench1:test_bench_inst.length_buffer_out_11bit[2]
@@ -27,6 +35,15 @@ data_buffer_out_8bit[4] <= test_bench1:test_bench_inst.data_buffer_out_8bit[4]
 data_buffer_out_8bit[5] <= test_bench1:test_bench_inst.data_buffer_out_8bit[5]
 data_buffer_out_8bit[6] <= test_bench1:test_bench_inst.data_buffer_out_8bit[6]
 data_buffer_out_8bit[7] <= test_bench1:test_bench_inst.data_buffer_out_8bit[7]
+sequence_count_fwd[0] <= test_bench1:test_bench_inst.test_sequence_counter_fwd[0]
+sequence_count_fwd[1] <= test_bench1:test_bench_inst.test_sequence_counter_fwd[1]
+sequence_count_fwd[2] <= test_bench1:test_bench_inst.test_sequence_counter_fwd[2]
+sequence_count_fwd[3] <= test_bench1:test_bench_inst.test_sequence_counter_fwd[3]
+sequence_count_fwd[4] <= test_bench1:test_bench_inst.test_sequence_counter_fwd[4]
+sequence_count_fwd[5] <= test_bench1:test_bench_inst.test_sequence_counter_fwd[5]
+sequence_count_fwd[6] <= test_bench1:test_bench_inst.test_sequence_counter_fwd[6]
+sequence_count_fwd[7] <= test_bench1:test_bench_inst.test_sequence_counter_fwd[7]
+sequence_count_fwd[8] <= test_bench1:test_bench_inst.test_sequence_counter_fwd[8]
 frame_to_monitoring[0] <= test_bench1:test_bench_inst.frame_to_monitoring[0]
 frame_to_monitoring[1] <= test_bench1:test_bench_inst.frame_to_monitoring[1]
 frame_to_monitoring[2] <= test_bench1:test_bench_inst.frame_to_monitoring[2]
@@ -40,42 +57,9 @@ frame_to_monitoring[9] <= test_bench1:test_bench_inst.frame_to_monitoring[9]
 frame_to_monitoring[10] <= test_bench1:test_bench_inst.frame_to_monitoring[10]
 frame_to_monitoring[11] <= test_bench1:test_bench_inst.frame_to_monitoring[11]
 frame_available_monitoring <= test_bench1:test_bench_inst.frame_available_monitoring
-triggerStart <= reset.DB_MAX_OUTPUT_PORT_TYPE
-triggerEnd <= test_bench1:test_bench_inst.test_data_read_enable
-test_sequence_counter_fwd[0] <= test_bench1:test_bench_inst.test_sequence_counter_fwd[0]
-test_sequence_counter_fwd[1] <= test_bench1:test_bench_inst.test_sequence_counter_fwd[1]
-test_sequence_counter_fwd[2] <= test_bench1:test_bench_inst.test_sequence_counter_fwd[2]
-test_sequence_counter_fwd[3] <= test_bench1:test_bench_inst.test_sequence_counter_fwd[3]
-test_sequence_counter_fwd[4] <= test_bench1:test_bench_inst.test_sequence_counter_fwd[4]
-test_sequence_counter_fwd[5] <= test_bench1:test_bench_inst.test_sequence_counter_fwd[5]
-test_sequence_counter_fwd[6] <= test_bench1:test_bench_inst.test_sequence_counter_fwd[6]
-test_sequence_counter_fwd[7] <= test_bench1:test_bench_inst.test_sequence_counter_fwd[7]
-test_sequence_counter_fwd[8] <= test_bench1:test_bench_inst.test_sequence_counter_fwd[8]
 
 
-|test|shift1_1bit:shift1_1bit_instFlip
-aclr => lpm_shiftreg:lpm_shiftreg_component.aclr
-clock => lpm_shiftreg:lpm_shiftreg_component.clock
-shiftin => lpm_shiftreg:lpm_shiftreg_component.shiftin
-shiftout <= lpm_shiftreg:lpm_shiftreg_component.shiftout
-
-
-|test|shift1_1bit:shift1_1bit_instFlip|lpm_shiftreg:lpm_shiftreg_component
-data[0] => _.IN1
-clock => dffs[0].CLK
-enable => dffs[0].ENA
-shiftin => _.IN1
-load => _.IN0
-load => _.IN0
-aclr => dffs[0].IN0
-aset => ~NO_FANOUT~
-sclr => _.IN0
-sset => _.IN0
-q[0] <= q[0].DB_MAX_OUTPUT_PORT_TYPE
-shiftout <= dffs[0].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|test|test_bench1:test_bench_inst
+|Receive_Port|test_bench1:test_bench_inst
 clk25 => SFD_FSM:sfd_fsm_inst.Clock
 clk25 => CRC_System:crc_system_inst.Clk
 clk25 => Data_Buffer:data_buffer_inst.write_clk
@@ -206,7 +190,7 @@ test_length_buffer_output[11] <= Length_DCFF:length_buffer_inst.q[11]
 test_sequence_invalidBit <= FrameValidFSM:FrameValidFSM_inst.invalidBit
 
 
-|test|test_bench1:test_bench_inst|SFD_FSM:sfd_fsm_inst
+|Receive_Port|test_bench1:test_bench_inst|SFD_FSM:sfd_fsm_inst
 Clock => shift1_4bit:shift4bit_inst.clock
 Clock => y_current~1.DATAIN
 sfd_rdv => Selector1.IN2
@@ -232,7 +216,7 @@ dataOut[3] <= shift1_4bit:shift4bit_inst.q[3]
 crc_rdv <= crc_rdv.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|test|test_bench1:test_bench_inst|SFD_FSM:sfd_fsm_inst|shift1_4bit:shift4bit_inst
+|Receive_Port|test_bench1:test_bench_inst|SFD_FSM:sfd_fsm_inst|shift1_4bit:shift4bit_inst
 clock => lpm_shiftreg:lpm_shiftreg_component.clock
 data[0] => lpm_shiftreg:lpm_shiftreg_component.data[0]
 data[1] => lpm_shiftreg:lpm_shiftreg_component.data[1]
@@ -245,7 +229,7 @@ q[2] <= lpm_shiftreg:lpm_shiftreg_component.q[2]
 q[3] <= lpm_shiftreg:lpm_shiftreg_component.q[3]
 
 
-|test|test_bench1:test_bench_inst|SFD_FSM:sfd_fsm_inst|shift1_4bit:shift4bit_inst|lpm_shiftreg:lpm_shiftreg_component
+|Receive_Port|test_bench1:test_bench_inst|SFD_FSM:sfd_fsm_inst|shift1_4bit:shift4bit_inst|lpm_shiftreg:lpm_shiftreg_component
 data[0] => _.IN1
 data[1] => _.IN1
 data[2] => _.IN1
@@ -278,7 +262,7 @@ q[3] <= dffs[3].DB_MAX_OUTPUT_PORT_TYPE
 shiftout <= shiftout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|test|test_bench1:test_bench_inst|CRC_System:crc_system_inst
+|Receive_Port|test_bench1:test_bench_inst|CRC_System:crc_system_inst
 Clk => CRC_FSM:CRC_FSM_inst.clk
 Clk => crc32x4r:crc32x4r_inst.Clock
 reset => CRC_FSM:CRC_FSM_inst.reset_sig
@@ -292,7 +276,7 @@ CRC_result_valid <= CRC_FSM:CRC_FSM_inst.crv
 CRC_check_result <= CRC_FSM:CRC_FSM_inst.check_result
 
 
-|test|test_bench1:test_bench_inst|CRC_System:crc_system_inst|CRC_FSM:CRC_FSM_inst
+|Receive_Port|test_bench1:test_bench_inst|CRC_System:crc_system_inst|CRC_FSM:CRC_FSM_inst
 clk => shift1_1bit:shift_check_result.clock
 clk => state_reg~1.DATAIN
 reset_sig => shift1_1bit:shift_check_result.aclr
@@ -338,14 +322,14 @@ check_result <= shift1_1bit:shift_check_result.shiftout
 crv <= crv.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|test|test_bench1:test_bench_inst|CRC_System:crc_system_inst|CRC_FSM:CRC_FSM_inst|shift1_1bit:shift_check_result
+|Receive_Port|test_bench1:test_bench_inst|CRC_System:crc_system_inst|CRC_FSM:CRC_FSM_inst|shift1_1bit:shift_check_result
 aclr => lpm_shiftreg:lpm_shiftreg_component.aclr
 clock => lpm_shiftreg:lpm_shiftreg_component.clock
 shiftin => lpm_shiftreg:lpm_shiftreg_component.shiftin
 shiftout <= lpm_shiftreg:lpm_shiftreg_component.shiftout
 
 
-|test|test_bench1:test_bench_inst|CRC_System:crc_system_inst|CRC_FSM:CRC_FSM_inst|shift1_1bit:shift_check_result|lpm_shiftreg:lpm_shiftreg_component
+|Receive_Port|test_bench1:test_bench_inst|CRC_System:crc_system_inst|CRC_FSM:CRC_FSM_inst|shift1_1bit:shift_check_result|lpm_shiftreg:lpm_shiftreg_component
 data[0] => _.IN1
 clock => dffs[0].CLK
 enable => dffs[0].ENA
@@ -360,7 +344,7 @@ q[0] <= q[0].DB_MAX_OUTPUT_PORT_TYPE
 shiftout <= dffs[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|test|test_bench1:test_bench_inst|CRC_System:crc_system_inst|crc32x4r:crc32x4r_inst
+|Receive_Port|test_bench1:test_bench_inst|CRC_System:crc_system_inst|crc32x4r:crc32x4r_inst
 Clock => crcreg32:crcreg32r.clock
 Reset => crcreg32:crcreg32r.aclr
 compute_enable => crcreg_clock_enable.IN0
@@ -404,7 +388,7 @@ CRC_out[30] <= crcreg32:crcreg32r.q[30]
 CRC_out[31] <= crcreg32:crcreg32r.q[31]
 
 
-|test|test_bench1:test_bench_inst|CRC_System:crc_system_inst|crc32x4r:crc32x4r_inst|crcreg32:crcreg32r
+|Receive_Port|test_bench1:test_bench_inst|CRC_System:crc_system_inst|crc32x4r:crc32x4r_inst|crcreg32:crcreg32r
 aclr => lpm_shiftreg:lpm_shiftreg_component.aclr
 clock => lpm_shiftreg:lpm_shiftreg_component.clock
 data[0] => lpm_shiftreg:lpm_shiftreg_component.data[0]
@@ -476,7 +460,7 @@ q[30] <= lpm_shiftreg:lpm_shiftreg_component.q[30]
 q[31] <= lpm_shiftreg:lpm_shiftreg_component.q[31]
 
 
-|test|test_bench1:test_bench_inst|CRC_System:crc_system_inst|crc32x4r:crc32x4r_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component
+|Receive_Port|test_bench1:test_bench_inst|CRC_System:crc_system_inst|crc32x4r:crc32x4r_inst|crcreg32:crcreg32r|lpm_shiftreg:lpm_shiftreg_component
 data[0] => _.IN1
 data[1] => _.IN1
 data[2] => _.IN1
@@ -677,7 +661,7 @@ q[31] <= dffs[31].DB_MAX_OUTPUT_PORT_TYPE
 shiftout <= shiftout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|test|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst
+|Receive_Port|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst
 reset => Data_DCFF:DCFF_inst.aclr
 write_enable => Data_DCFF:DCFF_inst.wrreq
 write_clk => Data_DCFF:DCFF_inst.wrclk
@@ -699,7 +683,7 @@ data_out_8[6] <= Data_DCFF:DCFF_inst.q[6]
 data_out_8[7] <= Data_DCFF:DCFF_inst.q[7]
 
 
-|test|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst
+|Receive_Port|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst
 aclr => dcfifo_mixed_widths:dcfifo_mixed_widths_component.aclr
 data[0] => dcfifo_mixed_widths:dcfifo_mixed_widths_component.data[0]
 data[1] => dcfifo_mixed_widths:dcfifo_mixed_widths_component.data[1]
@@ -721,7 +705,7 @@ rdempty <= dcfifo_mixed_widths:dcfifo_mixed_widths_component.rdempty
 wrfull <= dcfifo_mixed_widths:dcfifo_mixed_widths_component.wrfull
 
 
-|test|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component
+|Receive_Port|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component
 aclr => dcfifo_30i1:auto_generated.aclr
 data[0] => dcfifo_30i1:auto_generated.data[0]
 data[1] => dcfifo_30i1:auto_generated.data[1]
@@ -768,7 +752,7 @@ wrusedw[10] <= <GND>
 wrusedw[11] <= <GND>
 
 
-|test|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated
+|Receive_Port|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated
 aclr => a_graycounter_ggc:wrptr_g1p.aclr
 aclr => altsyncram_qo61:fifo_ram.aclr1
 aclr => delayed_wrptr_g[11].IN0
@@ -842,7 +826,7 @@ wrfull <= int_wrfull.DB_MAX_OUTPUT_PORT_TYPE
 wrreq => valid_wrreq.IN0
 
 
-|test|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|a_graycounter_q96:rdptr_g1p
+|Receive_Port|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|a_graycounter_q96:rdptr_g1p
 aclr => counter7a[11].IN0
 aclr => counter7a[10].IN0
 aclr => counter7a[9].IN0
@@ -900,7 +884,7 @@ q[10] <= counter7a[10].DB_MAX_OUTPUT_PORT_TYPE
 q[11] <= counter7a[11].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|test|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|a_graycounter_ggc:wrptr_g1p
+|Receive_Port|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|a_graycounter_ggc:wrptr_g1p
 aclr => counter10a[11].IN0
 aclr => counter10a[10].IN0
 aclr => counter10a[9].IN0
@@ -958,7 +942,7 @@ q[10] <= counter10a[10].DB_MAX_OUTPUT_PORT_TYPE
 q[11] <= counter10a[11].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|test|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|altsyncram_qo61:fifo_ram
+|Receive_Port|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|altsyncram_qo61:fifo_ram
 aclr1 => altsyncram_6ve1:altsyncram11.aclr1
 address_a[0] => altsyncram_6ve1:altsyncram11.address_b[0]
 address_a[1] => altsyncram_6ve1:altsyncram11.address_b[1]
@@ -1003,7 +987,7 @@ wren_a => altsyncram_6ve1:altsyncram11.clocken1
 wren_a => altsyncram_6ve1:altsyncram11.wren_b
 
 
-|test|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|altsyncram_qo61:fifo_ram|altsyncram_6ve1:altsyncram11
+|Receive_Port|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|altsyncram_qo61:fifo_ram|altsyncram_6ve1:altsyncram11
 aclr1 => ram_block12a0.CLR1
 aclr1 => ram_block12a1.CLR1
 aclr1 => ram_block12a2.CLR1
@@ -1154,14 +1138,14 @@ wren_b => ram_block12a2.PORTBRE
 wren_b => ram_block12a3.PORTBRE
 
 
-|test|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|dffpipe_ngh:rdaclr
+|Receive_Port|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|dffpipe_ngh:rdaclr
 clock => dffe13a[0].CLK
 clrn => dffe13a[0].ACLR
 d[0] => dffe13a[0].IN0
 q[0] <= dffe13a[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|test|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|alt_synch_pipe_tdb:rs_dgwp
+|Receive_Port|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|alt_synch_pipe_tdb:rs_dgwp
 clock => dffpipe_re9:dffpipe14.clock
 clrn => dffpipe_re9:dffpipe14.clrn
 d[0] => dffpipe_re9:dffpipe14.d[0]
@@ -1190,7 +1174,7 @@ q[10] <= dffpipe_re9:dffpipe14.q[10]
 q[11] <= dffpipe_re9:dffpipe14.q[11]
 
 
-|test|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|alt_synch_pipe_tdb:rs_dgwp|dffpipe_re9:dffpipe14
+|Receive_Port|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|alt_synch_pipe_tdb:rs_dgwp|dffpipe_re9:dffpipe14
 clock => dffe15a[11].CLK
 clock => dffe15a[10].CLK
 clock => dffe15a[9].CLK
@@ -1265,7 +1249,7 @@ q[10] <= dffe16a[10].DB_MAX_OUTPUT_PORT_TYPE
 q[11] <= dffe16a[11].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|test|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|alt_synch_pipe_1e8:ws_dgrp
+|Receive_Port|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|alt_synch_pipe_1e8:ws_dgrp
 clock => dffpipe_se9:dffpipe17.clock
 clrn => dffpipe_se9:dffpipe17.clrn
 d[0] => dffpipe_se9:dffpipe17.d[0]
@@ -1294,7 +1278,7 @@ q[10] <= dffpipe_se9:dffpipe17.q[10]
 q[11] <= dffpipe_se9:dffpipe17.q[11]
 
 
-|test|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|alt_synch_pipe_1e8:ws_dgrp|dffpipe_se9:dffpipe17
+|Receive_Port|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|alt_synch_pipe_1e8:ws_dgrp|dffpipe_se9:dffpipe17
 clock => dffe18a[11].CLK
 clock => dffe18a[10].CLK
 clock => dffe18a[9].CLK
@@ -1369,7 +1353,7 @@ q[10] <= dffe19a[10].DB_MAX_OUTPUT_PORT_TYPE
 q[11] <= dffe19a[11].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|test|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|cmpr_736:rdempty_eq_comp
+|Receive_Port|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|cmpr_736:rdempty_eq_comp
 aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
 dataa[0] => data_wire[2].IN0
 dataa[1] => data_wire[2].IN0
@@ -1397,7 +1381,7 @@ datab[10] => data_wire[7].IN1
 datab[11] => data_wire[7].IN1
 
 
-|test|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|cmpr_736:wrfull_eq_comp
+|Receive_Port|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|cmpr_736:wrfull_eq_comp
 aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
 dataa[0] => data_wire[2].IN0
 dataa[1] => data_wire[2].IN0
@@ -1425,7 +1409,7 @@ datab[10] => data_wire[7].IN1
 datab[11] => data_wire[7].IN1
 
 
-|test|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|cntr_jvd:cntr_b
+|Receive_Port|test_bench1:test_bench_inst|Data_Buffer:data_buffer_inst|Data_DCFF:DCFF_inst|dcfifo_mixed_widths:dcfifo_mixed_widths_component|dcfifo_30i1:auto_generated|cntr_jvd:cntr_b
 aset => counter_reg_bit20a[0].ACLR
 clock => counter_reg_bit20a[0].CLK
 cnt_en => _.IN0
@@ -1433,14 +1417,14 @@ cout <= cout_actual.DB_MAX_OUTPUT_PORT_TYPE
 q[0] <= safe_q[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|test|test_bench1:test_bench_inst|shift1_1bit:shift1_1bit_instCRC_RDV
+|Receive_Port|test_bench1:test_bench_inst|shift1_1bit:shift1_1bit_instCRC_RDV
 aclr => lpm_shiftreg:lpm_shiftreg_component.aclr
 clock => lpm_shiftreg:lpm_shiftreg_component.clock
 shiftin => lpm_shiftreg:lpm_shiftreg_component.shiftin
 shiftout <= lpm_shiftreg:lpm_shiftreg_component.shiftout
 
 
-|test|test_bench1:test_bench_inst|shift1_1bit:shift1_1bit_instCRC_RDV|lpm_shiftreg:lpm_shiftreg_component
+|Receive_Port|test_bench1:test_bench_inst|shift1_1bit:shift1_1bit_instCRC_RDV|lpm_shiftreg:lpm_shiftreg_component
 data[0] => _.IN1
 clock => dffs[0].CLK
 enable => dffs[0].ENA
@@ -1455,7 +1439,7 @@ q[0] <= q[0].DB_MAX_OUTPUT_PORT_TYPE
 shiftout <= dffs[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|test|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst
+|Receive_Port|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst
 aclr => dcfifo:dcfifo_component.aclr
 data[0] => dcfifo:dcfifo_component.data[0]
 data[1] => dcfifo:dcfifo_component.data[1]
@@ -1507,7 +1491,7 @@ rdempty <= dcfifo:dcfifo_component.rdempty
 wrfull <= dcfifo:dcfifo_component.wrfull
 
 
-|test|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component
+|Receive_Port|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component
 data[0] => dcfifo_lsh1:auto_generated.data[0]
 data[1] => dcfifo_lsh1:auto_generated.data[1]
 data[2] => dcfifo_lsh1:auto_generated.data[2]
@@ -1571,7 +1555,7 @@ wrusedw[3] <= <GND>
 wrusedw[4] <= <GND>
 
 
-|test|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_lsh1:auto_generated
+|Receive_Port|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_lsh1:auto_generated
 aclr => a_graycounter_4fc:wrptr_g1p.aclr
 aclr => a_graycounter_3fc:wrptr_gp.aclr
 aclr => altsyncram_ro61:fifo_ram.aclr1
@@ -1649,7 +1633,7 @@ wrfull <= int_wrfull.DB_MAX_OUTPUT_PORT_TYPE
 wrreq => valid_wrreq.IN0
 
 
-|test|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_lsh1:auto_generated|a_graycounter_d86:rdptr_g1p
+|Receive_Port|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_lsh1:auto_generated|a_graycounter_d86:rdptr_g1p
 aclr => counter7a[5].IN0
 aclr => counter7a[4].IN0
 aclr => counter7a[3].IN0
@@ -1686,7 +1670,7 @@ q[4] <= counter7a[4].DB_MAX_OUTPUT_PORT_TYPE
 q[5] <= counter7a[5].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|test|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_lsh1:auto_generated|a_graycounter_4fc:wrptr_g1p
+|Receive_Port|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_lsh1:auto_generated|a_graycounter_4fc:wrptr_g1p
 aclr => counter8a1.IN0
 aclr => counter8a0.IN0
 aclr => parity9.IN0
@@ -1719,7 +1703,7 @@ q[4] <= counter8a4.DB_MAX_OUTPUT_PORT_TYPE
 q[5] <= counter8a5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|test|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_lsh1:auto_generated|a_graycounter_3fc:wrptr_gp
+|Receive_Port|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_lsh1:auto_generated|a_graycounter_3fc:wrptr_gp
 aclr => counter13a[5].IN0
 aclr => counter13a[4].IN0
 aclr => counter13a[3].IN0
@@ -1756,7 +1740,7 @@ q[4] <= counter13a[4].DB_MAX_OUTPUT_PORT_TYPE
 q[5] <= counter13a[5].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|test|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_lsh1:auto_generated|altsyncram_ro61:fifo_ram
+|Receive_Port|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_lsh1:auto_generated|altsyncram_ro61:fifo_ram
 aclr1 => ram_block5a0.CLR1
 aclr1 => ram_block5a1.CLR1
 aclr1 => ram_block5a2.CLR1
@@ -2158,14 +2142,14 @@ wren_a => ram_block5a20.PORTAWE
 wren_a => ram_block5a20.ENA0
 
 
-|test|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_lsh1:auto_generated|dffpipe_ngh:rdaclr
+|Receive_Port|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_lsh1:auto_generated|dffpipe_ngh:rdaclr
 clock => dffe13a[0].CLK
 clrn => dffe13a[0].ACLR
 d[0] => dffe13a[0].IN0
 q[0] <= dffe13a[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|test|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_lsh1:auto_generated|alt_synch_pipe_hcb:rs_dgwp
+|Receive_Port|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_lsh1:auto_generated|alt_synch_pipe_hcb:rs_dgwp
 clock => dffpipe_gd9:dffpipe6.clock
 clrn => dffpipe_gd9:dffpipe6.clrn
 d[0] => dffpipe_gd9:dffpipe6.d[0]
@@ -2182,7 +2166,7 @@ q[4] <= dffpipe_gd9:dffpipe6.q[4]
 q[5] <= dffpipe_gd9:dffpipe6.q[5]
 
 
-|test|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_lsh1:auto_generated|alt_synch_pipe_hcb:rs_dgwp|dffpipe_gd9:dffpipe6
+|Receive_Port|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_lsh1:auto_generated|alt_synch_pipe_hcb:rs_dgwp|dffpipe_gd9:dffpipe6
 clock => dffe7a[5].CLK
 clock => dffe7a[4].CLK
 clock => dffe7a[3].CLK
@@ -2221,7 +2205,7 @@ q[4] <= dffe8a[4].DB_MAX_OUTPUT_PORT_TYPE
 q[5] <= dffe8a[5].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|test|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_lsh1:auto_generated|alt_synch_pipe_lc8:ws_dgrp
+|Receive_Port|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_lsh1:auto_generated|alt_synch_pipe_lc8:ws_dgrp
 clock => dffpipe_hd9:dffpipe9.clock
 clrn => dffpipe_hd9:dffpipe9.clrn
 d[0] => dffpipe_hd9:dffpipe9.d[0]
@@ -2238,7 +2222,7 @@ q[4] <= dffpipe_hd9:dffpipe9.q[4]
 q[5] <= dffpipe_hd9:dffpipe9.q[5]
 
 
-|test|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_lsh1:auto_generated|alt_synch_pipe_lc8:ws_dgrp|dffpipe_hd9:dffpipe9
+|Receive_Port|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_lsh1:auto_generated|alt_synch_pipe_lc8:ws_dgrp|dffpipe_hd9:dffpipe9
 clock => dffe10a[5].CLK
 clock => dffe10a[4].CLK
 clock => dffe10a[3].CLK
@@ -2277,7 +2261,7 @@ q[4] <= dffe11a[4].DB_MAX_OUTPUT_PORT_TYPE
 q[5] <= dffe11a[5].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|test|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_lsh1:auto_generated|cmpr_q16:rdempty_eq_comp
+|Receive_Port|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_lsh1:auto_generated|cmpr_q16:rdempty_eq_comp
 aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
 dataa[0] => data_wire[0].IN0
 dataa[1] => data_wire[0].IN0
@@ -2293,7 +2277,7 @@ datab[4] => data_wire[2].IN1
 datab[5] => data_wire[2].IN1
 
 
-|test|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_lsh1:auto_generated|cmpr_q16:wrfull_eq_comp
+|Receive_Port|test_bench1:test_bench_inst|Length_DCFF:length_buffer_inst|dcfifo:dcfifo_component|dcfifo_lsh1:auto_generated|cmpr_q16:wrfull_eq_comp
 aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
 dataa[0] => data_wire[0].IN0
 dataa[1] => data_wire[0].IN0
@@ -2309,7 +2293,7 @@ datab[4] => data_wire[2].IN1
 datab[5] => data_wire[2].IN1
 
 
-|test|test_bench1:test_bench_inst|LengthCounterSystem:length_counter_sys_inst
+|Receive_Port|test_bench1:test_bench_inst|LengthCounterSystem:length_counter_sys_inst
 clock => LengthCounterFSM:LengthCounterFSM_int.clk
 clock => LengthCounter:LengthCounter_inst.clock
 CRC_rdv => LengthCounterFSM:LengthCounterFSM_int.CRC_rdv
@@ -2330,7 +2314,7 @@ lengthValue[9] <= LengthCounter:LengthCounter_inst.q[10]
 lengthValue[10] <= LengthCounter:LengthCounter_inst.q[11]
 
 
-|test|test_bench1:test_bench_inst|LengthCounterSystem:length_counter_sys_inst|LengthCounterFSM:LengthCounterFSM_int
+|Receive_Port|test_bench1:test_bench_inst|LengthCounterSystem:length_counter_sys_inst|LengthCounterFSM:LengthCounterFSM_int
 clk => state_reg~1.DATAIN
 reset_sig => state_reg~3.DATAIN
 crc_RDV => state_next.COUNT.DATAA
@@ -2341,7 +2325,7 @@ CntEnable <= CntEnable.DB_MAX_OUTPUT_PORT_TYPE
 reset_counter <= reset_counter.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|test|test_bench1:test_bench_inst|LengthCounterSystem:length_counter_sys_inst|LengthCounter:LengthCounter_inst
+|Receive_Port|test_bench1:test_bench_inst|LengthCounterSystem:length_counter_sys_inst|LengthCounter:LengthCounter_inst
 aclr => lpm_counter:lpm_counter_component.aclr
 clock => lpm_counter:lpm_counter_component.clock
 cnt_en => lpm_counter:lpm_counter_component.cnt_en
@@ -2360,7 +2344,7 @@ q[10] <= lpm_counter:lpm_counter_component.q[10]
 q[11] <= lpm_counter:lpm_counter_component.q[11]
 
 
-|test|test_bench1:test_bench_inst|LengthCounterSystem:length_counter_sys_inst|LengthCounter:LengthCounter_inst|lpm_counter:lpm_counter_component
+|Receive_Port|test_bench1:test_bench_inst|LengthCounterSystem:length_counter_sys_inst|LengthCounter:LengthCounter_inst|lpm_counter:lpm_counter_component
 clock => cntr_k7j:auto_generated.clock
 clk_en => ~NO_FANOUT~
 cnt_en => cntr_k7j:auto_generated.cnt_en
@@ -2417,7 +2401,7 @@ eq[14] <= <GND>
 eq[15] <= <GND>
 
 
-|test|test_bench1:test_bench_inst|LengthCounterSystem:length_counter_sys_inst|LengthCounter:LengthCounter_inst|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated
+|Receive_Port|test_bench1:test_bench_inst|LengthCounterSystem:length_counter_sys_inst|LengthCounter:LengthCounter_inst|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated
 aclr => counter_reg_bit1a[11].ACLR
 aclr => counter_reg_bit1a[10].ACLR
 aclr => counter_reg_bit1a[9].ACLR
@@ -2460,14 +2444,14 @@ sclr => _.IN0
 sclr => _.IN0
 
 
-|test|test_bench1:test_bench_inst|shift1_1bit:shift1_1bit_instLengthWE
+|Receive_Port|test_bench1:test_bench_inst|shift1_1bit:shift1_1bit_instLengthWE
 aclr => lpm_shiftreg:lpm_shiftreg_component.aclr
 clock => lpm_shiftreg:lpm_shiftreg_component.clock
 shiftin => lpm_shiftreg:lpm_shiftreg_component.shiftin
 shiftout <= lpm_shiftreg:lpm_shiftreg_component.shiftout
 
 
-|test|test_bench1:test_bench_inst|shift1_1bit:shift1_1bit_instLengthWE|lpm_shiftreg:lpm_shiftreg_component
+|Receive_Port|test_bench1:test_bench_inst|shift1_1bit:shift1_1bit_instLengthWE|lpm_shiftreg:lpm_shiftreg_component
 data[0] => _.IN1
 clock => dffs[0].CLK
 enable => dffs[0].ENA
@@ -2482,14 +2466,14 @@ q[0] <= q[0].DB_MAX_OUTPUT_PORT_TYPE
 shiftout <= dffs[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|test|test_bench1:test_bench_inst|shift1_1bit:shift1_1bit_instLengthVal
+|Receive_Port|test_bench1:test_bench_inst|shift1_1bit:shift1_1bit_instLengthVal
 aclr => lpm_shiftreg:lpm_shiftreg_component.aclr
 clock => lpm_shiftreg:lpm_shiftreg_component.clock
 shiftin => lpm_shiftreg:lpm_shiftreg_component.shiftin
 shiftout <= lpm_shiftreg:lpm_shiftreg_component.shiftout
 
 
-|test|test_bench1:test_bench_inst|shift1_1bit:shift1_1bit_instLengthVal|lpm_shiftreg:lpm_shiftreg_component
+|Receive_Port|test_bench1:test_bench_inst|shift1_1bit:shift1_1bit_instLengthVal|lpm_shiftreg:lpm_shiftreg_component
 data[0] => _.IN1
 clock => dffs[0].CLK
 enable => dffs[0].ENA
@@ -2504,7 +2488,7 @@ q[0] <= q[0].DB_MAX_OUTPUT_PORT_TYPE
 shiftout <= dffs[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|test|test_bench1:test_bench_inst|FwdOutputCntrlr:FwdOutputCntrlr_inst
+|Receive_Port|test_bench1:test_bench_inst|FwdOutputCntrlr:FwdOutputCntrlr_inst
 clock => lengthValidReg:lengthValidReg_inst.clock
 clock => outFrameLengthCounter:outFrameLengthCounter_inst.clock
 clock => y_current~1.DATAIN
@@ -2558,7 +2542,7 @@ fwdSequenceNumbr[7] <= lengthValidReg:lengthValidReg_inst.q[19]
 fwdSequenceNumbr[8] <= lengthValidReg:lengthValidReg_inst.q[20]
 
 
-|test|test_bench1:test_bench_inst|FwdOutputCntrlr:FwdOutputCntrlr_inst|lengthValidReg:lengthValidReg_inst
+|Receive_Port|test_bench1:test_bench_inst|FwdOutputCntrlr:FwdOutputCntrlr_inst|lengthValidReg:lengthValidReg_inst
 aclr => lpm_ff:lpm_ff_component.aclr
 clock => lpm_ff:lpm_ff_component.clock
 data[0] => lpm_ff:lpm_ff_component.data[0]
@@ -2606,7 +2590,7 @@ q[19] <= lpm_ff:lpm_ff_component.q[19]
 q[20] <= lpm_ff:lpm_ff_component.q[20]
 
 
-|test|test_bench1:test_bench_inst|FwdOutputCntrlr:FwdOutputCntrlr_inst|lengthValidReg:lengthValidReg_inst|lpm_ff:lpm_ff_component
+|Receive_Port|test_bench1:test_bench_inst|FwdOutputCntrlr:FwdOutputCntrlr_inst|lengthValidReg:lengthValidReg_inst|lpm_ff:lpm_ff_component
 data[0] => dffs[0].DATAIN
 data[1] => dffs[1].DATAIN
 data[2] => dffs[2].DATAIN
@@ -2699,7 +2683,7 @@ q[19] <= dffs[19].DB_MAX_OUTPUT_PORT_TYPE
 q[20] <= dffs[20].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|test|test_bench1:test_bench_inst|FwdOutputCntrlr:FwdOutputCntrlr_inst|outFrameLengthCounter:outFrameLengthCounter_inst
+|Receive_Port|test_bench1:test_bench_inst|FwdOutputCntrlr:FwdOutputCntrlr_inst|outFrameLengthCounter:outFrameLengthCounter_inst
 clock => lpm_counter:lpm_counter_component.clock
 sclr => lpm_counter:lpm_counter_component.sclr
 q[0] <= lpm_counter:lpm_counter_component.q[0]
@@ -2715,7 +2699,7 @@ q[9] <= lpm_counter:lpm_counter_component.q[9]
 q[10] <= lpm_counter:lpm_counter_component.q[10]
 
 
-|test|test_bench1:test_bench_inst|FwdOutputCntrlr:FwdOutputCntrlr_inst|outFrameLengthCounter:outFrameLengthCounter_inst|lpm_counter:lpm_counter_component
+|Receive_Port|test_bench1:test_bench_inst|FwdOutputCntrlr:FwdOutputCntrlr_inst|outFrameLengthCounter:outFrameLengthCounter_inst|lpm_counter:lpm_counter_component
 clock => cntr_q4i:auto_generated.clock
 clk_en => ~NO_FANOUT~
 cnt_en => ~NO_FANOUT~
@@ -2770,7 +2754,7 @@ eq[14] <= <GND>
 eq[15] <= <GND>
 
 
-|test|test_bench1:test_bench_inst|FwdOutputCntrlr:FwdOutputCntrlr_inst|outFrameLengthCounter:outFrameLengthCounter_inst|lpm_counter:lpm_counter_component|cntr_q4i:auto_generated
+|Receive_Port|test_bench1:test_bench_inst|FwdOutputCntrlr:FwdOutputCntrlr_inst|outFrameLengthCounter:outFrameLengthCounter_inst|lpm_counter:lpm_counter_component|cntr_q4i:auto_generated
 clock => counter_reg_bit1a[10].CLK
 clock => counter_reg_bit1a[9].CLK
 clock => counter_reg_bit1a[8].CLK
@@ -2798,7 +2782,7 @@ sclr => _.IN0
 sclr => _.IN0
 
 
-|test|test_bench1:test_bench_inst|FwdOutputCntrlr:FwdOutputCntrlr_inst|frameLengthValueComp:frameLengthValueComp_inst
+|Receive_Port|test_bench1:test_bench_inst|FwdOutputCntrlr:FwdOutputCntrlr_inst|frameLengthValueComp:frameLengthValueComp_inst
 dataa[0] => lpm_compare:lpm_compare_component.dataa[0]
 dataa[1] => lpm_compare:lpm_compare_component.dataa[1]
 dataa[2] => lpm_compare:lpm_compare_component.dataa[2]
@@ -2824,7 +2808,7 @@ datab[10] => lpm_compare:lpm_compare_component.datab[10]
 AeB <= lpm_compare:lpm_compare_component.AeB
 
 
-|test|test_bench1:test_bench_inst|FwdOutputCntrlr:FwdOutputCntrlr_inst|frameLengthValueComp:frameLengthValueComp_inst|lpm_compare:lpm_compare_component
+|Receive_Port|test_bench1:test_bench_inst|FwdOutputCntrlr:FwdOutputCntrlr_inst|frameLengthValueComp:frameLengthValueComp_inst|lpm_compare:lpm_compare_component
 dataa[0] => cmpr_nig:auto_generated.dataa[0]
 dataa[1] => cmpr_nig:auto_generated.dataa[1]
 dataa[2] => cmpr_nig:auto_generated.dataa[2]
@@ -2858,7 +2842,7 @@ aneb <= <GND>
 ageb <= <GND>
 
 
-|test|test_bench1:test_bench_inst|FwdOutputCntrlr:FwdOutputCntrlr_inst|frameLengthValueComp:frameLengthValueComp_inst|lpm_compare:lpm_compare_component|cmpr_nig:auto_generated
+|Receive_Port|test_bench1:test_bench_inst|FwdOutputCntrlr:FwdOutputCntrlr_inst|frameLengthValueComp:frameLengthValueComp_inst|lpm_compare:lpm_compare_component|cmpr_nig:auto_generated
 aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
 dataa[0] => data_wire[2].IN0
 dataa[1] => data_wire[2].IN0
@@ -2884,7 +2868,7 @@ datab[9] => data_wire[6].IN1
 datab[10] => data_wire[7].IN1
 
 
-|test|test_bench1:test_bench_inst|SequenceNumberCounter:seq_counter_inst
+|Receive_Port|test_bench1:test_bench_inst|SequenceNumberCounter:seq_counter_inst
 Clk25Mhz => SequenceNumberCounter9BitVHD:SequenceNumberCounterNineBit_inst.clock
 Clk25Mhz => FrameAvailable~reg0.CLK
 FrameValid => ~NO_FANOUT~
@@ -2903,7 +2887,7 @@ SequenceCount[7] <= SequenceNumberCounter9BitVHD:SequenceNumberCounterNineBit_in
 SequenceCount[8] <= SequenceNumberCounter9BitVHD:SequenceNumberCounterNineBit_inst.q[8]
 
 
-|test|test_bench1:test_bench_inst|SequenceNumberCounter:seq_counter_inst|SequenceNumberCounter9BitVHD:SequenceNumberCounterNineBit_inst
+|Receive_Port|test_bench1:test_bench_inst|SequenceNumberCounter:seq_counter_inst|SequenceNumberCounter9BitVHD:SequenceNumberCounterNineBit_inst
 aclr => lpm_counter:lpm_counter_component.aclr
 clock => lpm_counter:lpm_counter_component.clock
 cnt_en => lpm_counter:lpm_counter_component.cnt_en
@@ -2918,7 +2902,7 @@ q[7] <= lpm_counter:lpm_counter_component.q[7]
 q[8] <= lpm_counter:lpm_counter_component.q[8]
 
 
-|test|test_bench1:test_bench_inst|SequenceNumberCounter:seq_counter_inst|SequenceNumberCounter9BitVHD:SequenceNumberCounterNineBit_inst|lpm_counter:lpm_counter_component
+|Receive_Port|test_bench1:test_bench_inst|SequenceNumberCounter:seq_counter_inst|SequenceNumberCounter9BitVHD:SequenceNumberCounterNineBit_inst|lpm_counter:lpm_counter_component
 clock => cntr_mni:auto_generated.clock
 clk_en => ~NO_FANOUT~
 cnt_en => cntr_mni:auto_generated.cnt_en
@@ -2969,7 +2953,7 @@ eq[14] <= <GND>
 eq[15] <= <GND>
 
 
-|test|test_bench1:test_bench_inst|SequenceNumberCounter:seq_counter_inst|SequenceNumberCounter9BitVHD:SequenceNumberCounterNineBit_inst|lpm_counter:lpm_counter_component|cntr_mni:auto_generated
+|Receive_Port|test_bench1:test_bench_inst|SequenceNumberCounter:seq_counter_inst|SequenceNumberCounter9BitVHD:SequenceNumberCounterNineBit_inst|lpm_counter:lpm_counter_component|cntr_mni:auto_generated
 aclr => counter_reg_bit1a[8].ACLR
 aclr => counter_reg_bit1a[7].ACLR
 aclr => counter_reg_bit1a[6].ACLR
@@ -3000,7 +2984,7 @@ q[7] <= counter_reg_bit1a[7].REGOUT
 q[8] <= counter_reg_bit1a[8].REGOUT
 
 
-|test|test_bench1:test_bench_inst|FrameValidFSM:FrameValidFSM_inst
+|Receive_Port|test_bench1:test_bench_inst|FrameValidFSM:FrameValidFSM_inst
 clk => state_reg.CLK
 Check_Result => process_2.IN0
 CRV => process_2.IN1
@@ -3010,14 +2994,14 @@ FrameValid <= FrameValid.DB_MAX_OUTPUT_PORT_TYPE
 invalidBit <= invalidBit.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|test|test_bench1:test_bench_inst|shift1_1bit:shift1_1bit_instCR
+|Receive_Port|test_bench1:test_bench_inst|shift1_1bit:shift1_1bit_instCR
 aclr => lpm_shiftreg:lpm_shiftreg_component.aclr
 clock => lpm_shiftreg:lpm_shiftreg_component.clock
 shiftin => lpm_shiftreg:lpm_shiftreg_component.shiftin
 shiftout <= lpm_shiftreg:lpm_shiftreg_component.shiftout
 
 
-|test|test_bench1:test_bench_inst|shift1_1bit:shift1_1bit_instCR|lpm_shiftreg:lpm_shiftreg_component
+|Receive_Port|test_bench1:test_bench_inst|shift1_1bit:shift1_1bit_instCR|lpm_shiftreg:lpm_shiftreg_component
 data[0] => _.IN1
 clock => dffs[0].CLK
 enable => dffs[0].ENA
@@ -3032,14 +3016,14 @@ q[0] <= q[0].DB_MAX_OUTPUT_PORT_TYPE
 shiftout <= dffs[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|test|test_bench1:test_bench_inst|shift1_1bit:shift1_1bit_instLengthCRV
+|Receive_Port|test_bench1:test_bench_inst|shift1_1bit:shift1_1bit_instLengthCRV
 aclr => lpm_shiftreg:lpm_shiftreg_component.aclr
 clock => lpm_shiftreg:lpm_shiftreg_component.clock
 shiftin => lpm_shiftreg:lpm_shiftreg_component.shiftin
 shiftout <= lpm_shiftreg:lpm_shiftreg_component.shiftout
 
 
-|test|test_bench1:test_bench_inst|shift1_1bit:shift1_1bit_instLengthCRV|lpm_shiftreg:lpm_shiftreg_component
+|Receive_Port|test_bench1:test_bench_inst|shift1_1bit:shift1_1bit_instLengthCRV|lpm_shiftreg:lpm_shiftreg_component
 data[0] => _.IN1
 clock => dffs[0].CLK
 enable => dffs[0].ENA
@@ -3052,275 +3036,5 @@ sclr => _.IN0
 sset => _.IN0
 q[0] <= q[0].DB_MAX_OUTPUT_PORT_TYPE
 shiftout <= dffs[0].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|test|MII_to_RCV:phy_inst
-Clock25 => framemem:frame_test_mem.clock
-Clock25 => addr_curr[0].CLK
-Clock25 => addr_curr[1].CLK
-Clock25 => addr_curr[2].CLK
-Clock25 => addr_curr[3].CLK
-Clock25 => addr_curr[4].CLK
-Clock25 => addr_curr[5].CLK
-Clock25 => addr_curr[6].CLK
-Clock25 => addr_curr[7].CLK
-Clock25 => addr_curr[8].CLK
-Clock25 => addr_curr[9].CLK
-Clock25 => cntr12bit:cntrx.clock
-Clock25 => y_current~1.DATAIN
-Resetx => framemem:frame_test_mem.aclr
-Resetx => addr_curr[0].ACLR
-Resetx => addr_curr[1].ACLR
-Resetx => addr_curr[2].ACLR
-Resetx => addr_curr[3].ACLR
-Resetx => addr_curr[4].ACLR
-Resetx => addr_curr[5].ACLR
-Resetx => addr_curr[6].ACLR
-Resetx => addr_curr[7].ACLR
-Resetx => addr_curr[8].ACLR
-Resetx => addr_curr[9].ACLR
-Resetx => cntr12bit:cntrx.aclr
-Resetx => y_current~3.DATAIN
-rcv_data_valid <= rcv_data_valid.DB_MAX_OUTPUT_PORT_TYPE
-rcv_data[0] <= framemem:frame_test_mem.q[0]
-rcv_data[1] <= framemem:frame_test_mem.q[1]
-rcv_data[2] <= framemem:frame_test_mem.q[2]
-rcv_data[3] <= framemem:frame_test_mem.q[3]
-
-
-|test|MII_to_RCV:phy_inst|framemem:frame_test_mem
-aclr => altsyncram:altsyncram_component.aclr0
-address[0] => altsyncram:altsyncram_component.address_a[0]
-address[1] => altsyncram:altsyncram_component.address_a[1]
-address[2] => altsyncram:altsyncram_component.address_a[2]
-address[3] => altsyncram:altsyncram_component.address_a[3]
-address[4] => altsyncram:altsyncram_component.address_a[4]
-address[5] => altsyncram:altsyncram_component.address_a[5]
-address[6] => altsyncram:altsyncram_component.address_a[6]
-address[7] => altsyncram:altsyncram_component.address_a[7]
-address[8] => altsyncram:altsyncram_component.address_a[8]
-address[9] => altsyncram:altsyncram_component.address_a[9]
-clock => altsyncram:altsyncram_component.clock0
-q[0] <= altsyncram:altsyncram_component.q_a[0]
-q[1] <= altsyncram:altsyncram_component.q_a[1]
-q[2] <= altsyncram:altsyncram_component.q_a[2]
-q[3] <= altsyncram:altsyncram_component.q_a[3]
-
-
-|test|MII_to_RCV:phy_inst|framemem:frame_test_mem|altsyncram:altsyncram_component
-wren_a => ~NO_FANOUT~
-rden_a => ~NO_FANOUT~
-wren_b => ~NO_FANOUT~
-rden_b => ~NO_FANOUT~
-data_a[0] => ~NO_FANOUT~
-data_a[1] => ~NO_FANOUT~
-data_a[2] => ~NO_FANOUT~
-data_a[3] => ~NO_FANOUT~
-data_b[0] => ~NO_FANOUT~
-address_a[0] => altsyncram_e781:auto_generated.address_a[0]
-address_a[1] => altsyncram_e781:auto_generated.address_a[1]
-address_a[2] => altsyncram_e781:auto_generated.address_a[2]
-address_a[3] => altsyncram_e781:auto_generated.address_a[3]
-address_a[4] => altsyncram_e781:auto_generated.address_a[4]
-address_a[5] => altsyncram_e781:auto_generated.address_a[5]
-address_a[6] => altsyncram_e781:auto_generated.address_a[6]
-address_a[7] => altsyncram_e781:auto_generated.address_a[7]
-address_a[8] => altsyncram_e781:auto_generated.address_a[8]
-address_a[9] => altsyncram_e781:auto_generated.address_a[9]
-address_b[0] => ~NO_FANOUT~
-addressstall_a => ~NO_FANOUT~
-addressstall_b => ~NO_FANOUT~
-clock0 => altsyncram_e781:auto_generated.clock0
-clock1 => ~NO_FANOUT~
-clocken0 => ~NO_FANOUT~
-clocken1 => ~NO_FANOUT~
-clocken2 => ~NO_FANOUT~
-clocken3 => ~NO_FANOUT~
-aclr0 => altsyncram_e781:auto_generated.aclr0
-aclr1 => ~NO_FANOUT~
-byteena_a[0] => ~NO_FANOUT~
-byteena_b[0] => ~NO_FANOUT~
-q_a[0] <= altsyncram_e781:auto_generated.q_a[0]
-q_a[1] <= altsyncram_e781:auto_generated.q_a[1]
-q_a[2] <= altsyncram_e781:auto_generated.q_a[2]
-q_a[3] <= altsyncram_e781:auto_generated.q_a[3]
-q_b[0] <= <GND>
-eccstatus[0] <= <GND>
-eccstatus[1] <= <GND>
-eccstatus[2] <= <GND>
-
-
-|test|MII_to_RCV:phy_inst|framemem:frame_test_mem|altsyncram:altsyncram_component|altsyncram_e781:auto_generated
-aclr0 => ram_block1a0.CLR0
-aclr0 => ram_block1a1.CLR0
-aclr0 => ram_block1a2.CLR0
-aclr0 => ram_block1a3.CLR0
-address_a[0] => ram_block1a0.PORTAADDR
-address_a[0] => ram_block1a1.PORTAADDR
-address_a[0] => ram_block1a2.PORTAADDR
-address_a[0] => ram_block1a3.PORTAADDR
-address_a[1] => ram_block1a0.PORTAADDR1
-address_a[1] => ram_block1a1.PORTAADDR1
-address_a[1] => ram_block1a2.PORTAADDR1
-address_a[1] => ram_block1a3.PORTAADDR1
-address_a[2] => ram_block1a0.PORTAADDR2
-address_a[2] => ram_block1a1.PORTAADDR2
-address_a[2] => ram_block1a2.PORTAADDR2
-address_a[2] => ram_block1a3.PORTAADDR2
-address_a[3] => ram_block1a0.PORTAADDR3
-address_a[3] => ram_block1a1.PORTAADDR3
-address_a[3] => ram_block1a2.PORTAADDR3
-address_a[3] => ram_block1a3.PORTAADDR3
-address_a[4] => ram_block1a0.PORTAADDR4
-address_a[4] => ram_block1a1.PORTAADDR4
-address_a[4] => ram_block1a2.PORTAADDR4
-address_a[4] => ram_block1a3.PORTAADDR4
-address_a[5] => ram_block1a0.PORTAADDR5
-address_a[5] => ram_block1a1.PORTAADDR5
-address_a[5] => ram_block1a2.PORTAADDR5
-address_a[5] => ram_block1a3.PORTAADDR5
-address_a[6] => ram_block1a0.PORTAADDR6
-address_a[6] => ram_block1a1.PORTAADDR6
-address_a[6] => ram_block1a2.PORTAADDR6
-address_a[6] => ram_block1a3.PORTAADDR6
-address_a[7] => ram_block1a0.PORTAADDR7
-address_a[7] => ram_block1a1.PORTAADDR7
-address_a[7] => ram_block1a2.PORTAADDR7
-address_a[7] => ram_block1a3.PORTAADDR7
-address_a[8] => ram_block1a0.PORTAADDR8
-address_a[8] => ram_block1a1.PORTAADDR8
-address_a[8] => ram_block1a2.PORTAADDR8
-address_a[8] => ram_block1a3.PORTAADDR8
-address_a[9] => ram_block1a0.PORTAADDR9
-address_a[9] => ram_block1a1.PORTAADDR9
-address_a[9] => ram_block1a2.PORTAADDR9
-address_a[9] => ram_block1a3.PORTAADDR9
-clock0 => ram_block1a0.CLK0
-clock0 => ram_block1a1.CLK0
-clock0 => ram_block1a2.CLK0
-clock0 => ram_block1a3.CLK0
-q_a[0] <= ram_block1a0.PORTADATAOUT
-q_a[1] <= ram_block1a1.PORTADATAOUT
-q_a[2] <= ram_block1a2.PORTADATAOUT
-q_a[3] <= ram_block1a3.PORTADATAOUT
-
-
-|test|MII_to_RCV:phy_inst|cntr12bit:cntrx
-aclr => lpm_counter:lpm_counter_component.aclr
-clock => lpm_counter:lpm_counter_component.clock
-cnt_en => lpm_counter:lpm_counter_component.cnt_en
-sclr => lpm_counter:lpm_counter_component.sclr
-q[0] <= lpm_counter:lpm_counter_component.q[0]
-q[1] <= lpm_counter:lpm_counter_component.q[1]
-q[2] <= lpm_counter:lpm_counter_component.q[2]
-q[3] <= lpm_counter:lpm_counter_component.q[3]
-q[4] <= lpm_counter:lpm_counter_component.q[4]
-q[5] <= lpm_counter:lpm_counter_component.q[5]
-q[6] <= lpm_counter:lpm_counter_component.q[6]
-q[7] <= lpm_counter:lpm_counter_component.q[7]
-q[8] <= lpm_counter:lpm_counter_component.q[8]
-q[9] <= lpm_counter:lpm_counter_component.q[9]
-q[10] <= lpm_counter:lpm_counter_component.q[10]
-q[11] <= lpm_counter:lpm_counter_component.q[11]
-
-
-|test|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component
-clock => cntr_k7j:auto_generated.clock
-clk_en => ~NO_FANOUT~
-cnt_en => cntr_k7j:auto_generated.cnt_en
-updown => ~NO_FANOUT~
-aclr => cntr_k7j:auto_generated.aclr
-aset => ~NO_FANOUT~
-aconst => ~NO_FANOUT~
-aload => ~NO_FANOUT~
-sclr => cntr_k7j:auto_generated.sclr
-sset => ~NO_FANOUT~
-sconst => ~NO_FANOUT~
-sload => ~NO_FANOUT~
-data[0] => ~NO_FANOUT~
-data[1] => ~NO_FANOUT~
-data[2] => ~NO_FANOUT~
-data[3] => ~NO_FANOUT~
-data[4] => ~NO_FANOUT~
-data[5] => ~NO_FANOUT~
-data[6] => ~NO_FANOUT~
-data[7] => ~NO_FANOUT~
-data[8] => ~NO_FANOUT~
-data[9] => ~NO_FANOUT~
-data[10] => ~NO_FANOUT~
-data[11] => ~NO_FANOUT~
-cin => ~NO_FANOUT~
-q[0] <= cntr_k7j:auto_generated.q[0]
-q[1] <= cntr_k7j:auto_generated.q[1]
-q[2] <= cntr_k7j:auto_generated.q[2]
-q[3] <= cntr_k7j:auto_generated.q[3]
-q[4] <= cntr_k7j:auto_generated.q[4]
-q[5] <= cntr_k7j:auto_generated.q[5]
-q[6] <= cntr_k7j:auto_generated.q[6]
-q[7] <= cntr_k7j:auto_generated.q[7]
-q[8] <= cntr_k7j:auto_generated.q[8]
-q[9] <= cntr_k7j:auto_generated.q[9]
-q[10] <= cntr_k7j:auto_generated.q[10]
-q[11] <= cntr_k7j:auto_generated.q[11]
-cout <= <GND>
-eq[0] <= <GND>
-eq[1] <= <GND>
-eq[2] <= <GND>
-eq[3] <= <GND>
-eq[4] <= <GND>
-eq[5] <= <GND>
-eq[6] <= <GND>
-eq[7] <= <GND>
-eq[8] <= <GND>
-eq[9] <= <GND>
-eq[10] <= <GND>
-eq[11] <= <GND>
-eq[12] <= <GND>
-eq[13] <= <GND>
-eq[14] <= <GND>
-eq[15] <= <GND>
-
-
-|test|MII_to_RCV:phy_inst|cntr12bit:cntrx|lpm_counter:lpm_counter_component|cntr_k7j:auto_generated
-aclr => counter_reg_bit1a[11].ACLR
-aclr => counter_reg_bit1a[10].ACLR
-aclr => counter_reg_bit1a[9].ACLR
-aclr => counter_reg_bit1a[8].ACLR
-aclr => counter_reg_bit1a[7].ACLR
-aclr => counter_reg_bit1a[6].ACLR
-aclr => counter_reg_bit1a[5].ACLR
-aclr => counter_reg_bit1a[4].ACLR
-aclr => counter_reg_bit1a[3].ACLR
-aclr => counter_reg_bit1a[2].ACLR
-aclr => counter_reg_bit1a[1].ACLR
-aclr => counter_reg_bit1a[0].ACLR
-clock => counter_reg_bit1a[11].CLK
-clock => counter_reg_bit1a[10].CLK
-clock => counter_reg_bit1a[9].CLK
-clock => counter_reg_bit1a[8].CLK
-clock => counter_reg_bit1a[7].CLK
-clock => counter_reg_bit1a[6].CLK
-clock => counter_reg_bit1a[5].CLK
-clock => counter_reg_bit1a[4].CLK
-clock => counter_reg_bit1a[3].CLK
-clock => counter_reg_bit1a[2].CLK
-clock => counter_reg_bit1a[1].CLK
-clock => counter_reg_bit1a[0].CLK
-cnt_en => _.IN1
-q[0] <= counter_reg_bit1a[0].REGOUT
-q[1] <= counter_reg_bit1a[1].REGOUT
-q[2] <= counter_reg_bit1a[2].REGOUT
-q[3] <= counter_reg_bit1a[3].REGOUT
-q[4] <= counter_reg_bit1a[4].REGOUT
-q[5] <= counter_reg_bit1a[5].REGOUT
-q[6] <= counter_reg_bit1a[6].REGOUT
-q[7] <= counter_reg_bit1a[7].REGOUT
-q[8] <= counter_reg_bit1a[8].REGOUT
-q[9] <= counter_reg_bit1a[9].REGOUT
-q[10] <= counter_reg_bit1a[10].REGOUT
-q[11] <= counter_reg_bit1a[11].REGOUT
-sclr => _.IN0
-sclr => _.IN0
-sclr => _.IN0
 
 

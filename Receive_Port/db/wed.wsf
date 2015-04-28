@@ -5078,10 +5078,10 @@ VECTOR("C:/Users/talal/Desktop/ECE559/FinalProject/ECE-559/Receive_Port/test.vwf
 VECTOR("C:/Users/talal/Desktop/ECE559/FinalProject/ECE-559/Receive_Port/db/Receive_Port.sim.cvwf")
 {
 	ZOOM{
-		ZBEGIN = 8250601;
-		ZEND = 8563101;
+		ZBEGIN = 8200933;
+		ZEND = 8419172;
 		NUMERATOR = 1346;
-		DENOMINATOR = 312500;
+		DENOMINATOR = 218239;
 		TOP_INDEX = 1;
 	}
 	CLOCK{
@@ -5373,312 +5373,8 @@ VECTOR("C:/Users/talal/Desktop/ECE559/FinalProject/ECE-559/Receive_Port/db/Recei
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "test_length_buffer_output";
-		INDEX = 35;
-		FORMAT = T;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_buffer_output[11]";
-		INDEX = 36;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_buffer_output[10]";
-		INDEX = 37;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_buffer_output[9]";
-		INDEX = 38;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_buffer_output[8]";
-		INDEX = 39;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_buffer_output[7]";
-		INDEX = 40;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_buffer_output[6]";
-		INDEX = 41;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_buffer_output[5]";
-		INDEX = 42;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_buffer_output[4]";
-		INDEX = 43;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_buffer_output[3]";
-		INDEX = 44;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_buffer_output[2]";
-		INDEX = 45;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_buffer_output[1]";
-		INDEX = 46;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_buffer_output[0]";
-		INDEX = 47;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_value";
-		INDEX = 48;
-		FORMAT = T;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_value[10]";
-		INDEX = 49;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_value[9]";
-		INDEX = 50;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_value[8]";
-		INDEX = 51;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_value[7]";
-		INDEX = 52;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_value[6]";
-		INDEX = 53;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_value[5]";
-		INDEX = 54;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_value[4]";
-		INDEX = 55;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_value[3]";
-		INDEX = 56;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_value[2]";
-		INDEX = 57;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_value[1]";
-		INDEX = 58;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_value[0]";
-		INDEX = 59;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_read_enable";
-		INDEX = 60;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_data_read_enable";
-		INDEX = 61;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_read_empty";
-		INDEX = 62;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_data_read_empty";
-		INDEX = 63;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_input4bit";
-		INDEX = 64;
-		FORMAT = T;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_input4bit[3]";
-		INDEX = 65;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_input4bit[2]";
-		INDEX = 66;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_input4bit[1]";
-		INDEX = 67;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_input4bit[0]";
-		INDEX = 68;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_crc_rdv";
-		INDEX = 69;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_length_we";
-		INDEX = 70;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_crc_cr";
-		INDEX = 71;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_crc_crv";
-		INDEX = 72;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
 		SIGNAL = "frame_available_monitoring";
-		INDEX = 73;
+		INDEX = 35;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -5686,7 +5382,7 @@ VECTOR("C:/Users/talal/Desktop/ECE559/FinalProject/ECE-559/Receive_Port/db/Recei
 	}
 	LINE{
 		SIGNAL = "frame_to_monitoring";
-		INDEX = 74;
+		INDEX = 36;
 		FORMAT = T;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -5694,7 +5390,7 @@ VECTOR("C:/Users/talal/Desktop/ECE559/FinalProject/ECE-559/Receive_Port/db/Recei
 	}
 	LINE{
 		SIGNAL = "frame_to_monitoring[11]";
-		INDEX = 75;
+		INDEX = 37;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -5702,7 +5398,7 @@ VECTOR("C:/Users/talal/Desktop/ECE559/FinalProject/ECE-559/Receive_Port/db/Recei
 	}
 	LINE{
 		SIGNAL = "frame_to_monitoring[10]";
-		INDEX = 76;
+		INDEX = 38;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -5710,7 +5406,7 @@ VECTOR("C:/Users/talal/Desktop/ECE559/FinalProject/ECE-559/Receive_Port/db/Recei
 	}
 	LINE{
 		SIGNAL = "frame_to_monitoring[9]";
-		INDEX = 77;
+		INDEX = 39;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -5718,7 +5414,7 @@ VECTOR("C:/Users/talal/Desktop/ECE559/FinalProject/ECE-559/Receive_Port/db/Recei
 	}
 	LINE{
 		SIGNAL = "frame_to_monitoring[8]";
-		INDEX = 78;
+		INDEX = 40;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -5726,7 +5422,7 @@ VECTOR("C:/Users/talal/Desktop/ECE559/FinalProject/ECE-559/Receive_Port/db/Recei
 	}
 	LINE{
 		SIGNAL = "frame_to_monitoring[7]";
-		INDEX = 79;
+		INDEX = 41;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -5734,7 +5430,7 @@ VECTOR("C:/Users/talal/Desktop/ECE559/FinalProject/ECE-559/Receive_Port/db/Recei
 	}
 	LINE{
 		SIGNAL = "frame_to_monitoring[6]";
-		INDEX = 80;
+		INDEX = 42;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -5742,7 +5438,7 @@ VECTOR("C:/Users/talal/Desktop/ECE559/FinalProject/ECE-559/Receive_Port/db/Recei
 	}
 	LINE{
 		SIGNAL = "frame_to_monitoring[5]";
-		INDEX = 81;
+		INDEX = 43;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -5750,7 +5446,7 @@ VECTOR("C:/Users/talal/Desktop/ECE559/FinalProject/ECE-559/Receive_Port/db/Recei
 	}
 	LINE{
 		SIGNAL = "frame_to_monitoring[4]";
-		INDEX = 82;
+		INDEX = 44;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -5758,7 +5454,7 @@ VECTOR("C:/Users/talal/Desktop/ECE559/FinalProject/ECE-559/Receive_Port/db/Recei
 	}
 	LINE{
 		SIGNAL = "frame_to_monitoring[3]";
-		INDEX = 83;
+		INDEX = 45;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -5766,7 +5462,7 @@ VECTOR("C:/Users/talal/Desktop/ECE559/FinalProject/ECE-559/Receive_Port/db/Recei
 	}
 	LINE{
 		SIGNAL = "frame_to_monitoring[2]";
-		INDEX = 84;
+		INDEX = 46;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -5774,7 +5470,7 @@ VECTOR("C:/Users/talal/Desktop/ECE559/FinalProject/ECE-559/Receive_Port/db/Recei
 	}
 	LINE{
 		SIGNAL = "frame_to_monitoring[1]";
-		INDEX = 85;
+		INDEX = 47;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -5782,111 +5478,23 @@ VECTOR("C:/Users/talal/Desktop/ECE559/FinalProject/ECE-559/Receive_Port/db/Recei
 	}
 	LINE{
 		SIGNAL = "frame_to_monitoring[0]";
-		INDEX = 86;
+		INDEX = 48;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "test_length_valid";
-		INDEX = 87;
+		SIGNAL = "triggerStart";
+		INDEX = 49;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "test_frame_valid";
-		INDEX = 88;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_sequence_counter";
-		INDEX = 89;
-		FORMAT = T;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_sequence_counter[8]";
-		INDEX = 90;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_sequence_counter[7]";
-		INDEX = 91;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_sequence_counter[6]";
-		INDEX = 92;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_sequence_counter[5]";
-		INDEX = 93;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_sequence_counter[4]";
-		INDEX = 94;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_sequence_counter[3]";
-		INDEX = 95;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_sequence_counter[2]";
-		INDEX = 96;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_sequence_counter[1]";
-		INDEX = 97;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_sequence_counter[0]";
-		INDEX = 98;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "test_sequence_invalidBit";
-		INDEX = 99;
+		SIGNAL = "triggerEnd";
+		INDEX = 50;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
